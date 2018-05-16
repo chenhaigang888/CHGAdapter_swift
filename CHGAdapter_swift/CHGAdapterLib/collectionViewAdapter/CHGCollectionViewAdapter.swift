@@ -9,7 +9,7 @@
 import UIKit
 
 /// tableViewDidSelectRow 回调
-typealias CHGCollectionDidSelectRowBlock = (_ collectionView:UICollectionView,_ indexPath:IndexPath,_ itemData:AnyObject)->Void
+typealias CHGCollectionViewDidSelectItemAtIndexPathBlock = (_ collectionView:UICollectionView,_ indexPath:IndexPath,_ itemData:AnyObject)->Void
 
 protocol CHGCollectionViewAdapterProtocol :UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
@@ -111,6 +111,45 @@ class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
     func fileIsExit(_ fileName:String) -> Bool {
         let xibFile = Bundle.main.path(forResource: fileName, ofType: "nib")
         return xibFile != nil
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let reusableViewData:NSArray? =
+            ((kind as NSString).isEqual(to: UICollectionElementKindSectionHeader)
+                ?
+                    self.adapterData?.headerDatas
+                :
+                    self.adapterData?.footerDatas)!
+        var headerFooterData:AnyObject? = nil
+        if reusableViewData != nil || reusableViewData?.count != 0 {
+            if indexPath.section >= (reusableViewData?.count)! {
+                collectionView.register(CHGCollectionReusableView.classForCoder(), forSupplementaryViewOfKind: kind, withReuseIdentifier:"CHGCollectionReusableView" )
+                let reusableView:CHGCollectionReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier:"CHGCollectionReusableView" , for: indexPath) as! CHGCollectionReusableView
+                reusableView.eventTransmissionBlock = collectionView.eventTransmissionBlock
+                reusableView.reusableViewFor(collectionView: collectionView, indexPath: indexPath, kind: kind as NSString, reusableViewData: headerFooterData)
+                return reusableView
+            }
+            headerFooterData = reusableViewData?[indexPath.section] as AnyObject
+        }
+        
+        let identifier:NSString = self.obtainSupplementaryElementNameWithCell(headerFooterData!, collectionView: collectionView, viewForSupplementaryElementOfKind: kind as NSString, indexPath: indexPath)
+        if self.fileIsExit(identifier as String) {
+            collectionView.register(UINib(nibName: identifier as String, bundle: nil), forSupplementaryViewOfKind: kind, withReuseIdentifier: identifier as String)
+        } else {
+            let NameSpace:String = Bundle.main.infoDictionary!["CFBundleExecutable"] as! String
+            let classAllNameClass:AnyClass = NSClassFromString("\(NameSpace).\(identifier)")!
+            collectionView.register(classAllNameClass, forSupplementaryViewOfKind: kind, withReuseIdentifier: identifier as String)
+        }
+        let reusableView:CHGCollectionReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: identifier as String, for: indexPath) as! CHGCollectionReusableView
+        reusableView.eventTransmissionBlock = collectionView.eventTransmissionBlock
+        reusableView.reusableViewFor(collectionView: collectionView, indexPath: indexPath, kind: kind as NSString, reusableViewData: headerFooterData)
+        return reusableView
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if (collectionView.collectionViewDidSelectItemAtIndexPathBlock != nil) {
+            collectionView.collectionViewDidSelectItemAtIndexPathBlock!(collectionView,indexPath,self.cellDataWithIndexPath(indexPath)!)
+        }
     }
     
 }

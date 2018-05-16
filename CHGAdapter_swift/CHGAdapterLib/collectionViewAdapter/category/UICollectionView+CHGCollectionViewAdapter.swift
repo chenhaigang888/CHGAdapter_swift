@@ -11,7 +11,7 @@ import UIKit
 
 private var collectionViewAdapterKey:Void?
 private var eventTransmissionBlockKey:Void?
-private var collectionDidSelectRowBlockKey:Void?
+private var collectionViewDidSelectItemAtIndexPathBlockKey:Void?
 private var collectionViewEmptyDataShowKey:Void?
 
 extension UICollectionView {
@@ -40,17 +40,17 @@ extension UICollectionView {
         self.eventTransmissionBlock = eventTransmissionBlock
     }
     
-    var collectionDidSelectRowBlock:CHGCollectionDidSelectRowBlock? {
+    var collectionViewDidSelectItemAtIndexPathBlock:CHGCollectionViewDidSelectItemAtIndexPathBlock? {
         get {
-            return objc_getAssociatedObject(self, &collectionDidSelectRowBlockKey) as? CHGCollectionDidSelectRowBlock
+            return objc_getAssociatedObject(self, &collectionViewDidSelectItemAtIndexPathBlockKey) as? CHGCollectionViewDidSelectItemAtIndexPathBlock
         }
         set(newValue) {
-            objc_setAssociatedObject(self, &collectionDidSelectRowBlockKey, newValue, .OBJC_ASSOCIATION_COPY_NONATOMIC)
+            objc_setAssociatedObject(self, &collectionViewDidSelectItemAtIndexPathBlockKey, newValue, .OBJC_ASSOCIATION_COPY_NONATOMIC)
         }
     }
     
-    func setCollectionDidSelectRowBlock(collectionDidSelectRowBlock:@escaping CHGCollectionDidSelectRowBlock) -> Void {
-        self.collectionDidSelectRowBlock = collectionDidSelectRowBlock
+    func setCollectionViewDidSelectItemAtIndexPathBlock(collectionViewDidSelectItemAtIndexPathBlock:@escaping CHGCollectionViewDidSelectItemAtIndexPathBlock) -> Void {
+        self.collectionViewDidSelectItemAtIndexPathBlock = collectionViewDidSelectItemAtIndexPathBlock
     }
     
     var collectionViewEmptyDataShow:CHGCollectionViewEmptyDataShow? {

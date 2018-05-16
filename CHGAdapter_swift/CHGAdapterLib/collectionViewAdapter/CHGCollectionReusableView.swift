@@ -16,7 +16,7 @@ class CHGCollectionReusableView: UICollectionReusableView {
     var reusableViewData:AnyObject?
     var kind:NSString?
     
-    func reusableViewFor(collectionView:UICollectionView,indexPath:IndexPath,kind:NSString,reusableViewData:AnyObject) -> Void {
+    func reusableViewFor(collectionView:UICollectionView,indexPath:IndexPath,kind:NSString,reusableViewData:AnyObject?) -> Void {
         self.collectionView = collectionView
         self.indexPath = indexPath
         self.kind = kind

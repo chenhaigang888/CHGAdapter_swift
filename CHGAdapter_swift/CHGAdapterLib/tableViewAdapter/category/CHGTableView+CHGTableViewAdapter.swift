@@ -49,6 +49,10 @@ extension UITableView {
         }
     }
     
+    func setTableViewDidSelectRowBlock(tableViewDidSelectRowBlock:@escaping CHGTableViewDidSelectRowBlock) -> Void {
+        self.tableViewDidSelectRowBlock = tableViewDidSelectRowBlock
+    }
+    
     var tableViewEmptyDataShow:CHGTableViewEmptyDataShow? {
         get {
             return objc_getAssociatedObject(self, &tableViewEmptyDataShowKey) as? CHGTableViewEmptyDataShow
@@ -57,6 +61,8 @@ extension UITableView {
             objc_setAssociatedObject(self, &tableViewEmptyDataShowKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
+    
+
     
     func setEmptyDataShow(_ title:NSString?,imageName:NSString?) -> Void {
         

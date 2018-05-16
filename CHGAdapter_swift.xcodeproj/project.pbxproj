@@ -24,6 +24,9 @@
 		8F14D08A20ABF446005E4A15 /* Sample1TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F14D08820ABF446005E4A15 /* Sample1TableViewCell.xib */; };
 		8F14D08C20ABF5B8005E4A15 /* Sample2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F14D08B20ABF5B8005E4A15 /* Sample2TableViewCell.swift */; };
 		8F14D08F20AC107C005E4A15 /* Sample1HeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F14D08E20AC107C005E4A15 /* Sample1HeaderFooterView.swift */; };
+		8F97260920AC2FFF00618F81 /* SampleAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F97260820AC2FFF00618F81 /* SampleAdapter.swift */; };
+		8F97260B20AC315A00618F81 /* Sample2HeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F97260A20AC315A00618F81 /* Sample2HeaderFooterView.swift */; };
+		8F97260D20AC316200618F81 /* Sample2HeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F97260C20AC316200618F81 /* Sample2HeaderFooterView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +70,9 @@
 		8F14D08820ABF446005E4A15 /* Sample1TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Sample1TableViewCell.xib; sourceTree = "<group>"; };
 		8F14D08B20ABF5B8005E4A15 /* Sample2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sample2TableViewCell.swift; sourceTree = "<group>"; };
 		8F14D08E20AC107C005E4A15 /* Sample1HeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sample1HeaderFooterView.swift; sourceTree = "<group>"; };
+		8F97260820AC2FFF00618F81 /* SampleAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleAdapter.swift; sourceTree = "<group>"; };
+		8F97260A20AC315A00618F81 /* Sample2HeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sample2HeaderFooterView.swift; sourceTree = "<group>"; };
+		8F97260C20AC316200618F81 /* Sample2HeaderFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Sample2HeaderFooterView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +215,7 @@
 		8F14D08020ABE372005E4A15 /* tableView */ = {
 			isa = PBXGroup;
 			children = (
+				8F97260720AC2FD900618F81 /* adapter */,
 				8F14D08D20AC102B005E4A15 /* headerFooterView */,
 				8F14D08620ABF422005E4A15 /* cell */,
 				8F14D08520ABF417005E4A15 /* controller */,
@@ -239,8 +246,18 @@
 			isa = PBXGroup;
 			children = (
 				8F14D08E20AC107C005E4A15 /* Sample1HeaderFooterView.swift */,
+				8F97260A20AC315A00618F81 /* Sample2HeaderFooterView.swift */,
+				8F97260C20AC316200618F81 /* Sample2HeaderFooterView.xib */,
 			);
 			path = headerFooterView;
+			sourceTree = "<group>";
+		};
+		8F97260720AC2FD900618F81 /* adapter */ = {
+			isa = PBXGroup;
+			children = (
+				8F97260820AC2FFF00618F81 /* SampleAdapter.swift */,
+			);
+			path = adapter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,6 +365,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F14D08420ABE38F005E4A15 /* TableViewController.xib in Resources */,
+				8F97260D20AC316200618F81 /* Sample2HeaderFooterView.xib in Resources */,
 				8F14D04A20ABC4A5005E4A15 /* LaunchScreen.storyboard in Resources */,
 				8F14D04720ABC4A5005E4A15 /* Assets.xcassets in Resources */,
 				8F14D08A20ABF446005E4A15 /* Sample1TableViewCell.xib in Resources */,
@@ -380,9 +398,11 @@
 				8F14D07C20ABD7B0005E4A15 /* CHGTableView+CHGTableViewAdapter.swift in Sources */,
 				8F14D08F20AC107C005E4A15 /* Sample1HeaderFooterView.swift in Sources */,
 				8F14D08920ABF446005E4A15 /* Sample1TableViewCell.swift in Sources */,
+				8F97260920AC2FFF00618F81 /* SampleAdapter.swift in Sources */,
 				8F14D08C20ABF5B8005E4A15 /* Sample2TableViewCell.swift in Sources */,
 				8F14D08320ABE38F005E4A15 /* TableViewController.swift in Sources */,
 				8F14D07920ABD1CC005E4A15 /* CHGTableViewHeaderFooterView.swift in Sources */,
+				8F97260B20AC315A00618F81 /* Sample2HeaderFooterView.swift in Sources */,
 				8F14D07220ABC83C005E4A15 /* CHGTableViewAdapter.swift in Sources */,
 				8F14D07720ABD054005E4A15 /* CHGTableViewCell.swift in Sources */,
 				8F14D04020ABC4A4005E4A15 /* AppDelegate.swift in Sources */,

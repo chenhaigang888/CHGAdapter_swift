@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,24 +20,33 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eKD-Lz-SbX">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
-                        <state key="normal" title="Button"/>
-                        <connections>
-                            <action selector="btnTap:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="h9s-jb-f3C"/>
-                        </connections>
-                    </button>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gm9-A8-5uo">
+                        <rect key="frame" x="257" y="6" width="49" height="31"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="47" id="E83-ek-Bud"/>
+                            <constraint firstAttribute="height" constant="31" id="l4r-WN-k6V"/>
+                        </constraints>
+                    </switch>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wOJ-Ul-444">
+                        <rect key="frame" x="16" y="11" width="241" height="22"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="eKD-Lz-SbX" secondAttribute="bottom" id="0yj-bG-KYe"/>
-                    <constraint firstItem="eKD-Lz-SbX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="CdT-2S-PQA"/>
-                    <constraint firstAttribute="trailing" secondItem="eKD-Lz-SbX" secondAttribute="trailing" id="Izh-XH-RVX"/>
-                    <constraint firstItem="eKD-Lz-SbX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="h2f-S0-PRX"/>
+                    <constraint firstItem="wOJ-Ul-444" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="FDf-q9-lhs"/>
+                    <constraint firstItem="Gm9-A8-5uo" firstAttribute="leading" secondItem="wOJ-Ul-444" secondAttribute="trailing" id="RGw-br-F2A"/>
+                    <constraint firstItem="Gm9-A8-5uo" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="VEt-Ac-nhz"/>
+                    <constraint firstAttribute="trailing" secondItem="Gm9-A8-5uo" secondAttribute="trailing" constant="16" id="eWp-n1-Thg"/>
+                    <constraint firstItem="wOJ-Ul-444" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="ewB-14-05S"/>
+                    <constraint firstItem="wOJ-Ul-444" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="vrW-Sd-8nh"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="btn" destination="eKD-Lz-SbX" id="vyh-DE-ZIf"/>
+                <outlet property="switch_" destination="Gm9-A8-5uo" id="agd-UX-sNh"/>
+                <outlet property="title" destination="wOJ-Ul-444" id="1jg-ZC-SBK"/>
             </connections>
         </tableViewCell>
     </objects>

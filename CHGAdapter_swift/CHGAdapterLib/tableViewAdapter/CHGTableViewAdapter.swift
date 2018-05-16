@@ -15,7 +15,7 @@ typealias CHGCallBack = (_ data:AnyObject?) -> Void
 typealias CHGEventTransmissionBlock = (_ target:AnyObject,_ params:AnyObject,_ tag:NSInteger,_ callBack:CHGCallBack?) ->AnyObject?
 
 /// tableViewDidSelectRow 回调
-typealias CHGTableViewDidSelectRowBlock = (UITableView,NSIndexPath,AnyObject)->Void
+typealias CHGTableViewDidSelectRowBlock = (_ tableView:UITableView,_ indexPath:IndexPath,_ itemData:AnyObject)->Void
 
 protocol CHGTableViewAdapterProtocol:UITableViewDelegate,UITableViewDataSource {
     
@@ -33,8 +33,10 @@ class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
     var footerName:NSString? = ""
     var adapterData:CHGTableViewAdapterData?
     var rowsOfSectionKeyName:NSString?
+    var tableViewDeselectRowAtIndexPathAnimation:Bool = true
     
-    func obtainCellNameWithCell(_ data: AnyObject, tableView: UITableView, cellForRowAtIndexPath cell: IndexPath) -> NSString {
+    
+    func obtainCellNameWithCell(_ data: AnyObject, tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> NSString {
         return self.cellName!;
     }
     
@@ -171,6 +173,13 @@ class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
         view.eventTransmissionBlock = tableView.eventTransmissionBlock
         view.headerFooter(headerFooterForSection: section, tableView: tableView, data: headerFooterData!, type: type)
         return view
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: self.tableViewDeselectRowAtIndexPathAnimation)
+        if tableView.tableViewDidSelectRowBlock != nil {
+            tableView.tableViewDidSelectRowBlock!(tableView,indexPath,self.cellDataWithIndexPath(indexPath)!)
+        }
     }
     
 }

@@ -10,17 +10,23 @@ import UIKit
 
 class Sample1TableViewCell: CHGTableViewCell {
     
-    @IBOutlet var btn:UIButton?
     
-    @IBAction func btnTap(_ sender:AnyObject) {
-        self.eventTransmissionBlock!(self,self.cellData!,1,{(data:AnyObject?)->Void in
-            print("返回结果：\(data!)")
+    @IBOutlet var title:UILabel?
+    @IBOutlet var switch_:UISwitch?
+    
+    @objc func switchValueChange(_ sender:AnyObject)->Void {
+        ((self.tableView?.tableViewAdapter?.adapterData?.customData) as! NSMutableDictionary).setObject(self.switch_?.isOn ?? false, forKey: self.indexPath! as NSCopying)
+        self.eventTransmissionBlock!(self,self.switch_?.isOn as AnyObject,1,{(data:AnyObject?)->Void in
+            print("\(data!.boolValue ? "true":"false")")
         })
     }
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        self.switch_?.addTarget(self, action:#selector(Sample1TableViewCell.switchValueChange), for: UIControlEvents.valueChanged)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -31,7 +37,10 @@ class Sample1TableViewCell: CHGTableViewCell {
     
     override func cellForRow(atIndexPath indexPath: IndexPath, tableView: UITableView?, data: AnyObject?) {
         super .cellForRow(atIndexPath: indexPath, tableView: tableView, data: data)
-        self.btn?.setTitle(data as? String, for: UIControlState.normal)
+        self.switch_?.isOn = (((self.tableView?.tableViewAdapter?.adapterData?.customData) as! NSMutableDictionary) .object(forKey: self.indexPath ?? false) != nil)
+        self.title?.text = data as? String;
     }
+    
+    
     
 }

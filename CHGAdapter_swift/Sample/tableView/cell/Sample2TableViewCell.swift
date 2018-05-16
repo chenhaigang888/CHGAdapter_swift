@@ -42,7 +42,7 @@ class Sample2TableViewCell: CHGTableViewCell {
     
     override func cellForRow(atIndexPath indexPath: IndexPath, tableView: UITableView?, data: AnyObject?) {
         super .cellForRow(atIndexPath: indexPath, tableView: tableView, data: data)
-        self.title.text = data as! String
+        self.title.text = data as? String
     }
     
 }

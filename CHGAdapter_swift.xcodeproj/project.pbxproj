@@ -27,6 +27,12 @@
 		8F97260920AC2FFF00618F81 /* SampleAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F97260820AC2FFF00618F81 /* SampleAdapter.swift */; };
 		8F97260B20AC315A00618F81 /* Sample2HeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F97260A20AC315A00618F81 /* Sample2HeaderFooterView.swift */; };
 		8F97260D20AC316200618F81 /* Sample2HeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F97260C20AC316200618F81 /* Sample2HeaderFooterView.xib */; };
+		8F97261020AC46C700618F81 /* CHGCollectionViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F97260F20AC46C700618F81 /* CHGCollectionViewAdapter.swift */; };
+		8F97261220AC46F400618F81 /* CHGCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F97261120AC46F400618F81 /* CHGCollectionViewCell.swift */; };
+		8F97261420AC472400618F81 /* CHGCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F97261320AC472400618F81 /* CHGCollectionReusableView.swift */; };
+		8F97261720AC475700618F81 /* CHGCollectionViewEmptyDataShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F97261620AC475700618F81 /* CHGCollectionViewEmptyDataShow.swift */; };
+		8F97261B20AC477D00618F81 /* CHGCollectionViewAdapterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F97261A20AC477D00618F81 /* CHGCollectionViewAdapterData.swift */; };
+		8F97261D20AC479F00618F81 /* UICollectionView+CHGCollectionViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F97261C20AC479F00618F81 /* UICollectionView+CHGCollectionViewAdapter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +79,12 @@
 		8F97260820AC2FFF00618F81 /* SampleAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleAdapter.swift; sourceTree = "<group>"; };
 		8F97260A20AC315A00618F81 /* Sample2HeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sample2HeaderFooterView.swift; sourceTree = "<group>"; };
 		8F97260C20AC316200618F81 /* Sample2HeaderFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Sample2HeaderFooterView.xib; sourceTree = "<group>"; };
+		8F97260F20AC46C700618F81 /* CHGCollectionViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CHGCollectionViewAdapter.swift; sourceTree = "<group>"; };
+		8F97261120AC46F400618F81 /* CHGCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CHGCollectionViewCell.swift; sourceTree = "<group>"; };
+		8F97261320AC472400618F81 /* CHGCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CHGCollectionReusableView.swift; sourceTree = "<group>"; };
+		8F97261620AC475700618F81 /* CHGCollectionViewEmptyDataShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CHGCollectionViewEmptyDataShow.swift; sourceTree = "<group>"; };
+		8F97261A20AC477D00618F81 /* CHGCollectionViewAdapterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CHGCollectionViewAdapterData.swift; sourceTree = "<group>"; };
+		8F97261C20AC479F00618F81 /* UICollectionView+CHGCollectionViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+CHGCollectionViewAdapter.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,7 +166,7 @@
 		8F14D06D20ABC7E6005E4A15 /* CHGAdapterLib */ = {
 			isa = PBXGroup;
 			children = (
-				8F14D07020ABC80A005E4A15 /* collectionViewAdapter */,
+				8F97260E20AC46A000618F81 /* collectionViewAdapter */,
 				8F14D06F20ABC7FE005E4A15 /* tableViewAdapter */,
 			);
 			path = CHGAdapterLib;
@@ -179,13 +191,6 @@
 				8F14D07820ABD1CC005E4A15 /* CHGTableViewHeaderFooterView.swift */,
 			);
 			path = tableViewAdapter;
-			sourceTree = "<group>";
-		};
-		8F14D07020ABC80A005E4A15 /* collectionViewAdapter */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = collectionViewAdapter;
 			sourceTree = "<group>";
 		};
 		8F14D07320ABCE68005E4A15 /* model */ = {
@@ -258,6 +263,43 @@
 				8F97260820AC2FFF00618F81 /* SampleAdapter.swift */,
 			);
 			path = adapter;
+			sourceTree = "<group>";
+		};
+		8F97260E20AC46A000618F81 /* collectionViewAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				8F97261920AC476600618F81 /* model */,
+				8F97261820AC476100618F81 /* category */,
+				8F97261520AC473E00618F81 /* emptyDataShow */,
+				8F97260F20AC46C700618F81 /* CHGCollectionViewAdapter.swift */,
+				8F97261120AC46F400618F81 /* CHGCollectionViewCell.swift */,
+				8F97261320AC472400618F81 /* CHGCollectionReusableView.swift */,
+			);
+			path = collectionViewAdapter;
+			sourceTree = "<group>";
+		};
+		8F97261520AC473E00618F81 /* emptyDataShow */ = {
+			isa = PBXGroup;
+			children = (
+				8F97261620AC475700618F81 /* CHGCollectionViewEmptyDataShow.swift */,
+			);
+			path = emptyDataShow;
+			sourceTree = "<group>";
+		};
+		8F97261820AC476100618F81 /* category */ = {
+			isa = PBXGroup;
+			children = (
+				8F97261C20AC479F00618F81 /* UICollectionView+CHGCollectionViewAdapter.swift */,
+			);
+			path = category;
+			sourceTree = "<group>";
+		};
+		8F97261920AC476600618F81 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				8F97261A20AC477D00618F81 /* CHGCollectionViewAdapterData.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,19 +435,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F97261720AC475700618F81 /* CHGCollectionViewEmptyDataShow.swift in Sources */,
 				8F14D07520ABCEA2005E4A15 /* CHGTableViewAdapterData.swift in Sources */,
 				8F14D07F20ABDBBA005E4A15 /* CHGTableViewEmptyDataShow.swift in Sources */,
 				8F14D07C20ABD7B0005E4A15 /* CHGTableView+CHGTableViewAdapter.swift in Sources */,
 				8F14D08F20AC107C005E4A15 /* Sample1HeaderFooterView.swift in Sources */,
 				8F14D08920ABF446005E4A15 /* Sample1TableViewCell.swift in Sources */,
 				8F97260920AC2FFF00618F81 /* SampleAdapter.swift in Sources */,
+				8F97261420AC472400618F81 /* CHGCollectionReusableView.swift in Sources */,
 				8F14D08C20ABF5B8005E4A15 /* Sample2TableViewCell.swift in Sources */,
+				8F97261220AC46F400618F81 /* CHGCollectionViewCell.swift in Sources */,
 				8F14D08320ABE38F005E4A15 /* TableViewController.swift in Sources */,
 				8F14D07920ABD1CC005E4A15 /* CHGTableViewHeaderFooterView.swift in Sources */,
+				8F97261020AC46C700618F81 /* CHGCollectionViewAdapter.swift in Sources */,
+				8F97261B20AC477D00618F81 /* CHGCollectionViewAdapterData.swift in Sources */,
 				8F97260B20AC315A00618F81 /* Sample2HeaderFooterView.swift in Sources */,
 				8F14D07220ABC83C005E4A15 /* CHGTableViewAdapter.swift in Sources */,
 				8F14D07720ABD054005E4A15 /* CHGTableViewCell.swift in Sources */,
 				8F14D04020ABC4A4005E4A15 /* AppDelegate.swift in Sources */,
+				8F97261D20AC479F00618F81 /* UICollectionView+CHGCollectionViewAdapter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

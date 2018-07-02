@@ -8,11 +8,11 @@
 
 import UIKit
 
-class CHGTableViewAdapterData: NSObject {
+open class CHGTableViewAdapterData: NSObject {
 
-    var cellDatas:NSArray?
-    var headerDatas:NSArray?
-    var footerDatas:NSArray?
-    var customData:AnyObject?
+    public var cellDatas:NSArray?
+    public var headerDatas:NSArray?
+    public var footerDatas:NSArray?
+    public var customData:AnyObject?
     
 }

@@ -8,25 +8,60 @@
 
 import UIKit
 
-class CHGTableViewCell: UITableViewCell {
+open class CHGTableViewCell: UITableViewCell {
     
-    var eventTransmissionBlock:CHGEventTransmissionBlock?
-    var indexPath:IndexPath?
-    var tableView:UITableView?
-    var cellData:AnyObject?
+    public var eventTransmissionBlock:CHGEventTransmissionBlock?
+    public var indexPath:IndexPath?
+    public var tableView:UITableView?
+    public var cellData:AnyObject?
     
-    func cellForRow(atIndexPath indexPath:IndexPath,tableView:UITableView?,data:AnyObject?) -> Void {
+    open func cellForRow(atIndexPath indexPath:IndexPath,tableView:UITableView?,data:AnyObject?) -> Void {
         self.indexPath = indexPath
         self.tableView = tableView;
         self.cellData = data;
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    open func adapterTag()->NSInteger? {
+        return self.tableView?.tableViewAdapter?.tag
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    
+    open func customData()->AnyObject? {
+        return self.tableView?.tableViewAdapter?.adapterData?.customData
     }
-
+    
+    open func controller()->UIViewController? {
+        return self.tableView?.tableViewAdapter?.controller
+    }
+    
+    /**
+     将被复用
+     
+     @param identifier identifier
+     */
+    open func willReuseWithIdentifier(identifier:NSString)->Void{
+        
+    }
+    
+    /**
+     将被复用
+     
+     @param identifier identifier
+     @param indexPath indexPath
+     */
+    open func willReuseWithIdentifier(identifier:NSString, indexPath:NSIndexPath)->Void{
+        
+    }
+    /**
+     cell将要显示
+     */
+    open func cellWillAppear()->Void {
+        
+    }
+    
+    /**
+     cell已经消失
+     */
+    open func cellDidDisappear()->Void {
+        
+    }
 }

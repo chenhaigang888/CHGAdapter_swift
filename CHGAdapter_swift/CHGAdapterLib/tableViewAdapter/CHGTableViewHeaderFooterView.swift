@@ -8,24 +8,58 @@
 
 import UIKit
 
-enum CHGTableViewHeaderFooterViewType {
+public enum CHGTableViewHeaderFooterViewType {
     case HeaderType
     case FooterType
 }
 
-class CHGTableViewHeaderFooterView: UITableViewHeaderFooterView {
+open class CHGTableViewHeaderFooterView: UITableViewHeaderFooterView {
 
-    var eventTransmissionBlock:CHGEventTransmissionBlock?
-    var section:NSInteger?
-    var tableView:UITableView?
-    var headerFooterData:AnyObject?
-    var type:CHGTableViewHeaderFooterViewType?
+    public var eventTransmissionBlock:CHGEventTransmissionBlock?
+    public var section:NSInteger?
+    public var tableView:UITableView?
+    public var headerFooterData:AnyObject?
+    public var type:CHGTableViewHeaderFooterViewType?
     
-    func headerFooter(headerFooterForSection section:NSInteger,tableView:UITableView,data:AnyObject,type:CHGTableViewHeaderFooterViewType) -> Void {
+    open func headerFooter(headerFooterForSection section:NSInteger,tableView:UITableView,data:AnyObject,type:CHGTableViewHeaderFooterViewType) -> Void {
         self.section = section
         self.tableView = tableView
         self.headerFooterData = data
         self.type = type
     }
     
+    open func controller()->UIViewController? {
+        return self.tableView?.tableViewAdapter?.controller
+    }
+    
+    open func adapterTag()->NSInteger? {
+        return self.tableView?.tableViewAdapter?.tag
+    }
+    
+    open func customData()->AnyObject? {
+        return self.tableView?.tableViewAdapter?.adapterData?.customData
+    }
+    
+    /**
+     将要复用
+     
+     @param identifier identifier
+     */
+    open func willReuseWithIdentifier(identifier:NSString)->Void {
+        
+    }
+    
+    /**
+     headerFooterView将要显示
+     */
+    open func headerFooterViewWillAppearWithType(type:CHGTableViewHeaderFooterViewType)->Void {
+        
+    }
+    
+    /**
+     headerFooterView已经消失
+     */
+    open func headerFooterViewDidDisAppearWithType(type:CHGTableViewHeaderFooterViewType)->Void {
+        
+    }
 }

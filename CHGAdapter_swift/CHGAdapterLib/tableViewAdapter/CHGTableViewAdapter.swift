@@ -9,15 +9,15 @@
 import UIKit
 
 /// 回调
-typealias CHGCallBack = (_ data:AnyObject?) -> Void
+public typealias CHGCallBack = (_ data:AnyObject?) -> Void
 
 /// 事件传输block target
-typealias CHGEventTransmissionBlock = (_ target:AnyObject,_ params:AnyObject,_ tag:NSInteger,_ callBack:CHGCallBack?) ->AnyObject?
+public typealias CHGEventTransmissionBlock = (_ target:AnyObject,_ params:AnyObject,_ tag:NSInteger,_ callBack:CHGCallBack?) ->AnyObject?
 
 /// tableViewDidSelectRow 回调
-typealias CHGTableViewDidSelectRowBlock = (_ tableView:UITableView,_ indexPath:IndexPath,_ itemData:AnyObject)->Void
+public typealias CHGTableViewDidSelectRowBlock = (_ tableView:UITableView,_ indexPath:IndexPath,_ itemData:AnyObject)->Void
 
-protocol CHGTableViewAdapterProtocol:UITableViewDelegate,UITableViewDataSource {
+public protocol CHGTableViewAdapterProtocol:UITableViewDelegate,UITableViewDataSource {
     
     func obtainCellNameWithCell(_ data:AnyObject ,tableView:UITableView, cellForRowAtIndexPath indexPath:IndexPath) -> NSString
     
@@ -26,46 +26,57 @@ protocol CHGTableViewAdapterProtocol:UITableViewDelegate,UITableViewDataSource {
     func obtainFooterNameWithFooter(_ data:AnyObject,tableView:UITableView, viewForFooterInSection section:NSInteger) -> NSString
 }
 
-class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
+open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
     
-    var cellName:NSString? = ""
-    var headerName:NSString? = ""
-    var footerName:NSString? = ""
-    var adapterData:CHGTableViewAdapterData?
-    var rowsOfSectionKeyName:NSString?
-    var tableViewDeselectRowAtIndexPathAnimation:Bool = true
+    public var cellName:NSString? = ""
+    public var headerName:NSString? = ""
+    public var footerName:NSString? = ""
+
+    /// 如果cell、headerView、footerView的高度都统一可以通过直接设置以下参数进行设置
+    public var cellHeight:CGFloat = 44
+    public var headerHeight:CGFloat = 0.01
+    public var footerHeight:CGFloat = 0.01
+    
+    public var adapterData:CHGTableViewAdapterData?
+    public var rowsOfSectionKeyName:NSString?
+    public var tableViewDeselectRowAtIndexPathAnimation:Bool = true
+    public var tag:NSInteger = 0
+    public var controller:UIViewController?
     
     
-    func obtainCellNameWithCell(_ data: AnyObject, tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> NSString {
+    open func obtainCellNameWithCell(_ data: AnyObject, tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> NSString {
         return self.cellName!;
     }
     
-    func obtainHeaderNameWithHeader(_ data: AnyObject, tableView: UITableView, viewForHeaderInSection section: NSInteger) -> NSString {
+    open func obtainHeaderNameWithHeader(_ data: AnyObject, tableView: UITableView, viewForHeaderInSection section: NSInteger) -> NSString {
         return self.headerName!;
     }
     
-    func obtainFooterNameWithFooter(_ data: AnyObject, tableView: UITableView, viewForFooterInSection section: NSInteger) -> NSString {
+    open func obtainFooterNameWithFooter(_ data: AnyObject, tableView: UITableView, viewForFooterInSection section: NSInteger) -> NSString {
         return self.footerName!;
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        let cellDatas = self.adapterData?.cellDatas
-        if (self.rowsOfSectionKeyName != nil) {
-            if cellDatas![0] is NSArray {
-                return (cellDatas?.count)!
-            } else {
-                return (cellDatas?.count)!
-            }
-        } else {
-            if cellDatas![0] is NSArray {
-                return (cellDatas?.count)!
-            } else {
-                return 1
-            }
-        }
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return self.cellHeight
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return self.headerHeight
+    }
+    
+    public func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return self.footerHeight
+    }
+    
+    public func numberOfSections(in tableView: UITableView) -> Int {
+        let cellDatas = self.adapterData?.cellDatas
+        if cellDatas == nil || cellDatas?.count == 0 {
+            return 0
+        }
+        return (cellDatas?.count)!
+    }
+    
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let cellDatas = self.adapterData?.cellDatas
         if cellDatas?.count == 0 {
             return 0;
@@ -78,37 +89,29 @@ class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
         if cellData is NSArray {
             return (cellData as AnyObject).count
         } else {
-            return (cellDatas?.count)!
+            return 1
         }
-        
     }
     
-    func cellDataWithIndexPath(_ indexPath:IndexPath) -> AnyObject? {
+    public func cellDataWithIndexPath(_ indexPath:IndexPath) -> AnyObject? {
         if self.adapterData?.cellDatas?.count == 0 {
             return nil
         }
         let sectionData:AnyObject = self.adapterData?.cellDatas![indexPath.section] as AnyObject
-        let cellData:AnyObject?
-        
         if self.rowsOfSectionKeyName != nil && !(sectionData is NSArray) {
             let tempArray:NSArray = sectionData.value(forKey: self.rowsOfSectionKeyName! as String) as! NSArray
-            cellData = tempArray[indexPath.row] as AnyObject
+            return tempArray[indexPath.row] as AnyObject
         } else {
-            if sectionData is NSArray {
-               cellData = sectionData[indexPath.row]
-            } else {
-                cellData = sectionData;
-            }
+            return sectionData is NSArray ? sectionData[indexPath.row] : sectionData
         }
-        return cellData
     }
     
-    func fileIsExit(_ fileName:String) -> Bool {
+    public func fileIsExit(_ fileName:String) -> Bool {
         let xibFile = Bundle.main.path(forResource: fileName, ofType: "nib")
         return xibFile != nil
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellData = self.cellDataWithIndexPath(indexPath)
         let identifier = self.obtainCellNameWithCell(cellData!, tableView: tableView, cellForRowAtIndexPath: indexPath)
         if identifier.length == 0 {
@@ -128,15 +131,15 @@ class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return self.tableview(tableView, tableViewHeaderFooterViewType: CHGTableViewHeaderFooterViewType.HeaderType, viewForHeaderInSection: section)
     }
     
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    public func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return self.tableview(tableView, tableViewHeaderFooterViewType: CHGTableViewHeaderFooterViewType.FooterType, viewForHeaderInSection: section)
     }
     
-    func tableview(_ tableView:UITableView,tableViewHeaderFooterViewType type:CHGTableViewHeaderFooterViewType,viewForHeaderInSection section:NSInteger) -> UIView? {
+    public func tableview(_ tableView:UITableView,tableViewHeaderFooterViewType type:CHGTableViewHeaderFooterViewType,viewForHeaderInSection section:NSInteger) -> UIView? {
         //获取headerFooter的Item 数据
         let headerFooterDatas:NSArray? =
             type == CHGTableViewHeaderFooterViewType.HeaderType
@@ -175,11 +178,46 @@ class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
         return view
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        if view is CHGTableViewHeaderFooterView {
+            (view as! CHGTableViewHeaderFooterView).headerFooterViewWillAppearWithType(type: CHGTableViewHeaderFooterViewType.HeaderType)
+        }
+    }
+    
+    public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if cell is CHGTableViewCell {
+            (cell as! CHGTableViewCell).cellWillAppear()
+        }
+    }
+    
+    public func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+        if view is CHGTableViewHeaderFooterView {
+            (view as! CHGTableViewHeaderFooterView).headerFooterViewWillAppearWithType(type: CHGTableViewHeaderFooterViewType.FooterType)
+        }
+    }
+    
+    public func tableView(_ tableView: UITableView, didEndDisplayingHeaderView view: UIView, forSection section: Int) {
+        if view is CHGTableViewHeaderFooterView {
+            (view as! CHGTableViewHeaderFooterView).headerFooterViewDidDisAppearWithType(type: CHGTableViewHeaderFooterViewType.HeaderType)
+        }
+    }
+    
+    public func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if cell is CHGTableViewCell {
+            (cell as! CHGTableViewCell).cellDidDisappear()
+        }
+    }
+    
+    public func tableView(_ tableView: UITableView, didEndDisplayingFooterView view: UIView, forSection section: Int) {
+        if view is CHGTableViewHeaderFooterView {
+            (view as! CHGTableViewHeaderFooterView).headerFooterViewDidDisAppearWithType(type: CHGTableViewHeaderFooterViewType.FooterType)
+        }
+    }
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: self.tableViewDeselectRowAtIndexPathAnimation)
         if tableView.tableViewDidSelectRowBlock != nil {
             tableView.tableViewDidSelectRowBlock!(tableView,indexPath,self.cellDataWithIndexPath(indexPath)!)
         }
     }
-    
 }

@@ -8,12 +8,12 @@
 
 import UIKit
 
-class CHGTableViewEmptyDataShow: NSObject {
+open class CHGTableViewEmptyDataShow: NSObject {
 
-    var imageName:NSString?
-    var title:NSString?
-    var verticalOffset:CGFloat?
-    var emptyDataSetShouldAllowScroll:Bool = false
+    public var imageName:NSString?
+    public var title:NSString?
+    public var verticalOffset:CGFloat?
+    public var emptyDataSetShouldAllowScroll:Bool = false
     
     
 }

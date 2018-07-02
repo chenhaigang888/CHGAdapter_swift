@@ -8,15 +8,54 @@
 
 import UIKit
 
-class CHGCollectionViewCell: UICollectionViewCell {
-    var eventTransmissionBlock:CHGEventTransmissionBlock?
-    var indexPath:IndexPath?
-    var collectionView:UICollectionView?
-    var cellData:AnyObject?
+open class CHGCollectionViewCell: UICollectionViewCell {
+    public var eventTransmissionBlock:CHGEventTransmissionBlock?
+    public var indexPath:IndexPath?
+    public var collectionView:UICollectionView?
+    public var cellData:AnyObject?
     
-    func cellForRow(atIndexPath indexPath:IndexPath,collectionView:UICollectionView?,data:AnyObject?) -> Void {
+    open func cellForRow(atIndexPath indexPath:IndexPath,collectionView:UICollectionView?,data:AnyObject?) -> Void {
         self.indexPath = indexPath
         self.collectionView = collectionView;
         self.cellData = data;
+    }
+    
+    open func adapterTag()->NSInteger? {
+        return self.collectionView?.collectionViewAdapter?.tag
+    }
+    
+    open func customData()->AnyObject? {
+        return self.collectionView?.collectionViewAdapter?.adapterData?.customData
+    }
+    
+    open func controller()->UIViewController?{
+        return self.collectionView?.collectionViewAdapter?.controller
+    }
+    
+    /**
+     将被复用
+     
+     @param identifier identifier
+     @param indexPath indexPath
+     */
+//    -(void)willReuseWithIdentifier:(NSString*)identifier indexPath:(NSIndexPath*)indexPath;
+    open func willReuseWithIdentifier(identifier:NSString,indexPath:NSIndexPath)->Void {
+        
+    }
+    
+    /**
+     cell将要显示
+     */
+//    -(void)cellWillAppear;
+    open func cellWillAppear()->Void {
+        
+    }
+    
+    /**
+     cell已经消失
+     */
+//    -(void)cellDidDisappear;
+    open func cellDidDisappear()->Void {
+        
     }
 }

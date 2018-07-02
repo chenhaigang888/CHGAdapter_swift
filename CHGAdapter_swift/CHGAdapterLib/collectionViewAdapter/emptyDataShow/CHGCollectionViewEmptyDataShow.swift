@@ -8,6 +8,6 @@
 
 import UIKit
 
-class CHGCollectionViewEmptyDataShow: CHGTableViewEmptyDataShow {
+open class CHGCollectionViewEmptyDataShow: CHGTableViewEmptyDataShow {
 
 }

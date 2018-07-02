@@ -16,7 +16,7 @@ private var tableViewEmptyDataShowKey: Void?
 
 extension UITableView {
     
-    var tableViewAdapter:CHGTableViewAdapter? {
+    open var tableViewAdapter:CHGTableViewAdapter? {
         get {
             return objc_getAssociatedObject(self, &tableViewAdapterKey) as? CHGTableViewAdapter
         }
@@ -27,7 +27,7 @@ extension UITableView {
         }
     }
     
-    var eventTransmissionBlock:CHGEventTransmissionBlock? {
+    open var eventTransmissionBlock:CHGEventTransmissionBlock? {
         get {
             return objc_getAssociatedObject(self, &eventTransmissionBlockKey) as? CHGEventTransmissionBlock
         }
@@ -36,11 +36,11 @@ extension UITableView {
         }
     }
     
-    func setEventTransmissionBlock(eventTransmissionBlock:@escaping CHGEventTransmissionBlock) -> Void {
+    open func setEventTransmissionBlock(eventTransmissionBlock:@escaping CHGEventTransmissionBlock) -> Void {
         self.eventTransmissionBlock = eventTransmissionBlock
     }
     
-    var tableViewDidSelectRowBlock:CHGTableViewDidSelectRowBlock? {
+    open var tableViewDidSelectRowBlock:CHGTableViewDidSelectRowBlock? {
         get {
             return objc_getAssociatedObject(self, &tableViewDidSelectRowBlockKey) as? CHGTableViewDidSelectRowBlock
         }
@@ -49,11 +49,11 @@ extension UITableView {
         }
     }
     
-    func setTableViewDidSelectRowBlock(tableViewDidSelectRowBlock:@escaping CHGTableViewDidSelectRowBlock) -> Void {
+    open func setTableViewDidSelectRowBlock(tableViewDidSelectRowBlock:@escaping CHGTableViewDidSelectRowBlock) -> Void {
         self.tableViewDidSelectRowBlock = tableViewDidSelectRowBlock
     }
     
-    var tableViewEmptyDataShow:CHGTableViewEmptyDataShow? {
+    open var tableViewEmptyDataShow:CHGTableViewEmptyDataShow? {
         get {
             return objc_getAssociatedObject(self, &tableViewEmptyDataShowKey) as? CHGTableViewEmptyDataShow
         }
@@ -64,19 +64,19 @@ extension UITableView {
     
 
     
-    func setEmptyDataShow(_ title:NSString?,imageName:NSString?) -> Void {
+    open func setEmptyDataShow(_ title:NSString?,imageName:NSString?) -> Void {
         
     }
     
-    func hiddHeadView() -> Void {
+    open func hiddHeadView() -> Void {
         
     }
     
-    func hiddenFooterView() -> Void {
+    open func hiddenFooterView() -> Void {
         
     }
     
-    func autoHeight() -> Void {
+    open func autoHeight() -> Void {
         
     }
     

@@ -81,7 +81,6 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
         if cellDatas?.count == 0 {
             return 0;
         }
-        
         if (self.rowsOfSectionKeyName != nil && (!(cellDatas![section] is NSArray))) {
             return ((cellDatas![section] as AnyObject).value(forKey: self.rowsOfSectionKeyName! as String) as! NSArray).count
         }

@@ -108,16 +108,15 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
                 self.adapterData?.footerDatas)
         var headerFooterData:AnyObject? = nil
         
-        if reusableViewData == nil || reusableViewData?.count != 0 {
-            if indexPath.section >= reusableViewData?.count ?? 0 {
-                collectionView.register(CHGCollectionReusableView.classForCoder(), forSupplementaryViewOfKind: kind, withReuseIdentifier:"CHGCollectionReusableView" )
-                let reusableView:CHGCollectionReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier:"CHGCollectionReusableView" , for: indexPath) as! CHGCollectionReusableView
-                reusableView.eventTransmissionBlock = collectionView.eventTransmissionBlock
-                reusableView.reusableViewFor(collectionView: collectionView, indexPath: indexPath, kind: kind as NSString, reusableViewData: headerFooterData)
-                return reusableView
-            }
-            headerFooterData = reusableViewData?[indexPath.section] as AnyObject
+        if reusableViewData == nil || reusableViewData?.count == 0 || indexPath.section >= reusableViewData?.count ?? 0 {
+            collectionView.register(CHGCollectionReusableView.classForCoder(), forSupplementaryViewOfKind: kind, withReuseIdentifier:"CHGCollectionReusableView" )
+            let reusableView:CHGCollectionReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier:"CHGCollectionReusableView" , for: indexPath) as! CHGCollectionReusableView
+            reusableView.eventTransmissionBlock = collectionView.eventTransmissionBlock
+            reusableView.reusableViewFor(collectionView: collectionView, indexPath: indexPath, kind: kind as NSString, reusableViewData: headerFooterData)
+            return reusableView
         }
+        
+        headerFooterData = reusableViewData?[indexPath.section] as AnyObject
         let identifier:NSString = self.obtainSupplementaryElementNameWithCell(headerFooterData!, collectionView: collectionView, viewForSupplementaryElementOfKind: kind as NSString, indexPath: indexPath)
         
         if self.fileIsExit(identifier as String) {

@@ -18,7 +18,7 @@ class CollectionViewController: UIViewController {
         tempAdapter.cellName = "Sample1CollectionViewCell"
         tempAdapter.headerName = "Sample1CollectionReusableView"
         tempAdapter.footerName = "Sample1CollectionReusableView"
-        tempAdapter.rowsOfSectionKeyName = "test"
+//        tempAdapter.rowsOfSectionKeyName = "test"
         return tempAdapter
     }()
     
@@ -27,13 +27,14 @@ class CollectionViewController: UIViewController {
         let tempAdapterData = CHGCollectionViewAdapterData()
         tempAdapterData.cellDatas =
             [
-                ["test":["1","2","3","4","5","6","7","8"]],
-                ["test":["1","2","3","4","5","6","7","8"]],
-                ["test":["1","2","3","4","5","6","7","8"]],
-                ["test":["1","2","3","4","5","6","7","8"]]
+//                ["test":["1","2","3","4","5","6","7","8"]],
+//                ["test":["1","2","3","4","5","6","7","8"]],
+//                ["test":["1","2","3","4","5","6","7","8"]],
+//                ["test":["1","2","3","4","5","6","7","8"]]
+                "1","2","3",["1","2"],"1"
         ]
-        tempAdapterData.headerDatas = ["header1","header2"]
-        tempAdapterData.footerDatas = ["footer1","footer2"]
+        tempAdapterData.headerDatas = ["header1","header2","header3"]
+        tempAdapterData.footerDatas = ["footer1","footer2","footer3"]
         tempAdapterData.customData = NSMutableDictionary()
         return tempAdapterData
     }()

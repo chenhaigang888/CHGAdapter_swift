@@ -79,6 +79,7 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
         let cellData = self.cellDataWithIndexPath(indexPath)
         let identifier:NSString = self.obtainCellNameWithCell(cellData!, collectionView: collectionView, cellForItemAtIndexPath: indexPath)
         if identifier.length == 0 {
+            print("cellName不能为空")
             return UICollectionViewCell()
         }
         if self.fileIsExit(identifier as String) {

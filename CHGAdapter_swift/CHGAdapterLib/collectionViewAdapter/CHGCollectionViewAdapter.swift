@@ -25,7 +25,7 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
     public var footerName:NSString? = ""
     public var adapterData:CHGCollectionViewAdapterData?
     public var rowsOfSectionKeyName:NSString?
-//    public var tableViewDeselectRowAtIndexPathAnimation:Bool = true
+    //    public var tableViewDeselectRowAtIndexPathAnimation:Bool = true
     public var controller:UIViewController?
     public var tag:NSInteger?
     
@@ -105,10 +105,11 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
                 ?
                     self.adapterData?.headerDatas
                 :
-                    self.adapterData?.footerDatas)!
+                self.adapterData?.footerDatas)
         var headerFooterData:AnyObject? = nil
-        if reusableViewData != nil || reusableViewData?.count != 0 {
-            if indexPath.section >= (reusableViewData?.count)! {
+        
+        if reusableViewData == nil || reusableViewData?.count != 0 {
+            if indexPath.section >= reusableViewData?.count ?? 0 {
                 collectionView.register(CHGCollectionReusableView.classForCoder(), forSupplementaryViewOfKind: kind, withReuseIdentifier:"CHGCollectionReusableView" )
                 let reusableView:CHGCollectionReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier:"CHGCollectionReusableView" , for: indexPath) as! CHGCollectionReusableView
                 reusableView.eventTransmissionBlock = collectionView.eventTransmissionBlock
@@ -117,15 +118,16 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
             }
             headerFooterData = reusableViewData?[indexPath.section] as AnyObject
         }
-        
         let identifier:NSString = self.obtainSupplementaryElementNameWithCell(headerFooterData!, collectionView: collectionView, viewForSupplementaryElementOfKind: kind as NSString, indexPath: indexPath)
+        
         if self.fileIsExit(identifier as String) {
             collectionView.register(UINib(nibName: identifier as String, bundle: nil), forSupplementaryViewOfKind: kind, withReuseIdentifier: identifier as String)
         } else {
             let NameSpace:String = Bundle.main.infoDictionary!["CFBundleExecutable"] as! String
-            let classAllNameClass:AnyClass = NSClassFromString("\(NameSpace).\(identifier)")!
+            let classAllNameClass:AnyClass? = NSClassFromString("\(NameSpace).\(identifier)")
             collectionView.register(classAllNameClass, forSupplementaryViewOfKind: kind, withReuseIdentifier: identifier as String)
         }
+        
         let reusableView:CHGCollectionReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: identifier as String, for: indexPath) as! CHGCollectionReusableView
         reusableView.eventTransmissionBlock = collectionView.eventTransmissionBlock
         reusableView.reusableViewFor(collectionView: collectionView, indexPath: indexPath, kind: kind as NSString, reusableViewData: headerFooterData)

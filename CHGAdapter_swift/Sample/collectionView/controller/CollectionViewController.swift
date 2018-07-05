@@ -50,8 +50,6 @@ class CollectionViewController: UIViewController {
         self.collectionView?.collectionViewAdapter = self.adapter
         self.collectionView?.setEmptyDataShow("暂时没有数据", imageName: "icon_dl_xsmm")
         self.collectionView?.collectionViewEmptyDataShow?.emptyDataSetShouldAllowScroll = true
-        self.collectionView?.hiddHeadView()
-        self.collectionView?.hiddenFooterView()
         self.collectionView?.setEventTransmissionBlock(eventTransmissionBlock: { (target:AnyObject, params, tag:NSInteger, callBack:CHGCallBack?) -> AnyObject? in
             callBack!("jjj" as AnyObject)
             return nil

@@ -76,16 +76,4 @@ extension UICollectionView {
         self.emptyDataSetSource = dataSource
         self.emptyDataSetDelegate = delegate
     }
-    
-    public func hiddHeadView() -> Void {
-        
-    }
-    
-    public func hiddenFooterView() -> Void {
-        
-    }
-    
-    public func autoHeight() -> Void {
-        
-    }
 }

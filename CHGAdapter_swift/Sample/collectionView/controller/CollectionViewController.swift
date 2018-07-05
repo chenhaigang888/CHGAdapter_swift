@@ -20,21 +20,35 @@ class CollectionViewController: UIViewController {
         tempAdapter.cellName = "Sample1CollectionViewCell"      //设置cell 类
         tempAdapter.headerName = "Sample1CollectionReusableView"//设置顶部显示的ReusableView 类
         tempAdapter.footerName = "Sample1CollectionReusableView" //设置底部显示的ReusableView 类
-        tempAdapter.rowsOfSectionKeyName = "test"//设置使用model或者字典中的字段作为cell的数据
+//        tempAdapter.rowsOfSectionKeyName = "test"//设置使用model或者字典中的字段作为cell的数据
         return tempAdapter
     }()
     
+    
+    /// 构造adapter的数据
     lazy var adapterData:CHGCollectionViewAdapterData = {
         () ->CHGCollectionViewAdapterData in
         let tempAdapterData = CHGCollectionViewAdapterData()
         tempAdapterData.cellDatas =
-            [
-                ["test":["1","2","3","4","5","6","7","8"]],
-                ["test":["1","2","3","4","5","6","7","8"]],
-                ["test":["1","2","3","4","5","6","7","8"]],
-                ["test":["1","2","3","4","5","6","7","8"]]
-
+        // data style 1
+//        [
+//            ["test":["1","2","3","4","5","6","7","8"]],
+//            ["test":["1","2","3","4","5","6","7","8"]],
+//            ["test":["1","2","3","4","5","6","7","8"]],
+//            ["test":["1","2","3","4","5","6","7","8"]]
+//
+//        ]
+        // data style 2
+        [
+            ["1","2","3","4"],
+            ["1","2","3","4"],
+            ["1","2","3","4"],
+            "1",
+            "2"
         ]
+        
+        // data style 3
+//        ["1","2","3","4","5","6"]
         tempAdapterData.headerDatas = ["header1","header2","header3"]
         tempAdapterData.footerDatas = ["footer1","footer2","footer3"]
         tempAdapterData.customData = NSMutableDictionary()

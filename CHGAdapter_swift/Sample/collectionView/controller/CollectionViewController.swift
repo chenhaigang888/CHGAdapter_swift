@@ -36,7 +36,6 @@ class CollectionViewController: UIViewController {
 //            ["test":["1","2","3","4","5","6","7","8"]],
 //            ["test":["1","2","3","4","5","6","7","8"]],
 //            ["test":["1","2","3","4","5","6","7","8"]]
-//
 //        ]
         // data style 2
         [

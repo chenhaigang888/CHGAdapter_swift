@@ -18,7 +18,7 @@ class TableViewController: UIViewController {
         tempAdapter.cellName = "Sample1TableViewCell"
         tempAdapter.headerName = "Sample1HeaderFooterView"
         tempAdapter.footerName = "Sample1HeaderFooterView"
-        tempAdapter.rowsOfSectionKeyName = "test"
+//        tempAdapter.rowsOfSectionKeyName = "test"//设置使用model或者字典中的字段作为cell的数据
         return tempAdapter
     }()
     
@@ -26,12 +26,24 @@ class TableViewController: UIViewController {
         () ->CHGTableViewAdapterData in
         let tempAdapterData = CHGTableViewAdapterData()
         tempAdapterData.cellDatas =
+            // data style 1
+            //        [
+            //            ["test":["1","2","3","4","5","6","7","8"]],
+            //            ["test":["1","2","3","4","5","6","7","8"]],
+            //            ["test":["1","2","3","4","5","6","7","8"]],
+            //            ["test":["1","2","3","4","5","6","7","8"]]
+            //        ]
+            // data style 2
             [
-                ["test":["1","2","3","4","5","6"]],
-                ["test":["1","2","3","4","5","6"]],
-                ["test":["1","2","3","4","5","6"]],
-                ["test":["1","2","3","4","5","6"]]
-            ]
+                ["1","2","3","4"],
+                ["1","2","3","4"],
+                ["1","2","3","4"],
+                "1",
+                "2"
+        ]
+        
+        // data style 3
+        //        ["1","2","3","4","5","6"]
         tempAdapterData.headerDatas = ["header1","header2"]
         tempAdapterData.footerDatas = ["footer1","footer2"]
         tempAdapterData.customData = NSMutableDictionary()

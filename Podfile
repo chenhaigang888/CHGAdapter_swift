@@ -8,5 +8,9 @@ use_modular_headers!
 
 pod 'DZNEmptyDataSet', :modular_headers => true
 
+pre_install do |installer|
+    
+    Pod::PodTarget.send(:define_method, :static_framework?) { return true }
+end
 
 end

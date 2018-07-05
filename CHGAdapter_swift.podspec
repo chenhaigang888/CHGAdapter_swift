@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "CHGAdapter_swift"
-  s.version      = "0.1.0"
+  s.version      = "0.1.1"
   s.summary      = "主要解决UITableView、UICollectionView与dataSource和Delegate解耦合"
 
   # This description is used to generate tags and improve search results.
@@ -134,6 +134,6 @@ Pod::Spec.new do |s|
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
   s.dependency "DZNEmptyDataSet", "~> 1.8.1"
-  s.static_framework = true
+  
 
 end

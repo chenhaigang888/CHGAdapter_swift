@@ -5,7 +5,7 @@ target "CHGAdapter_swift" do
 
 use_frameworks!
 
-pod 'DZNEmptyDataSet', :modular_headers => true
+pod 'DZNEmptyDataSet', '~> 1.8.1'
 
 
 end

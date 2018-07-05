@@ -39,6 +39,7 @@
 		8F97260920AC2FFF00618F81 /* SampleAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F97260820AC2FFF00618F81 /* SampleAdapter.swift */; };
 		8F97260B20AC315A00618F81 /* Sample2HeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F97260A20AC315A00618F81 /* Sample2HeaderFooterView.swift */; };
 		8F97260D20AC316200618F81 /* Sample2HeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F97260C20AC316200618F81 /* Sample2HeaderFooterView.xib */; };
+		B62A927F3BD3D0A21D326384 /* Pods_CHGAdapter_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F179A36227BDEF315AF738A8 /* Pods_CHGAdapter_swift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,9 @@
 		8F97260820AC2FFF00618F81 /* SampleAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleAdapter.swift; sourceTree = "<group>"; };
 		8F97260A20AC315A00618F81 /* Sample2HeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sample2HeaderFooterView.swift; sourceTree = "<group>"; };
 		8F97260C20AC316200618F81 /* Sample2HeaderFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Sample2HeaderFooterView.xib; sourceTree = "<group>"; };
+		EC11160D41E092B7E5E97090 /* Pods-CHGAdapter_swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHGAdapter_swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-CHGAdapter_swift/Pods-CHGAdapter_swift.release.xcconfig"; sourceTree = "<group>"; };
+		F179A36227BDEF315AF738A8 /* Pods_CHGAdapter_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CHGAdapter_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F23B5014BDF06F048C4998BF /* Pods-CHGAdapter_swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHGAdapter_swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CHGAdapter_swift/Pods-CHGAdapter_swift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B62A927F3BD3D0A21D326384 /* Pods_CHGAdapter_swift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +173,8 @@
 				8F14D05320ABC4A6005E4A15 /* CHGAdapter_swiftTests */,
 				8F14D05E20ABC4A6005E4A15 /* CHGAdapter_swiftUITests */,
 				8F14D03D20ABC4A4005E4A15 /* Products */,
+				FB6C9F925B9BCE9B3ECD14C7 /* Pods */,
+				B079C4416BACE4EC4FD18FDC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -352,6 +359,23 @@
 			path = adapter;
 			sourceTree = "<group>";
 		};
+		B079C4416BACE4EC4FD18FDC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F179A36227BDEF315AF738A8 /* Pods_CHGAdapter_swift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FB6C9F925B9BCE9B3ECD14C7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F23B5014BDF06F048C4998BF /* Pods-CHGAdapter_swift.debug.xcconfig */,
+				EC11160D41E092B7E5E97090 /* Pods-CHGAdapter_swift.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -359,9 +383,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8F14D06420ABC4A6005E4A15 /* Build configuration list for PBXNativeTarget "CHGAdapter_swift" */;
 			buildPhases = (
+				95B11E3FDC63B339D3E258CC /* [CP] Check Pods Manifest.lock */,
 				8F14D03820ABC4A4005E4A15 /* Sources */,
 				8F14D03920ABC4A4005E4A15 /* Frameworks */,
 				8F14D03A20ABC4A4005E4A15 /* Resources */,
+				390DAFDEFAF43A078F30842B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -482,6 +508,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		390DAFDEFAF43A078F30842B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CHGAdapter_swift/Pods-CHGAdapter_swift-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CHGAdapter_swift/Pods-CHGAdapter_swift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		95B11E3FDC63B339D3E258CC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CHGAdapter_swift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8F14D03820ABC4A4005E4A15 /* Sources */ = {
@@ -672,15 +737,13 @@
 		};
 		8F14D06520ABC4A6005E4A15 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F23B5014BDF06F048C4998BF /* Pods-CHGAdapter_swift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5GEGK9VKR7;
 				INFOPLIST_FILE = CHGAdapter_swift/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "chg.CHGAdapter-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -690,15 +753,13 @@
 		};
 		8F14D06620ABC4A6005E4A15 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC11160D41E092B7E5E97090 /* Pods-CHGAdapter_swift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5GEGK9VKR7;
 				INFOPLIST_FILE = CHGAdapter_swift/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "chg.CHGAdapter-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -713,11 +774,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CHGAdapter_swiftTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "chg.CHGAdapter-swiftTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -733,11 +790,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CHGAdapter_swiftTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "chg.CHGAdapter-swiftTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -752,11 +805,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CHGAdapter_swiftUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "chg.CHGAdapter-swiftUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -771,11 +820,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CHGAdapter_swiftUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "chg.CHGAdapter-swiftUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import DZNEmptyDataSet
 
 private var tableViewAdapterKey: Void?
 private var eventTransmissionBlockKey: Void?
@@ -59,25 +60,35 @@ extension UITableView {
         }
         set(newValue) {
             objc_setAssociatedObject(self, &tableViewEmptyDataShowKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            self.setEmpty(newValue!, delegate: newValue!)
         }
     }
     
-
-    
     open func setEmptyDataShow(_ title:NSString?,imageName:NSString?) -> Void {
-        
+        let tableViewEmptyDataShow = CHGTableViewEmptyDataShow.init()
+        tableViewEmptyDataShow.imageName = imageName!
+        tableViewEmptyDataShow.title = title!
+        tableViewEmptyDataShow.emptyDataSetShouldAllowScroll = true
+        self.tableViewEmptyDataShow = tableViewEmptyDataShow;
+    }
+    
+    private func setEmpty(_ dataSource:DZNEmptyDataSetSource,delegate:DZNEmptyDataSetDelegate) ->Void {
+        self.emptyDataSetSource = dataSource
+        self.emptyDataSetDelegate = delegate
     }
     
     open func hiddHeadView() -> Void {
-        
+        self.tableHeaderView = UIView.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0.0001))
     }
     
     open func hiddenFooterView() -> Void {
-        
+        self.tableFooterView = UIView.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0.0001))
     }
     
     open func autoHeight() -> Void {
-        
+        self.estimatedRowHeight = 44;
+        self.rowHeight = UITableViewAutomaticDimension;
+        self.tableViewAdapter?.cellHeight = -1;
     }
     
 }

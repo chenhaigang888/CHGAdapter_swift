@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import DZNEmptyDataSet
 
 private var collectionViewAdapterKey:Void?
 private var eventTransmissionBlockKey:Void?
@@ -59,11 +60,21 @@ extension UICollectionView {
         }
         set(newValue) {
             objc_setAssociatedObject(self, &collectionViewEmptyDataShowKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            self.setEmpty(newValue!, delegate: newValue!)
         }
     }
     
-    public func setEmptyDataShow(_ title:NSString?,imageName:NSString?) -> Void {
-        
+    open func setEmptyDataShow(_ title:NSString?,imageName:NSString?) -> Void {
+        let collectionViewEmptyDataShow = CHGCollectionViewEmptyDataShow.init()
+        collectionViewEmptyDataShow.imageName = imageName!
+        collectionViewEmptyDataShow.title = title!
+        collectionViewEmptyDataShow.emptyDataSetShouldAllowScroll = true
+        self.collectionViewEmptyDataShow = collectionViewEmptyDataShow;
+    }
+    
+    private func setEmpty(_ dataSource:DZNEmptyDataSetSource,delegate:DZNEmptyDataSetDelegate) ->Void {
+        self.emptyDataSetSource = dataSource
+        self.emptyDataSetDelegate = delegate
     }
     
     public func hiddHeadView() -> Void {

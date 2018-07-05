@@ -25,15 +25,15 @@ class TableViewController: UIViewController {
     lazy var adapterData:CHGTableViewAdapterData = {
         () ->CHGTableViewAdapterData in
         let tempAdapterData = CHGTableViewAdapterData()
-        tempAdapterData.cellDatas =
-            [
-                ["test":["1","2","3","4","5","6"]],
-                ["test":["1","2","3","4","5","6"]],
-                ["test":["1","2","3","4","5","6"]],
-                ["test":["1","2","3","4","5","6"]]
-            ]
-        tempAdapterData.headerDatas = ["header1","header2"]
-        tempAdapterData.footerDatas = ["footer1","footer2"]
+//        tempAdapterData.cellDatas =
+//            [
+//                ["test":["1","2","3","4","5","6"]],
+//                ["test":["1","2","3","4","5","6"]],
+//                ["test":["1","2","3","4","5","6"]],
+//                ["test":["1","2","3","4","5","6"]]
+//            ]
+//        tempAdapterData.headerDatas = ["header1","header2"]
+//        tempAdapterData.footerDatas = ["footer1","footer2"]
         tempAdapterData.customData = NSMutableDictionary()
         return tempAdapterData
     }()
@@ -42,6 +42,10 @@ class TableViewController: UIViewController {
         super.viewDidLoad()
         self.adapter.adapterData = self.adapterData
         self.tableView?.tableViewAdapter = self.adapter
+        self.tableView?.setEmptyDataShow("暂时没有数据", imageName: "icon_dl_xsmm")
+        self.tableView?.tableViewEmptyDataShow?.emptyDataSetShouldAllowScroll = true
+        self.tableView?.hiddHeadView()
+        self.tableView?.hiddenFooterView()
         
         self.tableView?.setEventTransmissionBlock(eventTransmissionBlock: { (target:AnyObject, params:AnyObject, tag:NSInteger,callBack:CHGCallBack?) -> AnyObject? in
             callBack!(params)

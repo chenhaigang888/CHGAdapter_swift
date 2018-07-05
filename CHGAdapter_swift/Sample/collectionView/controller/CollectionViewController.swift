@@ -18,7 +18,7 @@ class CollectionViewController: UIViewController {
         tempAdapter.cellName = "Sample1CollectionViewCell"
         tempAdapter.headerName = "Sample1CollectionReusableView"
         tempAdapter.footerName = "Sample1CollectionReusableView"
-//        tempAdapter.rowsOfSectionKeyName = "test"
+        tempAdapter.rowsOfSectionKeyName = "test"
         return tempAdapter
     }()
     
@@ -27,11 +27,11 @@ class CollectionViewController: UIViewController {
         let tempAdapterData = CHGCollectionViewAdapterData()
         tempAdapterData.cellDatas =
             [
-//                ["test":["1","2","3","4","5","6","7","8"]],
-//                ["test":["1","2","3","4","5","6","7","8"]],
-//                ["test":["1","2","3","4","5","6","7","8"]],
-//                ["test":["1","2","3","4","5","6","7","8"]]
-                "1","2","3",["1","2"],"1"
+                ["test":["1","2","3","4","5","6","7","8"]],
+                ["test":["1","2","3","4","5","6","7","8"]],
+                ["test":["1","2","3","4","5","6","7","8"]],
+                ["test":["1","2","3","4","5","6","7","8"]]
+
         ]
         tempAdapterData.headerDatas = ["header1","header2","header3"]
         tempAdapterData.footerDatas = ["footer1","footer2","footer3"]
@@ -48,9 +48,17 @@ class CollectionViewController: UIViewController {
         self.collectionView?.collectionViewLayout = layout
         self.adapter.adapterData = self.adapterData
         self.collectionView?.collectionViewAdapter = self.adapter
+        self.collectionView?.setEmptyDataShow("暂时没有数据", imageName: "icon_dl_xsmm")
+        self.collectionView?.collectionViewEmptyDataShow?.emptyDataSetShouldAllowScroll = true
+        self.collectionView?.hiddHeadView()
+        self.collectionView?.hiddenFooterView()
         self.collectionView?.setEventTransmissionBlock(eventTransmissionBlock: { (target:AnyObject, params, tag:NSInteger, callBack:CHGCallBack?) -> AnyObject? in
             callBack!("jjj" as AnyObject)
             return nil
+        })
+        self.collectionView?.setCollectionViewDidSelectItemAtIndexPathBlock(collectionViewDidSelectItemAtIndexPathBlock: {[weak self] (collectionView, indexPath, data) in
+            let tbVC = TableViewController.init(nibName: "TableViewController", bundle: nil)
+            self?.navigationController?.pushViewController(tbVC, animated: true)
         })
     }
 

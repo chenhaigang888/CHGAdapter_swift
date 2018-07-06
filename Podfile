@@ -3,10 +3,9 @@ workspace 'CHGAdapter_swift.xcworkspace'
 
 target "CHGAdapter_swift" do
 
-use_modular_headers!
 use_frameworks!
 
-pod 'DZNEmptyDataSet', :modular_headers => true
+pod 'DZNEmptyDataSet', :modular_headers => false
 
 
 end

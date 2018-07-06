@@ -8,7 +8,8 @@
 
 import Foundation
 import UIKit
-import DZNEmptyDataSet
+//import DZNEmptyDataSet
+import EmptyDataSet_Swift
 
 private var collectionViewAdapterKey:Void?
 private var eventTransmissionBlockKey:Void?
@@ -72,7 +73,7 @@ extension UICollectionView {
         self.collectionViewEmptyDataShow = collectionViewEmptyDataShow;
     }
     
-    private func setEmpty(_ dataSource:DZNEmptyDataSetSource,delegate:DZNEmptyDataSetDelegate) ->Void {
+    private func setEmpty(_ dataSource:EmptyDataSetSource,delegate:EmptyDataSetDelegate) ->Void {
         self.emptyDataSetSource = dataSource
         self.emptyDataSetDelegate = delegate
     }

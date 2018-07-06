@@ -8,7 +8,8 @@
 
 import Foundation
 import UIKit
-import DZNEmptyDataSet
+//import DZNEmptyData
+import EmptyDataSet_Swift
 
 private var tableViewAdapterKey: Void?
 private var eventTransmissionBlockKey: Void?
@@ -72,7 +73,7 @@ extension UITableView {
         self.tableViewEmptyDataShow = tableViewEmptyDataShow;
     }
     
-    private func setEmpty(_ dataSource:DZNEmptyDataSetSource,delegate:DZNEmptyDataSetDelegate) ->Void {
+    private func setEmpty(_ dataSource:EmptyDataSetSource,delegate:EmptyDataSetDelegate) ->Void {
         self.emptyDataSetSource = dataSource
         self.emptyDataSetDelegate = delegate
     }

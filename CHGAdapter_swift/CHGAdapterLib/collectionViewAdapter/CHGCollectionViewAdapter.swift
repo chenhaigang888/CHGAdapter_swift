@@ -108,7 +108,7 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
         return reusableView
     }
     
-    func headerFooterDataWithrSupplementaryElementOfKind(kind:NSString,indexPath:IndexPath) -> AnyObject? {
+    open func headerFooterDataWithrSupplementaryElementOfKind(kind:NSString,indexPath:IndexPath) -> AnyObject? {
         let reusableViewData:NSArray? =
             ((kind as NSString).isEqual(to: UICollectionElementKindSectionHeader)
                 ?

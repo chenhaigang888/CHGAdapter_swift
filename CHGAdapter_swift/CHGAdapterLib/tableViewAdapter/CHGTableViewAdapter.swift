@@ -138,7 +138,7 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
         return self.tableview(tableView, tableViewHeaderFooterViewType: CHGTableViewHeaderFooterViewType.FooterType, viewForHeaderInSection: section)
     }
     
-    func headerFooterDataWithType(type:CHGTableViewHeaderFooterViewType,section:NSInteger) -> AnyObject? {
+    open func headerFooterDataWithType(type:CHGTableViewHeaderFooterViewType,section:NSInteger) -> AnyObject? {
         let headerFooterDatas:NSArray? =
             type == CHGTableViewHeaderFooterViewType.HeaderType
                 ?

@@ -37,35 +37,35 @@ open class CHGTableViewEmptyDataShow: NSObject {
 }
 
 extension CHGTableViewEmptyDataShow :EmptyDataSetSource {    
-    public func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+    open func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
         let s = NSMutableAttributedString.init(string: self.title as String)
         s.addAttributes([NSAttributedStringKey.font : UIFont.systemFont(ofSize: 17)], range: NSRange(location: 0, length: self.title.length))
         return s;
     }
     
-    public func image(forEmptyDataSet scrollView: UIScrollView) -> UIImage? {
+    open func image(forEmptyDataSet scrollView: UIScrollView) -> UIImage? {
         return UIImage.init(named: self.imageName as String)
     }
 
-    public func verticalOffset(forEmptyDataSet scrollView: UIScrollView) -> CGFloat {
+    open func verticalOffset(forEmptyDataSet scrollView: UIScrollView) -> CGFloat {
         return self.verticalOffset
     }
 }
 
 extension CHGTableViewEmptyDataShow : EmptyDataSetDelegate {
-    public func emptyDataSet(_ scrollView: UIScrollView, didTapView view: UIView) {
+    open func emptyDataSet(_ scrollView: UIScrollView, didTapView view: UIView) {
         if (self.emptyDataDidTapViewBlock != nil) {
             self.emptyDataDidTapViewBlock!(scrollView,view)
         }
     }
     
-    public func emptyDataSet(_ scrollView: UIScrollView, didTapButton button: UIButton) {
+    open func emptyDataSet(_ scrollView: UIScrollView, didTapButton button: UIButton) {
         if (self.emptyDataDidTapButtonBlock != nil) {
             self.emptyDataDidTapButtonBlock!(scrollView,button)
         }
     }
     
-    public func emptyDataSetShouldAllowScroll(_ scrollView: UIScrollView) -> Bool {
+    open func emptyDataSetShouldAllowScroll(_ scrollView: UIScrollView) -> Bool {
         return self.emptyDataSetShouldAllowScroll
     }
     

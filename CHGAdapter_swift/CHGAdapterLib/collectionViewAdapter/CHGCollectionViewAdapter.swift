@@ -45,7 +45,7 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
         return cellDatas!.count;
     }
     
-    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    open func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let cellDatas = self.adapterData?.cellDatas;
         if cellDatas?.count == 0 {
             return 0
@@ -62,7 +62,7 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
         }
     }
     
-    func cellDataWithIndexPath(_ indexPath:IndexPath) -> AnyObject? {
+    open func cellDataWithIndexPath(_ indexPath:IndexPath) -> AnyObject? {
         if self.adapterData?.cellDatas?.count == 0 {
             return nil
         }
@@ -75,7 +75,7 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
         }
     }
     
-    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cellData = self.cellDataWithIndexPath(indexPath)
         let identifier:NSString = self.obtainCellNameWithCell(cellData!, collectionView: collectionView, cellForItemAtIndexPath: indexPath)
         if identifier.length == 0 {
@@ -95,12 +95,12 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
         return cell
     }
     
-    public func fileIsExit(_ fileName:String) -> Bool {
+    open func fileIsExit(_ fileName:String) -> Bool {
         let xibFile = Bundle.main.path(forResource: fileName, ofType: "nib")
         return xibFile != nil
     }
     
-    private func defaultReusableView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath, headerFooterData:AnyObject?)->CHGCollectionReusableView {
+    open func defaultReusableView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath, headerFooterData:AnyObject?)->CHGCollectionReusableView {
         collectionView.register(CHGCollectionReusableView.classForCoder(), forSupplementaryViewOfKind: kind, withReuseIdentifier:"CHGCollectionReusableView" )
         let reusableView:CHGCollectionReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier:"CHGCollectionReusableView" , for: indexPath) as! CHGCollectionReusableView
         reusableView.eventTransmissionBlock = collectionView.eventTransmissionBlock
@@ -108,7 +108,7 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
         return reusableView
     }
     
-    public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+    open func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let reusableViewData:NSArray? =
             ((kind as NSString).isEqual(to: UICollectionElementKindSectionHeader)
                 ?
@@ -140,31 +140,31 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
         return reusableView
     }
     
-    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    open func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if (collectionView.collectionViewDidSelectItemAtIndexPathBlock != nil) {
             collectionView.collectionViewDidSelectItemAtIndexPathBlock!(collectionView,indexPath,self.cellDataWithIndexPath(indexPath)!)
         }
     }
     
-    public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    open func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if cell is CHGCollectionViewCell {
             (cell as! CHGCollectionViewCell).cellWillAppear()
         }
     }
     
-    public func collectionView(_ collectionView: UICollectionView, willDisplaySupplementaryView view: UICollectionReusableView, forElementKind elementKind: String, at indexPath: IndexPath) {
+    open func collectionView(_ collectionView: UICollectionView, willDisplaySupplementaryView view: UICollectionReusableView, forElementKind elementKind: String, at indexPath: IndexPath) {
         if view is CHGCollectionReusableView {
             (view as! CHGCollectionReusableView).reusableViewWillAppear()
         }
     }
     
-    public func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    open func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if cell is CHGCollectionViewCell {
             (cell as! CHGCollectionViewCell).cellDidDisappear()
         }
     }
     
-    public func collectionView(_ collectionView: UICollectionView, didEndDisplayingSupplementaryView view: UICollectionReusableView, forElementOfKind elementKind: String, at indexPath: IndexPath) {
+    open func collectionView(_ collectionView: UICollectionView, didEndDisplayingSupplementaryView view: UICollectionReusableView, forElementOfKind elementKind: String, at indexPath: IndexPath) {
         if view is CHGCollectionReusableView {
             (view as! CHGCollectionReusableView).reusableViewDidDisappear()
         }

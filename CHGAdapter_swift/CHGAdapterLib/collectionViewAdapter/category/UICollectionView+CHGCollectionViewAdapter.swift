@@ -18,7 +18,7 @@ private var collectionViewEmptyDataShowKey:Void?
 
 extension UICollectionView {
     
-    public var collectionViewAdapter:CHGCollectionViewAdapter? {
+    open var collectionViewAdapter:CHGCollectionViewAdapter? {
         get {
             return objc_getAssociatedObject(self, &collectionViewAdapterKey) as? CHGCollectionViewAdapter
         }
@@ -29,7 +29,7 @@ extension UICollectionView {
         }
     }
     
-    public var eventTransmissionBlock:CHGEventTransmissionBlock? {
+    open var eventTransmissionBlock:CHGEventTransmissionBlock? {
         get {
             return objc_getAssociatedObject(self, &eventTransmissionBlockKey) as? CHGEventTransmissionBlock
         }
@@ -38,11 +38,11 @@ extension UICollectionView {
         }
     }
     
-    public func setEventTransmissionBlock(eventTransmissionBlock:@escaping CHGEventTransmissionBlock) -> Void {
+    open func setEventTransmissionBlock(eventTransmissionBlock:@escaping CHGEventTransmissionBlock) -> Void {
         self.eventTransmissionBlock = eventTransmissionBlock
     }
     
-    public var collectionViewDidSelectItemAtIndexPathBlock:CHGCollectionViewDidSelectItemAtIndexPathBlock? {
+    open var collectionViewDidSelectItemAtIndexPathBlock:CHGCollectionViewDidSelectItemAtIndexPathBlock? {
         get {
             return objc_getAssociatedObject(self, &collectionViewDidSelectItemAtIndexPathBlockKey) as? CHGCollectionViewDidSelectItemAtIndexPathBlock
         }
@@ -51,11 +51,11 @@ extension UICollectionView {
         }
     }
     
-    public func setCollectionViewDidSelectItemAtIndexPathBlock(collectionViewDidSelectItemAtIndexPathBlock:@escaping CHGCollectionViewDidSelectItemAtIndexPathBlock) -> Void {
+    open func setCollectionViewDidSelectItemAtIndexPathBlock(collectionViewDidSelectItemAtIndexPathBlock:@escaping CHGCollectionViewDidSelectItemAtIndexPathBlock) -> Void {
         self.collectionViewDidSelectItemAtIndexPathBlock = collectionViewDidSelectItemAtIndexPathBlock
     }
     
-    public var collectionViewEmptyDataShow:CHGCollectionViewEmptyDataShow? {
+    open var collectionViewEmptyDataShow:CHGCollectionViewEmptyDataShow? {
         get {
             return objc_getAssociatedObject(self, &collectionViewEmptyDataShowKey) as? CHGCollectionViewEmptyDataShow
         }

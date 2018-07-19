@@ -29,27 +29,27 @@ class CollectionViewController: UIViewController {
     lazy var adapterData:CHGCollectionViewAdapterData = {
         () ->CHGCollectionViewAdapterData in
         let tempAdapterData = CHGCollectionViewAdapterData()
-//        tempAdapterData.cellDatas =
-//        // data style 1
-////        [
-////            ["test":["1","2","3","4","5","6","7","8"]],
-////            ["test":["1","2","3","4","5","6","7","8"]],
-////            ["test":["1","2","3","4","5","6","7","8"]],
-////            ["test":["1","2","3","4","5","6","7","8"]]
-////        ]
-//        // data style 2
+        tempAdapterData.cellDatas =
+        // data style 1
 //        [
-//            ["1","2","3","4"],
-//            ["1","2","3","4"],
-//            ["1","2","3","4"],
-//            "1",
-//            "2"
+//            ["test":["1","2","3","4","5","6","7","8"]],
+//            ["test":["1","2","3","4","5","6","7","8"]],
+//            ["test":["1","2","3","4","5","6","7","8"]],
+//            ["test":["1","2","3","4","5","6","7","8"]]
 //        ]
-//
-//        // data style 3
-////        ["1","2","3","4","5","6"]
-//        tempAdapterData.headerDatas = ["header1","header2","header3"]
-//        tempAdapterData.footerDatas = ["footer1","footer2","footer3"]
+        // data style 2
+        [
+            ["1","2","3","4"],
+            ["1","2","3","4"],
+            ["1","2","3","4"],
+            "1",
+            "2"
+        ]
+
+        // data style 3
+//        ["1","2","3","4","5","6"]
+        tempAdapterData.headerDatas = ["header1","header2","header3"]
+        tempAdapterData.footerDatas = ["footer1","footer2","footer3"]
         tempAdapterData.customData = NSMutableDictionary()
         return tempAdapterData
     }()

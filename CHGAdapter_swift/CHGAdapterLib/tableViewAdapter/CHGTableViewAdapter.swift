@@ -138,21 +138,25 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
         return self.tableview(tableView, tableViewHeaderFooterViewType: CHGTableViewHeaderFooterViewType.FooterType, viewForHeaderInSection: section)
     }
     
-    open func tableview(_ tableView:UITableView,tableViewHeaderFooterViewType type:CHGTableViewHeaderFooterViewType,viewForHeaderInSection section:NSInteger) -> UIView? {
-        //获取headerFooter的Item 数据
+    func headerFooterDataWithType(type:CHGTableViewHeaderFooterViewType,section:NSInteger) -> AnyObject? {
         let headerFooterDatas:NSArray? =
             type == CHGTableViewHeaderFooterViewType.HeaderType
                 ?
                     self.adapterData?.headerDatas
                 :
-                    self.adapterData?.footerDatas
-        var headerFooterData:AnyObject?
+                self.adapterData?.footerDatas
         if headerFooterDatas != nil && headerFooterDatas?.count != 0 {
             if section >= (headerFooterDatas?.count)! {
                 return nil
             }
-            headerFooterData = headerFooterDatas?[section] as AnyObject
+            return headerFooterDatas?[section] as AnyObject
         }
+        return nil
+    }
+    
+    open func tableview(_ tableView:UITableView,tableViewHeaderFooterViewType type:CHGTableViewHeaderFooterViewType,viewForHeaderInSection section:NSInteger) -> UIView? {
+        //获取headerFooter的Item 数据
+        let headerFooterData:AnyObject? = self.headerFooterDataWithType(type: type, section: section)
         if headerFooterData == nil {
             return nil
         }

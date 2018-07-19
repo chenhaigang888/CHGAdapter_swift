@@ -108,6 +108,19 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
         return reusableView
     }
     
+    func headerFooterDataWithrSupplementaryElementOfKind(kind:NSString,indexPath:IndexPath) -> AnyObject? {
+        let reusableViewData:NSArray? =
+            ((kind as NSString).isEqual(to: UICollectionElementKindSectionHeader)
+                ?
+                    self.adapterData?.headerDatas
+                :
+                self.adapterData?.footerDatas)
+        if reusableViewData == nil || (reusableViewData?.count)! == 0 || indexPath.section >= (reusableViewData?.count)! {
+            return nil
+        }
+        return reusableViewData?[indexPath.section] as AnyObject
+    }
+    
     open func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let reusableViewData:NSArray? =
             ((kind as NSString).isEqual(to: UICollectionElementKindSectionHeader)
@@ -115,13 +128,10 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
                     self.adapterData?.headerDatas
                 :
                 self.adapterData?.footerDatas)
-        var headerFooterData:AnyObject? = nil
-        
+        let headerFooterData:AnyObject? = self.headerFooterDataWithrSupplementaryElementOfKind(kind: kind as NSString, indexPath: indexPath)
         if reusableViewData == nil || reusableViewData?.count == 0 || indexPath.section >= reusableViewData?.count ?? 0 {
             return self.defaultReusableView(collectionView, viewForSupplementaryElementOfKind: kind, at: indexPath, headerFooterData: headerFooterData)
         }
-        
-        headerFooterData = reusableViewData?[indexPath.section] as AnyObject
         let identifier:NSString = self.obtainSupplementaryElementNameWithCell(headerFooterData!, collectionView: collectionView, viewForSupplementaryElementOfKind: kind as NSString, indexPath: indexPath)
         if identifier.length == 0 {
             return self.defaultReusableView(collectionView, viewForSupplementaryElementOfKind: kind, at: indexPath, headerFooterData: headerFooterData)

@@ -11,7 +11,13 @@ import UIKit
 /// 回调
 public typealias CHGCallBack = (_ data:AnyObject?) -> Void
 
-/// 事件传输block target
+/// 事件传输block target.
+/// - Parameters:
+///   - target: 当前事件发生的场所（一般是cell、header、footer、adapter中）
+///   - params: 事件发生的场所传递出来的参数
+///   - tag: 区分事件发生的场所中的多个事件
+///   - callBack: 当当前类中处理完事件后异步通知事件所发生的场所
+/// - Returns: 当当前类中处理完事件后同步步通知事件所发生的场所
 public typealias CHGEventTransmissionBlock = (_ target:AnyObject,_ params:AnyObject,_ tag:NSInteger,_ callBack:CHGCallBack?) ->AnyObject?
 
 /// tableViewDidSelectRow 回调

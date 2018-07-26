@@ -35,7 +35,7 @@ class TableViewController: UIViewController {
             //        ]
             // data style 2
             [
-                ["1","2","3","4"],
+                ["SampleAdapterDemoViewController","2","3","4"],
                 ["1","2","3","4"],
                 ["1","2","3","4"],
                 "1",
@@ -73,8 +73,10 @@ class TableViewController: UIViewController {
         })
         
         //cell 被点击
-        self.tableView?.setTableViewDidSelectRowBlock(tableViewDidSelectRowBlock: { (tableView:UITableView, indexPath:IndexPath, itemData:AnyObject) in
+        self.tableView?.setTableViewDidSelectRowBlock(tableViewDidSelectRowBlock: { [weak self](tableView:UITableView, indexPath:IndexPath, itemData:AnyObject) in
             print("点击section:\(indexPath.section)  row:\(indexPath.row)\(itemData)")
+            let sampleAdapterDemoVC = SampleAdapterDemoViewController.init(nibName: "SampleAdapterDemoViewController", bundle: nil)
+            self?.navigationController?.pushViewController(sampleAdapterDemoVC, animated: true)
         })
     }
     

@@ -24,6 +24,19 @@
 		8F14D08A20ABF446005E4A15 /* Sample1TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F14D08820ABF446005E4A15 /* Sample1TableViewCell.xib */; };
 		8F14D08C20ABF5B8005E4A15 /* Sample2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F14D08B20ABF5B8005E4A15 /* Sample2TableViewCell.swift */; };
 		8F14D08F20AC107C005E4A15 /* Sample1HeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F14D08E20AC107C005E4A15 /* Sample1HeaderFooterView.swift */; };
+		8F1F6FDE2109BD31004E3B30 /* CHGSimpleTableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F6FDD2109BD31004E3B30 /* CHGSimpleTableViewAdapter.swift */; };
+		8F1F6FE72109C77A004E3B30 /* SampleAdapterDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F6FE52109C77A004E3B30 /* SampleAdapterDemoViewController.swift */; };
+		8F1F6FE82109C77A004E3B30 /* SampleAdapterDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F1F6FE62109C77A004E3B30 /* SampleAdapterDemoViewController.xib */; };
+		8F1F6FEB2109C8BE004E3B30 /* CHGAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F6FEA2109C8BE004E3B30 /* CHGAddress.swift */; };
+		8F1F6FEE2109CD02004E3B30 /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F6FEC2109CD02004E3B30 /* AddressTableViewCell.swift */; };
+		8F1F6FEF2109CD02004E3B30 /* AddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F1F6FED2109CD02004E3B30 /* AddressTableViewCell.xib */; };
+		8F1F6FF22109CE0E004E3B30 /* Address2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F6FF02109CE0E004E3B30 /* Address2TableViewCell.swift */; };
+		8F1F6FF32109CE0E004E3B30 /* Address2TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F1F6FF12109CE0E004E3B30 /* Address2TableViewCell.xib */; };
+		8F1F6FF72109D299004E3B30 /* SectionHeaderTitleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F6FF62109D299004E3B30 /* SectionHeaderTitleModel.swift */; };
+		8F1F6FF92109D306004E3B30 /* SectionHeaderTitleHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F6FF82109D306004E3B30 /* SectionHeaderTitleHeaderFooterView.swift */; };
+		8F1F6FFB2109D317004E3B30 /* SectionHeaderTitleHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F1F6FFA2109D317004E3B30 /* SectionHeaderTitleHeaderFooterView.xib */; };
+		8F1F6FFD2109D5F2004E3B30 /* SectionFooterDescriptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F6FFC2109D5F2004E3B30 /* SectionFooterDescriptionModel.swift */; };
+		8F1F6FFF2109D64E004E3B30 /* SectionFooterDescriptionContentHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1F6FFE2109D64E004E3B30 /* SectionFooterDescriptionContentHeaderFooterView.swift */; };
 		8F2271AC20EA243F00C72514 /* CHGCollectionViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F22719920EA243F00C72514 /* CHGCollectionViewAdapter.swift */; };
 		8F2271AD20EA243F00C72514 /* UICollectionView+CHGCollectionViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F22719B20EA243F00C72514 /* UICollectionView+CHGCollectionViewAdapter.swift */; };
 		8F2271AE20EA243F00C72514 /* CHGCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F22719C20EA243F00C72514 /* CHGCollectionViewCell.swift */; };
@@ -83,6 +96,19 @@
 		8F14D08820ABF446005E4A15 /* Sample1TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Sample1TableViewCell.xib; sourceTree = "<group>"; };
 		8F14D08B20ABF5B8005E4A15 /* Sample2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sample2TableViewCell.swift; sourceTree = "<group>"; };
 		8F14D08E20AC107C005E4A15 /* Sample1HeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sample1HeaderFooterView.swift; sourceTree = "<group>"; };
+		8F1F6FDD2109BD31004E3B30 /* CHGSimpleTableViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CHGSimpleTableViewAdapter.swift; sourceTree = "<group>"; };
+		8F1F6FE52109C77A004E3B30 /* SampleAdapterDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleAdapterDemoViewController.swift; sourceTree = "<group>"; };
+		8F1F6FE62109C77A004E3B30 /* SampleAdapterDemoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SampleAdapterDemoViewController.xib; sourceTree = "<group>"; };
+		8F1F6FEA2109C8BE004E3B30 /* CHGAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CHGAddress.swift; sourceTree = "<group>"; };
+		8F1F6FEC2109CD02004E3B30 /* AddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
+		8F1F6FED2109CD02004E3B30 /* AddressTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressTableViewCell.xib; sourceTree = "<group>"; };
+		8F1F6FF02109CE0E004E3B30 /* Address2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address2TableViewCell.swift; sourceTree = "<group>"; };
+		8F1F6FF12109CE0E004E3B30 /* Address2TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Address2TableViewCell.xib; sourceTree = "<group>"; };
+		8F1F6FF62109D299004E3B30 /* SectionHeaderTitleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderTitleModel.swift; sourceTree = "<group>"; };
+		8F1F6FF82109D306004E3B30 /* SectionHeaderTitleHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderTitleHeaderFooterView.swift; sourceTree = "<group>"; };
+		8F1F6FFA2109D317004E3B30 /* SectionHeaderTitleHeaderFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionHeaderTitleHeaderFooterView.xib; sourceTree = "<group>"; };
+		8F1F6FFC2109D5F2004E3B30 /* SectionFooterDescriptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionFooterDescriptionModel.swift; sourceTree = "<group>"; };
+		8F1F6FFE2109D64E004E3B30 /* SectionFooterDescriptionContentHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionFooterDescriptionContentHeaderFooterView.swift; sourceTree = "<group>"; };
 		8F22719920EA243F00C72514 /* CHGCollectionViewAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHGCollectionViewAdapter.swift; sourceTree = "<group>"; };
 		8F22719B20EA243F00C72514 /* UICollectionView+CHGCollectionViewAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+CHGCollectionViewAdapter.swift"; sourceTree = "<group>"; };
 		8F22719C20EA243F00C72514 /* CHGCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHGCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -240,6 +266,7 @@
 		8F14D08020ABE372005E4A15 /* tableView */ = {
 			isa = PBXGroup;
 			children = (
+				8F1F6FE92109C883004E3B30 /* Model */,
 				8F97260720AC2FD900618F81 /* adapter */,
 				8F14D08D20AC102B005E4A15 /* headerFooterView */,
 				8F14D08620ABF422005E4A15 /* cell */,
@@ -251,6 +278,7 @@
 		8F14D08520ABF417005E4A15 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				8F1F6FE42109C743004E3B30 /* 使用TableView进行布局 */,
 				8F14D08120ABE38F005E4A15 /* TableViewController.swift */,
 				8F14D08220ABE38F005E4A15 /* TableViewController.xib */,
 			);
@@ -263,6 +291,10 @@
 				8F14D08720ABF446005E4A15 /* Sample1TableViewCell.swift */,
 				8F14D08820ABF446005E4A15 /* Sample1TableViewCell.xib */,
 				8F14D08B20ABF5B8005E4A15 /* Sample2TableViewCell.swift */,
+				8F1F6FEC2109CD02004E3B30 /* AddressTableViewCell.swift */,
+				8F1F6FED2109CD02004E3B30 /* AddressTableViewCell.xib */,
+				8F1F6FF02109CE0E004E3B30 /* Address2TableViewCell.swift */,
+				8F1F6FF12109CE0E004E3B30 /* Address2TableViewCell.xib */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -273,8 +305,30 @@
 				8F14D08E20AC107C005E4A15 /* Sample1HeaderFooterView.swift */,
 				8F97260A20AC315A00618F81 /* Sample2HeaderFooterView.swift */,
 				8F97260C20AC316200618F81 /* Sample2HeaderFooterView.xib */,
+				8F1F6FF82109D306004E3B30 /* SectionHeaderTitleHeaderFooterView.swift */,
+				8F1F6FFA2109D317004E3B30 /* SectionHeaderTitleHeaderFooterView.xib */,
+				8F1F6FFE2109D64E004E3B30 /* SectionFooterDescriptionContentHeaderFooterView.swift */,
 			);
 			path = headerFooterView;
+			sourceTree = "<group>";
+		};
+		8F1F6FE42109C743004E3B30 /* 使用TableView进行布局 */ = {
+			isa = PBXGroup;
+			children = (
+				8F1F6FE52109C77A004E3B30 /* SampleAdapterDemoViewController.swift */,
+				8F1F6FE62109C77A004E3B30 /* SampleAdapterDemoViewController.xib */,
+			);
+			path = "使用TableView进行布局";
+			sourceTree = "<group>";
+		};
+		8F1F6FE92109C883004E3B30 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8F1F6FEA2109C8BE004E3B30 /* CHGAddress.swift */,
+				8F1F6FF62109D299004E3B30 /* SectionHeaderTitleModel.swift */,
+				8F1F6FFC2109D5F2004E3B30 /* SectionFooterDescriptionModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		8F22719820EA243F00C72514 /* collectionViewAdapter */ = {
@@ -323,6 +377,7 @@
 				8F2271A720EA243F00C72514 /* emptyDataShow */,
 				8F2271A920EA243F00C72514 /* model */,
 				8F2271AB20EA243F00C72514 /* CHGTableViewAdapter.swift */,
+				8F1F6FDD2109BD31004E3B30 /* CHGSimpleTableViewAdapter.swift */,
 			);
 			path = tableViewAdapter;
 			sourceTree = "<group>";
@@ -483,10 +538,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F82A09720AC8C19002A8780 /* CollectionViewController.xib in Resources */,
+				8F1F6FF32109CE0E004E3B30 /* Address2TableViewCell.xib in Resources */,
+				8F1F6FFB2109D317004E3B30 /* SectionHeaderTitleHeaderFooterView.xib in Resources */,
+				8F1F6FE82109C77A004E3B30 /* SampleAdapterDemoViewController.xib in Resources */,
 				8F14D08420ABE38F005E4A15 /* TableViewController.xib in Resources */,
 				8F97260D20AC316200618F81 /* Sample2HeaderFooterView.xib in Resources */,
 				8F14D04A20ABC4A5005E4A15 /* LaunchScreen.storyboard in Resources */,
 				8F14D04720ABC4A5005E4A15 /* Assets.xcassets in Resources */,
+				8F1F6FEF2109CD02004E3B30 /* AddressTableViewCell.xib in Resources */,
 				5F82A0A220AC8D42002A8780 /* Sample1CollectionReusableView.xib in Resources */,
 				8F14D08A20ABF446005E4A15 /* Sample1TableViewCell.xib in Resources */,
 				5F82A09D20AC8D0D002A8780 /* Sample1CollectionViewCell.xib in Resources */,
@@ -558,12 +617,20 @@
 				8F14D08F20AC107C005E4A15 /* Sample1HeaderFooterView.swift in Sources */,
 				8F2271B220EA243F00C72514 /* CHGTableView+CHGTableViewAdapter.swift in Sources */,
 				8F14D08920ABF446005E4A15 /* Sample1TableViewCell.swift in Sources */,
+				8F1F6FF72109D299004E3B30 /* SectionHeaderTitleModel.swift in Sources */,
 				8F2271B020EA243F00C72514 /* CHGCollectionViewAdapterData.swift in Sources */,
+				8F1F6FEE2109CD02004E3B30 /* AddressTableViewCell.swift in Sources */,
 				8F2271B620EA243F00C72514 /* CHGTableViewAdapterData.swift in Sources */,
+				8F1F6FE72109C77A004E3B30 /* SampleAdapterDemoViewController.swift in Sources */,
+				8F1F6FEB2109C8BE004E3B30 /* CHGAddress.swift in Sources */,
 				8F2271AD20EA243F00C72514 /* UICollectionView+CHGCollectionViewAdapter.swift in Sources */,
 				8F2271B120EA243F00C72514 /* CHGCollectionReusableView.swift in Sources */,
+				8F1F6FF92109D306004E3B30 /* SectionHeaderTitleHeaderFooterView.swift in Sources */,
+				8F1F6FFF2109D64E004E3B30 /* SectionFooterDescriptionContentHeaderFooterView.swift in Sources */,
+				8F1F6FDE2109BD31004E3B30 /* CHGSimpleTableViewAdapter.swift in Sources */,
 				8F2271AE20EA243F00C72514 /* CHGCollectionViewCell.swift in Sources */,
 				8F2271AF20EA243F00C72514 /* CHGCollectionViewEmptyDataShow.swift in Sources */,
+				8F1F6FFD2109D5F2004E3B30 /* SectionFooterDescriptionModel.swift in Sources */,
 				8F97260920AC2FFF00618F81 /* SampleAdapter.swift in Sources */,
 				5F82A0A120AC8D42002A8780 /* Sample1CollectionReusableView.swift in Sources */,
 				8F14D08C20ABF5B8005E4A15 /* Sample2TableViewCell.swift in Sources */,
@@ -573,6 +640,7 @@
 				8F97260B20AC315A00618F81 /* Sample2HeaderFooterView.swift in Sources */,
 				8F2271B320EA243F00C72514 /* CHGTableViewHeaderFooterView.swift in Sources */,
 				8F2271B520EA243F00C72514 /* CHGTableViewEmptyDataShow.swift in Sources */,
+				8F1F6FF22109CE0E004E3B30 /* Address2TableViewCell.swift in Sources */,
 				8F14D04020ABC4A4005E4A15 /* AppDelegate.swift in Sources */,
 				8F2271AC20EA243F00C72514 /* CHGCollectionViewAdapter.swift in Sources */,
 			);
@@ -743,7 +811,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5GEGK9VKR7;
 				INFOPLIST_FILE = CHGAdapter_swift/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "chg.CHGAdapter-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -759,7 +830,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5GEGK9VKR7;
 				INFOPLIST_FILE = CHGAdapter_swift/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "chg.CHGAdapter-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -774,7 +848,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CHGAdapter_swiftTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "chg.CHGAdapter-swiftTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -790,7 +868,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CHGAdapter_swiftTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "chg.CHGAdapter-swiftTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -805,7 +887,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CHGAdapter_swiftUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "chg.CHGAdapter-swiftUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -820,7 +906,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CHGAdapter_swiftUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "chg.CHGAdapter-swiftUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

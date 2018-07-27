@@ -37,7 +37,7 @@ protocol CHGTableViewHeaderFooterModelProtocol {
 }
 
 /// 简单的adapter，此adapter为使用TableView进行页面布局而使用，使用此adapter 需要cellData实现CHGTableViewCellModelProtocol协议，headerData和footerData需要实现CHGTableViewHeaderFooterModelProtocol协议
-class CHGSimpleTableViewAdapter: CHGTableViewAdapter {
+open class CHGSimpleTableViewAdapter: CHGTableViewAdapter {
     
     override open func obtainCellNameWithCell(_ data: AnyObject, tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> NSString {
         let tableViewCellModelProtocol:CHGTableViewCellModelProtocol = data as! CHGTableViewCellModelProtocol

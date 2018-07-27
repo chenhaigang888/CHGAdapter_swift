@@ -9,7 +9,7 @@
 import UIKit
 
 ///cell的Model需要实现的协议
-protocol CHGTableViewCellModelProtocol {
+public protocol CHGTableViewCellModelProtocol {
     
     /// 绑定一个cell、headerFooter 类
     ///
@@ -23,7 +23,7 @@ protocol CHGTableViewCellModelProtocol {
 }
 
 ///header footer的model需要实现的协议
-protocol CHGTableViewHeaderFooterModelProtocol {
+public protocol CHGTableViewHeaderFooterModelProtocol {
     
     /// 绑定一个cell、headerFooter 类
     ///

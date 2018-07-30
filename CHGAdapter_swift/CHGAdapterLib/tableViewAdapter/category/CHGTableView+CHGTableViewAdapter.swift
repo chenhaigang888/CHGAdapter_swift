@@ -100,7 +100,7 @@ extension UITableView {
 }
 
 extension UITableView {
-    var adapterData: CHGTableViewAdapterData {
+    open var adapterData: CHGTableViewAdapterData {
         get {
             return (self.tableViewAdapter?.adapterData)!
         }

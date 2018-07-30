@@ -20,7 +20,12 @@ extension UITableView {
     
     open var tableViewAdapter:CHGTableViewAdapter? {
         get {
-            return objc_getAssociatedObject(self, &tableViewAdapterKey) as? CHGTableViewAdapter
+            let adapter = objc_getAssociatedObject(self, &tableViewAdapterKey) as? CHGTableViewAdapter
+            if adapter == nil {
+                self.tableViewAdapter = CHGSimpleTableViewAdapter.init()
+                return self.tableViewAdapter
+            }
+            return adapter
         }
         set(newValue) {
             objc_setAssociatedObject(self, &tableViewAdapterKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
@@ -90,6 +95,18 @@ extension UITableView {
         self.estimatedRowHeight = 44;
         self.rowHeight = UITableViewAutomaticDimension;
         self.tableViewAdapter?.cellHeight = -1;
+    }
+    
+}
+
+extension UITableView {
+    var adapterData: CHGTableViewAdapterData {
+        get {
+            return (self.tableViewAdapter?.adapterData)!
+        }
+        set {
+            self.tableViewAdapter?.adapterData = newValue
+        }
     }
     
 }

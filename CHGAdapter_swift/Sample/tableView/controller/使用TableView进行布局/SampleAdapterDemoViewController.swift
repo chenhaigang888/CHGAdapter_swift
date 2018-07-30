@@ -29,7 +29,7 @@ class SampleAdapterDemoViewController: UIViewController {
             SectionFooterDescriptionModel.init(descriptionContent: "地址二描述")
         ]
     
-    var adapter:CHGSimpleTableViewAdapter = CHGSimpleTableViewAdapter()
+//    var adapter:CHGSimpleTableViewAdapter = CHGSimpleTableViewAdapter()
     lazy var adapterData:CHGTableViewAdapterData = {
         let adapterData = CHGTableViewAdapterData.init()
         adapterData.cellDatas = address as NSArray
@@ -43,8 +43,7 @@ class SampleAdapterDemoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "SampleAdapterDemo"
-        adapter.adapterData = adapterData
-        tableView.tableViewAdapter = adapter
+        tableView.adapterData = adapterData
     }
 
     override func didReceiveMemoryWarning() {

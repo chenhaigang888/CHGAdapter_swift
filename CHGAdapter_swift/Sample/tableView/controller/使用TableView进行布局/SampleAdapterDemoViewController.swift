@@ -28,19 +28,14 @@ class SampleAdapterDemoViewController: UIViewController {
             SectionFooterDescriptionModel.init(descriptionContent: "地址一描述"),
             SectionFooterDescriptionModel.init(descriptionContent: "地址二描述")
         ]
-
-    lazy var adapterData:CHGTableViewAdapterData = {
-        let adapterData = CHGTableViewAdapterData.init()
-        adapterData.cellDatas = address as NSArray
-        adapterData.headerDatas = headerData as NSArray
-        adapterData.footerDatas = footerData as NSArray
-        return adapterData
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "SampleAdapterDemo"
-        tableView.adapterData = adapterData
+        
+        tableView.cellDatas = address as NSArray
+        tableView.headerDatas = headerData as NSArray
+        tableView.footerDatas = footerData as NSArray
     }
 
     override func didReceiveMemoryWarning() {

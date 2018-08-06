@@ -15,7 +15,7 @@ class Sample1TableViewCell: CHGTableViewCell {
     @IBOutlet var switch_:UISwitch?
     
     @objc func switchValueChange(_ sender:AnyObject)->Void {
-        ((self.tableView?.tableViewAdapter?.adapterData?.customData) as! NSMutableDictionary).setObject(self.switch_?.isOn ?? false, forKey: self.indexPath! as NSCopying)
+        ((self.tableView?.tableViewAdapter?.adapterData.customData) as! NSMutableDictionary).setObject(self.switch_?.isOn ?? false, forKey: self.indexPath! as NSCopying)
         self.eventTransmissionBlock!(self,self.switch_?.isOn as AnyObject,1,{(data:AnyObject?)->Void in
             print("\(data!.boolValue ? "true":"false")")
         })
@@ -35,7 +35,7 @@ class Sample1TableViewCell: CHGTableViewCell {
     
     override func cellForRow(atIndexPath indexPath: IndexPath, tableView: UITableView?, data: AnyObject?) {
         super .cellForRow(atIndexPath: indexPath, tableView: tableView, data: data)
-        self.switch_?.isOn = (((self.tableView?.tableViewAdapter?.adapterData?.customData) as! NSMutableDictionary) .object(forKey: self.indexPath ?? false) != nil)
+        self.switch_?.isOn = (((self.tableView?.tableViewAdapter?.adapterData.customData) as! NSMutableDictionary) .object(forKey: self.indexPath ?? false) != nil)
         self.title?.text = data as? String;
     }
     

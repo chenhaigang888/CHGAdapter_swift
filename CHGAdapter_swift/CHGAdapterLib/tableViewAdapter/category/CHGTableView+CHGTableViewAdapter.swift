@@ -99,6 +99,7 @@ extension UITableView {
     
 }
 
+// MARK: - 增加快速使用的API
 extension UITableView {
     open var adapterData: CHGTableViewAdapterData {
         get {
@@ -106,6 +107,42 @@ extension UITableView {
         }
         set {
             self.tableViewAdapter?.adapterData = newValue
+        }
+    }
+    
+    open var cellDatas: NSArray? {
+        get {
+            return self.tableViewAdapter?.adapterData.cellDatas
+        }
+        set {
+            self.tableViewAdapter?.adapterData.cellDatas = newValue
+        }
+    }
+    
+    open var footerDatas: NSArray? {
+        get {
+            return self.tableViewAdapter?.adapterData.footerDatas
+        }
+        set {
+            self.tableViewAdapter?.adapterData.footerDatas = newValue
+        }
+    }
+    
+    open var headerDatas: NSArray? {
+        get {
+            return self.tableViewAdapter?.adapterData.headerDatas
+        }
+        set {
+            self.tableViewAdapter?.adapterData.headerDatas = newValue
+        }
+    }
+    
+    open var customData: AnyObject? {
+        get {
+            return self.tableViewAdapter?.adapterData.customData
+        }
+        set {
+            self.tableViewAdapter?.adapterData.customData = newValue
         }
     }
     

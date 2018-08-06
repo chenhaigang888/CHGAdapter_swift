@@ -26,7 +26,7 @@ open class CHGTableViewCell: UITableViewCell {
     }
     
     open func customData()->AnyObject? {
-        return self.tableView?.tableViewAdapter?.adapterData?.customData
+        return self.tableView?.tableViewAdapter?.adapterData.customData
     }
     
     open func controller()->UIViewController? {
@@ -65,3 +65,4 @@ open class CHGTableViewCell: UITableViewCell {
         
     }
 }
+

@@ -15,7 +15,7 @@ public typealias CHGEmptyDataDidTapButtonBlock = (_ scrollView: UIScrollView?, _
 
 /// 定义没有数据时候的简单显示及操作，如需更多功能可扩展此类以及实现DZNEmptyDataSetSource,DZNEmptyDataSetDelegate中的方法
 open class CHGTableViewEmptyDataShow: NSObject {
-
+    
     /// 没有内容时候显示的提示图片
     public var imageName:NSString = ""
     
@@ -27,7 +27,7 @@ open class CHGTableViewEmptyDataShow: NSObject {
     
     /// 没有数据的时候是否可以滚动
     public var emptyDataSetShouldAllowScroll:Bool = false
-
+    
     /// 没有数据的时候点击提示内容的回调
     public var emptyDataDidTapViewBlock:CHGEmptyDataDidTapViewBlock?
     
@@ -36,7 +36,7 @@ open class CHGTableViewEmptyDataShow: NSObject {
     
 }
 
-extension CHGTableViewEmptyDataShow :EmptyDataSetSource {    
+extension CHGTableViewEmptyDataShow :EmptyDataSetSource {
     open func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
         let s = NSMutableAttributedString.init(string: self.title as String)
         s.addAttributes([NSAttributedStringKey.font : UIFont.systemFont(ofSize: 17)], range: NSRange(location: 0, length: self.title.length))
@@ -46,7 +46,7 @@ extension CHGTableViewEmptyDataShow :EmptyDataSetSource {
     open func image(forEmptyDataSet scrollView: UIScrollView) -> UIImage? {
         return UIImage.init(named: self.imageName as String)
     }
-
+    
     open func verticalOffset(forEmptyDataSet scrollView: UIScrollView) -> CGFloat {
         return self.verticalOffset
     }

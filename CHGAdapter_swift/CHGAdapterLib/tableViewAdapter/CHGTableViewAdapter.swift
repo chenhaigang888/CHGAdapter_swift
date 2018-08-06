@@ -37,13 +37,13 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
     public var cellName:NSString? = ""
     public var headerName:NSString? = ""
     public var footerName:NSString? = ""
-
+    
     /// 如果cell、headerView、footerView的高度都统一可以通过直接设置以下参数进行设置
     public var cellHeight:CGFloat = 44
     public var headerHeight:CGFloat = 0.01
     public var footerHeight:CGFloat = 0.01
     
-    public var adapterData:CHGTableViewAdapterData?
+    public var adapterData:CHGTableViewAdapterData = CHGTableViewAdapterData.init()
     public var rowsOfSectionKeyName:NSString?
     public var tableViewDeselectRowAtIndexPathAnimation:Bool = true
     public var tag:NSInteger = 0
@@ -75,7 +75,7 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
     }
     
     open func numberOfSections(in tableView: UITableView) -> Int {
-        let cellDatas = self.adapterData?.cellDatas
+        let cellDatas = self.adapterData.cellDatas
         if cellDatas == nil || cellDatas?.count == 0 {
             return 0
         }
@@ -83,7 +83,7 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
     }
     
     open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let cellDatas = self.adapterData?.cellDatas
+        let cellDatas = self.adapterData.cellDatas
         if cellDatas?.count == 0 {
             return 0;
         }
@@ -99,10 +99,10 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
     }
     
     open func cellDataWithIndexPath(_ indexPath:IndexPath) -> AnyObject? {
-        if self.adapterData?.cellDatas?.count == 0 {
+        if self.adapterData.cellDatas?.count == 0 {
             return nil
         }
-        let sectionData:AnyObject = self.adapterData?.cellDatas![indexPath.section] as AnyObject
+        let sectionData:AnyObject = self.adapterData.cellDatas![indexPath.section] as AnyObject
         if self.rowsOfSectionKeyName != nil && !(sectionData is NSArray) {
             let tempArray:NSArray = sectionData.value(forKey: self.rowsOfSectionKeyName! as String) as! NSArray
             return tempArray[indexPath.row] as AnyObject
@@ -122,18 +122,22 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
         if identifier.length == 0 {
             return UITableViewCell()
         }
-        if self.fileIsExit(identifier as String) {
-            tableView.register(UINib (nibName: identifier as String, bundle: nil), forCellReuseIdentifier: identifier as String)
-        } else {
-            let NameSpace:String = Bundle.main.infoDictionary!["CFBundleExecutable"] as! String
-            let classAllNameClass:AnyClass = NSClassFromString("\(NameSpace).\(identifier)")!
-            tableView.register(classAllNameClass, forCellReuseIdentifier: identifier as String)
+        
+        var cell = tableView.dequeueReusableCell(withIdentifier: identifier as String)
+        if cell == nil {
+            if self.fileIsExit(identifier as String) {
+                tableView.register(UINib (nibName: identifier as String, bundle: nil), forCellReuseIdentifier: identifier as String)
+            } else {
+                let NameSpace:String = Bundle.main.infoDictionary!["CFBundleExecutable"] as! String
+                let classAllNameClass:AnyClass = NSClassFromString("\(NameSpace).\(identifier)")!
+                tableView.register(classAllNameClass, forCellReuseIdentifier: identifier as String)
+            }
+            cell = tableView.dequeueReusableCell(withIdentifier: identifier as String, for: indexPath)
         }
-       
-        let cell:CHGTableViewCell = tableView.dequeueReusableCell(withIdentifier: identifier as String, for: indexPath) as! CHGTableViewCell
-        cell.eventTransmissionBlock = tableView.eventTransmissionBlock
-        cell.cellForRow(atIndexPath: indexPath, tableView: tableView, data: cellData)
-        return cell
+        let cell_:CHGTableViewCell = cell as! CHGTableViewCell
+        cell_.eventTransmissionBlock = tableView.eventTransmissionBlock
+        cell_.cellForRow(atIndexPath: indexPath, tableView: tableView, data: cellData)
+        return cell_
     }
     
     open func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -148,9 +152,9 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
         let headerFooterDatas:NSArray? =
             type == CHGTableViewHeaderFooterViewType.HeaderType
                 ?
-                    self.adapterData?.headerDatas
+                    self.adapterData.headerDatas
                 :
-                self.adapterData?.footerDatas
+                self.adapterData.footerDatas
         if headerFooterDatas != nil && headerFooterDatas?.count != 0 {
             if section >= (headerFooterDatas?.count)! {
                 return nil
@@ -174,17 +178,23 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
         if identifier.length == 0 {
             return nil
         }
-        if self.fileIsExit(identifier as String) {
-            tableView.register(UINib(nibName: identifier as String, bundle: nil), forHeaderFooterViewReuseIdentifier: identifier as String)
-        } else {
-            let NameSpace:String = Bundle.main.infoDictionary!["CFBundleExecutable"] as! String
-            let classAllNameClass:AnyClass = NSClassFromString("\(NameSpace).\(identifier)")!
-            tableView.register(classAllNameClass, forHeaderFooterViewReuseIdentifier: identifier as String)
+        
+        var view = tableView.dequeueReusableHeaderFooterView(withIdentifier: identifier as String)
+        if view == nil {
+            if self.fileIsExit(identifier as String) {
+                tableView.register(UINib(nibName: identifier as String, bundle: nil), forHeaderFooterViewReuseIdentifier: identifier as String)
+            } else {
+                let NameSpace:String = Bundle.main.infoDictionary!["CFBundleExecutable"] as! String
+                let classAllNameClass:AnyClass = NSClassFromString("\(NameSpace).\(identifier)")!
+                tableView.register(classAllNameClass, forHeaderFooterViewReuseIdentifier: identifier as String)
+            }
+            view = tableView.dequeueReusableHeaderFooterView(withIdentifier: identifier as String)
         }
-        let view:CHGTableViewHeaderFooterView = tableView.dequeueReusableHeaderFooterView(withIdentifier: identifier as String) as! CHGTableViewHeaderFooterView
-        view.eventTransmissionBlock = tableView.eventTransmissionBlock
-        view.headerFooter(headerFooterForSection: section, tableView: tableView, data: headerFooterData!, type: type)
-        return view
+        
+        let view_:CHGTableViewHeaderFooterView = view as! CHGTableViewHeaderFooterView
+        view_.eventTransmissionBlock = tableView.eventTransmissionBlock
+        view_.headerFooter(headerFooterForSection: section, tableView: tableView, data: headerFooterData!, type: type)
+        return view_
     }
     
     open func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
@@ -230,3 +240,4 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
         }
     }
 }
+

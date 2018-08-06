@@ -14,7 +14,7 @@ public enum CHGTableViewHeaderFooterViewType {
 }
 
 open class CHGTableViewHeaderFooterView: UITableViewHeaderFooterView {
-
+    
     public var eventTransmissionBlock:CHGEventTransmissionBlock?
     public var section:NSInteger?
     public var tableView:UITableView?
@@ -37,7 +37,7 @@ open class CHGTableViewHeaderFooterView: UITableViewHeaderFooterView {
     }
     
     open func customData()->AnyObject? {
-        return self.tableView?.tableViewAdapter?.adapterData?.customData
+        return self.tableView?.tableViewAdapter?.adapterData.customData
     }
     
     /**

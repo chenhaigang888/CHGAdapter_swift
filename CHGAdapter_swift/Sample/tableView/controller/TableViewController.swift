@@ -26,14 +26,14 @@ class TableViewController: UIViewController {
         () ->CHGTableViewAdapterData in
         let tempAdapterData = CHGTableViewAdapterData()
         tempAdapterData.cellDatas =
-            // data style 1
-            //        [
-            //            ["test":["1","2","3","4","5","6","7","8"]],
-            //            ["test":["1","2","3","4","5","6","7","8"]],
-            //            ["test":["1","2","3","4","5","6","7","8"]],
-            //            ["test":["1","2","3","4","5","6","7","8"]]
-            //        ]
-            // data style 2
+////            // data style 1
+//                    [
+//                        ["test":["1","2","3","4","5","6","7","8"]],
+//                        ["test":["1","2","3","4","5","6","7","8"]],
+//                        ["test":["1","2","3","4","5","6","7","8"]],
+//                        ["test":["1","2","3","4","5","6","7","8"]]
+//                    ]
+//            // data style 2
             [
                 ["SampleAdapterDemoViewController","2","3","4"],
                 ["1","2","3","4"],
@@ -54,6 +54,7 @@ class TableViewController: UIViewController {
         super.viewDidLoad()
         //设置adapter
         self.adapter.adapterData = self.adapterData
+//        self.adapter.rowsOfSectionKeyName = "test"
         self.tableView?.tableViewAdapter = self.adapter
         //优化显示
         self.tableView?.hiddHeadView()

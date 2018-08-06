@@ -28,8 +28,7 @@ class SampleAdapterDemoViewController: UIViewController {
             SectionFooterDescriptionModel.init(descriptionContent: "地址一描述"),
             SectionFooterDescriptionModel.init(descriptionContent: "地址二描述")
         ]
-    
-//    var adapter:CHGSimpleTableViewAdapter = CHGSimpleTableViewAdapter()
+
     lazy var adapterData:CHGTableViewAdapterData = {
         let adapterData = CHGTableViewAdapterData.init()
         adapterData.cellDatas = address as NSArray
@@ -37,8 +36,6 @@ class SampleAdapterDemoViewController: UIViewController {
         adapterData.footerDatas = footerData as NSArray
         return adapterData
     }()
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -25,8 +25,7 @@ class CHGAddress: NSObject {
 
 // MARK: - 实现CHGTableViewCellModelProtocol协议，用返回当前model绑定的cell类以及cell的高度
 extension CHGAddress:CHGTableViewCellModelProtocol {
-    
-    func getCellClass() -> String {
+    func cellClassName(_ tableView: UITableView, indexPath: IndexPath) -> String {
         NSStringFromClass(AddressTableViewCell.classForCoder())
         if type == 0 {
             return "AddressTableViewCell"
@@ -35,9 +34,23 @@ extension CHGAddress:CHGTableViewCellModelProtocol {
         }
     }
     
-    func getCellHeigh() -> CGFloat {
+    func cellHeigh(_ tableView: UITableView, indexPath: IndexPath) -> CGFloat {
         return -1//为-1的时候代表自动布局 需要tableView设置 自动获取高度。可以自己返回想要的高度
     }
+    
+    
+//    func getCellClass() -> String {
+//        NSStringFromClass(AddressTableViewCell.classForCoder())
+//        if type == 0 {
+//            return "AddressTableViewCell"
+//        } else {
+//            return "Address2TableViewCell"
+//        }
+//    }
+//
+//    func getCellHeigh() -> CGFloat {
+//        return -1//为-1的时候代表自动布局 需要tableView设置 自动获取高度。可以自己返回想要的高度
+//    }
     
     
 }

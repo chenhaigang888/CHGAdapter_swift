@@ -19,13 +19,21 @@ class SectionFooterDescriptionModel: NSObject {
 }
 
 extension SectionFooterDescriptionModel:CHGTableViewHeaderFooterModelProtocol{
-    func getHeaderFooterClass() -> String {
+    func headerFooterClass(_ tableView: UITableView, section: NSInteger, type: CHGTableViewHeaderFooterViewType) -> String {
         return "SectionFooterDescriptionContentHeaderFooterView"
     }
     
-    func getHeaderFooterHeigh() -> CGFloat {
+    func headerFooterHeigh(_ tableView: UITableView, section: NSInteger, type: CHGTableViewHeaderFooterViewType) -> CGFloat {
         return 50
     }
+    
+//    func getHeaderFooterClass() -> String {
+//        return "SectionFooterDescriptionContentHeaderFooterView"
+//    }
+//    
+//    func getHeaderFooterHeigh() -> CGFloat {
+//        return 50
+//    }
     
     
 }

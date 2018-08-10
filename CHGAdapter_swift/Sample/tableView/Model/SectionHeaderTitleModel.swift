@@ -23,13 +23,21 @@ class SectionHeaderTitleModel: NSObject {
 }
 
 extension SectionHeaderTitleModel:CHGTableViewHeaderFooterModelProtocol {
-    func getHeaderFooterClass() -> String {
+    func headerFooterClass(_ tableView: UITableView, section: NSInteger, type: CHGTableViewHeaderFooterViewType) -> String {
         return headerClass!
     }
     
-    func getHeaderFooterHeigh() -> CGFloat {
+    func headerFooterHeigh(_ tableView: UITableView, section: NSInteger, type: CHGTableViewHeaderFooterViewType) -> CGFloat {
         return 30
     }
+    
+//    func getHeaderFooterClass() -> String {
+//        return headerClass!
+//    }
+//    
+//    func getHeaderFooterHeigh() -> CGFloat {
+//        return 30
+//    }
     
     
 }

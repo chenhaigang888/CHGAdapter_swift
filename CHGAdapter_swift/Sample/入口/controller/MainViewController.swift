@@ -36,6 +36,14 @@ class MainViewController: UIViewController {
                 let vc = TableViewViewController()
                 vc.title = titleModel.name
                 self?.navigationController?.pushViewController(vc, animated: true)
+            } else if indexPath.row == 2 {
+                let vc = CollectionViewUseDicViewController()
+                vc.title = titleModel.name
+                self?.navigationController?.pushViewController(vc, animated: true)
+            } else if indexPath.row == 3 {
+                let vc = TableViewUseDicViewController()
+                vc.title = titleModel.name
+                self?.navigationController?.pushViewController(vc, animated: true)
             }
         }
     }()
@@ -45,10 +53,12 @@ class MainViewController: UIViewController {
         let cellDatas =
             [
                 [
-                    TitleModel.init(name: "collectionView简单的用法"),
-                    TitleModel.init(name: "tableView简单的用法"),
-                    ]
-        ]
+                    TitleModel.init(name: "collectionView简单的用法(使用Model)"),
+                    TitleModel.init(name: "tableView简单的用法(使用Model)"),
+                    TitleModel.init(name: "collectionView简单的用法(使用NSDictionary)"),
+                    TitleModel.init(name: "tableView简单的用法(使用NSDictionary)"),
+                ]
+            ]
         return cellDatas as NSArray
     }()
 }

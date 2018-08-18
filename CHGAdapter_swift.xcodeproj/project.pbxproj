@@ -41,6 +41,19 @@
 		5FF37ABE2128342700477E61 /* TVSuccHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF37ABD2128342700477E61 /* TVSuccHeaderFooterView.swift */; };
 		5FF37AC02128343000477E61 /* TVSuccHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FF37ABF2128343000477E61 /* TVSuccHeaderFooterView.xib */; };
 		5FF37AC22128355600477E61 /* TVSuccModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF37AC12128355600477E61 /* TVSuccModel.swift */; };
+		5FF37AC921283CA900477E61 /* CollectionViewUseDicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF37AC721283CA900477E61 /* CollectionViewUseDicViewController.swift */; };
+		5FF37ACA21283CA900477E61 /* CollectionViewUseDicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FF37AC821283CA900477E61 /* CollectionViewUseDicViewController.xib */; };
+		5FF37ACE21283F3A00477E61 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF37ACC21283F3A00477E61 /* FriendTableViewCell.swift */; };
+		5FF37ACF21283F3A00477E61 /* FriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FF37ACD21283F3A00477E61 /* FriendTableViewCell.xib */; };
+		5FF37AD321283F9A00477E61 /* FriendAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF37AD221283F9A00477E61 /* FriendAdapter.swift */; };
+		5FF37ADC2128420F00477E61 /* TableViewUseDicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF37ADA2128420F00477E61 /* TableViewUseDicViewController.swift */; };
+		5FF37ADD2128420F00477E61 /* TableViewUseDicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FF37ADB2128420F00477E61 /* TableViewUseDicViewController.xib */; };
+		5FF37AE021284A1700477E61 /* TVTitleDicHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF37ADF21284A1700477E61 /* TVTitleDicHeaderFooterView.swift */; };
+		5FF37AE221284A6500477E61 /* TVTitleDicHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FF37AE121284A6500477E61 /* TVTitleDicHeaderFooterView.xib */; };
+		5FF37AE621284C1300477E61 /* CVFriendUseDicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF37AE421284C1300477E61 /* CVFriendUseDicCollectionViewCell.swift */; };
+		5FF37AE721284C1300477E61 /* CVFriendUseDicCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FF37AE521284C1300477E61 /* CVFriendUseDicCollectionViewCell.xib */; };
+		5FF37AE921284DCC00477E61 /* CVCollectionViewUseDicHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF37AE821284DCC00477E61 /* CVCollectionViewUseDicHeaderFooterView.swift */; };
+		5FF37AEC21284DE100477E61 /* CVCollectionViewUseDicHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FF37AEB21284DE100477E61 /* CVCollectionViewUseDicHeaderFooterView.xib */; };
 		8F14D04020ABC4A4005E4A15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F14D03F20ABC4A4005E4A15 /* AppDelegate.swift */; };
 		8F14D04720ABC4A5005E4A15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F14D04620ABC4A5005E4A15 /* Assets.xcassets */; };
 		8F14D04A20ABC4A5005E4A15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F14D04820ABC4A5005E4A15 /* LaunchScreen.storyboard */; };
@@ -114,6 +127,19 @@
 		5FF37ABD2128342700477E61 /* TVSuccHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVSuccHeaderFooterView.swift; sourceTree = "<group>"; };
 		5FF37ABF2128343000477E61 /* TVSuccHeaderFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TVSuccHeaderFooterView.xib; sourceTree = "<group>"; };
 		5FF37AC12128355600477E61 /* TVSuccModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVSuccModel.swift; sourceTree = "<group>"; };
+		5FF37AC721283CA900477E61 /* CollectionViewUseDicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewUseDicViewController.swift; sourceTree = "<group>"; };
+		5FF37AC821283CA900477E61 /* CollectionViewUseDicViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewUseDicViewController.xib; sourceTree = "<group>"; };
+		5FF37ACC21283F3A00477E61 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
+		5FF37ACD21283F3A00477E61 /* FriendTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendTableViewCell.xib; sourceTree = "<group>"; };
+		5FF37AD221283F9A00477E61 /* FriendAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendAdapter.swift; sourceTree = "<group>"; };
+		5FF37ADA2128420F00477E61 /* TableViewUseDicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewUseDicViewController.swift; sourceTree = "<group>"; };
+		5FF37ADB2128420F00477E61 /* TableViewUseDicViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewUseDicViewController.xib; sourceTree = "<group>"; };
+		5FF37ADF21284A1700477E61 /* TVTitleDicHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVTitleDicHeaderFooterView.swift; sourceTree = "<group>"; };
+		5FF37AE121284A6500477E61 /* TVTitleDicHeaderFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TVTitleDicHeaderFooterView.xib; sourceTree = "<group>"; };
+		5FF37AE421284C1300477E61 /* CVFriendUseDicCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVFriendUseDicCollectionViewCell.swift; sourceTree = "<group>"; };
+		5FF37AE521284C1300477E61 /* CVFriendUseDicCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CVFriendUseDicCollectionViewCell.xib; sourceTree = "<group>"; };
+		5FF37AE821284DCC00477E61 /* CVCollectionViewUseDicHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVCollectionViewUseDicHeaderFooterView.swift; sourceTree = "<group>"; };
+		5FF37AEB21284DE100477E61 /* CVCollectionViewUseDicHeaderFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CVCollectionViewUseDicHeaderFooterView.xib; sourceTree = "<group>"; };
 		8F14D03C20ABC4A4005E4A15 /* CHGAdapter_swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHGAdapter_swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F14D03F20ABC4A4005E4A15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F14D04620ABC4A5005E4A15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -169,12 +195,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5F82A09320AC8B8B002A8780 /* collectionView */ = {
+		5F82A09320AC8B8B002A8780 /* collectionView简单的用法(使用Model) */ = {
 			isa = PBXGroup;
 			children = (
 				5F92C2F12127ECCF00455EEB /* 最简单的用法 */,
 			);
-			path = collectionView;
+			path = "collectionView简单的用法(使用Model)";
 			sourceTree = "<group>";
 		};
 		5F92C2F12127ECCF00455EEB /* 最简单的用法 */ = {
@@ -335,6 +361,145 @@
 			path = HeaderFooterView;
 			sourceTree = "<group>";
 		};
+		5FF37AC321283BB700477E61 /* collectionView简单的用法(使用NSDictionary) */ = {
+			isa = PBXGroup;
+			children = (
+				5FF37AD021283F7300477E61 /* other */,
+				5FF37AC621283C6C00477E61 /* model */,
+				5FF37AC521283C6700477E61 /* view */,
+				5FF37AC421283C5F00477E61 /* controller */,
+			);
+			path = "collectionView简单的用法(使用NSDictionary)";
+			sourceTree = "<group>";
+		};
+		5FF37AC421283C5F00477E61 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				5FF37AC721283CA900477E61 /* CollectionViewUseDicViewController.swift */,
+				5FF37AC821283CA900477E61 /* CollectionViewUseDicViewController.xib */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		5FF37AC521283C6700477E61 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				5FF37AEA21284DD100477E61 /* headerFooterView */,
+				5FF37AE321284BE500477E61 /* CollectionViewCell */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		5FF37AC621283C6C00477E61 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		5FF37ACB21283F1600477E61 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				5FF37ACC21283F3A00477E61 /* FriendTableViewCell.swift */,
+				5FF37ACD21283F3A00477E61 /* FriendTableViewCell.xib */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		5FF37AD021283F7300477E61 /* other */ = {
+			isa = PBXGroup;
+			children = (
+				5FF37AD121283F7A00477E61 /* adapter */,
+			);
+			path = other;
+			sourceTree = "<group>";
+		};
+		5FF37AD121283F7A00477E61 /* adapter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = adapter;
+			sourceTree = "<group>";
+		};
+		5FF37AD42128417D00477E61 /* tableView简单的用法(使用NSDictionary) */ = {
+			isa = PBXGroup;
+			children = (
+				5FF37AD9212841B700477E61 /* view */,
+				5FF37AD8212841B100477E61 /* model */,
+				5FF37AD7212841A700477E61 /* controller */,
+				5FF37AD52128418800477E61 /* other */,
+			);
+			path = "tableView简单的用法(使用NSDictionary)";
+			sourceTree = "<group>";
+		};
+		5FF37AD52128418800477E61 /* other */ = {
+			isa = PBXGroup;
+			children = (
+				5FF37AD62128419C00477E61 /* adapter */,
+			);
+			path = other;
+			sourceTree = "<group>";
+		};
+		5FF37AD62128419C00477E61 /* adapter */ = {
+			isa = PBXGroup;
+			children = (
+				5FF37AD221283F9A00477E61 /* FriendAdapter.swift */,
+			);
+			path = adapter;
+			sourceTree = "<group>";
+		};
+		5FF37AD7212841A700477E61 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				5FF37ADA2128420F00477E61 /* TableViewUseDicViewController.swift */,
+				5FF37ADB2128420F00477E61 /* TableViewUseDicViewController.xib */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		5FF37AD8212841B100477E61 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		5FF37AD9212841B700477E61 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				5FF37ADE212849E700477E61 /* headerFooterView */,
+				5FF37ACB21283F1600477E61 /* TableViewCell */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		5FF37ADE212849E700477E61 /* headerFooterView */ = {
+			isa = PBXGroup;
+			children = (
+				5FF37ADF21284A1700477E61 /* TVTitleDicHeaderFooterView.swift */,
+				5FF37AE121284A6500477E61 /* TVTitleDicHeaderFooterView.xib */,
+			);
+			path = headerFooterView;
+			sourceTree = "<group>";
+		};
+		5FF37AE321284BE500477E61 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				5FF37AE421284C1300477E61 /* CVFriendUseDicCollectionViewCell.swift */,
+				5FF37AE521284C1300477E61 /* CVFriendUseDicCollectionViewCell.xib */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		5FF37AEA21284DD100477E61 /* headerFooterView */ = {
+			isa = PBXGroup;
+			children = (
+				5FF37AE821284DCC00477E61 /* CVCollectionViewUseDicHeaderFooterView.swift */,
+				5FF37AEB21284DE100477E61 /* CVCollectionViewUseDicHeaderFooterView.xib */,
+			);
+			path = headerFooterView;
+			sourceTree = "<group>";
+		};
 		8F14D03320ABC4A4005E4A15 = {
 			isa = PBXGroup;
 			children = (
@@ -400,21 +565,23 @@
 		8F14D06E20ABC7F4005E4A15 /* Sample */ = {
 			isa = PBXGroup;
 			children = (
+				5FF37AD42128417D00477E61 /* tableView简单的用法(使用NSDictionary) */,
+				5FF37AC321283BB700477E61 /* collectionView简单的用法(使用NSDictionary) */,
 				5F92C2F52127ED8900455EEB /* 入口 */,
-				5F82A09320AC8B8B002A8780 /* collectionView */,
-				8F14D08020ABE372005E4A15 /* tableView */,
+				5F82A09320AC8B8B002A8780 /* collectionView简单的用法(使用Model) */,
+				8F14D08020ABE372005E4A15 /* tableView简单的用法(使用Model) */,
 			);
 			path = Sample;
 			sourceTree = "<group>";
 		};
-		8F14D08020ABE372005E4A15 /* tableView */ = {
+		8F14D08020ABE372005E4A15 /* tableView简单的用法(使用Model) */ = {
 			isa = PBXGroup;
 			children = (
 				5FF37AA82128261A00477E61 /* view */,
 				5FF37AA72128260A00477E61 /* model */,
 				5FF37AA22128212A00477E61 /* controller */,
 			);
-			path = tableView;
+			path = "tableView简单的用法(使用Model)";
 			sourceTree = "<group>";
 		};
 		8F22719820EA243F00C72514 /* collectionViewAdapter */ = {
@@ -618,7 +785,10 @@
 			files = (
 				5FF37AA62128215300477E61 /* TableViewViewController.xib in Resources */,
 				5F92C3032127EF0500455EEB /* TitleTableViewCell.xib in Resources */,
+				5FF37ADD2128420F00477E61 /* TableViewUseDicViewController.xib in Resources */,
 				5FF37AAC2128265700477E61 /* TVInputTextTableViewCell.xib in Resources */,
+				5FF37AE221284A6500477E61 /* TVTitleDicHeaderFooterView.xib in Resources */,
+				5FF37ACF21283F3A00477E61 /* FriendTableViewCell.xib in Resources */,
 				8F14D04A20ABC4A5005E4A15 /* LaunchScreen.storyboard in Resources */,
 				5F92C3072127F2DF00455EEB /* CollectionViewViewController.xib in Resources */,
 				5F92C2FC2127EDC300455EEB /* MainViewController.xib in Resources */,
@@ -628,7 +798,10 @@
 				5FF37A9F212815B700477E61 /* CVSimulationDownCollectionViewCell.xib in Resources */,
 				5FF37A9B21280EFC00477E61 /* CVInputTextCollectionViewCell.xib in Resources */,
 				8F14D04720ABC4A5005E4A15 /* Assets.xcassets in Resources */,
+				5FF37AEC21284DE100477E61 /* CVCollectionViewUseDicHeaderFooterView.xib in Resources */,
+				5FF37AE721284C1300477E61 /* CVFriendUseDicCollectionViewCell.xib in Resources */,
 				5FF37AC02128343000477E61 /* TVSuccHeaderFooterView.xib in Resources */,
+				5FF37ACA21283CA900477E61 /* CollectionViewUseDicViewController.xib in Resources */,
 				5F92C3152127FCA500455EEB /* CVHeaderCollectionReusableView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -693,11 +866,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FF37AD321283F9A00477E61 /* FriendAdapter.swift in Sources */,
 				5FF37A9721280EB900477E61 /* CVInputTextModel.swift in Sources */,
 				8F2271B220EA243F00C72514 /* CHGTableView+CHGTableViewAdapter.swift in Sources */,
 				5F92C30D2127F6DC00455EEB /* CVTitleCollectionViewCell.swift in Sources */,
 				5FF37AAE2128266E00477E61 /* TVInputTextModel.swift in Sources */,
 				8F2271B020EA243F00C72514 /* CHGCollectionViewAdapterData.swift in Sources */,
+				5FF37AE621284C1300477E61 /* CVFriendUseDicCollectionViewCell.swift in Sources */,
 				5FF37AC22128355600477E61 /* TVSuccModel.swift in Sources */,
 				8F2271B620EA243F00C72514 /* CHGTableViewAdapterData.swift in Sources */,
 				5FF37ABC2128329B00477E61 /* TVTitleModel.swift in Sources */,
@@ -705,16 +880,21 @@
 				5FF37AA52128215300477E61 /* TableViewViewController.swift in Sources */,
 				8F2271B120EA243F00C72514 /* CHGCollectionReusableView.swift in Sources */,
 				5F92C3142127FCA500455EEB /* CVHeaderCollectionReusableView.swift in Sources */,
+				5FF37ADC2128420F00477E61 /* TableViewUseDicViewController.swift in Sources */,
 				8F1F6FDE2109BD31004E3B30 /* CHGSimpleTableViewAdapter.swift in Sources */,
+				5FF37AE921284DCC00477E61 /* CVCollectionViewUseDicHeaderFooterView.swift in Sources */,
 				5FF37ABE2128342700477E61 /* TVSuccHeaderFooterView.swift in Sources */,
 				5F92C3062127F2DF00455EEB /* CollectionViewViewController.swift in Sources */,
 				8F2271AE20EA243F00C72514 /* CHGCollectionViewCell.swift in Sources */,
+				5FF37AE021284A1700477E61 /* TVTitleDicHeaderFooterView.swift in Sources */,
 				5FF37AB82128325400477E61 /* TVTitleHeaderFooterView.swift in Sources */,
+				5FF37ACE21283F3A00477E61 /* FriendTableViewCell.swift in Sources */,
 				5F92C3102127FC0400455EEB /* CVHeaderModel.swift in Sources */,
 				5F92C2FB2127EDC300455EEB /* MainViewController.swift in Sources */,
 				5F92C3092127F68300455EEB /* CVTitleModel.swift in Sources */,
 				5FF37A9E212815B700477E61 /* CVSimulationDownCollectionViewCell.swift in Sources */,
 				5F92C2FE2127EE7900455EEB /* TitleModel.swift in Sources */,
+				5FF37AC921283CA900477E61 /* CollectionViewUseDicViewController.swift in Sources */,
 				5FF37AAB2128265700477E61 /* TVInputTextTableViewCell.swift in Sources */,
 				5FF37AB221282BC300477E61 /* TVSubmitHeaderFooterView.swift in Sources */,
 				8F2271AF20EA243F00C72514 /* CHGCollectionViewEmptyDataShow.swift in Sources */,

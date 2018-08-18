@@ -25,7 +25,7 @@ open class CHGCollectionViewCell: UICollectionViewCell {
     }
     
     open func customData()->AnyObject? {
-        return self.collectionView?.collectionViewAdapter?.adapterData?.customData
+        return self.collectionView?.collectionViewAdapter?.adapterData.customData
     }
     
     open func controller()->UIViewController?{

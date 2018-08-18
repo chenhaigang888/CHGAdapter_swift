@@ -23,7 +23,7 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
     public var cellName:NSString? = ""
     public var headerName:NSString? = ""
     public var footerName:NSString? = ""
-    public var adapterData:CHGCollectionViewAdapterData?
+    public var adapterData:CHGCollectionViewAdapterData = CHGCollectionViewAdapterData.init()
     public var rowsOfSectionKeyName:NSString?
     //    public var tableViewDeselectRowAtIndexPathAnimation:Bool = true
     public var controller:UIViewController?
@@ -38,7 +38,7 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
     }
     
     open func numberOfSections(in collectionView: UICollectionView) -> Int {
-        let cellDatas = self.adapterData?.cellDatas;
+        let cellDatas = self.adapterData.cellDatas;
         if cellDatas == nil || cellDatas?.count == 0 {
             return 0;
         }
@@ -46,7 +46,7 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
     }
     
     open func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let cellDatas = self.adapterData?.cellDatas;
+        let cellDatas = self.adapterData.cellDatas;
         if cellDatas?.count == 0 {
             return 0
         }
@@ -63,10 +63,10 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
     }
     
     open func cellDataWithIndexPath(_ indexPath:IndexPath) -> AnyObject? {
-        if self.adapterData?.cellDatas?.count == 0 {
+        if self.adapterData.cellDatas?.count == 0 {
             return nil
         }
-        let sectionData:AnyObject = self.adapterData?.cellDatas![indexPath.section] as AnyObject
+        let sectionData:AnyObject = self.adapterData.cellDatas![indexPath.section] as AnyObject
         if self.rowsOfSectionKeyName != nil && !(sectionData is NSArray) {
             let tempArray:NSArray = sectionData.value(forKey: self.rowsOfSectionKeyName! as String) as! NSArray
             return tempArray[indexPath.row] as AnyObject
@@ -112,9 +112,9 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
         let reusableViewData:NSArray? =
             ((kind as NSString).isEqual(to: UICollectionElementKindSectionHeader)
                 ?
-                    self.adapterData?.headerDatas
+                    self.adapterData.headerDatas
                 :
-                self.adapterData?.footerDatas)
+                self.adapterData.footerDatas)
         if reusableViewData == nil || (reusableViewData?.count)! == 0 || indexPath.section >= (reusableViewData?.count)! {
             return nil
         }
@@ -125,9 +125,9 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
         let reusableViewData:NSArray? =
             ((kind as NSString).isEqual(to: UICollectionElementKindSectionHeader)
                 ?
-                    self.adapterData?.headerDatas
+                    self.adapterData.headerDatas
                 :
-                self.adapterData?.footerDatas)
+                self.adapterData.footerDatas)
         let headerFooterData:AnyObject? = self.headerFooterDataWithrSupplementaryElementOfKind(kind: kind as NSString, indexPath: indexPath)
         if reusableViewData == nil || reusableViewData?.count == 0 || indexPath.section >= reusableViewData?.count ?? 0 {
             return self.defaultReusableView(collectionView, viewForSupplementaryElementOfKind: kind, at: indexPath, headerFooterData: headerFooterData)

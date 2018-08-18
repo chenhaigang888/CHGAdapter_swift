@@ -20,7 +20,12 @@ extension UICollectionView {
     
     open var collectionViewAdapter:CHGCollectionViewAdapter? {
         get {
-            return objc_getAssociatedObject(self, &collectionViewAdapterKey) as? CHGCollectionViewAdapter
+            let adapter = objc_getAssociatedObject(self, &collectionViewAdapterKey) as? CHGCollectionViewAdapter
+            if adapter == nil {
+                self.collectionViewAdapter = CHGSimpleCollectionViewAdapter.init()
+                return self.collectionViewAdapter
+            }
+            return adapter
         }
         set(newValue) {
             objc_setAssociatedObject(self, &collectionViewAdapterKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
@@ -77,4 +82,54 @@ extension UICollectionView {
         self.emptyDataSetSource = dataSource
         self.emptyDataSetDelegate = delegate
     }
+    
+}
+
+// MARK: - 增加快速使用的API
+extension UICollectionView {
+    open var adapterData: CHGCollectionViewAdapterData {
+        get {
+            return (self.collectionViewAdapter?.adapterData)!
+        }
+        set {
+            self.collectionViewAdapter?.adapterData = newValue
+        }
+    }
+    
+    open var cellDatas: NSArray? {
+        get {
+            return self.collectionViewAdapter?.adapterData.cellDatas
+        }
+        set {
+            self.collectionViewAdapter?.adapterData.cellDatas = newValue
+        }
+    }
+    
+    open var footerDatas: NSArray? {
+        get {
+            return self.collectionViewAdapter?.adapterData.footerDatas
+        }
+        set {
+            self.collectionViewAdapter?.adapterData.footerDatas = newValue
+        }
+    }
+    
+    open var headerDatas: NSArray? {
+        get {
+            return self.collectionViewAdapter?.adapterData.headerDatas
+        }
+        set {
+            self.collectionViewAdapter?.adapterData.headerDatas = newValue
+        }
+    }
+    
+    open var customData: AnyObject? {
+        get {
+            return self.collectionViewAdapter?.adapterData.customData
+        }
+        set {
+            self.collectionViewAdapter?.adapterData.customData = newValue
+        }
+    }
+    
 }

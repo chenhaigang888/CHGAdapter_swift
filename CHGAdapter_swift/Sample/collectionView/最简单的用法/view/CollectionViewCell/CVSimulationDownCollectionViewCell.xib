@@ -21,8 +21,11 @@
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tth-ZU-T9M">
                         <rect key="frame" x="0.0" y="0.0" width="211" height="144"/>
+                        <color key="backgroundColor" red="0.96481699486301364" green="0.41711258561643838" blue="0.44140625" alpha="1" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                        <state key="normal" title="模拟下载事件传输及反向传输"/>
+                        <state key="normal" title="模拟下载事件传输及反向传输">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
                         <connections>
                             <action selector="downloadBtnTapWithSender:" destination="gTV-IL-0wX" eventType="touchUpInside" id="IEO-as-h4I"/>
                         </connections>

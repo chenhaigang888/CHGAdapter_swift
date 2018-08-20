@@ -565,9 +565,9 @@
 		8F14D06E20ABC7F4005E4A15 /* Sample */ = {
 			isa = PBXGroup;
 			children = (
+				5F92C2F52127ED8900455EEB /* 入口 */,
 				5FF37AD42128417D00477E61 /* tableView简单的用法(使用NSDictionary) */,
 				5FF37AC321283BB700477E61 /* collectionView简单的用法(使用NSDictionary) */,
-				5F92C2F52127ED8900455EEB /* 入口 */,
 				5F82A09320AC8B8B002A8780 /* collectionView简单的用法(使用Model) */,
 				8F14D08020ABE372005E4A15 /* tableView简单的用法(使用Model) */,
 			);

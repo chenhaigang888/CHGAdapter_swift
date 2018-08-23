@@ -31,4 +31,5 @@ extension CVTitleModel : CHGCollectionViewCellModelProtocol {
 //        }
 //        return CGSize.init(width: 100, height: 100)
 //    }
+    
 }

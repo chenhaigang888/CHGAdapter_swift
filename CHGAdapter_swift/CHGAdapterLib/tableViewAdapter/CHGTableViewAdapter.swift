@@ -18,7 +18,7 @@ public typealias CHGCallBack = (_ data:AnyObject?) -> Void
 ///   - tag: 区分事件发生的场所中的多个事件
 ///   - callBack: 当当前类中处理完事件后异步通知事件所发生的场所
 /// - Returns: 当当前类中处理完事件后同步步通知事件所发生的场所
-public typealias CHGEventTransmissionBlock = (_ target:AnyObject,_ params:AnyObject,_ tag:NSInteger,_ callBack:CHGCallBack?) ->AnyObject? 
+public typealias CHGEventTransmissionBlock = (_ target:AnyObject,_ params:AnyObject,_ tag:NSInteger,_ callBack:CHGCallBack?) ->AnyObject?
 
 /// tableViewDidSelectRow 回调
 public typealias CHGTableViewDidSelectRowBlock = (_ tableView:UITableView,_ indexPath:IndexPath,_ itemData:AnyObject)->Void
@@ -44,7 +44,7 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
     public var footerHeight:CGFloat = 0.01
     
     public var adapterData:CHGTableViewAdapterData = CHGTableViewAdapterData.init()
-    public var rowsOfSectionKeyName:NSString?
+    public var rowsOfSectionKeyName:Any?
     public var tableViewDeselectRowAtIndexPathAnimation:Bool = true
     public var tag:NSInteger = 0
     public var controller:UIViewController?
@@ -88,7 +88,11 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
             return 0;
         }
         if (self.rowsOfSectionKeyName != nil && (!(cellDatas![section] is NSArray))) {
-            return ((cellDatas![section] as AnyObject).value(forKey: self.rowsOfSectionKeyName! as String) as! NSArray).count
+            if rowsOfSectionKeyName is String || rowsOfSectionKeyName is NSString {
+                return ((cellDatas![section] as AnyObject).value(forKey: self.rowsOfSectionKeyName! as! String) as! NSArray).count
+            } else {
+                return (cellDatas![section][keyPath:rowsOfSectionKeyName as! AnyKeyPath] as! NSArray).count
+            }
         }
         let cellData = cellDatas![section]
         if cellData is NSArray {
@@ -104,10 +108,15 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
         }
         let sectionData:AnyObject = self.adapterData.cellDatas![indexPath.section] as AnyObject
         if self.rowsOfSectionKeyName != nil && !(sectionData is NSArray) {
-            let tempArray:NSArray = sectionData.value(forKey: self.rowsOfSectionKeyName! as String) as! NSArray
+            var tempArray:NSArray = []
+            if rowsOfSectionKeyName is String || rowsOfSectionKeyName is NSString {
+                tempArray = sectionData.value(forKey: rowsOfSectionKeyName as! String) as! NSArray
+            } else {
+                tempArray = sectionData[keyPath:rowsOfSectionKeyName as! AnyKeyPath] as! NSArray
+            }
             return tempArray[indexPath.row] as AnyObject
         } else {
-            return sectionData is NSArray ? sectionData[indexPath.row] : sectionData
+            return sectionData is NSArray ? (sectionData as! NSArray)[indexPath.row] as AnyObject : sectionData as AnyObject
         }
     }
     

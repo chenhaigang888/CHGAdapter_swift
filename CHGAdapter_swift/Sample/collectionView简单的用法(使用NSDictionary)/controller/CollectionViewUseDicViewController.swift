@@ -20,36 +20,44 @@ class CollectionViewUseDicViewController: UIViewController {
     }()
     
     lazy var cellDatas:NSArray = {
+//                let test1 = [Test.init(id: "1", name: "张三1", sigin: "签名", icon: "img_qs_50x50"),
+//                             Test.init(id: "1", name: "李四1", sigin: "签名", icon: "img_qs_50x50"),
+//                             Test.init(id: "1", name: "王五1", sigin: "签名", icon: "img_qs_50x50")]
+//
+//                let test2 = [Test.init(id: "1", name: "张三2", sigin: "签名", icon: "img_qs_50x50"),
+//                             Test.init(id: "1", name: "李四2", sigin: "签名", icon: "img_qs_50x50"),
+//                             Test.init(id: "1", name: "王五2", sigin: "签名", icon: "img_qs_50x50")]
+//                let cellDatas =
+//                    [
+//                        Group.init(groupId: "1", groupName: "我的好友", count: "3", test: test1 as NSArray),
+//                        Group.init(groupId: "1", groupName: "我的好友", count: "3", test: test2 as NSArray)
+//                    ]
+        
+        
         let cellDatas =
             [
-                [
-                    ["id":"1","name":"张三1","sigin":"签名1","icon":"img_qs_50x50"],
-                    ["id":"2","name":"李四1","sigin":"签名1","icon":"img_qs_50x50"],
-                    ["id":"3","name":"王五1","sigin":"签名1","icon":"img_qs_50x50"],
+                
+                [   "groupId":"1",
+                    "groupName":"我的好友",
+                    "count":"3",
+                    "test":[
+                        ["id":"1","name":"张三1","sigin":"签名1","icon":"img_qs_50x50"],
+                        ["id":"2","name":"李四1","sigin":"签名1","icon":"img_qs_50x50"],
+                        ["id":"3","name":"王五1","sigin":"签名1","icon":"img_qs_50x50"],
+                    ]
                 ],
-                [
+                [  "groupId":"1",
+                   "groupName":"我的好友",
+                   "count":"3",
+                   "test":[
                     ["id":"4","name":"张三2","sigin":"签名1","icon":"img_qs_50x50"],
                     ["id":"5","name":"李四2","sigin":"签名1","icon":"img_qs_50x50"],
                     ["id":"6","name":"王五2","sigin":"签名1","icon":"img_qs_50x50"],
-                ],
-                [
-                    ["id":"4","name":"张三2","sigin":"签名1","icon":"img_qs_50x50"],
-                    ["id":"5","name":"李四2","sigin":"签名1","icon":"img_qs_50x50"],
-                    ["id":"6","name":"王五2","sigin":"签名1","icon":"img_qs_50x50"],
-                ]
+                    ]]
         ]
         return cellDatas as NSArray
     }()
     
-    lazy var headerData:NSArray = {
-        let headerData =
-            [
-                ["groupId":"1","groupName":"我的好友","count":"3"],
-                ["groupId":"2","groupName":"陌生人","count":"3"],
-                ["groupId":"3","groupName":"黑名单","count":"3"]
-            ]
-        return headerData as NSArray
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,9 +65,10 @@ class CollectionViewUseDicViewController: UIViewController {
         layout.itemSize = CGSize.init(width: 150, height: 150)
         layout.headerReferenceSize = CGSize.init(width: UIScreen.main.bounds.width, height: 30)
         
-        
+//        adapter.rowsOfSectionKeyName = \Group.test
+        adapter.rowsOfSectionKeyName = "test"
         adapter.adapterData.cellDatas = cellDatas
-        adapter.adapterData.headerDatas = headerData
+        adapter.adapterData.headerDatas = cellDatas
         collectionView?.collectionViewAdapter = adapter
         collectionView?.collectionViewLayout = layout
     }

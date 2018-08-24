@@ -10,13 +10,19 @@ import UIKit
 
 class MainViewController: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "CHGAdapter Demo"
         self.tableView.cellDatas = cellDatas
         tableView.tableViewDidSelectRowBlock = tableViewDidSelectRowBlock
+        
+        let titleModel = CVTitleModel.init(name: "晨")
+        let t = TestK.init()
+        t.key = \CVTitleModel.aaa
+        t.aa(data: titleModel)
+        
     }
     
     override func didReceiveMemoryWarning() {

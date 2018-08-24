@@ -25,10 +25,18 @@ class FriendTableViewCell: CHGTableViewCell {
     
     override func cellForRow(atIndexPath indexPath: IndexPath, tableView: UITableView?, data: AnyObject?) {
         super.cellForRow(atIndexPath: indexPath, tableView: tableView, data: data)
-        let dic:NSDictionary = data as! NSDictionary
-        self.icon.image = UIImage.init(named: dic["icon"] as! String)
-        self.name.text = dic["name"] as? String
-        self.sigin.text = dic["sigin"] as? String
+        if data is NSDictionary {
+            let dic:NSDictionary = data as! NSDictionary
+            self.icon.image = UIImage.init(named: dic["icon"] as! String)
+            self.name.text = dic["name"] as? String
+            self.sigin.text = dic["sigin"] as? String
+        } else {
+            let test:Test = data as! Test
+            self.icon.image = UIImage.init(named: test.icon!)
+            self.name.text = test.name
+            self.sigin.text = test.sigin
+        }
+        
     }
     
 }

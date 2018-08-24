@@ -20,9 +20,16 @@ class CVFriendUseDicCollectionViewCell: CHGCollectionViewCell {
 
     override func cellForRow(atIndexPath indexPath: IndexPath, collectionView: UICollectionView?, data: AnyObject?) {
         super.cellForRow(atIndexPath: indexPath, collectionView: collectionView, data: data)
-        let dic:NSDictionary = data as! NSDictionary
-        icon?.image = UIImage.init(named: dic["icon"] as! String)
-        title?.text = dic["name"] as? String
+        if data is NSDictionary {
+            let dic:NSDictionary = data as! NSDictionary
+            icon?.image = UIImage.init(named: dic["icon"] as! String)
+            title?.text = dic["name"] as? String
+        } else {
+            let test:Test = data as! Test
+            icon?.image = UIImage.init(named: test.icon!)
+            title?.text = test.name
+            
+        }
     }
     
 }

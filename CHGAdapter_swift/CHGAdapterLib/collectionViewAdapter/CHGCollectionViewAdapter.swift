@@ -24,7 +24,7 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
     public var headerName:NSString? = ""
     public var footerName:NSString? = ""
     public var adapterData:CHGCollectionViewAdapterData = CHGCollectionViewAdapterData.init()
-    public var rowsOfSectionKeyName:NSString?
+    public var rowsOfSectionKeyName:Any?
     //    public var tableViewDeselectRowAtIndexPathAnimation:Bool = true
     public var controller:UIViewController?
     public var tag:NSInteger?
@@ -52,7 +52,11 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
         }
         
         if self.rowsOfSectionKeyName != nil &&  !(cellDatas![section] is NSArray){
-            return ((cellDatas![section] as AnyObject).value(forKey: self.rowsOfSectionKeyName! as String) as! NSArray).count
+            if rowsOfSectionKeyName is String || rowsOfSectionKeyName is NSString {
+                return ((cellDatas![section] as AnyObject).value(forKey: self.rowsOfSectionKeyName! as! String) as! NSArray).count
+            } else {
+                return (cellDatas![section][keyPath:rowsOfSectionKeyName as! AnyKeyPath] as! NSArray).count
+            }
         }
         let cellData = cellDatas![section]
         if cellData is NSArray {
@@ -66,12 +70,17 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
         if self.adapterData.cellDatas?.count == 0 {
             return nil
         }
-        let sectionData:AnyObject = self.adapterData.cellDatas![indexPath.section] as AnyObject
+        let sectionData = self.adapterData.cellDatas![indexPath.section]
         if self.rowsOfSectionKeyName != nil && !(sectionData is NSArray) {
-            let tempArray:NSArray = sectionData.value(forKey: self.rowsOfSectionKeyName! as String) as! NSArray
+            var tempArray:NSArray = []
+            if rowsOfSectionKeyName is String || rowsOfSectionKeyName is NSString {
+                tempArray = (sectionData as AnyObject).value(forKey: rowsOfSectionKeyName as! String) as! NSArray
+            } else {
+                tempArray = sectionData[keyPath:rowsOfSectionKeyName as! AnyKeyPath] as! NSArray
+            }
             return tempArray[indexPath.row] as AnyObject
         } else {
-            return sectionData is NSArray ? sectionData[indexPath.row] : sectionData
+            return sectionData is NSArray ? (sectionData as! NSArray)[indexPath.row] as AnyObject : sectionData as AnyObject
         }
     }
     

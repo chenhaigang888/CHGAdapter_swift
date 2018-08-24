@@ -14,8 +14,14 @@ class TVTitleDicHeaderFooterView: CHGTableViewHeaderFooterView {
     
     override func headerFooter(headerFooterForSection section: NSInteger, tableView: UITableView, data: AnyObject, type: CHGTableViewHeaderFooterViewType) {
         super.headerFooter(headerFooterForSection: section, tableView: tableView, data: data, type: type)
-        let dic:NSDictionary = data as! NSDictionary
-        title?.text = dic["groupName"] as? String
+        if data is NSDictionary {
+            let dic:NSDictionary = data as! NSDictionary
+            title?.text = dic["groupName"] as? String
+        } else {
+            let group:Group = data as! Group
+            title?.text = group.groupName
+        }
+        
     }
 
 }

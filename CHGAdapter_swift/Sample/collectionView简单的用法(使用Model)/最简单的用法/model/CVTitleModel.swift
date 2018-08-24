@@ -10,6 +10,8 @@ import UIKit
 
 class CVTitleModel: NSObject {
     var name:String?
+    var aaa:Int? = 998
+    
     
     init(name:String) {
         super.init()

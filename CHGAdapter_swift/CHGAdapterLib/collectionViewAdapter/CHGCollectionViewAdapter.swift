@@ -8,7 +8,7 @@
 
 import UIKit
 
-/// tableViewDidSelectRow 回调
+/// collectionViewDidSelectRow 回调
 public typealias CHGCollectionViewDidSelectItemAtIndexPathBlock = (_ collectionView:UICollectionView,_ indexPath:IndexPath,_ itemData:AnyObject)->Void
 
 public protocol CHGCollectionViewAdapterProtocol :UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
@@ -25,7 +25,7 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
     public var footerName:NSString? = ""
     public var adapterData:CHGCollectionViewAdapterData = CHGCollectionViewAdapterData.init()
     public var rowsOfSectionKeyName:Any?
-    //    public var tableViewDeselectRowAtIndexPathAnimation:Bool = true
+    //    public var collectionViewDeselectRowAtIndexPathAnimation:Bool = true
     public var controller:UIViewController?
     public var tag:NSInteger?
     
@@ -187,6 +187,136 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
         if view is CHGCollectionReusableView {
             (view as! CHGCollectionReusableView).reusableViewDidDisappear()
         }
+    }
+    
+    @available(iOS 2.0, *)
+    open func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let collectionView:UICollectionView = scrollView as! UICollectionView
+        guard collectionView.scrollListener?.scrollViewDidScrollBlock != nil else {
+            return
+        }
+        collectionView.scrollListener?.scrollViewDidScrollBlock!(scrollView)
+    }
+    
+    @available(iOS 3.2, *)
+    open func scrollViewDidZoom(_ scrollView: UIScrollView) {
+        let collectionView:UICollectionView = scrollView as! UICollectionView
+        guard collectionView.scrollListener?.scrollViewDidZoomBlock != nil else {
+            return
+        }
+        collectionView.scrollListener?.scrollViewDidZoomBlock!(scrollView)
+    }
+    
+    @available(iOS 2.0, *)
+    open func scrollViewWillBeginDragging(_ scrollView: UIScrollView){
+        let collectionView:UICollectionView = scrollView as! UICollectionView
+        guard collectionView.scrollListener?.scrollViewWillBeginDraggingBlock != nil else {
+            return
+        }
+        collectionView.scrollListener?.scrollViewWillBeginDraggingBlock!(scrollView)
+    }
+    
+    @available(iOS 5.0, *)
+    open func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>){
+        let collectionView:UICollectionView = scrollView as! UICollectionView
+        guard collectionView.scrollListener?.scrollViewWillEndDraggingBlock != nil else {
+            return
+        }
+        collectionView.scrollListener?.scrollViewWillEndDraggingBlock!(scrollView,velocity,targetContentOffset)
+    }
+    
+    @available(iOS 2.0, *)
+    open func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let collectionView:UICollectionView = scrollView as! UICollectionView
+        guard collectionView.scrollListener?.scrollViewDidEndDraggingBlock != nil else {
+            return
+        }
+        collectionView.scrollListener?.scrollViewDidEndDraggingBlock!(scrollView,decelerate)
+    }
+    
+    
+    @available(iOS 2.0, *)
+    open func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+        let collectionView:UICollectionView = scrollView as! UICollectionView
+        guard collectionView.scrollListener?.scrollViewWillBeginDeceleratingBlock != nil else {
+            return
+        }
+        collectionView.scrollListener?.scrollViewWillBeginDeceleratingBlock!(scrollView)
+    }
+    
+    @available(iOS 2.0, *)
+    open func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let collectionView:UICollectionView = scrollView as! UICollectionView
+        guard collectionView.scrollListener?.scrollViewDidEndDeceleratingBlock != nil else {
+            return
+        }
+        collectionView.scrollListener?.scrollViewDidEndDeceleratingBlock!(scrollView)
+    }
+    
+    
+    @available(iOS 2.0, *)
+    open func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        let collectionView:UICollectionView = scrollView as! UICollectionView
+        guard collectionView.scrollListener?.scrollViewDidEndScrollingAnimationBlock != nil else {
+            return
+        }
+        collectionView.scrollListener?.scrollViewDidEndScrollingAnimationBlock!(scrollView)
+    }
+    
+    
+    @available(iOS 2.0, *)
+    open func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        let collectionView:UICollectionView = scrollView as! UICollectionView
+        guard collectionView.scrollListener?.viewForZoomingBlock != nil else {
+            return nil
+        }
+        return collectionView.scrollListener?.viewForZoomingBlock!(scrollView)
+    }
+    
+    @available(iOS 3.2, *)
+    open func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
+        let collectionView:UICollectionView = scrollView as! UICollectionView
+        guard collectionView.scrollListener?.scrollViewWillBeginZoomingBlock != nil else {
+            return
+        }
+        collectionView.scrollListener?.scrollViewWillBeginZoomingBlock!(scrollView,view)
+    }
+    
+    @available(iOS 2.0, *)
+    open func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
+        let collectionView:UICollectionView = scrollView as! UICollectionView
+        guard collectionView.scrollListener?.scrollViewDidEndZoomingBlock != nil else {
+            return
+        }
+        collectionView.scrollListener?.scrollViewDidEndZoomingBlock!(scrollView,view,scale)
+    }
+    
+    
+    @available(iOS 2.0, *)
+    open func scrollViewShouldScrollToTop(_ scrollView: UIScrollView) -> Bool {
+        let collectionView:UICollectionView = scrollView as! UICollectionView
+        guard collectionView.scrollListener?.scrollViewShouldScrollToTopBlock != nil else {
+            return scrollView.scrollsToTop
+        }
+        return (collectionView.scrollListener?.scrollViewShouldScrollToTopBlock!(scrollView))!
+    }
+    
+    @available(iOS 2.0, *)
+    open func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {
+        let collectionView:UICollectionView = scrollView as! UICollectionView
+        guard collectionView.scrollListener?.scrollViewDidScrollToTopBlock != nil else {
+            return
+        }
+        collectionView.scrollListener?.scrollViewDidScrollToTopBlock!(scrollView)
+    }
+    
+    @available(iOS 11.0, *)
+    open func scrollViewDidChangeAdjustedContentInset(_ scrollView: UIScrollView) {
+        let collectionView:UICollectionView = scrollView as! UICollectionView
+        guard collectionView.scrollListener?.scrollViewDidChangeAdjustedContentInsetBlock != nil else {
+            return
+        }
+        collectionView.scrollListener?.scrollViewDidChangeAdjustedContentInsetBlock!(scrollView)
     }
     
 }

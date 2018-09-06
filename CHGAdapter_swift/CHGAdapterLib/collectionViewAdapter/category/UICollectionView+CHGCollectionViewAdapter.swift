@@ -15,6 +15,7 @@ private var collectionViewAdapterKey:Void?
 private var eventTransmissionBlockKey:Void?
 private var collectionViewDidSelectItemAtIndexPathBlockKey:Void?
 private var collectionViewEmptyDataShowKey:Void?
+private var scrollListenerKey:Void?
 
 extension UICollectionView {
     
@@ -31,6 +32,20 @@ extension UICollectionView {
             objc_setAssociatedObject(self, &collectionViewAdapterKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             self.delegate = newValue
             self.dataSource = newValue
+        }
+    }
+    
+    open var scrollListener: ScrollListener? {
+        get {
+            let  scrollListener = objc_getAssociatedObject(self, &scrollListenerKey)
+            guard scrollListener != nil else {
+                self.scrollListener = ScrollListener()
+                return self.scrollListener
+            }
+            return scrollListener as? ScrollListener
+        }
+        set(newValue) {
+            objc_setAssociatedObject(self, &scrollListenerKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
     

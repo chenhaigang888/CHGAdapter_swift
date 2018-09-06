@@ -248,5 +248,135 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
             tableView.tableViewDidSelectRowBlock!(tableView,indexPath,self.cellDataWithIndexPath(indexPath)!)
         }
     }
+    
+    @available(iOS 2.0, *)
+    open func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let tableView:UITableView = scrollView as! UITableView
+        guard tableView.scrollListener?.scrollViewDidScrollBlock != nil else {
+            return
+        }
+        tableView.scrollListener?.scrollViewDidScrollBlock!(scrollView)
+    }
+    
+    @available(iOS 3.2, *)
+    open func scrollViewDidZoom(_ scrollView: UIScrollView) {
+        let tableView:UITableView = scrollView as! UITableView
+        guard tableView.scrollListener?.scrollViewDidZoomBlock != nil else {
+            return
+        }
+        tableView.scrollListener?.scrollViewDidZoomBlock!(scrollView)
+    }
+    
+    @available(iOS 2.0, *)
+    open func scrollViewWillBeginDragging(_ scrollView: UIScrollView){
+        let tableView:UITableView = scrollView as! UITableView
+        guard tableView.scrollListener?.scrollViewWillBeginDraggingBlock != nil else {
+            return
+        }
+        tableView.scrollListener?.scrollViewWillBeginDraggingBlock!(scrollView)
+    }
+    
+    @available(iOS 5.0, *)
+    open func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>){
+        let tableView:UITableView = scrollView as! UITableView
+        guard tableView.scrollListener?.scrollViewWillEndDraggingBlock != nil else {
+            return
+        }
+        tableView.scrollListener?.scrollViewWillEndDraggingBlock!(scrollView,velocity,targetContentOffset)
+    }
+    
+    @available(iOS 2.0, *)
+    open func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let tableView:UITableView = scrollView as! UITableView
+        guard tableView.scrollListener?.scrollViewDidEndDraggingBlock != nil else {
+            return
+        }
+        tableView.scrollListener?.scrollViewDidEndDraggingBlock!(scrollView,decelerate)
+    }
+    
+    
+    @available(iOS 2.0, *)
+    open func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+        let tableView:UITableView = scrollView as! UITableView
+        guard tableView.scrollListener?.scrollViewWillBeginDeceleratingBlock != nil else {
+            return
+        }
+        tableView.scrollListener?.scrollViewWillBeginDeceleratingBlock!(scrollView)
+    }
+    
+    @available(iOS 2.0, *)
+    open func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let tableView:UITableView = scrollView as! UITableView
+        guard tableView.scrollListener?.scrollViewDidEndDeceleratingBlock != nil else {
+            return
+        }
+        tableView.scrollListener?.scrollViewDidEndDeceleratingBlock!(scrollView)
+    }
+    
+    
+    @available(iOS 2.0, *)
+    open func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        let tableView:UITableView = scrollView as! UITableView
+        guard tableView.scrollListener?.scrollViewDidEndScrollingAnimationBlock != nil else {
+            return
+        }
+        tableView.scrollListener?.scrollViewDidEndScrollingAnimationBlock!(scrollView)
+    }
+    
+    
+    @available(iOS 2.0, *)
+    open func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        let tableView:UITableView = scrollView as! UITableView
+        guard tableView.scrollListener?.viewForZoomingBlock != nil else {
+            return nil
+        }
+        return tableView.scrollListener?.viewForZoomingBlock!(scrollView)
+    }
+    
+    @available(iOS 3.2, *)
+    open func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
+        let tableView:UITableView = scrollView as! UITableView
+        guard tableView.scrollListener?.scrollViewWillBeginZoomingBlock != nil else {
+            return
+        }
+        tableView.scrollListener?.scrollViewWillBeginZoomingBlock!(scrollView,view)
+    }
+    
+    @available(iOS 2.0, *)
+    open func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
+        let tableView:UITableView = scrollView as! UITableView
+        guard tableView.scrollListener?.scrollViewDidEndZoomingBlock != nil else {
+            return
+        }
+        tableView.scrollListener?.scrollViewDidEndZoomingBlock!(scrollView,view,scale)
+    }
+    
+    
+    @available(iOS 2.0, *)
+    open func scrollViewShouldScrollToTop(_ scrollView: UIScrollView) -> Bool {
+        let tableView:UITableView = scrollView as! UITableView
+        guard tableView.scrollListener?.scrollViewShouldScrollToTopBlock != nil else {
+            return scrollView.scrollsToTop
+        }
+        return (tableView.scrollListener?.scrollViewShouldScrollToTopBlock!(scrollView))!
+    }
+    
+    @available(iOS 2.0, *)
+    open func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {
+        let tableView:UITableView = scrollView as! UITableView
+        guard tableView.scrollListener?.scrollViewDidScrollToTopBlock != nil else {
+            return
+        }
+        tableView.scrollListener?.scrollViewDidScrollToTopBlock!(scrollView)
+    }
+    
+    @available(iOS 11.0, *)
+    open func scrollViewDidChangeAdjustedContentInset(_ scrollView: UIScrollView) {
+        let tableView:UITableView = scrollView as! UITableView
+        guard tableView.scrollListener?.scrollViewDidChangeAdjustedContentInsetBlock != nil else {
+            return
+        }
+        tableView.scrollListener?.scrollViewDidChangeAdjustedContentInsetBlock!(scrollView)
+    }
 }
 

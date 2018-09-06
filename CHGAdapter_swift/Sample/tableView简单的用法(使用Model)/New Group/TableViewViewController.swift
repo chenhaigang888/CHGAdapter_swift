@@ -18,6 +18,10 @@ class TableViewViewController: UIViewController {
         tableView?.cellDatas = cellDatas
         tableView?.footerDatas = footerDatas
         tableView?.eventTransmissionBlock = eventTransmissionBlock
+        tableView?.scrollListener?.scrollViewDidScrollBlock = {(scrollView)in
+            print("scrollView.contentOffset.y:\(scrollView.contentOffset.y)")
+        }
+
     }
 
     override func didReceiveMemoryWarning() {

@@ -15,6 +15,7 @@ private var tableViewAdapterKey: Void?
 private var eventTransmissionBlockKey: Void?
 private var tableViewDidSelectRowBlockKey: Void?
 private var tableViewEmptyDataShowKey: Void?
+private var scrollListenerKey:Void?
 
 extension UITableView {
     
@@ -31,6 +32,20 @@ extension UITableView {
             objc_setAssociatedObject(self, &tableViewAdapterKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             self.delegate = newValue
             self.dataSource = newValue
+        }
+    }
+    
+    open var scrollListener: ScrollListener? {
+        get {
+            let  scrollListener = objc_getAssociatedObject(self, &scrollListenerKey)
+            guard scrollListener != nil else {
+                self.scrollListener = ScrollListener()
+                return self.scrollListener
+            }
+            return scrollListener as? ScrollListener
+        }
+        set(newValue) {
+            objc_setAssociatedObject(self, &scrollListenerKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
     
@@ -145,5 +160,4 @@ extension UITableView {
             self.tableViewAdapter?.adapterData.customData = newValue
         }
     }
-    
 }

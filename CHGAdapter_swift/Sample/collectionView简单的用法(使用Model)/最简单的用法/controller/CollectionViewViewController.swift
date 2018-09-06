@@ -29,6 +29,9 @@ class CollectionViewViewController: UIViewController {
         collectionView.footerDatas = footerDatas
         collectionView.collectionViewDidSelectItemAtIndexPathBlock = collectionViewDidSelectItemAtIndexPathBlock
         collectionView.eventTransmissionBlock = eventTransmissionBlock
+        collectionView?.scrollListener?.scrollViewDidScrollBlock = {(scrollView)in
+            print("scrollView.contentOffset.y:\(scrollView.contentOffset.y)")
+        }
     }
 
     override func didReceiveMemoryWarning() {

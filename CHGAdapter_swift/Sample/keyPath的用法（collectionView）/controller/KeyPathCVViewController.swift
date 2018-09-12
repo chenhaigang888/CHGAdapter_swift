@@ -14,6 +14,7 @@ class KeyPathCVViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let foods:[Goods] =
         [
             Goods.init(name: "汉堡", price: 20),
@@ -22,13 +23,15 @@ class KeyPathCVViewController: UIViewController {
             Goods.init(name: "薯条", price: 35),
         ]
         
-        let pc:[Goods] =
+        let pcs:[Goods] =
         [
             Goods.init(name: "苹果电脑", price: 20),
             Goods.init(name: "联想电脑", price: 30),
             Goods.init(name: "Dell电脑", price: 32),
             Goods.init(name: "惠普电脑", price: 35),
         ]
+        
+        
         //-----------------------------------------------
         let citys1:[CityModel] =
         [
@@ -37,7 +40,7 @@ class KeyPathCVViewController: UIViewController {
             CityModel.init(name: "广州"),
             CityModel.init(name: "深圳"),
         ]
-        
+
         let citys2:[CityModel] =
         [
             CityModel.init(name: "纽约"),
@@ -49,7 +52,7 @@ class KeyPathCVViewController: UIViewController {
         collectionView?.cellDatas =
         [
             GoodsCategory.init(name: "食品", goods: foods),
-            GoodsCategory.init(name: "电脑", goods: pc),
+            GoodsCategory.init(name: "电脑", goods: pcs),
             CountryModel.init(name: "中国", citys: citys1),
             CountryModel.init(name: "美国", citys: citys2)
         ]

@@ -81,50 +81,51 @@ public extension CHGTableViewHeaderFooterModelProtocol {
 open class CHGSimpleTableViewAdapter: CHGTableViewAdapter {
     
     override open func obtainCellNameWithCell(_ data: AnyObject, tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> NSString {
-        let tableViewCellModelProtocol:CHGTableViewCellModelProtocol = data as! CHGTableViewCellModelProtocol
+        guard let tableViewCellModelProtocol:CHGTableViewCellModelProtocol = data as? CHGTableViewCellModelProtocol else {
+            return super.obtainCellNameWithCell(data, tableView: tableView, cellForRowAtIndexPath: indexPath)
+        }
         return tableViewCellModelProtocol.cellClassName(tableView,indexPath: indexPath) as NSString
     }
     
     override open func obtainHeaderNameWithHeader(_ data: AnyObject, tableView: UITableView, viewForHeaderInSection section: NSInteger) -> NSString {
-        let tableViewHeaderFooterModelProtocol:CHGTableViewHeaderFooterModelProtocol = data as! CHGTableViewHeaderFooterModelProtocol
+        guard let tableViewHeaderFooterModelProtocol:CHGTableViewHeaderFooterModelProtocol = data as? CHGTableViewHeaderFooterModelProtocol else {
+            return super.obtainHeaderNameWithHeader(data, tableView: tableView, viewForHeaderInSection: section)
+        }
         return tableViewHeaderFooterModelProtocol.headerFooterClass(tableView, section: section, type: .HeaderType) as NSString
     }
     
     open override func subDataKeyPath(_ indexPath: IndexPath, targetView: UIScrollView) -> Any? {
-        let sectionDatas = self.adapterData.cellDatas![indexPath.section]
-        if sectionDatas is CHGTableViewHeaderFooterModelProtocol {
-            let tableViewHeaderFooterModelProtocol:CHGTableViewHeaderFooterModelProtocol = sectionDatas as! CHGTableViewHeaderFooterModelProtocol
-            let keyPath = tableViewHeaderFooterModelProtocol.subDataKeyPath(indexPath,inTableView: targetView as! UITableView)
-            return keyPath
+        guard let tableViewHeaderFooterModelProtocol:CHGTableViewHeaderFooterModelProtocol = self.adapterData.cellDatas![indexPath.section] as? CHGTableViewHeaderFooterModelProtocol else {
+            return super.subDataKeyPath(indexPath, targetView: targetView)
         }
-        return super.subDataKeyPath(indexPath, targetView: targetView)
+        return tableViewHeaderFooterModelProtocol.subDataKeyPath(indexPath,inTableView: targetView as! UITableView)
     }
     
     override open func obtainFooterNameWithFooter(_ data: AnyObject, tableView: UITableView, viewForFooterInSection section: NSInteger) -> NSString {
-        let tableViewHeaderFooterModelProtocol:CHGTableViewHeaderFooterModelProtocol = data as! CHGTableViewHeaderFooterModelProtocol
+        guard let tableViewHeaderFooterModelProtocol:CHGTableViewHeaderFooterModelProtocol = data as? CHGTableViewHeaderFooterModelProtocol else {
+            return super.obtainFooterNameWithFooter(data, tableView: tableView, viewForFooterInSection: section)
+        }
         return tableViewHeaderFooterModelProtocol.headerFooterClass(tableView, section: section, type: .FooterType) as NSString
     }
     
     override open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let tableViewCellModelProtocol:CHGTableViewCellModelProtocol = cellDataWithIndexPath(indexPath,tableView: tableView) as! CHGTableViewCellModelProtocol
+        guard let tableViewCellModelProtocol:CHGTableViewCellModelProtocol = cellDataWithIndexPath(indexPath,tableView: tableView) as? CHGTableViewCellModelProtocol else {
+            return super.tableView(tableView, heightForRowAt: indexPath)
+        }
         return tableViewCellModelProtocol.cellHeigh(tableView, indexPath: indexPath)
     }
     
     override open func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        let headerData = headerFooterDataWithType(type: .HeaderType, section: section)
-        if headerData != nil {
-            let tableViewHeaderFooterModelProtocol:CHGTableViewHeaderFooterModelProtocol = headerFooterDataWithType(type: .HeaderType, section: section) as! CHGTableViewHeaderFooterModelProtocol
-            return tableViewHeaderFooterModelProtocol.headerFooterHeigh(tableView, section: section, type: .HeaderType)
+        guard let tableViewHeaderFooterModelProtocol:CHGTableViewHeaderFooterModelProtocol = headerFooterDataWithType(type: .HeaderType, section: section) as? CHGTableViewHeaderFooterModelProtocol else {
+            return super.tableView(tableView, heightForHeaderInSection: section)
         }
-        return super.tableView(tableView, heightForHeaderInSection: section)
+        return tableViewHeaderFooterModelProtocol.headerFooterHeigh(tableView, section: section, type: .HeaderType)
     }
     
     override open func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        let headerData = headerFooterDataWithType(type: .FooterType, section: section)
-        if headerData != nil {
-            let tableViewHeaderFooterModelProtocol:CHGTableViewHeaderFooterModelProtocol = headerFooterDataWithType(type: .FooterType, section: section) as! CHGTableViewHeaderFooterModelProtocol
-            return tableViewHeaderFooterModelProtocol.headerFooterHeigh(tableView, section: section, type: .FooterType)
+        guard let tableViewHeaderFooterModelProtocol:CHGTableViewHeaderFooterModelProtocol = headerFooterDataWithType(type: .FooterType, section: section) as? CHGTableViewHeaderFooterModelProtocol else {
+            return super.tableView(tableView, heightForFooterInSection: section)
         }
-        return super.tableView(tableView, heightForFooterInSection: section)
+        return tableViewHeaderFooterModelProtocol.headerFooterHeigh(tableView, section: section, type: .FooterType)
     }
 }

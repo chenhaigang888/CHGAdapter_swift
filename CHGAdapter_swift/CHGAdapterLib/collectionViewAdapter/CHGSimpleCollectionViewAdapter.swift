@@ -201,7 +201,16 @@ open class CHGSimpleCollectionViewAdapter: CHGCollectionViewAdapter {
         guard let supplementaryElementModelProtocol:CHGCollectionViewSupplementaryElementModelProtocol = self.adapterData.cellDatas![indexPath.section] as? CHGCollectionViewSupplementaryElementModelProtocol else {
             return super.subDataKeyPath(indexPath, targetView: targetView)
         }
-        return supplementaryElementModelProtocol.subDataKeyPath(indexPath, inCollectionView: targetView as! UICollectionView)
+        let keyPath = supplementaryElementModelProtocol.subDataKeyPath(indexPath, inCollectionView: targetView as! UICollectionView)
+        if keyPath is NSString || keyPath is String {
+            let keyPathStr:NSString = keyPath as! NSString
+            if keyPathStr.length == 0 {
+                return super.subDataKeyPath(indexPath, targetView: targetView)
+            } else {
+                return keyPathStr
+            }
+        }
+        return keyPath
     }
     
 }

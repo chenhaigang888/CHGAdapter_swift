@@ -98,7 +98,16 @@ open class CHGSimpleTableViewAdapter: CHGTableViewAdapter {
         guard let tableViewHeaderFooterModelProtocol:CHGTableViewHeaderFooterModelProtocol = self.adapterData.cellDatas![indexPath.section] as? CHGTableViewHeaderFooterModelProtocol else {
             return super.subDataKeyPath(indexPath, targetView: targetView)
         }
-        return tableViewHeaderFooterModelProtocol.subDataKeyPath(indexPath,inTableView: targetView as! UITableView)
+        let keyPath = tableViewHeaderFooterModelProtocol.subDataKeyPath(indexPath,inTableView: targetView as! UITableView)
+        if keyPath is NSString || keyPath is String {
+            let keyPathStr:NSString = keyPath as! NSString
+            if keyPathStr.length == 0 {
+                return super.subDataKeyPath(indexPath, targetView: targetView)
+            } else {
+                return keyPathStr
+            }
+        }
+        return keyPath
     }
     
     override open func obtainFooterNameWithFooter(_ data: AnyObject, tableView: UITableView, viewForFooterInSection section: NSInteger) -> NSString {

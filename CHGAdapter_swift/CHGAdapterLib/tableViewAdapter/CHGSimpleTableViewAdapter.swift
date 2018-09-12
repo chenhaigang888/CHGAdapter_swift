@@ -84,13 +84,13 @@ open class CHGSimpleTableViewAdapter: CHGTableViewAdapter {
         return tableViewHeaderFooterModelProtocol.headerFooterClass(tableView, section: section, type: .HeaderType) as NSString
     }
     
-    open override func subDataKeyPath(_ indexPath: IndexPath, inTableView tableView: UITableView) -> Any? {
+    open override func subDataKeyPath(_ indexPath: IndexPath, targetView: UIScrollView) -> Any? {
         let sectionDatas = self.adapterData.cellDatas![indexPath.section]
         if sectionDatas is NSArray {
             return ""
         }
         let tableViewHeaderFooterModelProtocol:CHGTableViewHeaderFooterModelProtocol = sectionDatas as! CHGTableViewHeaderFooterModelProtocol
-        let keyPath = tableViewHeaderFooterModelProtocol.subDataKeyPath(indexPath,inTableView: tableView)
+        let keyPath = tableViewHeaderFooterModelProtocol.subDataKeyPath(indexPath,inTableView: targetView as! UITableView)
         return keyPath
     }
     

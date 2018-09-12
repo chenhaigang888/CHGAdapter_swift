@@ -89,6 +89,7 @@
 		8FB8F15A2148AEF500B96551 /* CountryHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FB8F1592148AEF500B96551 /* CountryHeaderFooterView.xib */; };
 		8FB8F15D2148AFAB00B96551 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB8F15B2148AFAB00B96551 /* CityTableViewCell.swift */; };
 		8FB8F15E2148AFAB00B96551 /* CityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FB8F15C2148AFAB00B96551 /* CityTableViewCell.xib */; };
+		8FB8F1602148B47200B96551 /* CHGSubDataOfKeyPathDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB8F15F2148B47200B96551 /* CHGSubDataOfKeyPathDelegate.swift */; };
 		B62A927F3BD3D0A21D326384 /* Pods_CHGAdapter_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F179A36227BDEF315AF738A8 /* Pods_CHGAdapter_swift.framework */; };
 /* End PBXBuildFile section */
 
@@ -198,6 +199,7 @@
 		8FB8F1592148AEF500B96551 /* CountryHeaderFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryHeaderFooterView.xib; sourceTree = "<group>"; };
 		8FB8F15B2148AFAB00B96551 /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
 		8FB8F15C2148AFAB00B96551 /* CityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityTableViewCell.xib; sourceTree = "<group>"; };
+		8FB8F15F2148B47200B96551 /* CHGSubDataOfKeyPathDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CHGSubDataOfKeyPathDelegate.swift; sourceTree = "<group>"; };
 		EC11160D41E092B7E5E97090 /* Pods-CHGAdapter_swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHGAdapter_swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-CHGAdapter_swift/Pods-CHGAdapter_swift.release.xcconfig"; sourceTree = "<group>"; };
 		F179A36227BDEF315AF738A8 /* Pods_CHGAdapter_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CHGAdapter_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F23B5014BDF06F048C4998BF /* Pods-CHGAdapter_swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHGAdapter_swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CHGAdapter_swift/Pods-CHGAdapter_swift.debug.xcconfig"; sourceTree = "<group>"; };
@@ -601,6 +603,7 @@
 			children = (
 				8F0EE8B721410B0A004058D7 /* model */,
 				8F0EE8B6214109F5004058D7 /* category */,
+				8FB8F15F2148B47200B96551 /* CHGSubDataOfKeyPathDelegate.swift */,
 			);
 			path = public;
 			sourceTree = "<group>";
@@ -1011,6 +1014,7 @@
 				5FF37AAE2128266E00477E61 /* TVInputTextModel.swift in Sources */,
 				8F0A9F782147EE9A0030353C /* GoodsCategoryTableViewHeaderFooterView.swift in Sources */,
 				8F126EB3212AEF61003FD300 /* TitleCollectionViewCell.swift in Sources */,
+				8FB8F1602148B47200B96551 /* CHGSubDataOfKeyPathDelegate.swift in Sources */,
 				8F2271B020EA243F00C72514 /* CHGCollectionViewAdapterData.swift in Sources */,
 				8F0A9F752147ED2B0030353C /* GoodsCategory.swift in Sources */,
 				5FF37AE621284C1300477E61 /* CVFriendUseDicCollectionViewCell.swift in Sources */,

@@ -36,7 +36,6 @@ class FriendTableViewCell: CHGTableViewCell {
             self.name.text = test.name
             self.sigin.text = test.sigin
         }
-        
     }
     
 }

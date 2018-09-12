@@ -50,6 +50,10 @@ class MainViewController: UIViewController {
                 let vc = TableViewUseDicViewController()
                 vc.title = titleModel.name
                 self?.navigationController?.pushViewController(vc, animated: true)
+            } else if indexPath.row == 4 {
+                let vc = KeyPathViewController()
+                vc.title = titleModel.name
+                self?.navigationController?.pushViewController(vc, animated: true)
             }
         }
     }()
@@ -63,6 +67,7 @@ class MainViewController: UIViewController {
                     TitleModel.init(name: "tableView简单的用法(使用Model)"),
                     TitleModel.init(name: "collectionView简单的用法(使用NSDictionary)"),
                     TitleModel.init(name: "tableView简单的用法(使用NSDictionary)"),
+                    TitleModel.init(name: "keyPath的用法（tableView）")
                 ]
             ]
         return cellDatas as NSArray

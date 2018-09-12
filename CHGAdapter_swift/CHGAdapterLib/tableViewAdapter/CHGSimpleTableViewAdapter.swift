@@ -26,6 +26,8 @@ public protocol CHGTableViewCellModelProtocol {
     ///   - indexPath: 当前model所在的indexPath
     /// - Returns: cell、headerFooter的高度
     func cellHeigh(_ tableView:UITableView, indexPath:IndexPath) -> CGFloat
+    
+    
 }
 
 ///header footer的model需要实现的协议
@@ -58,6 +60,15 @@ public protocol CHGTableViewHeaderFooterModelProtocol {
     ///   - type: 表示当前model在header或者footer view中
     /// - Returns: 返回header footer的高度
     func headerFooterHeigh(_ tableView: UITableView, section: NSInteger,type:CHGTableViewHeaderFooterViewType) -> CGFloat
+    
+    func subDataKeyPath(_ indexPath:IndexPath, tableView: UITableView) -> Any
+}
+
+public extension CHGTableViewHeaderFooterModelProtocol {
+    
+    func subDataKeyPath(_ indexPath:IndexPath, tableView: UITableView) -> Any {
+        return ""
+    }
 }
 
 /// 简单的adapter，此adapter为使用TableView进行页面布局而使用，使用此adapter 需要cellData实现CHGTableViewCellModelProtocol协议，headerData和footerData需要实现CHGTableViewHeaderFooterModelProtocol协议
@@ -73,13 +84,23 @@ open class CHGSimpleTableViewAdapter: CHGTableViewAdapter {
         return tableViewHeaderFooterModelProtocol.headerFooterClass(tableView, section: section, type: .HeaderType) as NSString
     }
     
+    open override func subDataKeyPath(_ indexPath: IndexPath, tableView: UITableView) -> Any? {
+        let sectionDatas = self.adapterData.cellDatas![indexPath.section]
+        if sectionDatas is NSArray {
+            return ""
+        }
+        let tableViewHeaderFooterModelProtocol:CHGTableViewHeaderFooterModelProtocol = sectionDatas as! CHGTableViewHeaderFooterModelProtocol
+        let keyPath = tableViewHeaderFooterModelProtocol.subDataKeyPath(indexPath, tableView: tableView)
+        return keyPath
+    }
+    
     override open func obtainFooterNameWithFooter(_ data: AnyObject, tableView: UITableView, viewForFooterInSection section: NSInteger) -> NSString {
         let tableViewHeaderFooterModelProtocol:CHGTableViewHeaderFooterModelProtocol = data as! CHGTableViewHeaderFooterModelProtocol
         return tableViewHeaderFooterModelProtocol.headerFooterClass(tableView, section: section, type: .FooterType) as NSString
     }
     
     override open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let tableViewCellModelProtocol:CHGTableViewCellModelProtocol = cellDataWithIndexPath(indexPath) as! CHGTableViewCellModelProtocol
+        let tableViewCellModelProtocol:CHGTableViewCellModelProtocol = cellDataWithIndexPath(indexPath,tableView: tableView) as! CHGTableViewCellModelProtocol
         return tableViewCellModelProtocol.cellHeigh(tableView, indexPath: indexPath)
     }
     

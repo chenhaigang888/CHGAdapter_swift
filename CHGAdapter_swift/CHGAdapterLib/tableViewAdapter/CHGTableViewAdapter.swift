@@ -94,7 +94,9 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
         let subDataKeyPathTemp = self.subDataKeyPath(IndexPath.init(row: 0, section: section), targetView: tableView)
         if (subDataKeyPathTemp != nil && (!(cellDatas![section] is NSArray))) {
             if subDataKeyPathTemp is String || subDataKeyPathTemp is NSString {
-                return ((cellDatas![section] as AnyObject).value(forKey: subDataKeyPathTemp! as! String) as! NSArray).count
+                if (subDataKeyPathTemp as? NSString)?.length != 0 {
+                    return ((cellDatas![section] as AnyObject).value(forKey: subDataKeyPathTemp! as! String) as! NSArray).count
+                }
             } else {
                 return (cellDatas![section][keyPath:subDataKeyPathTemp as! AnyKeyPath] as! NSArray).count
             }
@@ -116,11 +118,13 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
         if subDataKeyPathTemp != nil && !(sectionData is NSArray) {
             var tempArray:NSArray = []
             if subDataKeyPathTemp is String || subDataKeyPathTemp is NSString {
-                tempArray = sectionData.value(forKey: subDataKeyPathTemp as! String) as! NSArray
+                if (subDataKeyPathTemp as? NSString)?.length != 0 {
+                    tempArray = sectionData.value(forKey: subDataKeyPathTemp as! String) as! NSArray
+                }
             } else {
                 tempArray = sectionData[keyPath:subDataKeyPathTemp as! AnyKeyPath] as! NSArray
             }
-            return tempArray[indexPath.row] as AnyObject
+            return tempArray.count == 0 ? sectionData as AnyObject : tempArray[indexPath.row] as AnyObject
         } else {
             return sectionData is NSArray ? (sectionData as! NSArray)[indexPath.row] as AnyObject : sectionData as AnyObject
         }

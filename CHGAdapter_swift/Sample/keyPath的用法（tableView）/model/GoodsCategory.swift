@@ -35,6 +35,17 @@ extension GoodsCategory: CHGTableViewHeaderFooterModelProtocol {
     
 }
 
+extension GoodsCategory: CHGCollectionViewSupplementaryElementModelProtocol {
+    func reusableViewInCollectionView(collectionView: UICollectionView, supplementaryElementOfKind kind: String, atIndexPath indexPath: IndexPath) -> String {
+        return "GoodsCategoryCollectionReusableView"
+    }
+    
+    func subDataKeyPath(_ indexPath: IndexPath, inCollectionView collectionView: UICollectionView) -> Any {
+        return \GoodsCategory.goods
+    }
+    
+}
+
 class Goods: NSObject {
     
     var name:String?//商品名称
@@ -56,5 +67,11 @@ extension Goods: CHGTableViewCellModelProtocol {
         return -1
     }
     
+}
+
+extension Goods: CHGCollectionViewCellModelProtocol {
+    func cellClassNameInCollectionView(collectionView: UICollectionView, atIndexPath: IndexPath) -> String {
+        return "GoodsCollectionViewCell"
+    }
     
 }

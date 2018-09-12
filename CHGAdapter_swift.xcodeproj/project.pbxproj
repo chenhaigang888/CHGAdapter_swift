@@ -90,6 +90,16 @@
 		8FB8F15D2148AFAB00B96551 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB8F15B2148AFAB00B96551 /* CityTableViewCell.swift */; };
 		8FB8F15E2148AFAB00B96551 /* CityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FB8F15C2148AFAB00B96551 /* CityTableViewCell.xib */; };
 		8FB8F1602148B47200B96551 /* CHGSubDataOfKeyPathDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB8F15F2148B47200B96551 /* CHGSubDataOfKeyPathDelegate.swift */; };
+		8FB8F1672148C02300B96551 /* KeyPathCVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB8F1652148C02300B96551 /* KeyPathCVViewController.swift */; };
+		8FB8F1682148C02300B96551 /* KeyPathCVViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FB8F1662148C02300B96551 /* KeyPathCVViewController.xib */; };
+		8FB8F16D2148C0B800B96551 /* GoodsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB8F16B2148C0B800B96551 /* GoodsCollectionViewCell.swift */; };
+		8FB8F16E2148C0B800B96551 /* GoodsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FB8F16C2148C0B800B96551 /* GoodsCollectionViewCell.xib */; };
+		8FB8F1712148C0CC00B96551 /* CityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB8F16F2148C0CC00B96551 /* CityCollectionViewCell.swift */; };
+		8FB8F1722148C0CC00B96551 /* CityCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FB8F1702148C0CC00B96551 /* CityCollectionViewCell.xib */; };
+		8FB8F1752148C1A100B96551 /* GoodsCategoryCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB8F1732148C1A100B96551 /* GoodsCategoryCollectionReusableView.swift */; };
+		8FB8F1762148C1A100B96551 /* GoodsCategoryCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FB8F1742148C1A100B96551 /* GoodsCategoryCollectionReusableView.xib */; };
+		8FB8F1792148C22A00B96551 /* CountyCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB8F1772148C22A00B96551 /* CountyCollectionReusableView.swift */; };
+		8FB8F17A2148C22A00B96551 /* CountyCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FB8F1782148C22A00B96551 /* CountyCollectionReusableView.xib */; };
 		B62A927F3BD3D0A21D326384 /* Pods_CHGAdapter_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F179A36227BDEF315AF738A8 /* Pods_CHGAdapter_swift.framework */; };
 /* End PBXBuildFile section */
 
@@ -200,6 +210,16 @@
 		8FB8F15B2148AFAB00B96551 /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
 		8FB8F15C2148AFAB00B96551 /* CityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityTableViewCell.xib; sourceTree = "<group>"; };
 		8FB8F15F2148B47200B96551 /* CHGSubDataOfKeyPathDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CHGSubDataOfKeyPathDelegate.swift; sourceTree = "<group>"; };
+		8FB8F1652148C02300B96551 /* KeyPathCVViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPathCVViewController.swift; sourceTree = "<group>"; };
+		8FB8F1662148C02300B96551 /* KeyPathCVViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyPathCVViewController.xib; sourceTree = "<group>"; };
+		8FB8F16B2148C0B800B96551 /* GoodsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsCollectionViewCell.swift; sourceTree = "<group>"; };
+		8FB8F16C2148C0B800B96551 /* GoodsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoodsCollectionViewCell.xib; sourceTree = "<group>"; };
+		8FB8F16F2148C0CC00B96551 /* CityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCollectionViewCell.swift; sourceTree = "<group>"; };
+		8FB8F1702148C0CC00B96551 /* CityCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityCollectionViewCell.xib; sourceTree = "<group>"; };
+		8FB8F1732148C1A100B96551 /* GoodsCategoryCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsCategoryCollectionReusableView.swift; sourceTree = "<group>"; };
+		8FB8F1742148C1A100B96551 /* GoodsCategoryCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoodsCategoryCollectionReusableView.xib; sourceTree = "<group>"; };
+		8FB8F1772148C22A00B96551 /* CountyCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountyCollectionReusableView.swift; sourceTree = "<group>"; };
+		8FB8F1782148C22A00B96551 /* CountyCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountyCollectionReusableView.xib; sourceTree = "<group>"; };
 		EC11160D41E092B7E5E97090 /* Pods-CHGAdapter_swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHGAdapter_swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-CHGAdapter_swift/Pods-CHGAdapter_swift.release.xcconfig"; sourceTree = "<group>"; };
 		F179A36227BDEF315AF738A8 /* Pods_CHGAdapter_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CHGAdapter_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F23B5014BDF06F048C4998BF /* Pods-CHGAdapter_swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CHGAdapter_swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CHGAdapter_swift/Pods-CHGAdapter_swift.debug.xcconfig"; sourceTree = "<group>"; };
@@ -704,6 +724,7 @@
 				5F82A09320AC8B8B002A8780 /* collectionView简单的用法(使用Model) */,
 				8F14D08020ABE372005E4A15 /* tableView简单的用法(使用Model) */,
 				8F0A9F6C2147EBC70030353C /* keyPath的用法（tableView） */,
+				8FB8F1612148BFD600B96551 /* keyPath的用法（collectionView） */,
 			);
 			path = Sample;
 			sourceTree = "<group>";
@@ -792,6 +813,63 @@
 				8F2271AA20EA243F00C72514 /* CHGTableViewAdapterData.swift */,
 			);
 			path = model;
+			sourceTree = "<group>";
+		};
+		8FB8F1612148BFD600B96551 /* keyPath的用法（collectionView） */ = {
+			isa = PBXGroup;
+			children = (
+				8FB8F1642148C00200B96551 /* model */,
+				8FB8F1632148BFFB00B96551 /* view */,
+				8FB8F1622148BFF000B96551 /* controller */,
+			);
+			path = "keyPath的用法（collectionView）";
+			sourceTree = "<group>";
+		};
+		8FB8F1622148BFF000B96551 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				8FB8F1652148C02300B96551 /* KeyPathCVViewController.swift */,
+				8FB8F1662148C02300B96551 /* KeyPathCVViewController.xib */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		8FB8F1632148BFFB00B96551 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				8FB8F16A2148C07F00B96551 /* CollectionViewHeaderFooterView */,
+				8FB8F1692148C07400B96551 /* CollectionViewCell */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		8FB8F1642148C00200B96551 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		8FB8F1692148C07400B96551 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				8FB8F16B2148C0B800B96551 /* GoodsCollectionViewCell.swift */,
+				8FB8F16C2148C0B800B96551 /* GoodsCollectionViewCell.xib */,
+				8FB8F16F2148C0CC00B96551 /* CityCollectionViewCell.swift */,
+				8FB8F1702148C0CC00B96551 /* CityCollectionViewCell.xib */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		8FB8F16A2148C07F00B96551 /* CollectionViewHeaderFooterView */ = {
+			isa = PBXGroup;
+			children = (
+				8FB8F1732148C1A100B96551 /* GoodsCategoryCollectionReusableView.swift */,
+				8FB8F1742148C1A100B96551 /* GoodsCategoryCollectionReusableView.xib */,
+				8FB8F1772148C22A00B96551 /* CountyCollectionReusableView.swift */,
+				8FB8F1782148C22A00B96551 /* CountyCollectionReusableView.xib */,
+			);
+			path = CollectionViewHeaderFooterView;
 			sourceTree = "<group>";
 		};
 		B079C4416BACE4EC4FD18FDC /* Frameworks */ = {
@@ -921,6 +999,7 @@
 				5F92C3032127EF0500455EEB /* TitleTableViewCell.xib in Resources */,
 				5FF37ADD2128420F00477E61 /* TableViewUseDicViewController.xib in Resources */,
 				5FF37AAC2128265700477E61 /* TVInputTextTableViewCell.xib in Resources */,
+				8FB8F17A2148C22A00B96551 /* CountyCollectionReusableView.xib in Resources */,
 				8F0A9F7A2147EEA30030353C /* GoodsCategoryTableViewHeaderFooterView.xib in Resources */,
 				5FF37AE221284A6500477E61 /* TVTitleDicHeaderFooterView.xib in Resources */,
 				5FF37ACF21283F3A00477E61 /* FriendTableViewCell.xib in Resources */,
@@ -928,12 +1007,16 @@
 				8F0A9F732147EC350030353C /* KeyPathViewController.xib in Resources */,
 				5F92C3072127F2DF00455EEB /* CollectionViewViewController.xib in Resources */,
 				8FB8F15E2148AFAB00B96551 /* CityTableViewCell.xib in Resources */,
+				8FB8F16E2148C0B800B96551 /* GoodsCollectionViewCell.xib in Resources */,
+				8FB8F1682148C02300B96551 /* KeyPathCVViewController.xib in Resources */,
 				5F92C2FC2127EDC300455EEB /* MainViewController.xib in Resources */,
 				5FF37AB421282BCE00477E61 /* TVSubmitHeaderFooterView.xib in Resources */,
 				5F92C30E2127F6DC00455EEB /* CVTitleCollectionViewCell.xib in Resources */,
+				8FB8F1722148C0CC00B96551 /* CityCollectionViewCell.xib in Resources */,
 				5FF37ABA2128325D00477E61 /* TVTitleHeaderFooterView.xib in Resources */,
 				8F0A9F7F2147EF460030353C /* GoodsTableViewCell.xib in Resources */,
 				5FF37A9F212815B700477E61 /* CVSimulationDownCollectionViewCell.xib in Resources */,
+				8FB8F1762148C1A100B96551 /* GoodsCategoryCollectionReusableView.xib in Resources */,
 				5FF37A9B21280EFC00477E61 /* CVInputTextCollectionViewCell.xib in Resources */,
 				8F14D04720ABC4A5005E4A15 /* Assets.xcassets in Resources */,
 				5FF37AEC21284DE100477E61 /* CVCollectionViewUseDicHeaderFooterView.xib in Resources */,
@@ -1007,6 +1090,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FF37AD321283F9A00477E61 /* FriendAdapter.swift in Sources */,
+				8FB8F1712148C0CC00B96551 /* CityCollectionViewCell.swift in Sources */,
 				5FF37A9721280EB900477E61 /* CVInputTextModel.swift in Sources */,
 				8FB8F1562148AD3500B96551 /* CountryModel.swift in Sources */,
 				8F2271B220EA243F00C72514 /* CHGTableView+CHGTableViewAdapter.swift in Sources */,
@@ -1020,6 +1104,7 @@
 				5FF37AE621284C1300477E61 /* CVFriendUseDicCollectionViewCell.swift in Sources */,
 				5FF37AC22128355600477E61 /* TVSuccModel.swift in Sources */,
 				8F2271B620EA243F00C72514 /* CHGTableViewAdapterData.swift in Sources */,
+				8FB8F1672148C02300B96551 /* KeyPathCVViewController.swift in Sources */,
 				5FF37ABC2128329B00477E61 /* TVTitleModel.swift in Sources */,
 				8F2271AD20EA243F00C72514 /* UICollectionView+CHGCollectionViewAdapter.swift in Sources */,
 				5FF37AA52128215300477E61 /* TableViewViewController.swift in Sources */,
@@ -1029,6 +1114,7 @@
 				8F1F6FDE2109BD31004E3B30 /* CHGSimpleTableViewAdapter.swift in Sources */,
 				5FF37AE921284DCC00477E61 /* CVCollectionViewUseDicHeaderFooterView.swift in Sources */,
 				8F0D567E2130215900EB7CAC /* TestK.swift in Sources */,
+				8FB8F1792148C22A00B96551 /* CountyCollectionReusableView.swift in Sources */,
 				8F0D568021302E5400EB7CAC /* Group.swift in Sources */,
 				5FF37ABE2128342700477E61 /* TVSuccHeaderFooterView.swift in Sources */,
 				8F0EE8B921410B35004058D7 /* ScrollListener.swift in Sources */,
@@ -1041,6 +1127,7 @@
 				5F92C3102127FC0400455EEB /* CVHeaderModel.swift in Sources */,
 				8F0A9F7E2147EF460030353C /* GoodsTableViewCell.swift in Sources */,
 				5F92C2FB2127EDC300455EEB /* MainViewController.swift in Sources */,
+				8FB8F16D2148C0B800B96551 /* GoodsCollectionViewCell.swift in Sources */,
 				5F92C3092127F68300455EEB /* CVTitleModel.swift in Sources */,
 				5FF37A9E212815B700477E61 /* CVSimulationDownCollectionViewCell.swift in Sources */,
 				8FB8F15D2148AFAB00B96551 /* CityTableViewCell.swift in Sources */,
@@ -1059,6 +1146,7 @@
 				8F2271B520EA243F00C72514 /* CHGTableViewEmptyDataShow.swift in Sources */,
 				8F14D04020ABC4A4005E4A15 /* AppDelegate.swift in Sources */,
 				5FF37AB621282C5600477E61 /* TVSubmitModel.swift in Sources */,
+				8FB8F1752148C1A100B96551 /* GoodsCategoryCollectionReusableView.swift in Sources */,
 				5F92C3022127EF0500455EEB /* TitleTableViewCell.swift in Sources */,
 				8F2271AC20EA243F00C72514 /* CHGCollectionViewAdapter.swift in Sources */,
 			);

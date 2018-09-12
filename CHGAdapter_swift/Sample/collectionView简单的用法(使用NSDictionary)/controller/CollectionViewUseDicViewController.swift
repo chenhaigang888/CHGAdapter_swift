@@ -66,7 +66,7 @@ class CollectionViewUseDicViewController: UIViewController {
         layout.headerReferenceSize = CGSize.init(width: UIScreen.main.bounds.width, height: 30)
         
 //        adapter.rowsOfSectionKeyName = \Group.test
-        adapter.rowsOfSectionKeyName = "test"
+        adapter.keyPathOfSubData = "test"
         adapter.adapterData.cellDatas = cellDatas
         adapter.adapterData.headerDatas = cellDatas
         collectionView?.collectionViewAdapter = adapter

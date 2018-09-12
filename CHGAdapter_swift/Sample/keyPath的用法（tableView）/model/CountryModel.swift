@@ -36,6 +36,16 @@ extension CountryModel: CHGTableViewHeaderFooterModelProtocol {
     
 }
 
+extension CountryModel: CHGCollectionViewSupplementaryElementModelProtocol {
+    func reusableViewInCollectionView(collectionView: UICollectionView, supplementaryElementOfKind kind: String, atIndexPath indexPath: IndexPath) -> String {
+        return "CountyCollectionReusableView"
+    }
+    
+    func subDataKeyPath(_ indexPath: IndexPath, inCollectionView collectionView: UICollectionView) -> Any {
+        return \CountryModel.citys
+    }
+}
+
 /// 城市
 class CityModel: NSObject {
     var name:String?
@@ -54,6 +64,12 @@ extension CityModel: CHGTableViewCellModelProtocol {
     
     func cellHeigh(_ tableView: UITableView, indexPath: IndexPath) -> CGFloat {
         return -1
+    }
+}
+
+extension CityModel: CHGCollectionViewCellModelProtocol {
+    func cellClassNameInCollectionView(collectionView: UICollectionView, atIndexPath: IndexPath) -> String {
+        return "CityCollectionViewCell"
     }
     
     

@@ -61,6 +61,12 @@ public protocol CHGTableViewHeaderFooterModelProtocol {
     /// - Returns: 返回header footer的高度
     func headerFooterHeigh(_ tableView: UITableView, section: NSInteger,type:CHGTableViewHeaderFooterViewType) -> CGFloat
     
+    /// 如果你的cell的数据是Model中的某一个字段（比如好友列表 外层Model是Group，Group中有一个字段friends为数组，你想使用Group中的friends字段的元素作为cell，则可以通过这个方法返回:\Group.friends）
+    ///
+    /// - Parameters:
+    ///   - indexPath: 当前的位置
+    ///   - tableView: 当前内容所在的tableView
+    /// - Returns: 返回keyPath
     func subDataKeyPath(_ indexPath:IndexPath,inTableView tableView: UITableView) -> Any
 }
 
@@ -86,12 +92,12 @@ open class CHGSimpleTableViewAdapter: CHGTableViewAdapter {
     
     open override func subDataKeyPath(_ indexPath: IndexPath, targetView: UIScrollView) -> Any? {
         let sectionDatas = self.adapterData.cellDatas![indexPath.section]
-        if sectionDatas is NSArray {
-            return ""
+        if sectionDatas is CHGTableViewHeaderFooterModelProtocol {
+            let tableViewHeaderFooterModelProtocol:CHGTableViewHeaderFooterModelProtocol = sectionDatas as! CHGTableViewHeaderFooterModelProtocol
+            let keyPath = tableViewHeaderFooterModelProtocol.subDataKeyPath(indexPath,inTableView: targetView as! UITableView)
+            return keyPath
         }
-        let tableViewHeaderFooterModelProtocol:CHGTableViewHeaderFooterModelProtocol = sectionDatas as! CHGTableViewHeaderFooterModelProtocol
-        let keyPath = tableViewHeaderFooterModelProtocol.subDataKeyPath(indexPath,inTableView: targetView as! UITableView)
-        return keyPath
+        return super.subDataKeyPath(indexPath, targetView: targetView)
     }
     
     override open func obtainFooterNameWithFooter(_ data: AnyObject, tableView: UITableView, viewForFooterInSection section: NSInteger) -> NSString {

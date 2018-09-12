@@ -52,6 +52,8 @@ public protocol CHGCollectionViewSupplementaryElementModelProtocol {
     func referenceHeaderSizeInCollectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, atSection section: Int) -> CGSize
     ///动态设置某个分区尾视图大小
     func referenceFooterSizeInCollectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, atSection section: Int) -> CGSize
+    
+    func subDataKeyPath(_ indexPath:IndexPath,inCollectionView collectionView: UICollectionView) -> Any
 }
 
 public extension CHGCollectionViewSupplementaryElementModelProtocol {
@@ -99,12 +101,16 @@ public extension CHGCollectionViewSupplementaryElementModelProtocol {
         }
         return CGSize.init(width: collectionView.frame.width, height: 30)
     }
+    
+    func subDataKeyPath(_ indexPath:IndexPath,inCollectionView collectionView: UICollectionView) -> Any {
+        return ""
+    }
 }
 
 open class CHGSimpleCollectionViewAdapter: CHGCollectionViewAdapter {
     
     open override func obtainCellNameWithCell(_ data: AnyObject, collectionView: UICollectionView, cellForItemAtIndexPath indexPath: IndexPath) -> NSString {
-        let cellModelProtocol:CHGCollectionViewCellModelProtocol = cellDataWithIndexPath(indexPath) as! CHGCollectionViewCellModelProtocol
+        let cellModelProtocol:CHGCollectionViewCellModelProtocol = cellDataWithIndexPath(indexPath,collectionView: collectionView) as! CHGCollectionViewCellModelProtocol
         return cellModelProtocol.cellClassNameInCollectionView(collectionView: collectionView, atIndexPath: indexPath) as NSString
     }
     
@@ -169,7 +175,7 @@ open class CHGSimpleCollectionViewAdapter: CHGCollectionViewAdapter {
     
     ///动态设置每个Item的尺寸大小
     open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        guard let model = cellDataWithIndexPath(indexPath) else {
+        guard let model = cellDataWithIndexPath(indexPath,collectionView: collectionView) else {
             if collectionViewLayout.isKind(of: UICollectionViewFlowLayout.classForCoder()) {
                 let layout:UICollectionViewFlowLayout = collectionViewLayout as! UICollectionViewFlowLayout
                 return layout.itemSize
@@ -191,6 +197,16 @@ open class CHGSimpleCollectionViewAdapter: CHGCollectionViewAdapter {
         }
         let supplementaryElementModelProtocol:CHGCollectionViewSupplementaryElementModelProtocol = model as! CHGCollectionViewSupplementaryElementModelProtocol
         return supplementaryElementModelProtocol.referenceFooterSizeInCollectionView(collectionView: collectionView, layout: collectionViewLayout, atSection: section)
+    }
+    
+    open override func subDataKeyPath(_ indexPath: IndexPath, targetView: UIScrollView) -> Any? {
+        let sectionDatas = self.adapterData.cellDatas![indexPath.section]
+        if sectionDatas is CHGCollectionViewSupplementaryElementModelProtocol {
+            let supplementaryElementModelProtocol:CHGCollectionViewSupplementaryElementModelProtocol = sectionDatas as! CHGCollectionViewSupplementaryElementModelProtocol
+            let keyPath = supplementaryElementModelProtocol.subDataKeyPath(indexPath, inCollectionView: targetView as! UICollectionView)
+            return keyPath
+        }
+        return super.subDataKeyPath(indexPath, targetView: targetView)
     }
     
 }

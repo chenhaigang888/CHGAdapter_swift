@@ -11,7 +11,7 @@ import UIKit
 /// collectionViewDidSelectRow 回调
 public typealias CHGCollectionViewDidSelectItemAtIndexPathBlock = (_ collectionView:UICollectionView,_ indexPath:IndexPath,_ itemData:AnyObject)->Void
 
-public protocol CHGCollectionViewAdapterProtocol :UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+public protocol CHGCollectionViewAdapterProtocol :UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,CHGSubDataOfKeyPathDelegate {
     
     func obtainCellNameWithCell(_ data:AnyObject,collectionView:UICollectionView,cellForItemAtIndexPath indexPath:IndexPath) -> NSString
     
@@ -20,11 +20,13 @@ public protocol CHGCollectionViewAdapterProtocol :UICollectionViewDataSource,UIC
 
 open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
     
+    
+    
     public var cellName:NSString? = ""
     public var headerName:NSString? = ""
     public var footerName:NSString? = ""
     public var adapterData:CHGCollectionViewAdapterData = CHGCollectionViewAdapterData.init()
-    public var rowsOfSectionKeyName:Any?
+    public var keyPathOfSubData:Any?
     //    public var collectionViewDeselectRowAtIndexPathAnimation:Bool = true
     public var controller:UIViewController?
     public var tag:NSInteger?
@@ -35,6 +37,10 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
     
     open func obtainSupplementaryElementNameWithCell(_ data: AnyObject, collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: NSString, indexPath: IndexPath) -> NSString {
         return (kind.isEqual(to: UICollectionElementKindSectionHeader) ? self.headerName : self.footerName)!
+    }
+    
+    open func subDataKeyPath(_ indexPath: IndexPath, targetView: UIScrollView) -> Any? {
+        return self.keyPathOfSubData
     }
     
     open func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -50,12 +56,12 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
         if cellDatas?.count == 0 {
             return 0
         }
-        
-        if self.rowsOfSectionKeyName != nil &&  !(cellDatas![section] is NSArray){
-            if rowsOfSectionKeyName is String || rowsOfSectionKeyName is NSString {
-                return ((cellDatas![section] as AnyObject).value(forKey: self.rowsOfSectionKeyName! as! String) as! NSArray).count
+        let subDataKeyPathTemp = self.subDataKeyPath(IndexPath.init(row: 0, section: section), targetView: collectionView)
+        if subDataKeyPathTemp != nil &&  !(cellDatas![section] is NSArray){
+            if subDataKeyPathTemp is String || subDataKeyPathTemp is NSString {
+                return ((cellDatas![section] as AnyObject).value(forKey: subDataKeyPathTemp! as! String) as! NSArray).count
             } else {
-                return (cellDatas![section][keyPath:rowsOfSectionKeyName as! AnyKeyPath] as! NSArray).count
+                return (cellDatas![section][keyPath:subDataKeyPathTemp as! AnyKeyPath] as! NSArray).count
             }
         }
         let cellData = cellDatas![section]
@@ -66,17 +72,18 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
         }
     }
     
-    open func cellDataWithIndexPath(_ indexPath:IndexPath) -> AnyObject? {
+    open func cellDataWithIndexPath(_ indexPath:IndexPath,collectionView:UICollectionView) -> AnyObject? {
         if self.adapterData.cellDatas?.count == 0 {
             return nil
         }
         let sectionData = self.adapterData.cellDatas![indexPath.section]
-        if self.rowsOfSectionKeyName != nil && !(sectionData is NSArray) {
+        let subDataKeyPathTemp = self.subDataKeyPath(indexPath, targetView: collectionView)
+        if subDataKeyPathTemp != nil && !(sectionData is NSArray) {
             var tempArray:NSArray = []
-            if rowsOfSectionKeyName is String || rowsOfSectionKeyName is NSString {
-                tempArray = (sectionData as AnyObject).value(forKey: rowsOfSectionKeyName as! String) as! NSArray
+            if subDataKeyPathTemp is String || subDataKeyPathTemp is NSString {
+                tempArray = (sectionData as AnyObject).value(forKey: subDataKeyPathTemp as! String) as! NSArray
             } else {
-                tempArray = sectionData[keyPath:rowsOfSectionKeyName as! AnyKeyPath] as! NSArray
+                tempArray = sectionData[keyPath:subDataKeyPathTemp as! AnyKeyPath] as! NSArray
             }
             return tempArray[indexPath.row] as AnyObject
         } else {
@@ -85,7 +92,7 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
     }
     
     open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cellData = self.cellDataWithIndexPath(indexPath)
+        let cellData = self.cellDataWithIndexPath(indexPath,collectionView: collectionView)
         let identifier:NSString = self.obtainCellNameWithCell(cellData!, collectionView: collectionView, cellForItemAtIndexPath: indexPath)
         if identifier.length == 0 {
             print("cellName不能为空")
@@ -161,7 +168,7 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
     
     open func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if (collectionView.collectionViewDidSelectItemAtIndexPathBlock != nil) {
-            collectionView.collectionViewDidSelectItemAtIndexPathBlock!(collectionView,indexPath,self.cellDataWithIndexPath(indexPath)!)
+            collectionView.collectionViewDidSelectItemAtIndexPathBlock!(collectionView,indexPath,self.cellDataWithIndexPath(indexPath,collectionView: collectionView)!)
         }
     }
     

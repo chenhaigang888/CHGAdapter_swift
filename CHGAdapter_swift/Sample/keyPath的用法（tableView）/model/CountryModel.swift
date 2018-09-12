@@ -30,7 +30,7 @@ extension CountryModel: CHGTableViewHeaderFooterModelProtocol {
         return 30
     }
     
-    func subDataKeyPath(_ indexPath: IndexPath, tableView: UITableView) -> Any {
+    func subDataKeyPath(_ indexPath: IndexPath, inTableView tableView: UITableView) -> Any {
         return \CountryModel.citys
     }
     

@@ -61,12 +61,12 @@ public protocol CHGTableViewHeaderFooterModelProtocol {
     /// - Returns: 返回header footer的高度
     func headerFooterHeigh(_ tableView: UITableView, section: NSInteger,type:CHGTableViewHeaderFooterViewType) -> CGFloat
     
-    func subDataKeyPath(_ indexPath:IndexPath, tableView: UITableView) -> Any
+    func subDataKeyPath(_ indexPath:IndexPath,inTableView tableView: UITableView) -> Any
 }
 
 public extension CHGTableViewHeaderFooterModelProtocol {
     
-    func subDataKeyPath(_ indexPath:IndexPath, tableView: UITableView) -> Any {
+    func subDataKeyPath(_ indexPath:IndexPath,inTableView tableView: UITableView) -> Any {
         return ""
     }
 }
@@ -84,13 +84,13 @@ open class CHGSimpleTableViewAdapter: CHGTableViewAdapter {
         return tableViewHeaderFooterModelProtocol.headerFooterClass(tableView, section: section, type: .HeaderType) as NSString
     }
     
-    open override func subDataKeyPath(_ indexPath: IndexPath, tableView: UITableView) -> Any? {
+    open override func subDataKeyPath(_ indexPath: IndexPath, inTableView tableView: UITableView) -> Any? {
         let sectionDatas = self.adapterData.cellDatas![indexPath.section]
         if sectionDatas is NSArray {
             return ""
         }
         let tableViewHeaderFooterModelProtocol:CHGTableViewHeaderFooterModelProtocol = sectionDatas as! CHGTableViewHeaderFooterModelProtocol
-        let keyPath = tableViewHeaderFooterModelProtocol.subDataKeyPath(indexPath, tableView: tableView)
+        let keyPath = tableViewHeaderFooterModelProtocol.subDataKeyPath(indexPath,inTableView: tableView)
         return keyPath
     }
     

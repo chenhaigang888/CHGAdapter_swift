@@ -31,7 +31,7 @@ public protocol CHGTableViewAdapterProtocol:UITableViewDelegate,UITableViewDataS
     
     func obtainFooterNameWithFooter(_ data:AnyObject,tableView:UITableView, viewForFooterInSection section:NSInteger) -> NSString
     
-    func subDataKeyPath(_ indexPath:IndexPath,tableView: UITableView) -> Any?
+    func subDataKeyPath(_ indexPath:IndexPath,inTableView tableView: UITableView) -> Any?
 }
 
 open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
@@ -48,7 +48,7 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
     public var footerHeight:CGFloat = 0.01
     
     public var adapterData:CHGTableViewAdapterData = CHGTableViewAdapterData.init()
-    public var rowsOfSectionKeyName:Any?
+    public var keyPathOfSubData:Any?
     public var tableViewDeselectRowAtIndexPathAnimation:Bool = true
     public var tag:NSInteger = 0
     public var controller:UIViewController?
@@ -66,8 +66,8 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
         return self.footerName!;
     }
     
-    open func subDataKeyPath(_ indexPath:IndexPath,tableView: UITableView) -> Any? {
-        return self.rowsOfSectionKeyName
+    open func subDataKeyPath(_ indexPath:IndexPath,inTableView tableView: UITableView) -> Any? {
+        return self.keyPathOfSubData
     }
     
     open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -95,7 +95,7 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
         if cellDatas?.count == 0 {
             return 0;
         }
-        let subDataKeyPathTemp = self.subDataKeyPath(IndexPath.init(row: 0, section: section), tableView: tableView)
+        let subDataKeyPathTemp = self.subDataKeyPath(IndexPath.init(row: 0, section: section), inTableView: tableView)
         if (subDataKeyPathTemp != nil && (!(cellDatas![section] is NSArray))) {
             if subDataKeyPathTemp is String || subDataKeyPathTemp is NSString {
                 return ((cellDatas![section] as AnyObject).value(forKey: subDataKeyPathTemp! as! String) as! NSArray).count
@@ -116,7 +116,7 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
             return nil
         }
         let sectionData:AnyObject = self.adapterData.cellDatas![indexPath.section] as AnyObject
-        let subDataKeyPathTemp = self.subDataKeyPath(indexPath,tableView: tableView)
+        let subDataKeyPathTemp = self.subDataKeyPath(indexPath,inTableView: tableView)
         if subDataKeyPathTemp != nil && !(sectionData is NSArray) {
             var tempArray:NSArray = []
             if subDataKeyPathTemp is String || subDataKeyPathTemp is NSString {

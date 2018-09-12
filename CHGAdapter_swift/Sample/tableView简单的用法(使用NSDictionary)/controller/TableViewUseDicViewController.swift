@@ -20,7 +20,7 @@ class TableViewUseDicViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        adapter.rowsOfSectionKeyName = "test"
+        adapter.keyPathOfSubData = "test"
 //        adapter.rowsOfSectionKeyName = \Group.test
         adapter.adapterData.cellDatas = cellDatas
         adapter.adapterData.headerDatas = cellDatas

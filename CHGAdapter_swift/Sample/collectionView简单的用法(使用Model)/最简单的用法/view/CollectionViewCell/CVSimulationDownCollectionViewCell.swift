@@ -22,7 +22,7 @@ class CVSimulationDownCollectionViewCell: CHGCollectionViewCell {
     }
 
     @IBAction func downloadBtnTap(sender:AnyObject)->Void {
-        _ = self.eventTransmissionBlock!(self,self.cellData!,0,{[weak self](data:AnyObject?) in
+        _ = self.eventTransmissionBlock!(self,self.cellData!,0,{[weak self](data) in
                 //外部传回的下载进度 将下载进度设置为downloadBtn 的title
                 self?.downloadBtn?.setTitle(data as? String, for: UIControlState.normal)
             })

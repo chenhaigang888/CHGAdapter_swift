@@ -48,7 +48,7 @@ class CollectionViewViewController: UIViewController {
     
     ///接收collectionView中的各种View、Adapter的事件传输。比如cell中有一个按钮点击按钮后可以通过 cell的eventTransmissionBlock将点击事件传输到这里进行处理,header、footer 等View的事件传输类似
     lazy var eventTransmissionBlock:CHGEventTransmissionBlock = {
-        {[weak self](target:AnyObject,param:AnyObject,tag:NSInteger,callBack:CHGCallBack?) in
+        {[weak self](target:Any,param:Any,tag:NSInteger,callBack:CHGCallBack?) in
             if target is CVInputTextCollectionViewCell { //CVInputTextCollectionViewCell 中返回的输入内容
                 self?.inputText = param as! String
                 print("输入内容为:\(String(describing: self?.inputText))")//
@@ -60,7 +60,7 @@ class CollectionViewViewController: UIViewController {
     }()
     
     //模拟下载任务
-    func simulationDownTask(param:AnyObject,callBack:CHGCallBack?) -> Void {
+    func simulationDownTask(param:Any,callBack:CHGCallBack?) -> Void {
         let simulationDownload:CVSimulationDownModel = param as! CVSimulationDownModel
         //模拟下载
         DispatchQueue.global().async {

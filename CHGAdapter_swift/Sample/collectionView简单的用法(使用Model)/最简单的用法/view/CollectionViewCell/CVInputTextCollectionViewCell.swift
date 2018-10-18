@@ -27,7 +27,7 @@ class CVInputTextCollectionViewCell: CHGCollectionViewCell {
     
     @IBAction func textViewChanged(sender:AnyObject) -> Void{
         //使用此block 向外传递数据
-        _ = self.eventTransmissionBlock!(self,textField?.text as AnyObject,0,{(data:AnyObject?) in
+        _ = self.eventTransmissionBlock!(self,textField?.text as AnyObject,0,{(data) in
                 //外部可以通过这个闭包异步的返回数据
             });
     }

@@ -29,7 +29,7 @@ class TableViewViewController: UIViewController {
     }
     
     lazy var eventTransmissionBlock:CHGEventTransmissionBlock = {
-        {[weak self](target:AnyObject,param:AnyObject,tag:NSInteger,callback:CHGCallBack?) in
+        {[weak self](target:Any,param:Any,tag:NSInteger,callback:CHGCallBack?) in
             if target is TVInputTextTableViewCell { //TVInputTextTableViewCell 中返回的事件
                 let dic:NSDictionary = param as! NSDictionary
                 let indexPath:IndexPath = dic.object(forKey: "indexPath") as! IndexPath

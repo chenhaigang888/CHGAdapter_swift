@@ -34,7 +34,7 @@ class TVInputTextTableViewCell: CHGTableViewCell {
         let param = ["indexPath":self.indexPath ?? IndexPath.init(),
                      "inputText":textField?.text ?? ""
                     ] as [String : Any]
-        _ = self.eventTransmissionBlock!(self,param as AnyObject,0,{(data:AnyObject?) in
+        _ = self.eventTransmissionBlock!(self,param as AnyObject,0,{(data) in
             
         })
     }

@@ -18,7 +18,7 @@ public typealias CHGCallBack = (_ data:Any?) -> Void
 ///   - tag: 区分事件发生的场所中的多个事件
 ///   - callBack: 当当前类中处理完事件后异步通知事件所发生的场所
 /// - Returns: 当当前类中处理完事件后同步步通知事件所发生的场所
-public typealias CHGEventTransmissionBlock = (_ target:Any,_ params:Any,_ tag:NSInteger,_ callBack:CHGCallBack?) ->Any?
+public typealias CHGEventTransmissionBlock = (_ target:Any?,_ params:Any?,_ tag:NSInteger,_ callBack:CHGCallBack?) ->Any?
 
 /// tableViewDidSelectRow 回调
 public typealias CHGTableViewDidSelectRowBlock = (_ tableView:UITableView,_ indexPath:IndexPath,_ itemData:AnyObject)->Void

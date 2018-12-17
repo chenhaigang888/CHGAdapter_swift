@@ -36,7 +36,7 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
     }
     
     open func obtainSupplementaryElementNameWithCell(_ data: AnyObject, collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: NSString, indexPath: IndexPath) -> NSString {
-        return (kind.isEqual(to: UICollectionElementKindSectionHeader) ? self.headerName : self.footerName)!
+        return (kind.isEqual(to: UICollectionView.elementKindSectionHeader) ? self.headerName : self.footerName)!
     }
     
     open func subDataKeyPath(_ indexPath: IndexPath, targetView: UIScrollView) -> Any? {
@@ -131,7 +131,7 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
     
     open func headerFooterDataWithrSupplementaryElementOfKind(kind:NSString,indexPath:IndexPath) -> AnyObject? {
         let reusableViewData:NSArray? =
-            ((kind as NSString).isEqual(to: UICollectionElementKindSectionHeader)
+            ((kind as NSString).isEqual(to: UICollectionView.elementKindSectionHeader)
                 ?
                     self.adapterData.headerDatas
                 :
@@ -144,7 +144,7 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
     
     open func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let reusableViewData:NSArray? =
-            ((kind as NSString).isEqual(to: UICollectionElementKindSectionHeader)
+            ((kind as NSString).isEqual(to: UICollectionView.elementKindSectionHeader)
                 ?
                     self.adapterData.headerDatas
                 :

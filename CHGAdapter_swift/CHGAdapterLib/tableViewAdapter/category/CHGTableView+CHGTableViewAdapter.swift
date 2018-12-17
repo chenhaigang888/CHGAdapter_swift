@@ -108,7 +108,7 @@ extension UITableView {
     
     open func autoHeight() -> Void {
         self.estimatedRowHeight = 44;
-        self.rowHeight = UITableViewAutomaticDimension;
+        self.rowHeight = UITableView.automaticDimension;
         self.tableViewAdapter?.cellHeight = -1;
     }
     

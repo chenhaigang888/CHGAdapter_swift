@@ -39,7 +39,7 @@ open class CHGTableViewEmptyDataShow: NSObject {
 extension CHGTableViewEmptyDataShow :EmptyDataSetSource {
     open func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
         let s = NSMutableAttributedString.init(string: self.title as String)
-        s.addAttributes([NSAttributedStringKey.font : UIFont.systemFont(ofSize: 17)], range: NSRange(location: 0, length: self.title.length))
+        s.addAttributes([NSAttributedString.Key.font : UIFont.systemFont(ofSize: 17)], range: NSRange(location: 0, length: self.title.length))
         return s;
     }
     

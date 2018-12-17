@@ -959,13 +959,16 @@
 				TargetAttributes = {
 					8F14D03B20ABC4A4005E4A15 = {
 						CreatedOnToolsVersion = 9.3.1;
+						LastSwiftMigration = 1010;
 					};
 					8F14D04F20ABC4A6005E4A15 = {
 						CreatedOnToolsVersion = 9.3.1;
+						LastSwiftMigration = 1010;
 						TestTargetID = 8F14D03B20ABC4A4005E4A15;
 					};
 					8F14D05A20ABC4A6005E4A15 = {
 						CreatedOnToolsVersion = 9.3.1;
+						LastSwiftMigration = 1010;
 						TestTargetID = 8F14D03B20ABC4A4005E4A15;
 					};
 				};
@@ -1315,7 +1318,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5GEGK9VKR7;
+				DEVELOPMENT_TEAM = 4A75LEU8F4;
 				INFOPLIST_FILE = CHGAdapter_swift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1323,7 +1326,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "chg.CHGAdapter-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1334,7 +1337,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5GEGK9VKR7;
+				DEVELOPMENT_TEAM = 4A75LEU8F4;
 				INFOPLIST_FILE = CHGAdapter_swift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1342,7 +1345,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "chg.CHGAdapter-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1361,7 +1364,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "chg.CHGAdapter-swiftTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CHGAdapter_swift.app/CHGAdapter_swift";
 			};
@@ -1381,7 +1384,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "chg.CHGAdapter-swiftTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CHGAdapter_swift.app/CHGAdapter_swift";
 			};
@@ -1400,7 +1403,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "chg.CHGAdapter-swiftUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = CHGAdapter_swift;
 			};
@@ -1419,7 +1422,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "chg.CHGAdapter-swiftUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = CHGAdapter_swift;
 			};

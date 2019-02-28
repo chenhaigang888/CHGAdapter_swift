@@ -10,8 +10,9 @@
 
 oc版：https://github.com/chenhaigang888/CHGAdapter
 
-### Installation with CocoaPods
+### 如有使用方面的问题或者交流请加QQ群：494648687
 
+### Installation with CocoaPods
 
 > pod 'CHGAdapter_swift', '~> 0.2.6'
 

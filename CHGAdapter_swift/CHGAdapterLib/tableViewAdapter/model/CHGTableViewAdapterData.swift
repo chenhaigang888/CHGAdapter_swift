@@ -13,6 +13,7 @@ open class CHGTableViewAdapterData: NSObject {
     public var cellDatas:NSArray?
     public var headerDatas:NSArray?
     public var footerDatas:NSArray?
+    public var indexDatas:NSArray?
     public var customData:AnyObject?
     
 }

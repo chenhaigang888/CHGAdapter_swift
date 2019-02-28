@@ -109,6 +109,14 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
         }
     }
     
+    open func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return self.adapterData.indexDatas as? [String]
+    }
+    
+    open func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
+        return UILocalizedIndexedCollation.current().section(forSectionIndexTitle: index)
+    }
+    
     open func cellDataWithIndexPath(_ indexPath:IndexPath,tableView: UITableView) -> AnyObject? {
         if self.adapterData.cellDatas?.count == 0 {
             return nil

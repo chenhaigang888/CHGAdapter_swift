@@ -60,7 +60,7 @@ class KeyPathViewController: UIViewController {
         ]
         
         tableView.headerDatas = tableView.cellDatas
-        
+        tableView.indexDatas = ["A","B","C","D","E","F"]
 
     }
 

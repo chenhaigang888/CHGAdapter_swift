@@ -152,6 +152,15 @@ extension UITableView {
         }
     }
     
+    open var indexDatas: NSArray? {
+        get {
+            return self.tableViewAdapter?.adapterData.indexDatas
+        }
+        set {
+            self.tableViewAdapter?.adapterData.indexDatas = newValue
+        }
+    }
+    
     open var customData: AnyObject? {
         get {
             return self.tableViewAdapter?.adapterData.customData

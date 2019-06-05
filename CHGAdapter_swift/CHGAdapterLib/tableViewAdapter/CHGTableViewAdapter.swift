@@ -121,13 +121,13 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
         if self.adapterData.cellDatas?.count == 0 {
             return nil
         }
-        let sectionData:AnyObject = self.adapterData.cellDatas![indexPath.section] as AnyObject
+        let sectionData = self.adapterData.cellDatas![indexPath.section]
         let subDataKeyPathTemp = self.subDataKeyPath(indexPath,targetView: tableView)
         if subDataKeyPathTemp != nil && !(sectionData is NSArray) {
             var tempArray:NSArray = []
             if subDataKeyPathTemp is String || subDataKeyPathTemp is NSString {
                 if (subDataKeyPathTemp as? NSString)?.length != 0 {
-                    tempArray = sectionData.value(forKey: subDataKeyPathTemp as! String) as! NSArray
+                    tempArray = (sectionData as AnyObject).value(forKey: subDataKeyPathTemp as! String) as! NSArray
                 }
             } else {
                 tempArray = sectionData[keyPath:subDataKeyPathTemp as! AnyKeyPath] as! NSArray

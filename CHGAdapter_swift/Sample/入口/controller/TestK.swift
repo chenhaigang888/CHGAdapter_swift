@@ -14,6 +14,6 @@ class TestK: NSObject {
 
     
     func aa(data:AnyObject) -> Void {
-        let aa = data[keyPath:key!]
+//        let aa = data[keyPath:key!]
     }
 }

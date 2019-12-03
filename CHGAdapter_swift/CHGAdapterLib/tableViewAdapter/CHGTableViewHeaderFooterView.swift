@@ -36,7 +36,7 @@ open class CHGTableViewHeaderFooterView: UITableViewHeaderFooterView {
         return self.tableView?.tableViewAdapter?.tag
     }
     
-    open func customData()->AnyObject? {
+    open func customData()->Any? {
         return self.tableView?.tableViewAdapter?.adapterData.customData
     }
     

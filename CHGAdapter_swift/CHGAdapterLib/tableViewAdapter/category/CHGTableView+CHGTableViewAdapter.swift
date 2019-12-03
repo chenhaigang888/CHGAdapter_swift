@@ -125,7 +125,7 @@ extension UITableView {
         }
     }
     
-    open var cellDatas: NSArray? {
+    open var cellDatas: [Any]? {
         get {
             return self.tableViewAdapter?.adapterData.cellDatas
         }
@@ -134,7 +134,7 @@ extension UITableView {
         }
     }
     
-    open var footerDatas: NSArray? {
+    open var footerDatas: [Any]? {
         get {
             return self.tableViewAdapter?.adapterData.footerDatas
         }
@@ -143,7 +143,7 @@ extension UITableView {
         }
     }
     
-    open var headerDatas: NSArray? {
+    open var headerDatas: [Any]? {
         get {
             return self.tableViewAdapter?.adapterData.headerDatas
         }
@@ -152,7 +152,7 @@ extension UITableView {
         }
     }
     
-    open var indexDatas: NSArray? {
+    open var indexDatas: [String]? {
         get {
             return self.tableViewAdapter?.adapterData.indexDatas
         }
@@ -161,7 +161,7 @@ extension UITableView {
         }
     }
     
-    open var customData: AnyObject? {
+    open var customData: Any? {
         get {
             return self.tableViewAdapter?.adapterData.customData
         }

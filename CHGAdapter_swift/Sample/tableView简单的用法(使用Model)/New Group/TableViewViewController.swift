@@ -14,9 +14,9 @@ class TableViewViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView?.headerDatas = headerDatas
-        tableView?.cellDatas = cellDatas
-        tableView?.footerDatas = footerDatas
+        tableView?.headerDatas = headerDatas as? [Any]
+        tableView?.cellDatas = cellDatas as? [Any]
+        tableView?.footerDatas = footerDatas as? [Any]
         tableView?.eventTransmissionBlock = eventTransmissionBlock
         tableView?.scrollListener?.scrollViewDidScrollBlock = {(scrollView)in
             print("scrollView.contentOffset.y:\(scrollView.contentOffset.y)")
@@ -50,7 +50,7 @@ class TableViewViewController: UIViewController {
     
     func succPageTap() -> Void {
         //重新显示登录按钮
-        tableView?.footerDatas = footerDatas
+        tableView?.footerDatas = footerDatas as? [Any]
         tableView?.reloadData()
     }
     

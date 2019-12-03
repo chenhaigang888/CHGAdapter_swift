@@ -33,7 +33,7 @@ class TableViewUseDicViewController: UIViewController {
     }
     
 
-    lazy var cellDatas:NSArray = {
+    lazy var cellDatas:[Any] = {
 //        let test1 = [Test.init(id: "1", name: "张三1", sigin: "签名", icon: "img_qs_50x50"),
 //                     Test.init(id: "1", name: "李四1", sigin: "签名", icon: "img_qs_50x50"),
 //                     Test.init(id: "1", name: "王五1", sigin: "签名", icon: "img_qs_50x50")]
@@ -69,6 +69,6 @@ class TableViewUseDicViewController: UIViewController {
                     ["id":"6","name":"王五2","sigin":"签名1","icon":"img_qs_50x50"],
                 ]]
         ]
-        return cellDatas as NSArray
+        return (cellDatas as NSArray) as! [Any]
     }()
 }

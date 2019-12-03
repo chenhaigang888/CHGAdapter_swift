@@ -15,7 +15,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "CHGAdapter Demo"
-        self.tableView.cellDatas = cellDatas
+        self.tableView.cellDatas = cellDatas as? [Any]
         tableView.tableViewDidSelectRowBlock = tableViewDidSelectRowBlock
         
         let titleModel = CVTitleModel.init(name: "晨")

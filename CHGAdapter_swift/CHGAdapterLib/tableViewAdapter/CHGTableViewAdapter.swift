@@ -110,7 +110,7 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
     }
     
     open func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return self.adapterData.indexDatas as? [String]
+        return self.adapterData.indexDatas
     }
     
     open func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
@@ -176,7 +176,7 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
     }
     
     open func headerFooterDataWithType(type:CHGTableViewHeaderFooterViewType,section:NSInteger) -> AnyObject? {
-        let headerFooterDatas:NSArray? =
+        let headerFooterDatas:[Any]? =
             type == CHGTableViewHeaderFooterViewType.HeaderType
                 ?
                     self.adapterData.headerDatas

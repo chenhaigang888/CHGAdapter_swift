@@ -11,7 +11,7 @@ import UIKit
 class FriendAdapter: CHGTableViewAdapter {
 
     //通过这个方法返回cell
-    override func obtainCellNameWithCell(_ data: AnyObject, tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> NSString {
+    override func obtainCellNameWithCell(_ data: Any, tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> String {
         return "FriendTableViewCell"
     }
     
@@ -19,7 +19,7 @@ class FriendAdapter: CHGTableViewAdapter {
         return 70
     }
     
-    override func obtainHeaderNameWithHeader(_ data: AnyObject, tableView: UITableView, viewForHeaderInSection section: NSInteger) -> NSString {
+    override func obtainHeaderNameWithHeader(_ data: Any, tableView: UITableView, viewForHeaderInSection section: NSInteger) -> String {
         return "TVTitleDicHeaderFooterView"
     }
     

@@ -80,18 +80,18 @@ public extension CHGTableViewHeaderFooterModelProtocol {
 /// 简单的adapter，此adapter为使用TableView进行页面布局而使用，使用此adapter 需要cellData实现CHGTableViewCellModelProtocol协议，headerData和footerData需要实现CHGTableViewHeaderFooterModelProtocol协议
 open class CHGSimpleTableViewAdapter: CHGTableViewAdapter {
     
-    override open func obtainCellNameWithCell(_ data: AnyObject, tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> NSString {
+    override open func obtainCellNameWithCell(_ data: Any, tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> String {
         guard let tableViewCellModelProtocol:CHGTableViewCellModelProtocol = data as? CHGTableViewCellModelProtocol else {
             return super.obtainCellNameWithCell(data, tableView: tableView, cellForRowAtIndexPath: indexPath)
         }
-        return tableViewCellModelProtocol.cellClassName(tableView,indexPath: indexPath) as NSString
+        return tableViewCellModelProtocol.cellClassName(tableView,indexPath: indexPath)
     }
     
-    override open func obtainHeaderNameWithHeader(_ data: AnyObject, tableView: UITableView, viewForHeaderInSection section: NSInteger) -> NSString {
+    override open func obtainHeaderNameWithHeader(_ data: Any, tableView: UITableView, viewForHeaderInSection section: NSInteger) -> String {
         guard let tableViewHeaderFooterModelProtocol:CHGTableViewHeaderFooterModelProtocol = data as? CHGTableViewHeaderFooterModelProtocol else {
             return super.obtainHeaderNameWithHeader(data, tableView: tableView, viewForHeaderInSection: section)
         }
-        return tableViewHeaderFooterModelProtocol.headerFooterClass(tableView, section: section, type: .HeaderType) as NSString
+        return tableViewHeaderFooterModelProtocol.headerFooterClass(tableView, section: section, type: .HeaderType)
     }
     
     open override func subDataKeyPath(_ indexPath: IndexPath, targetView: UIScrollView) -> Any? {
@@ -110,11 +110,11 @@ open class CHGSimpleTableViewAdapter: CHGTableViewAdapter {
         return keyPath
     }
     
-    override open func obtainFooterNameWithFooter(_ data: AnyObject, tableView: UITableView, viewForFooterInSection section: NSInteger) -> NSString {
+    override open func obtainFooterNameWithFooter(_ data: Any, tableView: UITableView, viewForFooterInSection section: NSInteger) -> String {
         guard let tableViewHeaderFooterModelProtocol:CHGTableViewHeaderFooterModelProtocol = data as? CHGTableViewHeaderFooterModelProtocol else {
             return super.obtainFooterNameWithFooter(data, tableView: tableView, viewForFooterInSection: section)
         }
-        return tableViewHeaderFooterModelProtocol.headerFooterClass(tableView, section: section, type: .FooterType) as NSString
+        return tableViewHeaderFooterModelProtocol.headerFooterClass(tableView, section: section, type: .FooterType)
     }
     
     override open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

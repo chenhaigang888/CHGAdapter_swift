@@ -21,22 +21,22 @@ public typealias CHGCallBack = (_ data:Any?) -> Void
 public typealias CHGEventTransmissionBlock = (_ target:Any?,_ params:Any?,_ tag:NSInteger,_ callBack:CHGCallBack?) ->Any?
 
 /// tableViewDidSelectRow 回调
-public typealias CHGTableViewDidSelectRowBlock = (_ tableView:UITableView,_ indexPath:IndexPath,_ itemData:AnyObject)->Void
+public typealias CHGTableViewDidSelectRowBlock = (_ tableView:UITableView,_ indexPath:IndexPath,_ itemData:Any)->Void
 
 public protocol CHGTableViewAdapterProtocol:UITableViewDelegate,UITableViewDataSource, CHGSubDataOfKeyPathDelegate{
     
-    func obtainCellNameWithCell(_ data:AnyObject ,tableView:UITableView, cellForRowAtIndexPath indexPath:IndexPath) -> NSString
+    func obtainCellNameWithCell(_ data:Any ,tableView:UITableView, cellForRowAtIndexPath indexPath:IndexPath) -> String
     
-    func obtainHeaderNameWithHeader(_ data:AnyObject,tableView:UITableView, viewForHeaderInSection section:NSInteger) -> NSString
+    func obtainHeaderNameWithHeader(_ data:Any,tableView:UITableView, viewForHeaderInSection section:NSInteger) -> String
     
-    func obtainFooterNameWithFooter(_ data:AnyObject,tableView:UITableView, viewForFooterInSection section:NSInteger) -> NSString
+    func obtainFooterNameWithFooter(_ data:Any,tableView:UITableView, viewForFooterInSection section:NSInteger) -> String
 }
 
 open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
     
-    public var cellName:NSString? = ""
-    public var headerName:NSString? = ""
-    public var footerName:NSString? = ""
+    public var cellName:String? = ""
+    public var headerName:String? = ""
+    public var footerName:String? = ""
     
     /// 如果cell、headerView、footerView的高度都统一可以通过直接设置以下参数进行设置
     public var cellHeight:CGFloat = 44
@@ -50,15 +50,15 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
     public var controller:UIViewController?
     
     
-    open func obtainCellNameWithCell(_ data: AnyObject, tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> NSString {
+    open func obtainCellNameWithCell(_ data: Any, tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> String {
         return self.cellName!;
     }
     
-    open func obtainHeaderNameWithHeader(_ data: AnyObject, tableView: UITableView, viewForHeaderInSection section: NSInteger) -> NSString {
+    open func obtainHeaderNameWithHeader(_ data: Any, tableView: UITableView, viewForHeaderInSection section: NSInteger) -> String {
         return self.headerName!;
     }
     
-    open func obtainFooterNameWithFooter(_ data: AnyObject, tableView: UITableView, viewForFooterInSection section: NSInteger) -> NSString {
+    open func obtainFooterNameWithFooter(_ data: Any, tableView: UITableView, viewForFooterInSection section: NSInteger) -> String {
         return self.footerName!;
     }
     
@@ -117,7 +117,7 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
         return UILocalizedIndexedCollation.current().section(forSectionIndexTitle: index)
     }
     
-    open func cellDataWithIndexPath(_ indexPath:IndexPath,tableView: UITableView) -> AnyObject? {
+    open func cellDataWithIndexPath(_ indexPath:IndexPath,tableView: UITableView) -> Any? {
         if self.adapterData.cellDatas?.count == 0 {
             return nil
         }
@@ -132,9 +132,9 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
             } else {
                 tempArray = sectionData[keyPath:subDataKeyPathTemp as! AnyKeyPath] as! NSArray
             }
-            return tempArray.count == 0 ? sectionData as AnyObject : tempArray[indexPath.row] as AnyObject
+            return tempArray.count == 0 ? sectionData : tempArray[indexPath.row]
         } else {
-            return sectionData is NSArray ? (sectionData as! NSArray)[indexPath.row] as AnyObject : sectionData as AnyObject
+            return sectionData is NSArray ? (sectionData as! NSArray)[indexPath.row] : sectionData
         }
     }
     
@@ -146,7 +146,8 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
     open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellData = self.cellDataWithIndexPath(indexPath,tableView: tableView)
         let identifier = self.obtainCellNameWithCell(cellData!, tableView: tableView, cellForRowAtIndexPath: indexPath)
-        if identifier.length == 0 {
+        
+        if identifier.count == 0 {
             return UITableViewCell()
         }
         
@@ -175,7 +176,7 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
         return self.tableview(tableView, tableViewHeaderFooterViewType: CHGTableViewHeaderFooterViewType.FooterType, viewForHeaderInSection: section)
     }
     
-    open func headerFooterDataWithType(type:CHGTableViewHeaderFooterViewType,section:NSInteger) -> AnyObject? {
+    open func headerFooterDataWithType(type:CHGTableViewHeaderFooterViewType,section:NSInteger) -> Any? {
         let headerFooterDatas:[Any]? =
             type == CHGTableViewHeaderFooterViewType.HeaderType
                 ?
@@ -186,23 +187,23 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
             if section >= (headerFooterDatas?.count)! {
                 return nil
             }
-            return headerFooterDatas?[section] as AnyObject
+            return headerFooterDatas?[section]
         }
         return nil
     }
     
     open func tableview(_ tableView:UITableView,tableViewHeaderFooterViewType type:CHGTableViewHeaderFooterViewType,viewForHeaderInSection section:NSInteger) -> UIView? {
         //获取headerFooter的Item 数据
-        let headerFooterData:AnyObject? = self.headerFooterDataWithType(type: type, section: section)
+        let headerFooterData:Any? = self.headerFooterDataWithType(type: type, section: section)
         if headerFooterData == nil {
             return nil
         }
-        let identifier:NSString =
+        let identifier:String =
             type == CHGTableViewHeaderFooterViewType.HeaderType ? self.obtainHeaderNameWithHeader(headerFooterData!, tableView: tableView, viewForHeaderInSection: section)
                 :
                 self.obtainFooterNameWithFooter(headerFooterData!, tableView: tableView, viewForFooterInSection: section)
         
-        if identifier.length == 0 {
+        if identifier.count == 0 {
             return nil
         }
         

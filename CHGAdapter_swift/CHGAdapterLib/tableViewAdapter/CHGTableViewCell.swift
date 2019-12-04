@@ -13,9 +13,9 @@ open class CHGTableViewCell: UITableViewCell {
     public var eventTransmissionBlock:CHGEventTransmissionBlock?
     public var indexPath:IndexPath?
     public var tableView:UITableView?
-    public var cellData:AnyObject?
+    public var cellData:Any?
     
-    open func cellForRow(atIndexPath indexPath:IndexPath,tableView:UITableView?,data:AnyObject?) -> Void {
+    open func cellForRow(atIndexPath indexPath:IndexPath,tableView:UITableView?,data:Any?) -> Void {
         self.indexPath = indexPath
         self.tableView = tableView;
         self.cellData = data;

@@ -13,7 +13,7 @@ class TVSubmitHeaderFooterView: CHGTableViewHeaderFooterView {
     @IBOutlet weak var leftBtn:UIButton?
     @IBOutlet weak var rightBtn:UIButton?
     
-    override func headerFooter(headerFooterForSection section: NSInteger, tableView: UITableView, data: AnyObject, type: CHGTableViewHeaderFooterViewType) {
+    override func headerFooter(headerFooterForSection section: NSInteger, tableView: UITableView, data: Any, type: CHGTableViewHeaderFooterViewType) {
         super.headerFooter(headerFooterForSection: section, tableView: tableView, data: data, type: type)
         let submitModel:TVSubmitModel = data as! TVSubmitModel
         leftBtn?.setTitle(submitModel.leftBtnText, for: UIControl.State.normal)

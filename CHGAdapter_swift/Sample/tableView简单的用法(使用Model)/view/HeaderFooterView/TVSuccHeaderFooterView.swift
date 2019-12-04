@@ -17,7 +17,7 @@ class TVSuccHeaderFooterView: CHGTableViewHeaderFooterView {
         title?.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(titleTap(sender:))))
     }
     
-    override func headerFooter(headerFooterForSection section: NSInteger, tableView: UITableView, data: AnyObject, type: CHGTableViewHeaderFooterViewType) {
+    override func headerFooter(headerFooterForSection section: NSInteger, tableView: UITableView, data: Any, type: CHGTableViewHeaderFooterViewType) {
         super.headerFooter(headerFooterForSection: section, tableView: tableView, data: data, type: type)
         let succModel:TVSuccModel = data as! TVSuccModel
         self.title?.text = succModel.title

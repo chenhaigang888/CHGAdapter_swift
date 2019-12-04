@@ -23,7 +23,7 @@ class FriendTableViewCell: CHGTableViewCell {
 
     }
     
-    override func cellForRow(atIndexPath indexPath: IndexPath, tableView: UITableView?, data: AnyObject?) {
+    override func cellForRow(atIndexPath indexPath: IndexPath, tableView: UITableView?, data: Any?) {
         super.cellForRow(atIndexPath: indexPath, tableView: tableView, data: data)
         if data is NSDictionary {
             let dic:NSDictionary = data as! NSDictionary

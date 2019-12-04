@@ -23,7 +23,7 @@ class GoodsTableViewCell: CHGTableViewCell {
         // Configure the view for the selected state
     }
     
-    override func cellForRow(atIndexPath indexPath: IndexPath, tableView: UITableView?, data: AnyObject?) {
+    override func cellForRow(atIndexPath indexPath: IndexPath, tableView: UITableView?, data: Any?) {
         super.cellForRow(atIndexPath: indexPath, tableView: tableView, data: data)
         let model:Goods = data as! Goods
         title?.text = model.name

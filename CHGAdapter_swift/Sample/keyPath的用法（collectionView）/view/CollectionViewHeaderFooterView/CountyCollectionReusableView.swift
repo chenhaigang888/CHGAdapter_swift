@@ -16,7 +16,7 @@ class CountyCollectionReusableView: CHGCollectionReusableView {
         super.awakeFromNib()
         // Initialization code
     }
-    override func reusableViewFor(collectionView: UICollectionView, indexPath: IndexPath, kind: NSString, reusableViewData: AnyObject?) {
+    override func reusableViewFor(collectionView: UICollectionView, indexPath: IndexPath, kind: NSString, reusableViewData: Any?) {
         super.reusableViewFor(collectionView: collectionView, indexPath: indexPath, kind: kind, reusableViewData: reusableViewData)
         let model:CountryModel = reusableViewData as! CountryModel
         title?.text = model.name

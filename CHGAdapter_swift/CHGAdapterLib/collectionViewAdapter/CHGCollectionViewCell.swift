@@ -12,9 +12,9 @@ open class CHGCollectionViewCell: UICollectionViewCell {
     public var eventTransmissionBlock:CHGEventTransmissionBlock?
     public var indexPath:IndexPath?
     public var collectionView:UICollectionView?
-    public var cellData:AnyObject?
+    public var cellData:Any?
     
-    open func cellForRow(atIndexPath indexPath:IndexPath,collectionView:UICollectionView?,data:AnyObject?) -> Void {
+    open func cellForRow(atIndexPath indexPath:IndexPath,collectionView:UICollectionView?,data:Any?) -> Void {
         self.indexPath = indexPath
         self.collectionView = collectionView;
         self.cellData = data;
@@ -24,7 +24,7 @@ open class CHGCollectionViewCell: UICollectionViewCell {
         return self.collectionView?.collectionViewAdapter?.tag
     }
     
-    open func customData()->AnyObject? {
+    open func customData()->Any? {
         return self.collectionView?.collectionViewAdapter?.adapterData.customData
     }
     

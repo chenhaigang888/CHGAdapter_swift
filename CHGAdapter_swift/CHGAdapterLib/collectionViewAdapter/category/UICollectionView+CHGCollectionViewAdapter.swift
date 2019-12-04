@@ -111,7 +111,7 @@ extension UICollectionView {
         }
     }
     
-    open var cellDatas: NSArray? {
+    open var cellDatas: [Any]? {
         get {
             return self.collectionViewAdapter?.adapterData.cellDatas
         }
@@ -120,7 +120,7 @@ extension UICollectionView {
         }
     }
     
-    open var footerDatas: NSArray? {
+    open var footerDatas: [Any]? {
         get {
             return self.collectionViewAdapter?.adapterData.footerDatas
         }
@@ -129,7 +129,7 @@ extension UICollectionView {
         }
     }
     
-    open var headerDatas: NSArray? {
+    open var headerDatas: [Any]? {
         get {
             return self.collectionViewAdapter?.adapterData.headerDatas
         }
@@ -138,7 +138,7 @@ extension UICollectionView {
         }
     }
     
-    open var customData: AnyObject? {
+    open var customData: Any? {
         get {
             return self.collectionViewAdapter?.adapterData.customData
         }

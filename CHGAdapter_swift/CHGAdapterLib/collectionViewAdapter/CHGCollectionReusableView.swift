@@ -13,10 +13,10 @@ open class CHGCollectionReusableView: UICollectionReusableView {
     public var eventTransmissionBlock:CHGEventTransmissionBlock?
     public var indexPath:IndexPath?
     public var collectionView:UICollectionView?
-    public var reusableViewData:AnyObject?
+    public var reusableViewData:Any?
     public var kind:NSString?
     
-    open func reusableViewFor(collectionView:UICollectionView,indexPath:IndexPath,kind:NSString,reusableViewData:AnyObject?) -> Void {
+    open func reusableViewFor(collectionView:UICollectionView,indexPath:IndexPath,kind:NSString,reusableViewData:Any?) -> Void {
         self.collectionView = collectionView
         self.indexPath = indexPath
         self.kind = kind
@@ -27,7 +27,7 @@ open class CHGCollectionReusableView: UICollectionReusableView {
         return self.collectionView?.collectionViewAdapter?.tag
     }
     
-    open func customData()->AnyObject? {
+    open func customData()->Any? {
         return self.collectionView?.collectionViewAdapter?.adapterData.customData
     }
     

@@ -24,9 +24,9 @@ class CollectionViewViewController: UIViewController {
         layout.sectionInset = UIEdgeInsets.init(top: 20, left: 20, bottom: 20, right: 20)
         collectionView.collectionViewLayout = layout
         
-        collectionView.cellDatas = cellDatas
-        collectionView.headerDatas = headerDatas
-        collectionView.footerDatas = footerDatas
+        collectionView.cellDatas = cellDatas as? [Any]
+        collectionView.headerDatas = headerDatas as? [Any]
+        collectionView.footerDatas = footerDatas as? [Any]
         collectionView.collectionViewDidSelectItemAtIndexPathBlock = collectionViewDidSelectItemAtIndexPathBlock
         collectionView.eventTransmissionBlock = eventTransmissionBlock
         collectionView?.scrollListener?.scrollViewDidScrollBlock = {(scrollView)in
@@ -41,7 +41,7 @@ class CollectionViewViewController: UIViewController {
 
     /// collectionViewCell 被点击
     lazy var collectionViewDidSelectItemAtIndexPathBlock:CHGCollectionViewDidSelectItemAtIndexPathBlock = {
-        {(collectionView:UICollectionView,indexPath:IndexPath,itemData:AnyObject) in
+        {(collectionView:UICollectionView,indexPath:IndexPath,itemData:Any) in
             
         }
     }()

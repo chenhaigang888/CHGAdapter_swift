@@ -20,7 +20,7 @@ class CVCollectionViewUseDicHeaderFooterView: CHGCollectionReusableView {
     }
     */
     
-    override func reusableViewFor(collectionView: UICollectionView, indexPath: IndexPath, kind: NSString, reusableViewData: AnyObject?) {
+    override func reusableViewFor(collectionView: UICollectionView, indexPath: IndexPath, kind: NSString, reusableViewData: Any?) {
         super.reusableViewFor(collectionView: collectionView, indexPath: indexPath, kind: kind, reusableViewData: reusableViewData)
         if reusableViewData is NSDictionary {
             let dic:NSDictionary = reusableViewData as! NSDictionary

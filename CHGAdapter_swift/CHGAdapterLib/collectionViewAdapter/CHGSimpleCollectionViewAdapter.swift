@@ -109,18 +109,18 @@ public extension CHGCollectionViewSupplementaryElementModelProtocol {
 
 open class CHGSimpleCollectionViewAdapter: CHGCollectionViewAdapter {
     
-    open override func obtainCellNameWithCell(_ data: AnyObject, collectionView: UICollectionView, cellForItemAtIndexPath indexPath: IndexPath) -> NSString {
+    open override func obtainCellNameWithCell(_ data: Any, collectionView: UICollectionView, cellForItemAtIndexPath indexPath: IndexPath) -> String {
         guard let cellModelProtocol:CHGCollectionViewCellModelProtocol = data as? CHGCollectionViewCellModelProtocol else {
             return super.obtainCellNameWithCell(data, collectionView: collectionView, cellForItemAtIndexPath: indexPath)
         }
-        return cellModelProtocol.cellClassNameInCollectionView(collectionView: collectionView, atIndexPath: indexPath) as NSString
+        return cellModelProtocol.cellClassNameInCollectionView(collectionView: collectionView, atIndexPath: indexPath)
     }
     
-    open override func obtainSupplementaryElementNameWithCell(_ data: AnyObject, collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: NSString, indexPath: IndexPath) -> NSString {
+    open override func obtainSupplementaryElementNameWithCell(_ data: Any, collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: NSString, indexPath: IndexPath) -> String {
         guard let supplementaryElementModelProtocol:CHGCollectionViewSupplementaryElementModelProtocol = data as? CHGCollectionViewSupplementaryElementModelProtocol else {
             return super.obtainSupplementaryElementNameWithCell(data, collectionView: collectionView, viewForSupplementaryElementOfKind: kind, indexPath: indexPath)
         }
-        return supplementaryElementModelProtocol.reusableViewInCollectionView(collectionView: collectionView, supplementaryElementOfKind: kind as String, atIndexPath: indexPath) as NSString
+        return supplementaryElementModelProtocol.reusableViewInCollectionView(collectionView: collectionView, supplementaryElementOfKind: kind as String, atIndexPath: indexPath)
     }
     
     ///动态设置每个分区的EdgeInsets 不包括header和footer

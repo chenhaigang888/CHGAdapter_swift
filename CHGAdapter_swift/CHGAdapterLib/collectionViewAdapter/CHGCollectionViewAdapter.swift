@@ -9,33 +9,34 @@
 import UIKit
 
 /// collectionViewDidSelectRow 回调
-public typealias CHGCollectionViewDidSelectItemAtIndexPathBlock = (_ collectionView:UICollectionView,_ indexPath:IndexPath,_ itemData:AnyObject)->Void
+public typealias CHGCollectionViewDidSelectItemAtIndexPathBlock = (_ collectionView:UICollectionView,_ indexPath:IndexPath,_ itemData:Any)->Void
 
 public protocol CHGCollectionViewAdapterProtocol :UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,CHGSubDataOfKeyPathDelegate {
     
-    func obtainCellNameWithCell(_ data:AnyObject,collectionView:UICollectionView,cellForItemAtIndexPath indexPath:IndexPath) -> NSString
+    func obtainCellNameWithCell(_ data:Any,collectionView:UICollectionView,cellForItemAtIndexPath indexPath:IndexPath) -> String
     
-    func obtainSupplementaryElementNameWithCell(_ data:AnyObject,collectionView:UICollectionView,viewForSupplementaryElementOfKind kind:NSString,indexPath:IndexPath) -> NSString
+    func obtainSupplementaryElementNameWithCell(_ data:Any,collectionView:UICollectionView,viewForSupplementaryElementOfKind kind:NSString,indexPath:IndexPath) -> String
 }
 
 open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
     
     
     
-    public var cellName:NSString? = ""
-    public var headerName:NSString? = ""
-    public var footerName:NSString? = ""
+    public var cellName:String? = ""
+    public var headerName:String? = ""
+    public var footerName:String? = ""
     public var adapterData:CHGCollectionViewAdapterData = CHGCollectionViewAdapterData.init()
     public var keyPathOfSubData:Any?
     //    public var collectionViewDeselectRowAtIndexPathAnimation:Bool = true
     public var controller:UIViewController?
     public var tag:NSInteger?
     
-    open func obtainCellNameWithCell(_ data: AnyObject, collectionView: UICollectionView, cellForItemAtIndexPath indexPath: IndexPath) -> NSString {
+    open func obtainCellNameWithCell(_ data: Any, collectionView: UICollectionView, cellForItemAtIndexPath indexPath: IndexPath) -> String {
         return self.cellName!
     }
     
-    open func obtainSupplementaryElementNameWithCell(_ data: AnyObject, collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: NSString, indexPath: IndexPath) -> NSString {
+    open func obtainSupplementaryElementNameWithCell(_ data: Any, collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: NSString, indexPath: IndexPath) -> String {
+        
         return (kind.isEqual(to: UICollectionView.elementKindSectionHeader) ? self.headerName : self.footerName)!
     }
     
@@ -75,7 +76,7 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
         }
     }
     
-    open func cellDataWithIndexPath(_ indexPath:IndexPath,collectionView:UICollectionView) -> AnyObject? {
+    open func cellDataWithIndexPath(_ indexPath:IndexPath,collectionView:UICollectionView) -> Any? {
         if self.adapterData.cellDatas?.count == 0 {
             return nil
         }
@@ -90,16 +91,16 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
             } else {
                 tempArray = sectionData[keyPath:subDataKeyPathTemp as! AnyKeyPath] as! NSArray
             }
-            return tempArray.count == 0 ? sectionData as AnyObject : tempArray[indexPath.row] as AnyObject
+            return tempArray.count == 0 ? sectionData : tempArray[indexPath.row]
         } else {
-            return sectionData is NSArray ? (sectionData as! NSArray)[indexPath.row] as AnyObject : sectionData as AnyObject
+            return sectionData is NSArray ? (sectionData as! NSArray)[indexPath.row] : sectionData
         }
     }
     
     open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cellData = self.cellDataWithIndexPath(indexPath,collectionView: collectionView)
-        let identifier:NSString = self.obtainCellNameWithCell(cellData!, collectionView: collectionView, cellForItemAtIndexPath: indexPath)
-        if identifier.length == 0 {
+        let identifier:String = self.obtainCellNameWithCell(cellData!, collectionView: collectionView, cellForItemAtIndexPath: indexPath)
+        if identifier.count == 0 {
             print("cellName不能为空")
             return UICollectionViewCell()
         }
@@ -121,7 +122,7 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
         return xibFile != nil
     }
     
-    open func defaultReusableView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath, headerFooterData:AnyObject?)->CHGCollectionReusableView {
+    open func defaultReusableView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath, headerFooterData:Any?)->CHGCollectionReusableView {
         collectionView.register(CHGCollectionReusableView.classForCoder(), forSupplementaryViewOfKind: kind, withReuseIdentifier:"CHGCollectionReusableView" )
         let reusableView:CHGCollectionReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier:"CHGCollectionReusableView" , for: indexPath) as! CHGCollectionReusableView
         reusableView.eventTransmissionBlock = collectionView.eventTransmissionBlock
@@ -129,8 +130,8 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
         return reusableView
     }
     
-    open func headerFooterDataWithrSupplementaryElementOfKind(kind:NSString,indexPath:IndexPath) -> AnyObject? {
-        let reusableViewData:NSArray? =
+    open func headerFooterDataWithrSupplementaryElementOfKind(kind:NSString,indexPath:IndexPath) -> Any? {
+        let reusableViewData:[Any]? =
             ((kind as NSString).isEqual(to: UICollectionView.elementKindSectionHeader)
                 ?
                     self.adapterData.headerDatas
@@ -139,33 +140,33 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
         if reusableViewData == nil || (reusableViewData?.count)! == 0 || indexPath.section >= (reusableViewData?.count)! {
             return nil
         }
-        return reusableViewData?[indexPath.section] as AnyObject
+        return reusableViewData?[indexPath.section]
     }
     
     open func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let reusableViewData:NSArray? =
+        let reusableViewData:[Any]? =
             ((kind as NSString).isEqual(to: UICollectionView.elementKindSectionHeader)
                 ?
                     self.adapterData.headerDatas
                 :
                 self.adapterData.footerDatas)
-        let headerFooterData:AnyObject? = self.headerFooterDataWithrSupplementaryElementOfKind(kind: kind as NSString, indexPath: indexPath)
+        let headerFooterData:Any? = self.headerFooterDataWithrSupplementaryElementOfKind(kind: kind as NSString, indexPath: indexPath)
         if reusableViewData == nil || reusableViewData?.count == 0 || indexPath.section >= reusableViewData?.count ?? 0 {
-            return self.defaultReusableView(collectionView, viewForSupplementaryElementOfKind: kind, at: indexPath, headerFooterData: headerFooterData)
+            return self.defaultReusableView(collectionView, viewForSupplementaryElementOfKind: kind as String, at: indexPath, headerFooterData: headerFooterData)
         }
-        let identifier:NSString = self.obtainSupplementaryElementNameWithCell(headerFooterData!, collectionView: collectionView, viewForSupplementaryElementOfKind: kind as NSString, indexPath: indexPath)
-        if identifier.length == 0 {
-            return self.defaultReusableView(collectionView, viewForSupplementaryElementOfKind: kind, at: indexPath, headerFooterData: headerFooterData)
+        let identifier:String = self.obtainSupplementaryElementNameWithCell(headerFooterData!, collectionView: collectionView, viewForSupplementaryElementOfKind: kind as NSString, indexPath: indexPath)
+        if identifier.count == 0 {
+            return self.defaultReusableView(collectionView, viewForSupplementaryElementOfKind: kind as String, at: indexPath, headerFooterData: headerFooterData)
         }
         if self.fileIsExit(identifier as String) {
-            collectionView.register(UINib(nibName: identifier as String, bundle: nil), forSupplementaryViewOfKind: kind, withReuseIdentifier: identifier as String)
+            collectionView.register(UINib(nibName: identifier as String, bundle: nil), forSupplementaryViewOfKind: kind as String, withReuseIdentifier: identifier as String)
         } else {
             let NameSpace:String = Bundle.main.infoDictionary!["CFBundleExecutable"] as! String
             let classAllNameClass:AnyClass? = NSClassFromString("\(NameSpace).\(identifier)")
-            collectionView.register(classAllNameClass, forSupplementaryViewOfKind: kind, withReuseIdentifier: identifier as String)
+            collectionView.register(classAllNameClass, forSupplementaryViewOfKind: kind as String, withReuseIdentifier: identifier as String)
         }
         
-        let reusableView:CHGCollectionReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: identifier as String, for: indexPath) as! CHGCollectionReusableView
+        let reusableView:CHGCollectionReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: kind as String, withReuseIdentifier: identifier as String, for: indexPath) as! CHGCollectionReusableView
         reusableView.eventTransmissionBlock = collectionView.eventTransmissionBlock
         reusableView.reusableViewFor(collectionView: collectionView, indexPath: indexPath, kind: kind as NSString, reusableViewData: headerFooterData)
         return reusableView

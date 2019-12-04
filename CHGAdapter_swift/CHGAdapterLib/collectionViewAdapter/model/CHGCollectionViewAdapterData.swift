@@ -9,8 +9,8 @@
 import UIKit
 
 open class CHGCollectionViewAdapterData: NSObject {
-    public var cellDatas:NSArray?
-    public var headerDatas:NSArray?
-    public var footerDatas:NSArray?
-    public var customData:AnyObject?
+    public var cellDatas:[Any]?
+    public var headerDatas:[Any]?
+    public var footerDatas:[Any]?
+    public var customData:Any?
 }

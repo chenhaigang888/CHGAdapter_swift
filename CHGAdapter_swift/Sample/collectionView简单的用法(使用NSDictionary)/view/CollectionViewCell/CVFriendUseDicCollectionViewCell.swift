@@ -18,7 +18,7 @@ class CVFriendUseDicCollectionViewCell: CHGCollectionViewCell {
         // Initialization code
     }
 
-    override func cellForRow(atIndexPath indexPath: IndexPath, collectionView: UICollectionView?, data: AnyObject?) {
+    override func cellForRow(atIndexPath indexPath: IndexPath, collectionView: UICollectionView?, data: Any?) {
         super.cellForRow(atIndexPath: indexPath, collectionView: collectionView, data: data)
         if data is NSDictionary {
             let dic:NSDictionary = data as! NSDictionary

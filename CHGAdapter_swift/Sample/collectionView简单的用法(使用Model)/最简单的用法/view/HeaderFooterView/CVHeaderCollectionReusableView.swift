@@ -17,7 +17,7 @@ class CVHeaderCollectionReusableView: CHGCollectionReusableView {
         // Initialization code
     }
     
-    override func reusableViewFor(collectionView: UICollectionView, indexPath: IndexPath, kind: NSString, reusableViewData: AnyObject?) {
+    override func reusableViewFor(collectionView: UICollectionView, indexPath: IndexPath, kind: NSString, reusableViewData: Any?) {
         super.reusableViewFor(collectionView: collectionView, indexPath: indexPath, kind: kind, reusableViewData: reusableViewData)
         let headerModel:CVHeaderModel = reusableViewData as! CVHeaderModel
         self.name?.text = headerModel.name

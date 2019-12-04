@@ -17,7 +17,7 @@ class GoodsCollectionViewCell: CHGCollectionViewCell {
         // Initialization code
     }
 
-    override func cellForRow(atIndexPath indexPath: IndexPath, collectionView: UICollectionView?, data: AnyObject?) {
+    override func cellForRow(atIndexPath indexPath: IndexPath, collectionView: UICollectionView?, data: Any?) {
         super.cellForRow(atIndexPath: indexPath, collectionView: collectionView, data: data)
         let model:Goods = data as! Goods
         title?.text = model.name

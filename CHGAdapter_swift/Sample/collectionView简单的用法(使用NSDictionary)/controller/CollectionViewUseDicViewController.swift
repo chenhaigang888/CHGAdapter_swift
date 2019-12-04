@@ -67,8 +67,8 @@ class CollectionViewUseDicViewController: UIViewController {
         
 //        adapter.rowsOfSectionKeyName = \Group.test
         adapter.keyPathOfSubData = "test"
-        adapter.adapterData.cellDatas = cellDatas
-        adapter.adapterData.headerDatas = cellDatas
+        adapter.adapterData.cellDatas = cellDatas as? [Any]
+        adapter.adapterData.headerDatas = cellDatas as? [Any]
         collectionView?.collectionViewAdapter = adapter
         collectionView?.collectionViewLayout = layout
     }

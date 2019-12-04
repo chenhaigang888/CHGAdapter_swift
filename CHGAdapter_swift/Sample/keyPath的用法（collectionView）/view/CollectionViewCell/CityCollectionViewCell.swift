@@ -17,7 +17,7 @@ class CityCollectionViewCell: CHGCollectionViewCell {
         // Initialization code
     }
     
-    override func cellForRow(atIndexPath indexPath: IndexPath, collectionView: UICollectionView?, data: AnyObject?) {
+    override func cellForRow(atIndexPath indexPath: IndexPath, collectionView: UICollectionView?, data: Any?) {
         super.cellForRow(atIndexPath: indexPath, collectionView: collectionView, data: data)
         let model:CityModel = data as! CityModel
         title?.text = model.name

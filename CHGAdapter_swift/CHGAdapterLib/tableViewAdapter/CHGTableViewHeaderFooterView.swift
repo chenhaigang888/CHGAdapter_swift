@@ -21,7 +21,7 @@ open class CHGTableViewHeaderFooterView: UITableViewHeaderFooterView {
     public var headerFooterData:Any?
     public var type:CHGTableViewHeaderFooterViewType?
     
-    open func headerFooter(headerFooterForSection section:NSInteger,tableView:UITableView,data:Any,type:CHGTableViewHeaderFooterViewType) -> Void {
+    open func headerFooter(section:NSInteger,tableView:UITableView,data:Any,type:CHGTableViewHeaderFooterViewType) -> Void {
         self.section = section
         self.tableView = tableView
         self.headerFooterData = data

@@ -36,7 +36,7 @@ extension GoodsCategory: CHGTableViewHeaderFooterModelProtocol {
 }
 
 extension GoodsCategory: CHGCollectionViewSupplementaryElementModelProtocol {
-    func reusableViewInCollectionView(collectionView: UICollectionView, supplementaryElementOfKind kind: String, atIndexPath indexPath: IndexPath) -> String {
+    func reusableView(collectionView: UICollectionView, supplementaryElementOfKind kind: String, atIndexPath indexPath: IndexPath) -> String {
         return "GoodsCategoryCollectionReusableView"
     }
     
@@ -70,7 +70,7 @@ extension Goods: CHGTableViewCellModelProtocol {
 }
 
 extension Goods: CHGCollectionViewCellModelProtocol {
-    func cellClassNameInCollectionView(collectionView: UICollectionView, atIndexPath: IndexPath) -> String {
+    func cellClassName(collectionView: UICollectionView, at indexPath: IndexPath) -> String {
         return "GoodsCollectionViewCell"
     }
     

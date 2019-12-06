@@ -37,7 +37,7 @@ extension CountryModel: CHGTableViewHeaderFooterModelProtocol {
 }
 
 extension CountryModel: CHGCollectionViewSupplementaryElementModelProtocol {
-    func reusableViewInCollectionView(collectionView: UICollectionView, supplementaryElementOfKind kind: String, atIndexPath indexPath: IndexPath) -> String {
+    func reusableView(collectionView: UICollectionView, supplementaryElementOfKind kind: String, atIndexPath indexPath: IndexPath) -> String {
         return "CountyCollectionReusableView"
     }
     
@@ -68,7 +68,7 @@ extension CityModel: CHGTableViewCellModelProtocol {
 }
 
 extension CityModel: CHGCollectionViewCellModelProtocol {
-    func cellClassNameInCollectionView(collectionView: UICollectionView, atIndexPath: IndexPath) -> String {
+    func cellClassName(collectionView: UICollectionView, at indexPath: IndexPath) -> String {
         return "CityCollectionViewCell"
     }
     

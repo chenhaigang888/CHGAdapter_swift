@@ -23,7 +23,7 @@ class CVHeaderModel: NSObject {
 
 extension CVHeaderModel: CHGCollectionViewSupplementaryElementModelProtocol {
     
-    func reusableViewInCollectionView(collectionView: UICollectionView, supplementaryElementOfKind kind: String, atIndexPath indexPath: IndexPath) -> String {
+    func reusableView(collectionView: UICollectionView, supplementaryElementOfKind kind: String, atIndexPath indexPath: IndexPath) -> String {
         return "CVHeaderCollectionReusableView"
     }
     

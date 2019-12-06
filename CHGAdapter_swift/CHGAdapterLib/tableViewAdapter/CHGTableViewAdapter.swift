@@ -221,7 +221,7 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
         
         let view_:CHGTableViewHeaderFooterView = view as! CHGTableViewHeaderFooterView
         view_.eventTransmissionBlock = tableView.eventTransmissionBlock
-        view_.headerFooter(headerFooterForSection: section, tableView: tableView, data: headerFooterData!, type: type)
+        view_.headerFooter(section: section, tableView: tableView, data: headerFooterData!, type: type)
         return view_
     }
     

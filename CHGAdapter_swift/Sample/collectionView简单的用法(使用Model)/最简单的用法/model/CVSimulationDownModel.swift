@@ -20,7 +20,7 @@ class CVSimulationDownModel: NSObject {
 }
 
 extension CVSimulationDownModel: CHGCollectionViewCellModelProtocol {
-    func cellClassNameInCollectionView(collectionView: UICollectionView, atIndexPath: IndexPath) -> String {
+    func cellClassName(collectionView: UICollectionView, at indexPath: IndexPath) -> String {
         return "CVSimulationDownCollectionViewCell"
     }
     

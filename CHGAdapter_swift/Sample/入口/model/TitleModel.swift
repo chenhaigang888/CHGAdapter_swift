@@ -43,14 +43,14 @@ extension TitleModel: CHGTableViewHeaderFooterModelProtocol {
 
 // MARK: - 如果TitleModel类需要在CollectionView类中的Cell中使用则需要实现CHGCollectionViewCellModelProtocol协议
 extension TitleModel: CHGCollectionViewCellModelProtocol {
-    func cellClassNameInCollectionView(collectionView: UICollectionView, atIndexPath: IndexPath) -> String {
+    func cellClassName(collectionView: UICollectionView, at indexPath: IndexPath) -> String {
         return "TitleCollectionViewCell"
     }
 }
 
 // MARK: - 如果TitleModel类需要在CollectionView类中的Cell中使用则需要实现CHGCollectionViewSupplementaryElementModelProtocol协议
 extension TitleModel: CHGCollectionViewSupplementaryElementModelProtocol {
-    func reusableViewInCollectionView(collectionView: UICollectionView, supplementaryElementOfKind kind: String, atIndexPath indexPath: IndexPath) -> String {
+    func reusableView(collectionView: UICollectionView, supplementaryElementOfKind kind: String, atIndexPath indexPath: IndexPath) -> String {
         return "这里填写collectionView的HeadFooterView类名 必须是CHGCollectionReusableView的子类"
     }
 }

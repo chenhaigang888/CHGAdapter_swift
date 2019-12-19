@@ -54,6 +54,31 @@
 		5FF37AE721284C1300477E61 /* CVFriendUseDicCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FF37AE521284C1300477E61 /* CVFriendUseDicCollectionViewCell.xib */; };
 		5FF37AE921284DCC00477E61 /* CVCollectionViewUseDicHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF37AE821284DCC00477E61 /* CVCollectionViewUseDicHeaderFooterView.swift */; };
 		5FF37AEC21284DE100477E61 /* CVCollectionViewUseDicHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FF37AEB21284DE100477E61 /* CVCollectionViewUseDicHeaderFooterView.xib */; };
+		842444B723A8D22A0097C98C /* SampleTBVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842444B523A8D22A0097C98C /* SampleTBVViewController.swift */; };
+		842444B823A8D22A0097C98C /* SampleTBVViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842444B623A8D22A0097C98C /* SampleTBVViewController.xib */; };
+		84499FE623AB13C70012F312 /* Computer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84499FE523AB13C70012F312 /* Computer.swift */; };
+		84499FEB23AB14770012F312 /* ComputerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84499FE923AB14770012F312 /* ComputerTableViewCell.swift */; };
+		84499FEC23AB14770012F312 /* ComputerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84499FEA23AB14770012F312 /* ComputerTableViewCell.xib */; };
+		84499FF223AB17160012F312 /* TBFunctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84499FF023AB17160012F312 /* TBFunctionViewController.swift */; };
+		84499FF323AB17160012F312 /* TBFunctionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84499FF123AB17160012F312 /* TBFunctionViewController.xib */; };
+		84499FF623AB196D0012F312 /* TwoSectionTBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84499FF423AB196D0012F312 /* TwoSectionTBViewController.swift */; };
+		84499FF723AB196D0012F312 /* TwoSectionTBViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84499FF523AB196D0012F312 /* TwoSectionTBViewController.xib */; };
+		84499FFA23AB1AB20012F312 /* TBHeaderFooterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84499FF823AB1AB20012F312 /* TBHeaderFooterViewController.swift */; };
+		84499FFB23AB1AB20012F312 /* TBHeaderFooterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84499FF923AB1AB20012F312 /* TBHeaderFooterViewController.xib */; };
+		84499FFD23AB1AF90012F312 /* TBHeaderFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84499FFC23AB1AF90012F312 /* TBHeaderFooter.swift */; };
+		8449A00023AB1BBD0012F312 /* TBOneTitleHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84499FFF23AB1BBD0012F312 /* TBOneTitleHeaderFooterView.swift */; };
+		8449A00223AB1BD50012F312 /* TBOneTitleHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8449A00123AB1BD50012F312 /* TBOneTitleHeaderFooterView.xib */; };
+		8449A00523AB22B60012F312 /* TBHeaderFooter2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449A00323AB22B60012F312 /* TBHeaderFooter2ViewController.swift */; };
+		8449A00623AB22B60012F312 /* TBHeaderFooter2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8449A00423AB22B60012F312 /* TBHeaderFooter2ViewController.xib */; };
+		8449A00823AB22F10012F312 /* GoodsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449A00723AB22F10012F312 /* GoodsType.swift */; };
+		8449A00A23AB23B20012F312 /* GoodsTypeTVHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449A00923AB23B20012F312 /* GoodsTypeTVHeaderFooterView.swift */; };
+		8449A00C23AB293B0012F312 /* GoodsTypeTVFooterDescHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449A00B23AB293B0012F312 /* GoodsTypeTVFooterDescHeaderFooterView.swift */; };
+		8449A00E23AB294D0012F312 /* GoodsTypeTVFooterDescHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8449A00D23AB294D0012F312 /* GoodsTypeTVFooterDescHeaderFooterView.xib */; };
+		84881DB223A8CD4C00FA662A /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84881DB023A8CD4C00FA662A /* StartViewController.swift */; };
+		84881DB323A8CD4C00FA662A /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84881DB123A8CD4C00FA662A /* StartViewController.xib */; };
+		84881DB723A8CDF600FA662A /* FuncModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84881DB623A8CDF600FA662A /* FuncModel.swift */; };
+		84881DBC23A8CE8E00FA662A /* FuncModelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84881DBA23A8CE8E00FA662A /* FuncModelTableViewCell.swift */; };
+		84881DBD23A8CE8E00FA662A /* FuncModelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84881DBB23A8CE8E00FA662A /* FuncModelTableViewCell.xib */; };
 		8F0A9F722147EC350030353C /* KeyPathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0A9F702147EC350030353C /* KeyPathViewController.swift */; };
 		8F0A9F732147EC350030353C /* KeyPathViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F0A9F712147EC350030353C /* KeyPathViewController.xib */; };
 		8F0A9F752147ED2B0030353C /* GoodsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0A9F742147ED2B0030353C /* GoodsCategory.swift */; };
@@ -168,6 +193,31 @@
 		5FF37AE521284C1300477E61 /* CVFriendUseDicCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CVFriendUseDicCollectionViewCell.xib; sourceTree = "<group>"; };
 		5FF37AE821284DCC00477E61 /* CVCollectionViewUseDicHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVCollectionViewUseDicHeaderFooterView.swift; sourceTree = "<group>"; };
 		5FF37AEB21284DE100477E61 /* CVCollectionViewUseDicHeaderFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CVCollectionViewUseDicHeaderFooterView.xib; sourceTree = "<group>"; };
+		842444B523A8D22A0097C98C /* SampleTBVViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleTBVViewController.swift; sourceTree = "<group>"; };
+		842444B623A8D22A0097C98C /* SampleTBVViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SampleTBVViewController.xib; sourceTree = "<group>"; };
+		84499FE523AB13C70012F312 /* Computer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Computer.swift; sourceTree = "<group>"; };
+		84499FE923AB14770012F312 /* ComputerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComputerTableViewCell.swift; sourceTree = "<group>"; };
+		84499FEA23AB14770012F312 /* ComputerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComputerTableViewCell.xib; sourceTree = "<group>"; };
+		84499FF023AB17160012F312 /* TBFunctionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBFunctionViewController.swift; sourceTree = "<group>"; };
+		84499FF123AB17160012F312 /* TBFunctionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TBFunctionViewController.xib; sourceTree = "<group>"; };
+		84499FF423AB196D0012F312 /* TwoSectionTBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TwoSectionTBViewController.swift; path = ../../../../../../../Documents/TwoSectionTBViewController.swift; sourceTree = "<group>"; };
+		84499FF523AB196D0012F312 /* TwoSectionTBViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TwoSectionTBViewController.xib; path = ../../../../../../../Documents/TwoSectionTBViewController.xib; sourceTree = "<group>"; };
+		84499FF823AB1AB20012F312 /* TBHeaderFooterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TBHeaderFooterViewController.swift; path = ../../../../../../../Documents/TBHeaderFooterViewController.swift; sourceTree = "<group>"; };
+		84499FF923AB1AB20012F312 /* TBHeaderFooterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TBHeaderFooterViewController.xib; path = ../../../../../../../Documents/TBHeaderFooterViewController.xib; sourceTree = "<group>"; };
+		84499FFC23AB1AF90012F312 /* TBHeaderFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TBHeaderFooter.swift; path = ../../../../../../../Documents/TBHeaderFooter.swift; sourceTree = "<group>"; };
+		84499FFF23AB1BBD0012F312 /* TBOneTitleHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TBOneTitleHeaderFooterView.swift; path = ../../../../../../../../Documents/TBOneTitleHeaderFooterView.swift; sourceTree = "<group>"; };
+		8449A00123AB1BD50012F312 /* TBOneTitleHeaderFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TBOneTitleHeaderFooterView.xib; path = ../../../../../../../../Documents/TBOneTitleHeaderFooterView.xib; sourceTree = "<group>"; };
+		8449A00323AB22B60012F312 /* TBHeaderFooter2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TBHeaderFooter2ViewController.swift; path = ../../../../../../../Documents/TBHeaderFooter2ViewController.swift; sourceTree = "<group>"; };
+		8449A00423AB22B60012F312 /* TBHeaderFooter2ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TBHeaderFooter2ViewController.xib; path = ../../../../../../../Documents/TBHeaderFooter2ViewController.xib; sourceTree = "<group>"; };
+		8449A00723AB22F10012F312 /* GoodsType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GoodsType.swift; path = ../../../../../../../Documents/GoodsType.swift; sourceTree = "<group>"; };
+		8449A00923AB23B20012F312 /* GoodsTypeTVHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GoodsTypeTVHeaderFooterView.swift; path = ../../../../../../../../Documents/GoodsTypeTVHeaderFooterView.swift; sourceTree = "<group>"; };
+		8449A00B23AB293B0012F312 /* GoodsTypeTVFooterDescHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GoodsTypeTVFooterDescHeaderFooterView.swift; path = ../../../../../../../../Documents/GoodsTypeTVFooterDescHeaderFooterView.swift; sourceTree = "<group>"; };
+		8449A00D23AB294D0012F312 /* GoodsTypeTVFooterDescHeaderFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = GoodsTypeTVFooterDescHeaderFooterView.xib; path = ../../../../../../../../Documents/GoodsTypeTVFooterDescHeaderFooterView.xib; sourceTree = "<group>"; };
+		84881DB023A8CD4C00FA662A /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		84881DB123A8CD4C00FA662A /* StartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
+		84881DB623A8CDF600FA662A /* FuncModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncModel.swift; sourceTree = "<group>"; };
+		84881DBA23A8CE8E00FA662A /* FuncModelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncModelTableViewCell.swift; sourceTree = "<group>"; };
+		84881DBB23A8CE8E00FA662A /* FuncModelTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FuncModelTableViewCell.xib; sourceTree = "<group>"; };
 		8F0A9F702147EC350030353C /* KeyPathViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPathViewController.swift; sourceTree = "<group>"; };
 		8F0A9F712147EC350030353C /* KeyPathViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyPathViewController.xib; sourceTree = "<group>"; };
 		8F0A9F742147ED2B0030353C /* GoodsCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsCategory.swift; sourceTree = "<group>"; };
@@ -559,6 +609,142 @@
 			path = headerFooterView;
 			sourceTree = "<group>";
 		};
+		84499FE723AB143B0012F312 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84499FFE23AB1B820012F312 /* HeaderFooterView */,
+				84499FE823AB14490012F312 /* TableViewCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84499FE823AB14490012F312 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				84499FE923AB14770012F312 /* ComputerTableViewCell.swift */,
+				84499FEA23AB14770012F312 /* ComputerTableViewCell.xib */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		84499FFE23AB1B820012F312 /* HeaderFooterView */ = {
+			isa = PBXGroup;
+			children = (
+				84499FFF23AB1BBD0012F312 /* TBOneTitleHeaderFooterView.swift */,
+				8449A00123AB1BD50012F312 /* TBOneTitleHeaderFooterView.xib */,
+				8449A00923AB23B20012F312 /* GoodsTypeTVHeaderFooterView.swift */,
+				8449A00B23AB293B0012F312 /* GoodsTypeTVFooterDescHeaderFooterView.swift */,
+				8449A00D23AB294D0012F312 /* GoodsTypeTVFooterDescHeaderFooterView.xib */,
+			);
+			path = HeaderFooterView;
+			sourceTree = "<group>";
+		};
+		84881DA523A8CC2000FA662A /* Sample2 */ = {
+			isa = PBXGroup;
+			children = (
+				84881DAB23A8CCCF00FA662A /* 入口 */,
+				84881DA623A8CC2E00FA662A /* TableView */,
+				84881DA723A8CC3C00FA662A /* CollectionView */,
+			);
+			path = Sample2;
+			sourceTree = "<group>";
+		};
+		84881DA623A8CC2E00FA662A /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				84881DA823A8CC5000FA662A /* TableView功能介绍 */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		84881DA723A8CC3C00FA662A /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		84881DA823A8CC5000FA662A /* TableView功能介绍 */ = {
+			isa = PBXGroup;
+			children = (
+				84499FE723AB143B0012F312 /* View */,
+				84881DAA23A8CC7B00FA662A /* Model */,
+				84881DA923A8CC6900FA662A /* ViewController */,
+			);
+			path = "TableView功能介绍";
+			sourceTree = "<group>";
+		};
+		84881DA923A8CC6900FA662A /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				84499FF023AB17160012F312 /* TBFunctionViewController.swift */,
+				84499FF123AB17160012F312 /* TBFunctionViewController.xib */,
+				842444B523A8D22A0097C98C /* SampleTBVViewController.swift */,
+				842444B623A8D22A0097C98C /* SampleTBVViewController.xib */,
+				84499FF423AB196D0012F312 /* TwoSectionTBViewController.swift */,
+				84499FF523AB196D0012F312 /* TwoSectionTBViewController.xib */,
+				84499FF823AB1AB20012F312 /* TBHeaderFooterViewController.swift */,
+				84499FF923AB1AB20012F312 /* TBHeaderFooterViewController.xib */,
+				8449A00323AB22B60012F312 /* TBHeaderFooter2ViewController.swift */,
+				8449A00423AB22B60012F312 /* TBHeaderFooter2ViewController.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		84881DAA23A8CC7B00FA662A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				84499FE523AB13C70012F312 /* Computer.swift */,
+				84499FFC23AB1AF90012F312 /* TBHeaderFooter.swift */,
+				8449A00723AB22F10012F312 /* GoodsType.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84881DAB23A8CCCF00FA662A /* 入口 */ = {
+			isa = PBXGroup;
+			children = (
+				84881DB823A8CE5E00FA662A /* View */,
+				84881DB523A8CDA200FA662A /* Model */,
+				84881DB423A8CD9300FA662A /* ViewController */,
+			);
+			path = "入口";
+			sourceTree = "<group>";
+		};
+		84881DB423A8CD9300FA662A /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				84881DB023A8CD4C00FA662A /* StartViewController.swift */,
+				84881DB123A8CD4C00FA662A /* StartViewController.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		84881DB523A8CDA200FA662A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				84881DB623A8CDF600FA662A /* FuncModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84881DB823A8CE5E00FA662A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84881DB923A8CE6600FA662A /* TableViewCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84881DB923A8CE6600FA662A /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				84881DBA23A8CE8E00FA662A /* FuncModelTableViewCell.swift */,
+				84881DBB23A8CE8E00FA662A /* FuncModelTableViewCell.xib */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
 		8F0A9F6C2147EBC70030353C /* keyPath的用法（tableView） */ = {
 			isa = PBXGroup;
 			children = (
@@ -677,6 +863,7 @@
 		8F14D03E20ABC4A4005E4A15 /* CHGAdapter_swift */ = {
 			isa = PBXGroup;
 			children = (
+				84881DA523A8CC2000FA662A /* Sample2 */,
 				8F14D06E20ABC7F4005E4A15 /* Sample */,
 				8F14D06D20ABC7E6005E4A15 /* CHGAdapterLib */,
 				8F14D03F20ABC4A4005E4A15 /* AppDelegate.swift */,
@@ -998,20 +1185,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84499FFB23AB1AB20012F312 /* TBHeaderFooterViewController.xib in Resources */,
 				5FF37AA62128215300477E61 /* TableViewViewController.xib in Resources */,
 				5F92C3032127EF0500455EEB /* TitleTableViewCell.xib in Resources */,
+				8449A00E23AB294D0012F312 /* GoodsTypeTVFooterDescHeaderFooterView.xib in Resources */,
 				5FF37ADD2128420F00477E61 /* TableViewUseDicViewController.xib in Resources */,
 				5FF37AAC2128265700477E61 /* TVInputTextTableViewCell.xib in Resources */,
+				84499FF323AB17160012F312 /* TBFunctionViewController.xib in Resources */,
 				8FB8F17A2148C22A00B96551 /* CountyCollectionReusableView.xib in Resources */,
 				8F0A9F7A2147EEA30030353C /* GoodsCategoryTableViewHeaderFooterView.xib in Resources */,
 				5FF37AE221284A6500477E61 /* TVTitleDicHeaderFooterView.xib in Resources */,
+				84881DBD23A8CE8E00FA662A /* FuncModelTableViewCell.xib in Resources */,
 				5FF37ACF21283F3A00477E61 /* FriendTableViewCell.xib in Resources */,
 				8F14D04A20ABC4A5005E4A15 /* LaunchScreen.storyboard in Resources */,
 				8F0A9F732147EC350030353C /* KeyPathViewController.xib in Resources */,
 				5F92C3072127F2DF00455EEB /* CollectionViewViewController.xib in Resources */,
+				84499FEC23AB14770012F312 /* ComputerTableViewCell.xib in Resources */,
 				8FB8F15E2148AFAB00B96551 /* CityTableViewCell.xib in Resources */,
 				8FB8F16E2148C0B800B96551 /* GoodsCollectionViewCell.xib in Resources */,
+				8449A00223AB1BD50012F312 /* TBOneTitleHeaderFooterView.xib in Resources */,
 				8FB8F1682148C02300B96551 /* KeyPathCVViewController.xib in Resources */,
+				8449A00623AB22B60012F312 /* TBHeaderFooter2ViewController.xib in Resources */,
 				5F92C2FC2127EDC300455EEB /* MainViewController.xib in Resources */,
 				5FF37AB421282BCE00477E61 /* TVSubmitHeaderFooterView.xib in Resources */,
 				5F92C30E2127F6DC00455EEB /* CVTitleCollectionViewCell.xib in Resources */,
@@ -1019,6 +1213,8 @@
 				5FF37ABA2128325D00477E61 /* TVTitleHeaderFooterView.xib in Resources */,
 				8F0A9F7F2147EF460030353C /* GoodsTableViewCell.xib in Resources */,
 				5FF37A9F212815B700477E61 /* CVSimulationDownCollectionViewCell.xib in Resources */,
+				84881DB323A8CD4C00FA662A /* StartViewController.xib in Resources */,
+				842444B823A8D22A0097C98C /* SampleTBVViewController.xib in Resources */,
 				8FB8F1762148C1A100B96551 /* GoodsCategoryCollectionReusableView.xib in Resources */,
 				5FF37A9B21280EFC00477E61 /* CVInputTextCollectionViewCell.xib in Resources */,
 				8F14D04720ABC4A5005E4A15 /* Assets.xcassets in Resources */,
@@ -1027,6 +1223,7 @@
 				5FF37AC02128343000477E61 /* TVSuccHeaderFooterView.xib in Resources */,
 				5FF37ACA21283CA900477E61 /* CollectionViewUseDicViewController.xib in Resources */,
 				8FB8F15A2148AEF500B96551 /* CountryHeaderFooterView.xib in Resources */,
+				84499FF723AB196D0012F312 /* TwoSectionTBViewController.xib in Resources */,
 				8F126EB4212AEF61003FD300 /* TitleCollectionViewCell.xib in Resources */,
 				5F92C3152127FCA500455EEB /* CVHeaderCollectionReusableView.xib in Resources */,
 			);
@@ -1092,17 +1289,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84499FF223AB17160012F312 /* TBFunctionViewController.swift in Sources */,
 				5FF37AD321283F9A00477E61 /* FriendAdapter.swift in Sources */,
 				8FB8F1712148C0CC00B96551 /* CityCollectionViewCell.swift in Sources */,
 				5FF37A9721280EB900477E61 /* CVInputTextModel.swift in Sources */,
 				8FB8F1562148AD3500B96551 /* CountryModel.swift in Sources */,
 				8F2271B220EA243F00C72514 /* CHGTableView+CHGTableViewAdapter.swift in Sources */,
+				842444B723A8D22A0097C98C /* SampleTBVViewController.swift in Sources */,
 				5F92C30D2127F6DC00455EEB /* CVTitleCollectionViewCell.swift in Sources */,
+				8449A00023AB1BBD0012F312 /* TBOneTitleHeaderFooterView.swift in Sources */,
+				8449A00823AB22F10012F312 /* GoodsType.swift in Sources */,
 				5FF37AAE2128266E00477E61 /* TVInputTextModel.swift in Sources */,
+				8449A00A23AB23B20012F312 /* GoodsTypeTVHeaderFooterView.swift in Sources */,
 				8F0A9F782147EE9A0030353C /* GoodsCategoryTableViewHeaderFooterView.swift in Sources */,
 				8F126EB3212AEF61003FD300 /* TitleCollectionViewCell.swift in Sources */,
 				8FB8F1602148B47200B96551 /* CHGSubDataOfKeyPathDelegate.swift in Sources */,
 				8F2271B020EA243F00C72514 /* CHGCollectionViewAdapterData.swift in Sources */,
+				84881DB723A8CDF600FA662A /* FuncModel.swift in Sources */,
 				8F0A9F752147ED2B0030353C /* GoodsCategory.swift in Sources */,
 				5FF37AE621284C1300477E61 /* CVFriendUseDicCollectionViewCell.swift in Sources */,
 				5FF37AC22128355600477E61 /* TVSuccModel.swift in Sources */,
@@ -1110,6 +1313,7 @@
 				8FB8F1672148C02300B96551 /* KeyPathCVViewController.swift in Sources */,
 				5FF37ABC2128329B00477E61 /* TVTitleModel.swift in Sources */,
 				8F2271AD20EA243F00C72514 /* UICollectionView+CHGCollectionViewAdapter.swift in Sources */,
+				84499FEB23AB14770012F312 /* ComputerTableViewCell.swift in Sources */,
 				5FF37AA52128215300477E61 /* TableViewViewController.swift in Sources */,
 				8F2271B120EA243F00C72514 /* CHGCollectionReusableView.swift in Sources */,
 				5F92C3142127FCA500455EEB /* CVHeaderCollectionReusableView.swift in Sources */,
@@ -1117,19 +1321,26 @@
 				8F1F6FDE2109BD31004E3B30 /* CHGSimpleTableViewAdapter.swift in Sources */,
 				5FF37AE921284DCC00477E61 /* CVCollectionViewUseDicHeaderFooterView.swift in Sources */,
 				8F0D567E2130215900EB7CAC /* TestK.swift in Sources */,
+				84499FE623AB13C70012F312 /* Computer.swift in Sources */,
+				84499FF623AB196D0012F312 /* TwoSectionTBViewController.swift in Sources */,
 				8FB8F1792148C22A00B96551 /* CountyCollectionReusableView.swift in Sources */,
 				8F0D568021302E5400EB7CAC /* Group.swift in Sources */,
 				5FF37ABE2128342700477E61 /* TVSuccHeaderFooterView.swift in Sources */,
+				84881DB223A8CD4C00FA662A /* StartViewController.swift in Sources */,
 				8F0EE8B921410B35004058D7 /* ScrollListener.swift in Sources */,
 				5F92C3062127F2DF00455EEB /* CollectionViewViewController.swift in Sources */,
+				84499FFD23AB1AF90012F312 /* TBHeaderFooter.swift in Sources */,
+				8449A00C23AB293B0012F312 /* GoodsTypeTVFooterDescHeaderFooterView.swift in Sources */,
 				8F2271AE20EA243F00C72514 /* CHGCollectionViewCell.swift in Sources */,
 				5FF37AE021284A1700477E61 /* TVTitleDicHeaderFooterView.swift in Sources */,
 				5FF37AB82128325400477E61 /* TVTitleHeaderFooterView.swift in Sources */,
 				5FF37ACE21283F3A00477E61 /* FriendTableViewCell.swift in Sources */,
 				8F0A9F722147EC350030353C /* KeyPathViewController.swift in Sources */,
 				5F92C3102127FC0400455EEB /* CVHeaderModel.swift in Sources */,
+				8449A00523AB22B60012F312 /* TBHeaderFooter2ViewController.swift in Sources */,
 				8F0A9F7E2147EF460030353C /* GoodsTableViewCell.swift in Sources */,
 				5F92C2FB2127EDC300455EEB /* MainViewController.swift in Sources */,
+				84499FFA23AB1AB20012F312 /* TBHeaderFooterViewController.swift in Sources */,
 				8FB8F16D2148C0B800B96551 /* GoodsCollectionViewCell.swift in Sources */,
 				5F92C3092127F68300455EEB /* CVTitleModel.swift in Sources */,
 				5FF37A9E212815B700477E61 /* CVSimulationDownCollectionViewCell.swift in Sources */,
@@ -1138,6 +1349,7 @@
 				5FF37AC921283CA900477E61 /* CollectionViewUseDicViewController.swift in Sources */,
 				5FF37AAB2128265700477E61 /* TVInputTextTableViewCell.swift in Sources */,
 				5FF37AB221282BC300477E61 /* TVSubmitHeaderFooterView.swift in Sources */,
+				84881DBC23A8CE8E00FA662A /* FuncModelTableViewCell.swift in Sources */,
 				8FB8F1582148AEEC00B96551 /* CountryHeaderFooterView.swift in Sources */,
 				8F2271AF20EA243F00C72514 /* CHGCollectionViewEmptyDataShow.swift in Sources */,
 				5FF37AA1212815CC00477E61 /* CVSimulationDownModel.swift in Sources */,

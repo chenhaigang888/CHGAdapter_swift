@@ -44,7 +44,6 @@ class TBFunctionViewController: UIViewController {
 
     func getFuncList() -> [Any] {
         var funcs = [Any]()
-        
         for item in ["一个section的列表",
                      "多个section的列表",
                      "多个section的列表带HeaderFooter 方式1",

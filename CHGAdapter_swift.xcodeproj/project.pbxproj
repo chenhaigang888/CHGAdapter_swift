@@ -54,6 +54,17 @@
 		5FF37AE721284C1300477E61 /* CVFriendUseDicCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FF37AE521284C1300477E61 /* CVFriendUseDicCollectionViewCell.xib */; };
 		5FF37AE921284DCC00477E61 /* CVCollectionViewUseDicHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF37AE821284DCC00477E61 /* CVCollectionViewUseDicHeaderFooterView.swift */; };
 		5FF37AEC21284DE100477E61 /* CVCollectionViewUseDicHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FF37AEB21284DE100477E61 /* CVCollectionViewUseDicHeaderFooterView.xib */; };
+		8405DB1B23AB6590006EE441 /* TBHeaderFooterCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405DB1923AB6590006EE441 /* TBHeaderFooterCollectionReusableView.swift */; };
+		8405DB1C23AB6590006EE441 /* TBHeaderFooterCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8405DB1A23AB6590006EE441 /* TBHeaderFooterCollectionReusableView.xib */; };
+		8405DB1E23AB6899006EE441 /* GoodsType+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405DB1D23AB6899006EE441 /* GoodsType+CollectionView.swift */; };
+		8405DB2123AB6903006EE441 /* GoodsTypeCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405DB1F23AB6903006EE441 /* GoodsTypeCollectionReusableView.swift */; };
+		8405DB2223AB6903006EE441 /* GoodsTypeCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8405DB2023AB6903006EE441 /* GoodsTypeCollectionReusableView.xib */; };
+		8405DB2423AB6B57006EE441 /* Phone+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405DB2323AB6B57006EE441 /* Phone+CollectionView.swift */; };
+		8405DB2723AB6B9E006EE441 /* PhoneCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405DB2523AB6B9E006EE441 /* PhoneCollectionViewCell.swift */; };
+		8405DB2823AB6B9E006EE441 /* PhoneCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8405DB2623AB6B9E006EE441 /* PhoneCollectionViewCell.xib */; };
+		8405DB2A23AB6D6D006EE441 /* Compan+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405DB2923AB6D6D006EE441 /* Compan+CollectionView.swift */; };
+		8405DB2D23AB6DD3006EE441 /* CompanyCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405DB2B23AB6DD3006EE441 /* CompanyCollectionReusableView.swift */; };
+		8405DB2E23AB6DD3006EE441 /* CompanyCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8405DB2C23AB6DD3006EE441 /* CompanyCollectionReusableView.xib */; };
 		842444B723A8D22A0097C98C /* SampleTBVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842444B523A8D22A0097C98C /* SampleTBVViewController.swift */; };
 		842444B823A8D22A0097C98C /* SampleTBVViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842444B623A8D22A0097C98C /* SampleTBVViewController.xib */; };
 		84499FE623AB13C70012F312 /* Computer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84499FE523AB13C70012F312 /* Computer.swift */; };
@@ -88,6 +99,24 @@
 		8449A02623AB5B1B0012F312 /* LoginHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449A02523AB5B1B0012F312 /* LoginHeaderFooterView.swift */; };
 		8449A02823AB5B2E0012F312 /* LoginHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8449A02723AB5B2E0012F312 /* LoginHeaderFooterView.xib */; };
 		8449A02A23AB5BA50012F312 /* LoginHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449A02923AB5BA50012F312 /* LoginHeader.swift */; };
+		8449A03123AB5F540012F312 /* COFunctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449A02F23AB5F540012F312 /* COFunctionViewController.swift */; };
+		8449A03223AB5F540012F312 /* COFunctionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8449A03023AB5F540012F312 /* COFunctionViewController.xib */; };
+		8449A03523AB600C0012F312 /* SampleCOVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449A03323AB600C0012F312 /* SampleCOVViewController.swift */; };
+		8449A03623AB600C0012F312 /* SampleCOVViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8449A03423AB600C0012F312 /* SampleCOVViewController.xib */; };
+		8449A03923AB60190012F312 /* TwoSectionCOViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449A03723AB60190012F312 /* TwoSectionCOViewController.swift */; };
+		8449A03A23AB60190012F312 /* TwoSectionCOViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8449A03823AB60190012F312 /* TwoSectionCOViewController.xib */; };
+		8449A03D23AB60280012F312 /* COHeaderFooterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449A03B23AB60280012F312 /* COHeaderFooterViewController.swift */; };
+		8449A03E23AB60280012F312 /* COHeaderFooterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8449A03C23AB60280012F312 /* COHeaderFooterViewController.xib */; };
+		8449A04123AB60370012F312 /* COHeaderFooter2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449A03F23AB60370012F312 /* COHeaderFooter2ViewController.swift */; };
+		8449A04223AB60370012F312 /* COHeaderFooter2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8449A04023AB60370012F312 /* COHeaderFooter2ViewController.xib */; };
+		8449A04523AB60470012F312 /* COVarietyDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449A04323AB60470012F312 /* COVarietyDataViewController.swift */; };
+		8449A04623AB60470012F312 /* COVarietyDataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8449A04423AB60470012F312 /* COVarietyDataViewController.xib */; };
+		8449A04923AB60570012F312 /* COVarietyData2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449A04723AB60570012F312 /* COVarietyData2ViewController.swift */; };
+		8449A04A23AB60570012F312 /* COVarietyData2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8449A04823AB60570012F312 /* COVarietyData2ViewController.xib */; };
+		8449A04C23AB60CB0012F312 /* Computer+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449A04B23AB60CB0012F312 /* Computer+CollectionView.swift */; };
+		8449A05023AB612E0012F312 /* ComputerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449A04E23AB612E0012F312 /* ComputerCollectionViewCell.swift */; };
+		8449A05123AB612E0012F312 /* ComputerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8449A04F23AB612E0012F312 /* ComputerCollectionViewCell.xib */; };
+		8449A05323AB646E0012F312 /* TBHeaderFooter+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449A05223AB646E0012F312 /* TBHeaderFooter+CollectionView.swift */; };
 		84881DB223A8CD4C00FA662A /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84881DB023A8CD4C00FA662A /* StartViewController.swift */; };
 		84881DB323A8CD4C00FA662A /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84881DB123A8CD4C00FA662A /* StartViewController.xib */; };
 		84881DB723A8CDF600FA662A /* FuncModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84881DB623A8CDF600FA662A /* FuncModel.swift */; };
@@ -207,6 +236,17 @@
 		5FF37AE521284C1300477E61 /* CVFriendUseDicCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CVFriendUseDicCollectionViewCell.xib; sourceTree = "<group>"; };
 		5FF37AE821284DCC00477E61 /* CVCollectionViewUseDicHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVCollectionViewUseDicHeaderFooterView.swift; sourceTree = "<group>"; };
 		5FF37AEB21284DE100477E61 /* CVCollectionViewUseDicHeaderFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CVCollectionViewUseDicHeaderFooterView.xib; sourceTree = "<group>"; };
+		8405DB1923AB6590006EE441 /* TBHeaderFooterCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBHeaderFooterCollectionReusableView.swift; sourceTree = "<group>"; };
+		8405DB1A23AB6590006EE441 /* TBHeaderFooterCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TBHeaderFooterCollectionReusableView.xib; sourceTree = "<group>"; };
+		8405DB1D23AB6899006EE441 /* GoodsType+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GoodsType+CollectionView.swift"; sourceTree = "<group>"; };
+		8405DB1F23AB6903006EE441 /* GoodsTypeCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsTypeCollectionReusableView.swift; sourceTree = "<group>"; };
+		8405DB2023AB6903006EE441 /* GoodsTypeCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoodsTypeCollectionReusableView.xib; sourceTree = "<group>"; };
+		8405DB2323AB6B57006EE441 /* Phone+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Phone+CollectionView.swift"; sourceTree = "<group>"; };
+		8405DB2523AB6B9E006EE441 /* PhoneCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneCollectionViewCell.swift; sourceTree = "<group>"; };
+		8405DB2623AB6B9E006EE441 /* PhoneCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneCollectionViewCell.xib; sourceTree = "<group>"; };
+		8405DB2923AB6D6D006EE441 /* Compan+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Compan+CollectionView.swift"; sourceTree = "<group>"; };
+		8405DB2B23AB6DD3006EE441 /* CompanyCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyCollectionReusableView.swift; sourceTree = "<group>"; };
+		8405DB2C23AB6DD3006EE441 /* CompanyCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompanyCollectionReusableView.xib; sourceTree = "<group>"; };
 		842444B523A8D22A0097C98C /* SampleTBVViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleTBVViewController.swift; sourceTree = "<group>"; };
 		842444B623A8D22A0097C98C /* SampleTBVViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SampleTBVViewController.xib; sourceTree = "<group>"; };
 		84499FE523AB13C70012F312 /* Computer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Computer.swift; sourceTree = "<group>"; };
@@ -241,6 +281,24 @@
 		8449A02523AB5B1B0012F312 /* LoginHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHeaderFooterView.swift; sourceTree = "<group>"; };
 		8449A02723AB5B2E0012F312 /* LoginHeaderFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginHeaderFooterView.xib; sourceTree = "<group>"; };
 		8449A02923AB5BA50012F312 /* LoginHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHeader.swift; sourceTree = "<group>"; };
+		8449A02F23AB5F540012F312 /* COFunctionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COFunctionViewController.swift; sourceTree = "<group>"; };
+		8449A03023AB5F540012F312 /* COFunctionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = COFunctionViewController.xib; sourceTree = "<group>"; };
+		8449A03323AB600C0012F312 /* SampleCOVViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleCOVViewController.swift; sourceTree = "<group>"; };
+		8449A03423AB600C0012F312 /* SampleCOVViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SampleCOVViewController.xib; sourceTree = "<group>"; };
+		8449A03723AB60190012F312 /* TwoSectionCOViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoSectionCOViewController.swift; sourceTree = "<group>"; };
+		8449A03823AB60190012F312 /* TwoSectionCOViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TwoSectionCOViewController.xib; sourceTree = "<group>"; };
+		8449A03B23AB60280012F312 /* COHeaderFooterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COHeaderFooterViewController.swift; sourceTree = "<group>"; };
+		8449A03C23AB60280012F312 /* COHeaderFooterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = COHeaderFooterViewController.xib; sourceTree = "<group>"; };
+		8449A03F23AB60370012F312 /* COHeaderFooter2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COHeaderFooter2ViewController.swift; sourceTree = "<group>"; };
+		8449A04023AB60370012F312 /* COHeaderFooter2ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = COHeaderFooter2ViewController.xib; sourceTree = "<group>"; };
+		8449A04323AB60470012F312 /* COVarietyDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COVarietyDataViewController.swift; sourceTree = "<group>"; };
+		8449A04423AB60470012F312 /* COVarietyDataViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = COVarietyDataViewController.xib; sourceTree = "<group>"; };
+		8449A04723AB60570012F312 /* COVarietyData2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COVarietyData2ViewController.swift; sourceTree = "<group>"; };
+		8449A04823AB60570012F312 /* COVarietyData2ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = COVarietyData2ViewController.xib; sourceTree = "<group>"; };
+		8449A04B23AB60CB0012F312 /* Computer+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Computer+CollectionView.swift"; sourceTree = "<group>"; };
+		8449A04E23AB612E0012F312 /* ComputerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComputerCollectionViewCell.swift; sourceTree = "<group>"; };
+		8449A04F23AB612E0012F312 /* ComputerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComputerCollectionViewCell.xib; sourceTree = "<group>"; };
+		8449A05223AB646E0012F312 /* TBHeaderFooter+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TBHeaderFooter+CollectionView.swift"; sourceTree = "<group>"; };
 		84881DB023A8CD4C00FA662A /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		84881DB123A8CD4C00FA662A /* StartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
 		84881DB623A8CDF600FA662A /* FuncModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncModel.swift; sourceTree = "<group>"; };
@@ -637,6 +695,19 @@
 			path = headerFooterView;
 			sourceTree = "<group>";
 		};
+		8405DB1823AB653E006EE441 /* CollectionViewSupplementaryView */ = {
+			isa = PBXGroup;
+			children = (
+				8405DB1923AB6590006EE441 /* TBHeaderFooterCollectionReusableView.swift */,
+				8405DB1A23AB6590006EE441 /* TBHeaderFooterCollectionReusableView.xib */,
+				8405DB1F23AB6903006EE441 /* GoodsTypeCollectionReusableView.swift */,
+				8405DB2023AB6903006EE441 /* GoodsTypeCollectionReusableView.xib */,
+				8405DB2B23AB6DD3006EE441 /* CompanyCollectionReusableView.swift */,
+				8405DB2C23AB6DD3006EE441 /* CompanyCollectionReusableView.xib */,
+			);
+			path = CollectionViewSupplementaryView;
+			sourceTree = "<group>";
+		};
 		84499FE723AB143B0012F312 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -672,6 +743,69 @@
 			path = HeaderFooterView;
 			sourceTree = "<group>";
 		};
+		8449A02B23AB5EFF0012F312 /* CollectionView功能介绍 */ = {
+			isa = PBXGroup;
+			children = (
+				8449A02E23AB5F250012F312 /* View */,
+				8449A02D23AB5F1E0012F312 /* Model */,
+				8449A02C23AB5F150012F312 /* ViewController */,
+			);
+			path = "CollectionView功能介绍";
+			sourceTree = "<group>";
+		};
+		8449A02C23AB5F150012F312 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8449A02F23AB5F540012F312 /* COFunctionViewController.swift */,
+				8449A03023AB5F540012F312 /* COFunctionViewController.xib */,
+				8449A03323AB600C0012F312 /* SampleCOVViewController.swift */,
+				8449A03423AB600C0012F312 /* SampleCOVViewController.xib */,
+				8449A03723AB60190012F312 /* TwoSectionCOViewController.swift */,
+				8449A03823AB60190012F312 /* TwoSectionCOViewController.xib */,
+				8449A03B23AB60280012F312 /* COHeaderFooterViewController.swift */,
+				8449A03C23AB60280012F312 /* COHeaderFooterViewController.xib */,
+				8449A03F23AB60370012F312 /* COHeaderFooter2ViewController.swift */,
+				8449A04023AB60370012F312 /* COHeaderFooter2ViewController.xib */,
+				8449A04323AB60470012F312 /* COVarietyDataViewController.swift */,
+				8449A04423AB60470012F312 /* COVarietyDataViewController.xib */,
+				8449A04723AB60570012F312 /* COVarietyData2ViewController.swift */,
+				8449A04823AB60570012F312 /* COVarietyData2ViewController.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		8449A02D23AB5F1E0012F312 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8449A04B23AB60CB0012F312 /* Computer+CollectionView.swift */,
+				8449A05223AB646E0012F312 /* TBHeaderFooter+CollectionView.swift */,
+				8405DB1D23AB6899006EE441 /* GoodsType+CollectionView.swift */,
+				8405DB2323AB6B57006EE441 /* Phone+CollectionView.swift */,
+				8405DB2923AB6D6D006EE441 /* Compan+CollectionView.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8449A02E23AB5F250012F312 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8405DB1823AB653E006EE441 /* CollectionViewSupplementaryView */,
+				8449A04D23AB61120012F312 /* CollectionViewCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8449A04D23AB61120012F312 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				8449A04E23AB612E0012F312 /* ComputerCollectionViewCell.swift */,
+				8449A04F23AB612E0012F312 /* ComputerCollectionViewCell.xib */,
+				8405DB2523AB6B9E006EE441 /* PhoneCollectionViewCell.swift */,
+				8405DB2623AB6B9E006EE441 /* PhoneCollectionViewCell.xib */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
 		84881DA523A8CC2000FA662A /* Sample2 */ = {
 			isa = PBXGroup;
 			children = (
@@ -693,6 +827,7 @@
 		84881DA723A8CC3C00FA662A /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				8449A02B23AB5EFF0012F312 /* CollectionView功能介绍 */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -1227,8 +1362,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8449A03223AB5F540012F312 /* COFunctionViewController.xib in Resources */,
 				84499FFB23AB1AB20012F312 /* TBHeaderFooterViewController.xib in Resources */,
 				5FF37AA62128215300477E61 /* TableViewViewController.xib in Resources */,
+				8449A05123AB612E0012F312 /* ComputerCollectionViewCell.xib in Resources */,
+				8405DB2223AB6903006EE441 /* GoodsTypeCollectionReusableView.xib in Resources */,
 				5F92C3032127EF0500455EEB /* TitleTableViewCell.xib in Resources */,
 				8449A00E23AB294D0012F312 /* GoodsTypeTVFooterDescHeaderFooterView.xib in Resources */,
 				5FF37ADD2128420F00477E61 /* TableViewUseDicViewController.xib in Resources */,
@@ -1236,17 +1374,23 @@
 				84499FF323AB17160012F312 /* TBFunctionViewController.xib in Resources */,
 				8FB8F17A2148C22A00B96551 /* CountyCollectionReusableView.xib in Resources */,
 				8449A02823AB5B2E0012F312 /* LoginHeaderFooterView.xib in Resources */,
+				8449A04A23AB60570012F312 /* COVarietyData2ViewController.xib in Resources */,
 				8F0A9F7A2147EEA30030353C /* GoodsCategoryTableViewHeaderFooterView.xib in Resources */,
 				5FF37AE221284A6500477E61 /* TVTitleDicHeaderFooterView.xib in Resources */,
+				8449A03A23AB60190012F312 /* TwoSectionCOViewController.xib in Resources */,
 				84881DBD23A8CE8E00FA662A /* FuncModelTableViewCell.xib in Resources */,
 				5FF37ACF21283F3A00477E61 /* FriendTableViewCell.xib in Resources */,
+				8405DB1C23AB6590006EE441 /* TBHeaderFooterCollectionReusableView.xib in Resources */,
 				8F14D04A20ABC4A5005E4A15 /* LaunchScreen.storyboard in Resources */,
 				8F0A9F732147EC350030353C /* KeyPathViewController.xib in Resources */,
+				8405DB2E23AB6DD3006EE441 /* CompanyCollectionReusableView.xib in Resources */,
 				5F92C3072127F2DF00455EEB /* CollectionViewViewController.xib in Resources */,
 				84499FEC23AB14770012F312 /* ComputerTableViewCell.xib in Resources */,
 				8FB8F15E2148AFAB00B96551 /* CityTableViewCell.xib in Resources */,
 				8FB8F16E2148C0B800B96551 /* GoodsCollectionViewCell.xib in Resources */,
 				8449A00223AB1BD50012F312 /* TBOneTitleHeaderFooterView.xib in Resources */,
+				8449A03E23AB60280012F312 /* COHeaderFooterViewController.xib in Resources */,
+				8449A04623AB60470012F312 /* COVarietyDataViewController.xib in Resources */,
 				8FB8F1682148C02300B96551 /* KeyPathCVViewController.xib in Resources */,
 				8449A00623AB22B60012F312 /* TBHeaderFooter2ViewController.xib in Resources */,
 				5F92C2FC2127EDC300455EEB /* MainViewController.xib in Resources */,
@@ -1255,14 +1399,17 @@
 				8FB8F1722148C0CC00B96551 /* CityCollectionViewCell.xib in Resources */,
 				8449A02023AB4F390012F312 /* TBVarietyData2ViewController.xib in Resources */,
 				5FF37ABA2128325D00477E61 /* TVTitleHeaderFooterView.xib in Resources */,
+				8449A04223AB60370012F312 /* COHeaderFooter2ViewController.xib in Resources */,
 				8F0A9F7F2147EF460030353C /* GoodsTableViewCell.xib in Resources */,
 				5FF37A9F212815B700477E61 /* CVSimulationDownCollectionViewCell.xib in Resources */,
 				84881DB323A8CD4C00FA662A /* StartViewController.xib in Resources */,
 				842444B823A8D22A0097C98C /* SampleTBVViewController.xib in Resources */,
 				8FB8F1762148C1A100B96551 /* GoodsCategoryCollectionReusableView.xib in Resources */,
 				5FF37A9B21280EFC00477E61 /* CVInputTextCollectionViewCell.xib in Resources */,
+				8405DB2823AB6B9E006EE441 /* PhoneCollectionViewCell.xib in Resources */,
 				8F14D04720ABC4A5005E4A15 /* Assets.xcassets in Resources */,
 				8449A01223AB48A20012F312 /* TBEventTransmissionViewController.xib in Resources */,
+				8449A03623AB600C0012F312 /* SampleCOVViewController.xib in Resources */,
 				8449A01823AB4B1C0012F312 /* PhoneTableViewCell.xib in Resources */,
 				5FF37AEC21284DE100477E61 /* CVCollectionViewUseDicHeaderFooterView.xib in Resources */,
 				5FF37AE721284C1300477E61 /* CVFriendUseDicCollectionViewCell.xib in Resources */,
@@ -1339,6 +1486,7 @@
 				84499FF223AB17160012F312 /* TBFunctionViewController.swift in Sources */,
 				5FF37AD321283F9A00477E61 /* FriendAdapter.swift in Sources */,
 				8FB8F1712148C0CC00B96551 /* CityCollectionViewCell.swift in Sources */,
+				8405DB1B23AB6590006EE441 /* TBHeaderFooterCollectionReusableView.swift in Sources */,
 				5FF37A9721280EB900477E61 /* CVInputTextModel.swift in Sources */,
 				8FB8F1562148AD3500B96551 /* CountryModel.swift in Sources */,
 				8F2271B220EA243F00C72514 /* CHGTableView+CHGTableViewAdapter.swift in Sources */,
@@ -1362,30 +1510,38 @@
 				8FB8F1672148C02300B96551 /* KeyPathCVViewController.swift in Sources */,
 				5FF37ABC2128329B00477E61 /* TVTitleModel.swift in Sources */,
 				8F2271AD20EA243F00C72514 /* UICollectionView+CHGCollectionViewAdapter.swift in Sources */,
+				8449A04923AB60570012F312 /* COVarietyData2ViewController.swift in Sources */,
 				84499FEB23AB14770012F312 /* ComputerTableViewCell.swift in Sources */,
 				5FF37AA52128215300477E61 /* TableViewViewController.swift in Sources */,
 				8F2271B120EA243F00C72514 /* CHGCollectionReusableView.swift in Sources */,
 				5F92C3142127FCA500455EEB /* CVHeaderCollectionReusableView.swift in Sources */,
 				5FF37ADC2128420F00477E61 /* TableViewUseDicViewController.swift in Sources */,
 				8F1F6FDE2109BD31004E3B30 /* CHGSimpleTableViewAdapter.swift in Sources */,
+				8449A03123AB5F540012F312 /* COFunctionViewController.swift in Sources */,
+				8405DB2423AB6B57006EE441 /* Phone+CollectionView.swift in Sources */,
 				5FF37AE921284DCC00477E61 /* CVCollectionViewUseDicHeaderFooterView.swift in Sources */,
 				8F0D567E2130215900EB7CAC /* TestK.swift in Sources */,
 				8449A01423AB4A080012F312 /* Phone.swift in Sources */,
+				8449A03923AB60190012F312 /* TwoSectionCOViewController.swift in Sources */,
 				84499FE623AB13C70012F312 /* Computer.swift in Sources */,
 				8449A01723AB4B1C0012F312 /* PhoneTableViewCell.swift in Sources */,
 				84499FF623AB196D0012F312 /* TwoSectionTBViewController.swift in Sources */,
 				8FB8F1792148C22A00B96551 /* CountyCollectionReusableView.swift in Sources */,
+				8449A05323AB646E0012F312 /* TBHeaderFooter+CollectionView.swift in Sources */,
+				8449A05023AB612E0012F312 /* ComputerCollectionViewCell.swift in Sources */,
 				8F0D568021302E5400EB7CAC /* Group.swift in Sources */,
 				5FF37ABE2128342700477E61 /* TVSuccHeaderFooterView.swift in Sources */,
 				84881DB223A8CD4C00FA662A /* StartViewController.swift in Sources */,
 				8F0EE8B921410B35004058D7 /* ScrollListener.swift in Sources */,
 				5F92C3062127F2DF00455EEB /* CollectionViewViewController.swift in Sources */,
+				8449A03D23AB60280012F312 /* COHeaderFooterViewController.swift in Sources */,
 				84499FFD23AB1AF90012F312 /* TBHeaderFooter.swift in Sources */,
 				8449A00C23AB293B0012F312 /* GoodsTypeTVFooterDescHeaderFooterView.swift in Sources */,
 				8F2271AE20EA243F00C72514 /* CHGCollectionViewCell.swift in Sources */,
 				8449A01B23AB4C4E0012F312 /* TBVarietyDataViewController.swift in Sources */,
 				5FF37AE021284A1700477E61 /* TVTitleDicHeaderFooterView.swift in Sources */,
 				8449A02223AB55480012F312 /* Company.swift in Sources */,
+				8449A04123AB60370012F312 /* COHeaderFooter2ViewController.swift in Sources */,
 				5FF37AB82128325400477E61 /* TVTitleHeaderFooterView.swift in Sources */,
 				5FF37ACE21283F3A00477E61 /* FriendTableViewCell.swift in Sources */,
 				8F0A9F722147EC350030353C /* KeyPathViewController.swift in Sources */,
@@ -1396,17 +1552,21 @@
 				5F92C2FB2127EDC300455EEB /* MainViewController.swift in Sources */,
 				84499FFA23AB1AB20012F312 /* TBHeaderFooterViewController.swift in Sources */,
 				8FB8F16D2148C0B800B96551 /* GoodsCollectionViewCell.swift in Sources */,
+				8405DB2123AB6903006EE441 /* GoodsTypeCollectionReusableView.swift in Sources */,
 				5F92C3092127F68300455EEB /* CVTitleModel.swift in Sources */,
 				5FF37A9E212815B700477E61 /* CVSimulationDownCollectionViewCell.swift in Sources */,
 				8449A01F23AB4F390012F312 /* TBVarietyData2ViewController.swift in Sources */,
 				8449A01123AB48A20012F312 /* TBEventTransmissionViewController.swift in Sources */,
 				8FB8F15D2148AFAB00B96551 /* CityTableViewCell.swift in Sources */,
+				8405DB1E23AB6899006EE441 /* GoodsType+CollectionView.swift in Sources */,
 				5F92C2FE2127EE7900455EEB /* TitleModel.swift in Sources */,
 				5FF37AC921283CA900477E61 /* CollectionViewUseDicViewController.swift in Sources */,
 				5FF37AAB2128265700477E61 /* TVInputTextTableViewCell.swift in Sources */,
 				5FF37AB221282BC300477E61 /* TVSubmitHeaderFooterView.swift in Sources */,
 				84881DBC23A8CE8E00FA662A /* FuncModelTableViewCell.swift in Sources */,
+				8405DB2723AB6B9E006EE441 /* PhoneCollectionViewCell.swift in Sources */,
 				8FB8F1582148AEEC00B96551 /* CountryHeaderFooterView.swift in Sources */,
+				8405DB2D23AB6DD3006EE441 /* CompanyCollectionReusableView.swift in Sources */,
 				8F2271AF20EA243F00C72514 /* CHGCollectionViewEmptyDataShow.swift in Sources */,
 				5FF37AA1212815CC00477E61 /* CVSimulationDownModel.swift in Sources */,
 				5F92C2F02127C94000455EEB /* CHGSimpleCollectionViewAdapter.swift in Sources */,
@@ -1414,12 +1574,16 @@
 				8F2271B420EA243F00C72514 /* CHGTableViewCell.swift in Sources */,
 				8F2271B320EA243F00C72514 /* CHGTableViewHeaderFooterView.swift in Sources */,
 				5FF37A9A21280EFC00477E61 /* CVInputTextCollectionViewCell.swift in Sources */,
+				8405DB2A23AB6D6D006EE441 /* Compan+CollectionView.swift in Sources */,
 				8F2271B520EA243F00C72514 /* CHGTableViewEmptyDataShow.swift in Sources */,
+				8449A04523AB60470012F312 /* COVarietyDataViewController.swift in Sources */,
 				8F14D04020ABC4A4005E4A15 /* AppDelegate.swift in Sources */,
 				5FF37AB621282C5600477E61 /* TVSubmitModel.swift in Sources */,
 				8FB8F1752148C1A100B96551 /* GoodsCategoryCollectionReusableView.swift in Sources */,
 				5F92C3022127EF0500455EEB /* TitleTableViewCell.swift in Sources */,
+				8449A04C23AB60CB0012F312 /* Computer+CollectionView.swift in Sources */,
 				8F2271AC20EA243F00C72514 /* CHGCollectionViewAdapter.swift in Sources */,
+				8449A03523AB600C0012F312 /* SampleCOVViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

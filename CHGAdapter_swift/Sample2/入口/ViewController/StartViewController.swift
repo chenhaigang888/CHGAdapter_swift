@@ -14,9 +14,9 @@ class StartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "CHGAdapter Demo"
         tableView.cellDatas = [getFuncList()]
         configTableView()
-        
     }
     
     
@@ -32,7 +32,7 @@ class StartViewController: UIViewController {
     /// 获取功能列表
     func getFuncList() -> [Any] {
         return [FuncModel.init(title: "UITableView demo",_viewController: TBFunctionViewController()),
-                FuncModel.init(title: "UICollectionView demo",_viewController: TBFunctionViewController())]
+                FuncModel.init(title: "UICollectionView demo",_viewController: COFunctionViewController())]
     }
 
 

@@ -85,6 +85,9 @@
 		8449A02023AB4F390012F312 /* TBVarietyData2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8449A01E23AB4F390012F312 /* TBVarietyData2ViewController.xib */; };
 		8449A02223AB55480012F312 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449A02123AB55480012F312 /* Company.swift */; };
 		8449A02423AB57CB0012F312 /* CompanyHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449A02323AB57CB0012F312 /* CompanyHeaderFooterView.swift */; };
+		8449A02623AB5B1B0012F312 /* LoginHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449A02523AB5B1B0012F312 /* LoginHeaderFooterView.swift */; };
+		8449A02823AB5B2E0012F312 /* LoginHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8449A02723AB5B2E0012F312 /* LoginHeaderFooterView.xib */; };
+		8449A02A23AB5BA50012F312 /* LoginHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449A02923AB5BA50012F312 /* LoginHeader.swift */; };
 		84881DB223A8CD4C00FA662A /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84881DB023A8CD4C00FA662A /* StartViewController.swift */; };
 		84881DB323A8CD4C00FA662A /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84881DB123A8CD4C00FA662A /* StartViewController.xib */; };
 		84881DB723A8CDF600FA662A /* FuncModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84881DB623A8CDF600FA662A /* FuncModel.swift */; };
@@ -235,6 +238,9 @@
 		8449A01E23AB4F390012F312 /* TBVarietyData2ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TBVarietyData2ViewController.xib; sourceTree = "<group>"; };
 		8449A02123AB55480012F312 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		8449A02323AB57CB0012F312 /* CompanyHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyHeaderFooterView.swift; sourceTree = "<group>"; };
+		8449A02523AB5B1B0012F312 /* LoginHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHeaderFooterView.swift; sourceTree = "<group>"; };
+		8449A02723AB5B2E0012F312 /* LoginHeaderFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginHeaderFooterView.xib; sourceTree = "<group>"; };
+		8449A02923AB5BA50012F312 /* LoginHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHeader.swift; sourceTree = "<group>"; };
 		84881DB023A8CD4C00FA662A /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		84881DB123A8CD4C00FA662A /* StartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
 		84881DB623A8CDF600FA662A /* FuncModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncModel.swift; sourceTree = "<group>"; };
@@ -660,6 +666,8 @@
 				8449A00B23AB293B0012F312 /* GoodsTypeTVFooterDescHeaderFooterView.swift */,
 				8449A00D23AB294D0012F312 /* GoodsTypeTVFooterDescHeaderFooterView.xib */,
 				8449A02323AB57CB0012F312 /* CompanyHeaderFooterView.swift */,
+				8449A02523AB5B1B0012F312 /* LoginHeaderFooterView.swift */,
+				8449A02723AB5B2E0012F312 /* LoginHeaderFooterView.xib */,
 			);
 			path = HeaderFooterView;
 			sourceTree = "<group>";
@@ -730,6 +738,7 @@
 				8449A00723AB22F10012F312 /* GoodsType.swift */,
 				8449A01323AB4A080012F312 /* Phone.swift */,
 				8449A02123AB55480012F312 /* Company.swift */,
+				8449A02923AB5BA50012F312 /* LoginHeader.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1226,6 +1235,7 @@
 				5FF37AAC2128265700477E61 /* TVInputTextTableViewCell.xib in Resources */,
 				84499FF323AB17160012F312 /* TBFunctionViewController.xib in Resources */,
 				8FB8F17A2148C22A00B96551 /* CountyCollectionReusableView.xib in Resources */,
+				8449A02823AB5B2E0012F312 /* LoginHeaderFooterView.xib in Resources */,
 				8F0A9F7A2147EEA30030353C /* GoodsCategoryTableViewHeaderFooterView.xib in Resources */,
 				5FF37AE221284A6500477E61 /* TVTitleDicHeaderFooterView.xib in Resources */,
 				84881DBD23A8CE8E00FA662A /* FuncModelTableViewCell.xib in Resources */,
@@ -1332,6 +1342,7 @@
 				5FF37A9721280EB900477E61 /* CVInputTextModel.swift in Sources */,
 				8FB8F1562148AD3500B96551 /* CountryModel.swift in Sources */,
 				8F2271B220EA243F00C72514 /* CHGTableView+CHGTableViewAdapter.swift in Sources */,
+				8449A02623AB5B1B0012F312 /* LoginHeaderFooterView.swift in Sources */,
 				842444B723A8D22A0097C98C /* SampleTBVViewController.swift in Sources */,
 				5F92C30D2127F6DC00455EEB /* CVTitleCollectionViewCell.swift in Sources */,
 				8449A00023AB1BBD0012F312 /* TBOneTitleHeaderFooterView.swift in Sources */,
@@ -1347,6 +1358,7 @@
 				5FF37AE621284C1300477E61 /* CVFriendUseDicCollectionViewCell.swift in Sources */,
 				5FF37AC22128355600477E61 /* TVSuccModel.swift in Sources */,
 				8F2271B620EA243F00C72514 /* CHGTableViewAdapterData.swift in Sources */,
+				8449A02A23AB5BA50012F312 /* LoginHeader.swift in Sources */,
 				8FB8F1672148C02300B96551 /* KeyPathCVViewController.swift in Sources */,
 				5FF37ABC2128329B00477E61 /* TVTitleModel.swift in Sources */,
 				8F2271AD20EA243F00C72514 /* UICollectionView+CHGCollectionViewAdapter.swift in Sources */,

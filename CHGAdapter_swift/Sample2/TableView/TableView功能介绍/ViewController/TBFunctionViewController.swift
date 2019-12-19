@@ -35,7 +35,7 @@ class TBFunctionViewController: UIViewController {
                      ["title" : "多个section的列表带HeaderFooter 数据结构2","vc":TBHeaderFooter2ViewController.init()],
                      ["title" : "cell中含有多种Model 演示1","vc":TBVarietyDataViewController.init()],
                      ["title" : "cell中含有多种Model 演示2","vc":TBVarietyData2ViewController.init()],
-                     ["title" : "cell、header、footer上的事件传递到controller中","vc":TBEventTransmissionViewController.init()],
+                     ["title" : "cell、header、footer上的事件传递到controller中","vc":TableViewViewController.init()],
                      ] {
                         funcs.append(FuncModel.init(title: item["title"] as! String, _viewController:item["vc"] as! UIViewController ))
         }

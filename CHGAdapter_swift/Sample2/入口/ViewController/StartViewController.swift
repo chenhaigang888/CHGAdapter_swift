@@ -23,17 +23,16 @@ class StartViewController: UIViewController {
     /// 配置tableView
     func configTableView() -> Void {
         tableView.setTableViewDidSelectRowBlock { [weak self](tableView, indexPath, data) in
-            if indexPath.row == 0 {
-                self?.navigationController?.pushViewController(TBFunctionViewController(), animated: true)
-            }
+            let model:FuncModel = data as! FuncModel
+            self?.navigationController?.pushViewController(model.viewController, animated: true)
         }
     }
 
     
     /// 获取功能列表
     func getFuncList() -> [Any] {
-        return [FuncModel.init(title: "UITableView"),
-                FuncModel.init(title: "UICollectionView")]
+        return [FuncModel.init(title: "UITableView demo",_viewController: TBFunctionViewController()),
+                FuncModel.init(title: "UICollectionView demo",_viewController: TBFunctionViewController())]
     }
 
 

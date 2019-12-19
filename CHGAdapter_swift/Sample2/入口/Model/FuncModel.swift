@@ -8,29 +8,21 @@
 
 import UIKit
 
-
-///// 功能列表的模型
-//
-//class FuncModel:NSObject, CHGTableViewCellModelProtocol {
-//    var title:String?
-//
-//    init(title:String?) {
-//        super.init()
-//        self.title = title
-//    }
-//
-//    func cellClassName(_ tableView: UITableView, indexPath: IndexPath) -> String {
-//        return "FuncModelTableViewCell"
-//    }
-//
-//    func cellHeigh(_ tableView: UITableView, indexPath: IndexPath) -> CGFloat {
-//        return 44
-//    }
-//}
-
 struct FuncModel : CHGTableViewCellModelProtocol{
     var title:String
-
+    var _viewController:UIViewController
+    
+    var viewController:UIViewController {
+        get {
+            _viewController.title = title
+            return _viewController
+        }
+        set {
+            _viewController = newValue
+            
+        }
+    }
+    
     func cellClassName(_ tableView: UITableView, indexPath: IndexPath) -> String {
         return "FuncModelTableViewCell"
     }

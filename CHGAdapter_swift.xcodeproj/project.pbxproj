@@ -74,6 +74,17 @@
 		8449A00A23AB23B20012F312 /* GoodsTypeTVHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449A00923AB23B20012F312 /* GoodsTypeTVHeaderFooterView.swift */; };
 		8449A00C23AB293B0012F312 /* GoodsTypeTVFooterDescHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449A00B23AB293B0012F312 /* GoodsTypeTVFooterDescHeaderFooterView.swift */; };
 		8449A00E23AB294D0012F312 /* GoodsTypeTVFooterDescHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8449A00D23AB294D0012F312 /* GoodsTypeTVFooterDescHeaderFooterView.xib */; };
+		8449A01123AB48A20012F312 /* TBEventTransmissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449A00F23AB48A20012F312 /* TBEventTransmissionViewController.swift */; };
+		8449A01223AB48A20012F312 /* TBEventTransmissionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8449A01023AB48A20012F312 /* TBEventTransmissionViewController.xib */; };
+		8449A01423AB4A080012F312 /* Phone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449A01323AB4A080012F312 /* Phone.swift */; };
+		8449A01723AB4B1C0012F312 /* PhoneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449A01523AB4B1C0012F312 /* PhoneTableViewCell.swift */; };
+		8449A01823AB4B1C0012F312 /* PhoneTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8449A01623AB4B1C0012F312 /* PhoneTableViewCell.xib */; };
+		8449A01B23AB4C4E0012F312 /* TBVarietyDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449A01923AB4C4E0012F312 /* TBVarietyDataViewController.swift */; };
+		8449A01C23AB4C4E0012F312 /* TBVarietyDataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8449A01A23AB4C4E0012F312 /* TBVarietyDataViewController.xib */; };
+		8449A01F23AB4F390012F312 /* TBVarietyData2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449A01D23AB4F390012F312 /* TBVarietyData2ViewController.swift */; };
+		8449A02023AB4F390012F312 /* TBVarietyData2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8449A01E23AB4F390012F312 /* TBVarietyData2ViewController.xib */; };
+		8449A02223AB55480012F312 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449A02123AB55480012F312 /* Company.swift */; };
+		8449A02423AB57CB0012F312 /* CompanyHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449A02323AB57CB0012F312 /* CompanyHeaderFooterView.swift */; };
 		84881DB223A8CD4C00FA662A /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84881DB023A8CD4C00FA662A /* StartViewController.swift */; };
 		84881DB323A8CD4C00FA662A /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84881DB123A8CD4C00FA662A /* StartViewController.xib */; };
 		84881DB723A8CDF600FA662A /* FuncModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84881DB623A8CDF600FA662A /* FuncModel.swift */; };
@@ -213,6 +224,17 @@
 		8449A00923AB23B20012F312 /* GoodsTypeTVHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GoodsTypeTVHeaderFooterView.swift; path = ../../../../../../../../Documents/GoodsTypeTVHeaderFooterView.swift; sourceTree = "<group>"; };
 		8449A00B23AB293B0012F312 /* GoodsTypeTVFooterDescHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GoodsTypeTVFooterDescHeaderFooterView.swift; path = ../../../../../../../../Documents/GoodsTypeTVFooterDescHeaderFooterView.swift; sourceTree = "<group>"; };
 		8449A00D23AB294D0012F312 /* GoodsTypeTVFooterDescHeaderFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = GoodsTypeTVFooterDescHeaderFooterView.xib; path = ../../../../../../../../Documents/GoodsTypeTVFooterDescHeaderFooterView.xib; sourceTree = "<group>"; };
+		8449A00F23AB48A20012F312 /* TBEventTransmissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBEventTransmissionViewController.swift; sourceTree = "<group>"; };
+		8449A01023AB48A20012F312 /* TBEventTransmissionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TBEventTransmissionViewController.xib; sourceTree = "<group>"; };
+		8449A01323AB4A080012F312 /* Phone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Phone.swift; sourceTree = "<group>"; };
+		8449A01523AB4B1C0012F312 /* PhoneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneTableViewCell.swift; sourceTree = "<group>"; };
+		8449A01623AB4B1C0012F312 /* PhoneTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneTableViewCell.xib; sourceTree = "<group>"; };
+		8449A01923AB4C4E0012F312 /* TBVarietyDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBVarietyDataViewController.swift; sourceTree = "<group>"; };
+		8449A01A23AB4C4E0012F312 /* TBVarietyDataViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TBVarietyDataViewController.xib; sourceTree = "<group>"; };
+		8449A01D23AB4F390012F312 /* TBVarietyData2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBVarietyData2ViewController.swift; sourceTree = "<group>"; };
+		8449A01E23AB4F390012F312 /* TBVarietyData2ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TBVarietyData2ViewController.xib; sourceTree = "<group>"; };
+		8449A02123AB55480012F312 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
+		8449A02323AB57CB0012F312 /* CompanyHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyHeaderFooterView.swift; sourceTree = "<group>"; };
 		84881DB023A8CD4C00FA662A /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		84881DB123A8CD4C00FA662A /* StartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
 		84881DB623A8CDF600FA662A /* FuncModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncModel.swift; sourceTree = "<group>"; };
@@ -623,6 +645,8 @@
 			children = (
 				84499FE923AB14770012F312 /* ComputerTableViewCell.swift */,
 				84499FEA23AB14770012F312 /* ComputerTableViewCell.xib */,
+				8449A01523AB4B1C0012F312 /* PhoneTableViewCell.swift */,
+				8449A01623AB4B1C0012F312 /* PhoneTableViewCell.xib */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -635,6 +659,7 @@
 				8449A00923AB23B20012F312 /* GoodsTypeTVHeaderFooterView.swift */,
 				8449A00B23AB293B0012F312 /* GoodsTypeTVFooterDescHeaderFooterView.swift */,
 				8449A00D23AB294D0012F312 /* GoodsTypeTVFooterDescHeaderFooterView.xib */,
+				8449A02323AB57CB0012F312 /* CompanyHeaderFooterView.swift */,
 			);
 			path = HeaderFooterView;
 			sourceTree = "<group>";
@@ -687,6 +712,12 @@
 				84499FF923AB1AB20012F312 /* TBHeaderFooterViewController.xib */,
 				8449A00323AB22B60012F312 /* TBHeaderFooter2ViewController.swift */,
 				8449A00423AB22B60012F312 /* TBHeaderFooter2ViewController.xib */,
+				8449A01923AB4C4E0012F312 /* TBVarietyDataViewController.swift */,
+				8449A01A23AB4C4E0012F312 /* TBVarietyDataViewController.xib */,
+				8449A01D23AB4F390012F312 /* TBVarietyData2ViewController.swift */,
+				8449A01E23AB4F390012F312 /* TBVarietyData2ViewController.xib */,
+				8449A00F23AB48A20012F312 /* TBEventTransmissionViewController.swift */,
+				8449A01023AB48A20012F312 /* TBEventTransmissionViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -697,6 +728,8 @@
 				84499FE523AB13C70012F312 /* Computer.swift */,
 				84499FFC23AB1AF90012F312 /* TBHeaderFooter.swift */,
 				8449A00723AB22F10012F312 /* GoodsType.swift */,
+				8449A01323AB4A080012F312 /* Phone.swift */,
+				8449A02123AB55480012F312 /* Company.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1210,6 +1243,7 @@
 				5FF37AB421282BCE00477E61 /* TVSubmitHeaderFooterView.xib in Resources */,
 				5F92C30E2127F6DC00455EEB /* CVTitleCollectionViewCell.xib in Resources */,
 				8FB8F1722148C0CC00B96551 /* CityCollectionViewCell.xib in Resources */,
+				8449A02023AB4F390012F312 /* TBVarietyData2ViewController.xib in Resources */,
 				5FF37ABA2128325D00477E61 /* TVTitleHeaderFooterView.xib in Resources */,
 				8F0A9F7F2147EF460030353C /* GoodsTableViewCell.xib in Resources */,
 				5FF37A9F212815B700477E61 /* CVSimulationDownCollectionViewCell.xib in Resources */,
@@ -1218,10 +1252,13 @@
 				8FB8F1762148C1A100B96551 /* GoodsCategoryCollectionReusableView.xib in Resources */,
 				5FF37A9B21280EFC00477E61 /* CVInputTextCollectionViewCell.xib in Resources */,
 				8F14D04720ABC4A5005E4A15 /* Assets.xcassets in Resources */,
+				8449A01223AB48A20012F312 /* TBEventTransmissionViewController.xib in Resources */,
+				8449A01823AB4B1C0012F312 /* PhoneTableViewCell.xib in Resources */,
 				5FF37AEC21284DE100477E61 /* CVCollectionViewUseDicHeaderFooterView.xib in Resources */,
 				5FF37AE721284C1300477E61 /* CVFriendUseDicCollectionViewCell.xib in Resources */,
 				5FF37AC02128343000477E61 /* TVSuccHeaderFooterView.xib in Resources */,
 				5FF37ACA21283CA900477E61 /* CollectionViewUseDicViewController.xib in Resources */,
+				8449A01C23AB4C4E0012F312 /* TBVarietyDataViewController.xib in Resources */,
 				8FB8F15A2148AEF500B96551 /* CountryHeaderFooterView.xib in Resources */,
 				84499FF723AB196D0012F312 /* TwoSectionTBViewController.xib in Resources */,
 				8F126EB4212AEF61003FD300 /* TitleCollectionViewCell.xib in Resources */,
@@ -1321,7 +1358,9 @@
 				8F1F6FDE2109BD31004E3B30 /* CHGSimpleTableViewAdapter.swift in Sources */,
 				5FF37AE921284DCC00477E61 /* CVCollectionViewUseDicHeaderFooterView.swift in Sources */,
 				8F0D567E2130215900EB7CAC /* TestK.swift in Sources */,
+				8449A01423AB4A080012F312 /* Phone.swift in Sources */,
 				84499FE623AB13C70012F312 /* Computer.swift in Sources */,
+				8449A01723AB4B1C0012F312 /* PhoneTableViewCell.swift in Sources */,
 				84499FF623AB196D0012F312 /* TwoSectionTBViewController.swift in Sources */,
 				8FB8F1792148C22A00B96551 /* CountyCollectionReusableView.swift in Sources */,
 				8F0D568021302E5400EB7CAC /* Group.swift in Sources */,
@@ -1332,11 +1371,14 @@
 				84499FFD23AB1AF90012F312 /* TBHeaderFooter.swift in Sources */,
 				8449A00C23AB293B0012F312 /* GoodsTypeTVFooterDescHeaderFooterView.swift in Sources */,
 				8F2271AE20EA243F00C72514 /* CHGCollectionViewCell.swift in Sources */,
+				8449A01B23AB4C4E0012F312 /* TBVarietyDataViewController.swift in Sources */,
 				5FF37AE021284A1700477E61 /* TVTitleDicHeaderFooterView.swift in Sources */,
+				8449A02223AB55480012F312 /* Company.swift in Sources */,
 				5FF37AB82128325400477E61 /* TVTitleHeaderFooterView.swift in Sources */,
 				5FF37ACE21283F3A00477E61 /* FriendTableViewCell.swift in Sources */,
 				8F0A9F722147EC350030353C /* KeyPathViewController.swift in Sources */,
 				5F92C3102127FC0400455EEB /* CVHeaderModel.swift in Sources */,
+				8449A02423AB57CB0012F312 /* CompanyHeaderFooterView.swift in Sources */,
 				8449A00523AB22B60012F312 /* TBHeaderFooter2ViewController.swift in Sources */,
 				8F0A9F7E2147EF460030353C /* GoodsTableViewCell.swift in Sources */,
 				5F92C2FB2127EDC300455EEB /* MainViewController.swift in Sources */,
@@ -1344,6 +1386,8 @@
 				8FB8F16D2148C0B800B96551 /* GoodsCollectionViewCell.swift in Sources */,
 				5F92C3092127F68300455EEB /* CVTitleModel.swift in Sources */,
 				5FF37A9E212815B700477E61 /* CVSimulationDownCollectionViewCell.swift in Sources */,
+				8449A01F23AB4F390012F312 /* TBVarietyData2ViewController.swift in Sources */,
+				8449A01123AB48A20012F312 /* TBEventTransmissionViewController.swift in Sources */,
 				8FB8F15D2148AFAB00B96551 /* CityTableViewCell.swift in Sources */,
 				5F92C2FE2127EE7900455EEB /* TitleModel.swift in Sources */,
 				5FF37AC921283CA900477E61 /* CollectionViewUseDicViewController.swift in Sources */,
@@ -1532,6 +1576,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 334V4U3KT6;
 				INFOPLIST_FILE = CHGAdapter_swift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1551,6 +1596,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 334V4U3KT6;
 				INFOPLIST_FILE = CHGAdapter_swift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

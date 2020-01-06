@@ -36,6 +36,7 @@ class TBFunctionViewController: UIViewController {
                      ["title" : "cell中含有多种Model 演示1","vc":TBVarietyDataViewController.init()],
                      ["title" : "cell中含有多种Model 演示2","vc":TBVarietyData2ViewController.init()],
                      ["title" : "cell、header、footer上的事件传递到controller中","vc":TableViewViewController.init()],
+                     ["title" : "枚举类型的数据类型","vc":EnumViewController.init()]
                      ] {
                         funcs.append(FuncModel.init(title: item["title"] as! String, _viewController:item["vc"] as! UIViewController ))
         }

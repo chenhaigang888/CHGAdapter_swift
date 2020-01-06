@@ -54,6 +54,23 @@
 		5FF37AE721284C1300477E61 /* CVFriendUseDicCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FF37AE521284C1300477E61 /* CVFriendUseDicCollectionViewCell.xib */; };
 		5FF37AE921284DCC00477E61 /* CVCollectionViewUseDicHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF37AE821284DCC00477E61 /* CVCollectionViewUseDicHeaderFooterView.swift */; };
 		5FF37AEC21284DE100477E61 /* CVCollectionViewUseDicHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FF37AEB21284DE100477E61 /* CVCollectionViewUseDicHeaderFooterView.xib */; };
+		8405A48223C308C700CF2ED8 /* Week.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405A48123C308C700CF2ED8 /* Week.swift */; };
+		8405A48923C30C1800CF2ED8 /* EnumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405A48723C30C1800CF2ED8 /* EnumViewController.swift */; };
+		8405A48A23C30C1800CF2ED8 /* EnumViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8405A48823C30C1800CF2ED8 /* EnumViewController.xib */; };
+		8405A48D23C315E300CF2ED8 /* WeekTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405A48B23C315E300CF2ED8 /* WeekTableViewCell.swift */; };
+		8405A48E23C315E300CF2ED8 /* WeekTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8405A48C23C315E300CF2ED8 /* WeekTableViewCell.xib */; };
+		8405A49123C3168F00CF2ED8 /* WeekCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405A48F23C3168F00CF2ED8 /* WeekCollectionViewCell.swift */; };
+		8405A49223C3168F00CF2ED8 /* WeekCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8405A49023C3168F00CF2ED8 /* WeekCollectionViewCell.xib */; };
+		8405A49423C3174800CF2ED8 /* Week+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405A49323C3174800CF2ED8 /* Week+CollectionView.swift */; };
+		8405A49723C317BD00CF2ED8 /* EnumCOViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405A49523C317BD00CF2ED8 /* EnumCOViewController.swift */; };
+		8405A49823C317BD00CF2ED8 /* EnumCOViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8405A49623C317BD00CF2ED8 /* EnumCOViewController.xib */; };
+		8405A49A23C3194D00CF2ED8 /* Pay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405A49923C3194D00CF2ED8 /* Pay.swift */; };
+		8405A49D23C31A3C00CF2ED8 /* AliPayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405A49B23C31A3C00CF2ED8 /* AliPayTableViewCell.swift */; };
+		8405A49E23C31A3C00CF2ED8 /* AliPayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8405A49C23C31A3C00CF2ED8 /* AliPayTableViewCell.xib */; };
+		8405A4A123C31A9700CF2ED8 /* WeChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405A49F23C31A9700CF2ED8 /* WeChatTableViewCell.swift */; };
+		8405A4A223C31A9700CF2ED8 /* WeChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8405A4A023C31A9700CF2ED8 /* WeChatTableViewCell.xib */; };
+		8405A4A523C31ADA00CF2ED8 /* unionpayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405A4A323C31ADA00CF2ED8 /* unionpayTableViewCell.swift */; };
+		8405A4A623C31ADA00CF2ED8 /* unionpayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8405A4A423C31ADA00CF2ED8 /* unionpayTableViewCell.xib */; };
 		8405DB1B23AB6590006EE441 /* TBHeaderFooterCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405DB1923AB6590006EE441 /* TBHeaderFooterCollectionReusableView.swift */; };
 		8405DB1C23AB6590006EE441 /* TBHeaderFooterCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8405DB1A23AB6590006EE441 /* TBHeaderFooterCollectionReusableView.xib */; };
 		8405DB1E23AB6899006EE441 /* GoodsType+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405DB1D23AB6899006EE441 /* GoodsType+CollectionView.swift */; };
@@ -236,6 +253,23 @@
 		5FF37AE521284C1300477E61 /* CVFriendUseDicCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CVFriendUseDicCollectionViewCell.xib; sourceTree = "<group>"; };
 		5FF37AE821284DCC00477E61 /* CVCollectionViewUseDicHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVCollectionViewUseDicHeaderFooterView.swift; sourceTree = "<group>"; };
 		5FF37AEB21284DE100477E61 /* CVCollectionViewUseDicHeaderFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CVCollectionViewUseDicHeaderFooterView.xib; sourceTree = "<group>"; };
+		8405A48123C308C700CF2ED8 /* Week.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Week.swift; sourceTree = "<group>"; };
+		8405A48723C30C1800CF2ED8 /* EnumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumViewController.swift; sourceTree = "<group>"; };
+		8405A48823C30C1800CF2ED8 /* EnumViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnumViewController.xib; sourceTree = "<group>"; };
+		8405A48B23C315E300CF2ED8 /* WeekTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekTableViewCell.swift; sourceTree = "<group>"; };
+		8405A48C23C315E300CF2ED8 /* WeekTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeekTableViewCell.xib; sourceTree = "<group>"; };
+		8405A48F23C3168F00CF2ED8 /* WeekCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekCollectionViewCell.swift; sourceTree = "<group>"; };
+		8405A49023C3168F00CF2ED8 /* WeekCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeekCollectionViewCell.xib; sourceTree = "<group>"; };
+		8405A49323C3174800CF2ED8 /* Week+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Week+CollectionView.swift"; sourceTree = "<group>"; };
+		8405A49523C317BD00CF2ED8 /* EnumCOViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumCOViewController.swift; sourceTree = "<group>"; };
+		8405A49623C317BD00CF2ED8 /* EnumCOViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnumCOViewController.xib; sourceTree = "<group>"; };
+		8405A49923C3194D00CF2ED8 /* Pay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pay.swift; sourceTree = "<group>"; };
+		8405A49B23C31A3C00CF2ED8 /* AliPayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AliPayTableViewCell.swift; sourceTree = "<group>"; };
+		8405A49C23C31A3C00CF2ED8 /* AliPayTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AliPayTableViewCell.xib; sourceTree = "<group>"; };
+		8405A49F23C31A9700CF2ED8 /* WeChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeChatTableViewCell.swift; sourceTree = "<group>"; };
+		8405A4A023C31A9700CF2ED8 /* WeChatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeChatTableViewCell.xib; sourceTree = "<group>"; };
+		8405A4A323C31ADA00CF2ED8 /* unionpayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = unionpayTableViewCell.swift; sourceTree = "<group>"; };
+		8405A4A423C31ADA00CF2ED8 /* unionpayTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = unionpayTableViewCell.xib; sourceTree = "<group>"; };
 		8405DB1923AB6590006EE441 /* TBHeaderFooterCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBHeaderFooterCollectionReusableView.swift; sourceTree = "<group>"; };
 		8405DB1A23AB6590006EE441 /* TBHeaderFooterCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TBHeaderFooterCollectionReusableView.xib; sourceTree = "<group>"; };
 		8405DB1D23AB6899006EE441 /* GoodsType+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GoodsType+CollectionView.swift"; sourceTree = "<group>"; };
@@ -724,6 +758,14 @@
 				84499FEA23AB14770012F312 /* ComputerTableViewCell.xib */,
 				8449A01523AB4B1C0012F312 /* PhoneTableViewCell.swift */,
 				8449A01623AB4B1C0012F312 /* PhoneTableViewCell.xib */,
+				8405A48B23C315E300CF2ED8 /* WeekTableViewCell.swift */,
+				8405A48C23C315E300CF2ED8 /* WeekTableViewCell.xib */,
+				8405A49B23C31A3C00CF2ED8 /* AliPayTableViewCell.swift */,
+				8405A49C23C31A3C00CF2ED8 /* AliPayTableViewCell.xib */,
+				8405A49F23C31A9700CF2ED8 /* WeChatTableViewCell.swift */,
+				8405A4A023C31A9700CF2ED8 /* WeChatTableViewCell.xib */,
+				8405A4A323C31ADA00CF2ED8 /* unionpayTableViewCell.swift */,
+				8405A4A423C31ADA00CF2ED8 /* unionpayTableViewCell.xib */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -770,6 +812,8 @@
 				8449A04423AB60470012F312 /* COVarietyDataViewController.xib */,
 				8449A04723AB60570012F312 /* COVarietyData2ViewController.swift */,
 				8449A04823AB60570012F312 /* COVarietyData2ViewController.xib */,
+				8405A49523C317BD00CF2ED8 /* EnumCOViewController.swift */,
+				8405A49623C317BD00CF2ED8 /* EnumCOViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -782,6 +826,7 @@
 				8405DB1D23AB6899006EE441 /* GoodsType+CollectionView.swift */,
 				8405DB2323AB6B57006EE441 /* Phone+CollectionView.swift */,
 				8405DB2923AB6D6D006EE441 /* Compan+CollectionView.swift */,
+				8405A49323C3174800CF2ED8 /* Week+CollectionView.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -802,6 +847,8 @@
 				8449A04F23AB612E0012F312 /* ComputerCollectionViewCell.xib */,
 				8405DB2523AB6B9E006EE441 /* PhoneCollectionViewCell.swift */,
 				8405DB2623AB6B9E006EE441 /* PhoneCollectionViewCell.xib */,
+				8405A48F23C3168F00CF2ED8 /* WeekCollectionViewCell.swift */,
+				8405A49023C3168F00CF2ED8 /* WeekCollectionViewCell.xib */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
@@ -861,6 +908,8 @@
 				8449A01E23AB4F390012F312 /* TBVarietyData2ViewController.xib */,
 				8449A00F23AB48A20012F312 /* TBEventTransmissionViewController.swift */,
 				8449A01023AB48A20012F312 /* TBEventTransmissionViewController.xib */,
+				8405A48723C30C1800CF2ED8 /* EnumViewController.swift */,
+				8405A48823C30C1800CF2ED8 /* EnumViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -874,6 +923,8 @@
 				8449A01323AB4A080012F312 /* Phone.swift */,
 				8449A02123AB55480012F312 /* Company.swift */,
 				8449A02923AB5BA50012F312 /* LoginHeader.swift */,
+				8405A48123C308C700CF2ED8 /* Week.swift */,
+				8405A49923C3194D00CF2ED8 /* Pay.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1369,6 +1420,7 @@
 				8405DB2223AB6903006EE441 /* GoodsTypeCollectionReusableView.xib in Resources */,
 				5F92C3032127EF0500455EEB /* TitleTableViewCell.xib in Resources */,
 				8449A00E23AB294D0012F312 /* GoodsTypeTVFooterDescHeaderFooterView.xib in Resources */,
+				8405A4A223C31A9700CF2ED8 /* WeChatTableViewCell.xib in Resources */,
 				5FF37ADD2128420F00477E61 /* TableViewUseDicViewController.xib in Resources */,
 				5FF37AAC2128265700477E61 /* TVInputTextTableViewCell.xib in Resources */,
 				84499FF323AB17160012F312 /* TBFunctionViewController.xib in Resources */,
@@ -1377,8 +1429,11 @@
 				8449A04A23AB60570012F312 /* COVarietyData2ViewController.xib in Resources */,
 				8F0A9F7A2147EEA30030353C /* GoodsCategoryTableViewHeaderFooterView.xib in Resources */,
 				5FF37AE221284A6500477E61 /* TVTitleDicHeaderFooterView.xib in Resources */,
+				8405A48A23C30C1800CF2ED8 /* EnumViewController.xib in Resources */,
+				8405A4A623C31ADA00CF2ED8 /* unionpayTableViewCell.xib in Resources */,
 				8449A03A23AB60190012F312 /* TwoSectionCOViewController.xib in Resources */,
 				84881DBD23A8CE8E00FA662A /* FuncModelTableViewCell.xib in Resources */,
+				8405A49E23C31A3C00CF2ED8 /* AliPayTableViewCell.xib in Resources */,
 				5FF37ACF21283F3A00477E61 /* FriendTableViewCell.xib in Resources */,
 				8405DB1C23AB6590006EE441 /* TBHeaderFooterCollectionReusableView.xib in Resources */,
 				8F14D04A20ABC4A5005E4A15 /* LaunchScreen.storyboard in Resources */,
@@ -1389,6 +1444,7 @@
 				8FB8F15E2148AFAB00B96551 /* CityTableViewCell.xib in Resources */,
 				8FB8F16E2148C0B800B96551 /* GoodsCollectionViewCell.xib in Resources */,
 				8449A00223AB1BD50012F312 /* TBOneTitleHeaderFooterView.xib in Resources */,
+				8405A49223C3168F00CF2ED8 /* WeekCollectionViewCell.xib in Resources */,
 				8449A03E23AB60280012F312 /* COHeaderFooterViewController.xib in Resources */,
 				8449A04623AB60470012F312 /* COVarietyDataViewController.xib in Resources */,
 				8FB8F1682148C02300B96551 /* KeyPathCVViewController.xib in Resources */,
@@ -1401,6 +1457,7 @@
 				5FF37ABA2128325D00477E61 /* TVTitleHeaderFooterView.xib in Resources */,
 				8449A04223AB60370012F312 /* COHeaderFooter2ViewController.xib in Resources */,
 				8F0A9F7F2147EF460030353C /* GoodsTableViewCell.xib in Resources */,
+				8405A49823C317BD00CF2ED8 /* EnumCOViewController.xib in Resources */,
 				5FF37A9F212815B700477E61 /* CVSimulationDownCollectionViewCell.xib in Resources */,
 				84881DB323A8CD4C00FA662A /* StartViewController.xib in Resources */,
 				842444B823A8D22A0097C98C /* SampleTBVViewController.xib in Resources */,
@@ -1418,6 +1475,7 @@
 				8449A01C23AB4C4E0012F312 /* TBVarietyDataViewController.xib in Resources */,
 				8FB8F15A2148AEF500B96551 /* CountryHeaderFooterView.xib in Resources */,
 				84499FF723AB196D0012F312 /* TwoSectionTBViewController.xib in Resources */,
+				8405A48E23C315E300CF2ED8 /* WeekTableViewCell.xib in Resources */,
 				8F126EB4212AEF61003FD300 /* TitleCollectionViewCell.xib in Resources */,
 				5F92C3152127FCA500455EEB /* CVHeaderCollectionReusableView.xib in Resources */,
 			);
@@ -1527,9 +1585,11 @@
 				8449A01723AB4B1C0012F312 /* PhoneTableViewCell.swift in Sources */,
 				84499FF623AB196D0012F312 /* TwoSectionTBViewController.swift in Sources */,
 				8FB8F1792148C22A00B96551 /* CountyCollectionReusableView.swift in Sources */,
+				8405A49423C3174800CF2ED8 /* Week+CollectionView.swift in Sources */,
 				8449A05323AB646E0012F312 /* TBHeaderFooter+CollectionView.swift in Sources */,
 				8449A05023AB612E0012F312 /* ComputerCollectionViewCell.swift in Sources */,
 				8F0D568021302E5400EB7CAC /* Group.swift in Sources */,
+				8405A48223C308C700CF2ED8 /* Week.swift in Sources */,
 				5FF37ABE2128342700477E61 /* TVSuccHeaderFooterView.swift in Sources */,
 				84881DB223A8CD4C00FA662A /* StartViewController.swift in Sources */,
 				8F0EE8B921410B35004058D7 /* ScrollListener.swift in Sources */,
@@ -1541,13 +1601,17 @@
 				8449A01B23AB4C4E0012F312 /* TBVarietyDataViewController.swift in Sources */,
 				5FF37AE021284A1700477E61 /* TVTitleDicHeaderFooterView.swift in Sources */,
 				8449A02223AB55480012F312 /* Company.swift in Sources */,
+				8405A49D23C31A3C00CF2ED8 /* AliPayTableViewCell.swift in Sources */,
 				8449A04123AB60370012F312 /* COHeaderFooter2ViewController.swift in Sources */,
 				5FF37AB82128325400477E61 /* TVTitleHeaderFooterView.swift in Sources */,
 				5FF37ACE21283F3A00477E61 /* FriendTableViewCell.swift in Sources */,
 				8F0A9F722147EC350030353C /* KeyPathViewController.swift in Sources */,
+				8405A4A123C31A9700CF2ED8 /* WeChatTableViewCell.swift in Sources */,
 				5F92C3102127FC0400455EEB /* CVHeaderModel.swift in Sources */,
 				8449A02423AB57CB0012F312 /* CompanyHeaderFooterView.swift in Sources */,
+				8405A49A23C3194D00CF2ED8 /* Pay.swift in Sources */,
 				8449A00523AB22B60012F312 /* TBHeaderFooter2ViewController.swift in Sources */,
+				8405A4A523C31ADA00CF2ED8 /* unionpayTableViewCell.swift in Sources */,
 				8F0A9F7E2147EF460030353C /* GoodsTableViewCell.swift in Sources */,
 				5F92C2FB2127EDC300455EEB /* MainViewController.swift in Sources */,
 				84499FFA23AB1AB20012F312 /* TBHeaderFooterViewController.swift in Sources */,
@@ -1563,7 +1627,10 @@
 				5FF37AC921283CA900477E61 /* CollectionViewUseDicViewController.swift in Sources */,
 				5FF37AAB2128265700477E61 /* TVInputTextTableViewCell.swift in Sources */,
 				5FF37AB221282BC300477E61 /* TVSubmitHeaderFooterView.swift in Sources */,
+				8405A49723C317BD00CF2ED8 /* EnumCOViewController.swift in Sources */,
+				8405A48D23C315E300CF2ED8 /* WeekTableViewCell.swift in Sources */,
 				84881DBC23A8CE8E00FA662A /* FuncModelTableViewCell.swift in Sources */,
+				8405A49123C3168F00CF2ED8 /* WeekCollectionViewCell.swift in Sources */,
 				8405DB2723AB6B9E006EE441 /* PhoneCollectionViewCell.swift in Sources */,
 				8FB8F1582148AEEC00B96551 /* CountryHeaderFooterView.swift in Sources */,
 				8405DB2D23AB6DD3006EE441 /* CompanyCollectionReusableView.swift in Sources */,
@@ -1576,6 +1643,7 @@
 				5FF37A9A21280EFC00477E61 /* CVInputTextCollectionViewCell.swift in Sources */,
 				8405DB2A23AB6D6D006EE441 /* Compan+CollectionView.swift in Sources */,
 				8F2271B520EA243F00C72514 /* CHGTableViewEmptyDataShow.swift in Sources */,
+				8405A48923C30C1800CF2ED8 /* EnumViewController.swift in Sources */,
 				8449A04523AB60470012F312 /* COVarietyDataViewController.swift in Sources */,
 				8F14D04020ABC4A4005E4A15 /* AppDelegate.swift in Sources */,
 				5FF37AB621282C5600477E61 /* TVSubmitModel.swift in Sources */,

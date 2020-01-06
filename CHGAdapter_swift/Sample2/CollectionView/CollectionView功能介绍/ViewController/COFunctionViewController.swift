@@ -33,7 +33,7 @@ class COFunctionViewController: UIViewController {
                      ["title" : "多个section的列表带HeaderFooter 数据结构2","vc":COHeaderFooter2ViewController.init()],
                      ["title" : "cell中含有多种Model 演示1","vc":COVarietyDataViewController.init()],
                      ["title" : "cell中含有多种Model 演示2","vc":COVarietyData2ViewController.init()],
-//                     ["title" : "cell、header、footer上的事件传递到controller中","vc":TableViewViewController.init()],
+                     ["title" : "枚举类型的数据类型","vc":EnumCOViewController.init()]
                      ] {
                         funcs.append(FuncModel.init(title: item["title"] as! String, _viewController:item["vc"] as! UIViewController ))
         }

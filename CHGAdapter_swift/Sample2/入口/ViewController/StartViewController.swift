@@ -19,6 +19,11 @@ class StartViewController: UIViewController {
         configTableView()
     }
     
+    /// 获取功能列表
+    func getFuncList() -> [Any] {
+        return [FuncModel.init(title: "UITableView demo",_viewController: TBFunctionViewController()),
+                FuncModel.init(title: "UICollectionView demo",_viewController: COFunctionViewController())]
+    }
     
     /// 配置tableView
     func configTableView() -> Void {
@@ -27,13 +32,5 @@ class StartViewController: UIViewController {
             self?.navigationController?.pushViewController(model.viewController, animated: true)
         }
     }
-
-    
-    /// 获取功能列表
-    func getFuncList() -> [Any] {
-        return [FuncModel.init(title: "UITableView demo",_viewController: TBFunctionViewController()),
-                FuncModel.init(title: "UICollectionView demo",_viewController: COFunctionViewController())]
-    }
-
 
 }

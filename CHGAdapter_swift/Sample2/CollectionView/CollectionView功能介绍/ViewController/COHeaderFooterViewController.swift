@@ -39,7 +39,7 @@ class COHeaderFooterViewController: UIViewController {
         }
         
         func getHeaderData() -> [Any] {
-            var headerData = [Any]()
+            let headerData = [Any]()
             
 //            headerData.append(TBHeaderFooter.init(title: "国产品牌", titleColor: .red))
 //            headerData.append(TBHeaderFooter.init(title: "国外品牌", titleColor: .blue))

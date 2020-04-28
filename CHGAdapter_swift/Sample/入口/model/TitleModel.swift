@@ -21,7 +21,7 @@ class TitleModel: NSObject {
 
 // MARK: - 如果TitleModel类需要在TableView类中的Cell中使用则需要实现CHGTableViewCellModelProtocol协议
 extension TitleModel: CHGTableViewCellModelProtocol {
-    func cellClassName(_ tableView: UITableView, indexPath: IndexPath) -> AnyClass? {
+    func cellClass(_ tableView: UITableView, indexPath: IndexPath) -> AnyClass? {
         return TitleTableViewCell.self
     }
     
@@ -43,7 +43,7 @@ extension TitleModel: CHGTableViewHeaderFooterModelProtocol {
 
 // MARK: - 如果TitleModel类需要在CollectionView类中的Cell中使用则需要实现CHGCollectionViewCellModelProtocol协议
 extension TitleModel: CHGCollectionViewCellModelProtocol {
-    func cellClassName(collectionView: UICollectionView, at indexPath: IndexPath) -> AnyClass? {
+    func cellClass(collectionView: UICollectionView, at indexPath: IndexPath) -> AnyClass? {
         return TitleCollectionViewCell.self
     }
 }

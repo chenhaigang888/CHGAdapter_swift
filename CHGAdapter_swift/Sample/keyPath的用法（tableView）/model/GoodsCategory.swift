@@ -59,7 +59,7 @@ class Goods: NSObject {
 }
 
 extension Goods: CHGTableViewCellModelProtocol {
-    func cellClassName(_ tableView: UITableView, indexPath: IndexPath) -> AnyClass? {
+    func cellClass(_ tableView: UITableView, indexPath: IndexPath) -> AnyClass? {
         return GoodsTableViewCell.classForCoder()
     }
     
@@ -70,7 +70,7 @@ extension Goods: CHGTableViewCellModelProtocol {
 }
 
 extension Goods: CHGCollectionViewCellModelProtocol {
-    func cellClassName(collectionView: UICollectionView, at indexPath: IndexPath) -> AnyClass? {
+    func cellClass(collectionView: UICollectionView, at indexPath: IndexPath) -> AnyClass? {
         return GoodsCollectionViewCell.self
     }
     

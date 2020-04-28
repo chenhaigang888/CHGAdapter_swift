@@ -23,8 +23,8 @@ class CityTableViewCell: CHGTableViewCell {
         // Configure the view for the selected state
     }
     
-    override func cellForRow(atIndexPath indexPath: IndexPath, tableView: UITableView?, data: Any?) {
-        super.cellForRow(atIndexPath: indexPath, tableView: tableView, data: data)
+    override func cellForRow(atIndexPath indexPath: IndexPath, tableView: UITableView?, data: Any?,eventTransmissionBlock:CHGEventTransmissionBlock?) {
+        super.cellForRow(atIndexPath: indexPath, tableView: tableView, data: data,eventTransmissionBlock: eventTransmissionBlock)
         let model:CityModel = data as! CityModel
         title?.text = model.name
     }

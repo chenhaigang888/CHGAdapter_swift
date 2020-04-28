@@ -9,7 +9,7 @@
 import UIKit
 
 /// 回调
-public typealias CHGCallBack = (_ data:Any?) -> Void
+public typealias CHGCallBack = (_ data:Any?) -> Any?
 
 /// 事件传输block target.
 /// - Parameters:
@@ -18,18 +18,18 @@ public typealias CHGCallBack = (_ data:Any?) -> Void
 ///   - tag: 区分事件发生的场所中的多个事件
 ///   - callBack: 当当前类中处理完事件后异步通知事件所发生的场所
 /// - Returns: 当当前类中处理完事件后同步步通知事件所发生的场所
-public typealias CHGEventTransmissionBlock = (_ target:Any?,_ params:Any?,_ tag:NSInteger,_ callBack:CHGCallBack?) ->Any?
+public typealias CHGEventTransmissionBlock = (_ target:Any?,_ params:Any?,_ tag:NSInteger,_ callBack:CHGCallBack?) -> Any?
 
 /// tableViewDidSelectRow 回调
 public typealias CHGTableViewDidSelectRowBlock = (_ tableView:UITableView,_ indexPath:IndexPath,_ itemData:Any)->Void
 
 public protocol CHGTableViewAdapterProtocol:UITableViewDelegate,UITableViewDataSource, CHGSubDataOfKeyPathDelegate{
     
-    func obtainCellNameWithCell(_ data:Any ,tableView:UITableView, cellForRowAtIndexPath indexPath:IndexPath) -> AnyClass?
+    func obtainCellClassWithCell(_ data:Any ,tableView:UITableView, cellForRowAtIndexPath indexPath:IndexPath) -> AnyClass?
     
-    func obtainHeaderNameWithHeader(_ data:Any,tableView:UITableView, viewForHeaderInSection section:NSInteger) -> AnyClass?
+    func obtainHeaderClassWithHeader(_ data:Any,tableView:UITableView, viewForHeaderInSection section:NSInteger) -> AnyClass?
     
-    func obtainFooterNameWithFooter(_ data:Any,tableView:UITableView, viewForFooterInSection section:NSInteger) -> AnyClass?
+    func obtainFooterClassWithFooter(_ data:Any,tableView:UITableView, viewForFooterInSection section:NSInteger) -> AnyClass?
 }
 
 open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
@@ -50,15 +50,15 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
     public var controller:UIViewController?
     
     
-    open func obtainCellNameWithCell(_ data: Any, tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> AnyClass? {
+    open func obtainCellClassWithCell(_ data: Any, tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> AnyClass? {
         return self.cellName!;
     }
     
-    open func obtainHeaderNameWithHeader(_ data: Any, tableView: UITableView, viewForHeaderInSection section: NSInteger) -> AnyClass? {
+    open func obtainHeaderClassWithHeader(_ data: Any, tableView: UITableView, viewForHeaderInSection section: NSInteger) -> AnyClass? {
         return self.headerName!;
     }
     
-    open func obtainFooterNameWithFooter(_ data: Any, tableView: UITableView, viewForFooterInSection section: NSInteger) -> AnyClass? {
+    open func obtainFooterClassWithFooter(_ data: Any, tableView: UITableView, viewForFooterInSection section: NSInteger) -> AnyClass? {
         return self.footerName!;
     }
     
@@ -142,7 +142,7 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
     
     open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellData = self.cellDataWithIndexPath(indexPath,tableView: tableView)
-        guard let cellClass = self.obtainCellNameWithCell(cellData!, tableView: tableView, cellForRowAtIndexPath: indexPath) else { return UITableViewCell() }
+        guard let cellClass = self.obtainCellClassWithCell(cellData!, tableView: tableView, cellForRowAtIndexPath: indexPath) else { return UITableViewCell() }
         let classAllName = NSStringFromClass(cellClass)
         var cell = tableView.dequeueReusableCell(withIdentifier: classAllName)
         if cell == nil {
@@ -156,8 +156,8 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
             cell = tableView.dequeueReusableCell(withIdentifier: classAllName, for: indexPath)
         }
         let cell_:CHGTableViewCell = cell as! CHGTableViewCell
-        cell_.eventTransmissionBlock = tableView.eventTransmissionBlock
-        cell_.cellForRow(atIndexPath: indexPath, tableView: tableView, data: cellData)
+//        cell_.eventTransmissionBlock = tableView.eventTransmissionBlock
+        cell_.cellForRow(atIndexPath: indexPath, tableView: tableView, data: cellData,eventTransmissionBlock: tableView.eventTransmissionBlock)
         return cell_
     }
     
@@ -192,9 +192,9 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
             return nil
         }
         guard let headerFooterClass:AnyClass =
-        type == CHGTableViewHeaderFooterViewType.HeaderType ? self.obtainHeaderNameWithHeader(headerFooterData!, tableView: tableView, viewForHeaderInSection: section)
+        type == CHGTableViewHeaderFooterViewType.HeaderType ? self.obtainHeaderClassWithHeader(headerFooterData!, tableView: tableView, viewForHeaderInSection: section)
             :
-            self.obtainFooterNameWithFooter(headerFooterData!, tableView: tableView, viewForFooterInSection: section) else { return nil }
+            self.obtainFooterClassWithFooter(headerFooterData!, tableView: tableView, viewForFooterInSection: section) else { return nil }
         
         let classAllName = NSStringFromClass(headerFooterClass)
         
@@ -211,8 +211,8 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
         }
         
         let view_:CHGTableViewHeaderFooterView = view as! CHGTableViewHeaderFooterView
-        view_.eventTransmissionBlock = tableView.eventTransmissionBlock
-        view_.headerFooter(section: section, tableView: tableView, data: headerFooterData!, type: type)
+//        view_.eventTransmissionBlock = tableView.eventTransmissionBlock
+        view_.headerFooter(section: section, tableView: tableView, data: headerFooterData!, type: type,eventTransmissionBlock: tableView.eventTransmissionBlock)
         return view_
     }
     

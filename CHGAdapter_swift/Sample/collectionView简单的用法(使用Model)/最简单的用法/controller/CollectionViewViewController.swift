@@ -65,17 +65,17 @@ class CollectionViewViewController: UIViewController {
         //模拟下载
         DispatchQueue.global().async {
             DispatchQueue.main.async {
-                callBack!("开始下载" as AnyObject)
+                _ = callBack!("开始下载" as AnyObject)
             }
             for i in 0...100 {
                 sleep(1)
                 DispatchQueue.main.async {
                     print("----模拟下载:\(String(describing: simulationDownload.url))---进度：\(i)---")
-                    callBack!("下载进度：\(i)%" as AnyObject)
+                    _ = callBack!("下载进度：\(i)%" as AnyObject)
                 }
             }
             DispatchQueue.main.async {
-                callBack!("下载完成100%" as AnyObject)
+                _ = callBack!("下载完成100%" as AnyObject)
             }
         }
     }

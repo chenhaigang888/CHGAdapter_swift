@@ -17,8 +17,8 @@ class CVTitleCollectionViewCell: CHGCollectionViewCell {
         // Initialization code
     }
 
-    override func cellForRow(atIndexPath indexPath: IndexPath, collectionView: UICollectionView?, data: Any?) {
-        super.cellForRow(atIndexPath: indexPath, collectionView: collectionView, data: data)
+    override func cellForRow(atIndexPath indexPath: IndexPath, collectionView: UICollectionView?, data: Any?,eventTransmissionBlock:CHGEventTransmissionBlock?) {
+        super.cellForRow(atIndexPath: indexPath, collectionView: collectionView, data: data,eventTransmissionBlock: eventTransmissionBlock)
         let titleModel:CVTitleModel = data as! CVTitleModel
         self.name?.text = titleModel.name
         

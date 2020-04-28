@@ -41,7 +41,7 @@ enum Week {
 }
 
 extension Week : CHGTableViewCellModelProtocol {
-    func cellClassName(_ tableView: UITableView, indexPath: IndexPath) -> AnyClass? {
+    func cellClass(_ tableView: UITableView, indexPath: IndexPath) -> AnyClass? {
         return WeekTableViewCell.self
     }
     

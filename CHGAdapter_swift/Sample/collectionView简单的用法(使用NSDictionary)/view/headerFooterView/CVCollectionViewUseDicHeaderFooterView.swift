@@ -20,8 +20,8 @@ class CVCollectionViewUseDicHeaderFooterView: CHGCollectionReusableView {
     }
     */
     
-    override func reusableViewFor(collectionView: UICollectionView, indexPath: IndexPath, kind: NSString, reusableViewData: Any?) {
-        super.reusableViewFor(collectionView: collectionView, indexPath: indexPath, kind: kind, reusableViewData: reusableViewData)
+    override func reusableViewFor(collectionView: UICollectionView, indexPath: IndexPath, kind: NSString, reusableViewData: Any?,eventTransmissionBlock:CHGEventTransmissionBlock?) {
+    super.reusableViewFor(collectionView: collectionView, indexPath: indexPath, kind: kind, reusableViewData: reusableViewData,eventTransmissionBlock: eventTransmissionBlock)
         if reusableViewData is NSDictionary {
             let dic:NSDictionary = reusableViewData as! NSDictionary
             title?.text = dic["groupName"] as? String

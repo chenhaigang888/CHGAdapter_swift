@@ -29,7 +29,7 @@ enum Pay {
 }
 
 extension Pay : CHGTableViewCellModelProtocol {
-    func cellClassName(_ tableView: UITableView, indexPath: IndexPath) -> AnyClass? {
+    func cellClass(_ tableView: UITableView, indexPath: IndexPath) -> AnyClass? {
         switch self {
         case .aliPay:
             return AliPayTableViewCell.classForCoder()

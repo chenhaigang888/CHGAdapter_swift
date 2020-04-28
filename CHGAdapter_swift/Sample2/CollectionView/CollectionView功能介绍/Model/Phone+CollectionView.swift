@@ -9,7 +9,7 @@
 import UIKit
 
 extension Phone : CHGCollectionViewCellModelProtocol {
-    func cellClassName(collectionView: UICollectionView, at indexPath: IndexPath) -> AnyClass? {
+    func cellClass(collectionView: UICollectionView, at indexPath: IndexPath) -> AnyClass? {
         return PhoneCollectionViewCell.self
     }
     

@@ -17,7 +17,7 @@ public protocol CHGTableViewCellModelProtocol {
     ///   - tableView: 当前model所在的tableView
     ///   - indexPath: 当前model所在的indexPath
     /// - Returns: 返回类名或者identifier
-    func cellClassName(_ tableView:UITableView, indexPath:IndexPath) -> AnyClass?
+    func cellClass(_ tableView:UITableView, indexPath:IndexPath) -> AnyClass?
     
     /// 返回当前cell的高度
     ///
@@ -80,16 +80,16 @@ public extension CHGTableViewHeaderFooterModelProtocol {
 /// 简单的adapter，此adapter为使用TableView进行页面布局而使用，使用此adapter 需要cellData实现CHGTableViewCellModelProtocol协议，headerData和footerData需要实现CHGTableViewHeaderFooterModelProtocol协议
 open class CHGSimpleTableViewAdapter: CHGTableViewAdapter {
     
-    override open func obtainCellNameWithCell(_ data: Any, tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> AnyClass? {
+    override open func obtainCellClassWithCell(_ data: Any, tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> AnyClass? {
         guard let tableViewCellModelProtocol:CHGTableViewCellModelProtocol = (data as AnyObject) as? CHGTableViewCellModelProtocol else {
-            return super.obtainCellNameWithCell(data, tableView: tableView, cellForRowAtIndexPath: indexPath)
+            return super.obtainCellClassWithCell(data, tableView: tableView, cellForRowAtIndexPath: indexPath)
         }
-        return tableViewCellModelProtocol.cellClassName(tableView,indexPath: indexPath)
+        return tableViewCellModelProtocol.cellClass(tableView,indexPath: indexPath)
     }
     
-    override open func obtainHeaderNameWithHeader(_ data: Any, tableView: UITableView, viewForHeaderInSection section: NSInteger) -> AnyClass? {
+    override open func obtainHeaderClassWithHeader(_ data: Any, tableView: UITableView, viewForHeaderInSection section: NSInteger) -> AnyClass? {
         guard let tableViewHeaderFooterModelProtocol:CHGTableViewHeaderFooterModelProtocol = (data as AnyObject) as? CHGTableViewHeaderFooterModelProtocol else {
-            return super.obtainHeaderNameWithHeader(data, tableView: tableView, viewForHeaderInSection: section)
+            return super.obtainHeaderClassWithHeader(data, tableView: tableView, viewForHeaderInSection: section)
         }
         return tableViewHeaderFooterModelProtocol.headerFooterClass(tableView, section: section, type: .HeaderType)
     }
@@ -110,9 +110,9 @@ open class CHGSimpleTableViewAdapter: CHGTableViewAdapter {
         return keyPath
     }
     
-    override open func obtainFooterNameWithFooter(_ data: Any, tableView: UITableView, viewForFooterInSection section: NSInteger) -> AnyClass? {
+    override open func obtainFooterClassWithFooter(_ data: Any, tableView: UITableView, viewForFooterInSection section: NSInteger) -> AnyClass? {
         guard let tableViewHeaderFooterModelProtocol:CHGTableViewHeaderFooterModelProtocol = (data as AnyObject) as? CHGTableViewHeaderFooterModelProtocol else {
-            return super.obtainFooterNameWithFooter(data, tableView: tableView, viewForFooterInSection: section)
+            return super.obtainFooterClassWithFooter(data, tableView: tableView, viewForFooterInSection: section)
         }
         return tableViewHeaderFooterModelProtocol.headerFooterClass(tableView, section: section, type: .FooterType)
     }

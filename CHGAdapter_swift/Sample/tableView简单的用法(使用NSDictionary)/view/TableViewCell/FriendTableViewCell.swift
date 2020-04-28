@@ -23,8 +23,8 @@ class FriendTableViewCell: CHGTableViewCell {
 
     }
     
-    override func cellForRow(atIndexPath indexPath: IndexPath, tableView: UITableView?, data: Any?) {
-        super.cellForRow(atIndexPath: indexPath, tableView: tableView, data: data)
+    override func cellForRow(atIndexPath indexPath: IndexPath, tableView: UITableView?, data: Any?,eventTransmissionBlock:CHGEventTransmissionBlock?) {
+        super.cellForRow(atIndexPath: indexPath, tableView: tableView, data: data,eventTransmissionBlock: eventTransmissionBlock)
         if data is NSDictionary {
             let dic:NSDictionary = data as! NSDictionary
             self.icon.image = UIImage.init(named: dic["icon"] as! String)

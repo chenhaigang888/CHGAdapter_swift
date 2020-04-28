@@ -16,7 +16,7 @@ public protocol CHGCollectionViewCellModelProtocol {
     /// - Parameters:
     ///   - collectionView: model所在的collectionView的cell中（model可能会存在很多collectionView、collectionViewCell）
     ///   - atIndexPath: model在collectionView中所处的indexPath
-    func cellClassName(collectionView:UICollectionView, at indexPath:IndexPath)->AnyClass?
+    func cellClass(collectionView:UICollectionView, at indexPath:IndexPath)->AnyClass?
     
     ///返回item的大小
     func cellItemSize(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
@@ -109,16 +109,16 @@ public extension CHGCollectionViewSupplementaryElementModelProtocol {
 
 open class CHGSimpleCollectionViewAdapter: CHGCollectionViewAdapter {
     
-    open override func obtainCellNameWithCell(_ data: Any, collectionView: UICollectionView, cellForItemAtIndexPath indexPath: IndexPath) -> AnyClass? {
+    open override func obtainCellClassWithCell(_ data: Any, collectionView: UICollectionView, cellForItemAtIndexPath indexPath: IndexPath) -> AnyClass? {
         guard let cellModelProtocol:CHGCollectionViewCellModelProtocol = (data as AnyObject) as? CHGCollectionViewCellModelProtocol else {
-            return super.obtainCellNameWithCell(data, collectionView: collectionView, cellForItemAtIndexPath: indexPath)
+            return super.obtainCellClassWithCell(data, collectionView: collectionView, cellForItemAtIndexPath: indexPath)
         }
-        return cellModelProtocol.cellClassName(collectionView: collectionView, at: indexPath)
+        return cellModelProtocol.cellClass(collectionView: collectionView, at: indexPath)
     }
     
-    open override func obtainSupplementaryElementNameWithCell(_ data: Any, collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: NSString, indexPath: IndexPath) -> AnyClass? {
+    open override func obtainSupplementaryElementClassWithCell(_ data: Any, collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: NSString, indexPath: IndexPath) -> AnyClass? {
         guard let supplementaryElementModelProtocol:CHGCollectionViewSupplementaryElementModelProtocol = (data as AnyObject) as? CHGCollectionViewSupplementaryElementModelProtocol else {
-            return super.obtainSupplementaryElementNameWithCell(data, collectionView: collectionView, viewForSupplementaryElementOfKind: kind, indexPath: indexPath)
+            return super.obtainSupplementaryElementClassWithCell(data, collectionView: collectionView, viewForSupplementaryElementOfKind: kind, indexPath: indexPath)
         }
         return supplementaryElementModelProtocol.reusableView(collectionView: collectionView, supplementaryElementOfKind: kind as String, atIndexPath: indexPath)
     }

@@ -21,11 +21,12 @@ open class CHGTableViewHeaderFooterView: UITableViewHeaderFooterView {
     public var headerFooterData:Any?
     public var type:CHGTableViewHeaderFooterViewType?
     
-    open func headerFooter(section:NSInteger,tableView:UITableView,data:Any,type:CHGTableViewHeaderFooterViewType) -> Void {
+    open func headerFooter(section:NSInteger,tableView:UITableView,data:Any,type:CHGTableViewHeaderFooterViewType,eventTransmissionBlock:CHGEventTransmissionBlock?) -> Void {
         self.section = section
         self.tableView = tableView
         self.headerFooterData = data
         self.type = type
+        self.eventTransmissionBlock = eventTransmissionBlock
     }
     
     open func controller()->UIViewController? {

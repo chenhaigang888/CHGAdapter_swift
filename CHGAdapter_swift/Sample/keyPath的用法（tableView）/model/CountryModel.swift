@@ -58,7 +58,7 @@ class CityModel: NSObject {
 }
 
 extension CityModel: CHGTableViewCellModelProtocol {
-    func cellClassName(_ tableView: UITableView, indexPath: IndexPath) -> AnyClass? {
+    func cellClass(_ tableView: UITableView, indexPath: IndexPath) -> AnyClass? {
         return CityTableViewCell.classForCoder()
     }
     
@@ -68,7 +68,7 @@ extension CityModel: CHGTableViewCellModelProtocol {
 }
 
 extension CityModel: CHGCollectionViewCellModelProtocol {
-    func cellClassName(collectionView: UICollectionView, at indexPath: IndexPath) -> AnyClass? {
+    func cellClass(collectionView: UICollectionView, at indexPath: IndexPath) -> AnyClass? {
         return CityCollectionViewCell.self
     }
     

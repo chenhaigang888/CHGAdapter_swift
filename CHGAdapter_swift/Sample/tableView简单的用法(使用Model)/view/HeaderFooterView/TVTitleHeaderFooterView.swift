@@ -20,8 +20,8 @@ class TVTitleHeaderFooterView: CHGTableViewHeaderFooterView {
     }
     */
     
-    override func headerFooter(section: NSInteger, tableView: UITableView, data: Any, type: CHGTableViewHeaderFooterViewType) {
-        super.headerFooter(section: section, tableView: tableView, data: data, type: type)
+    override func headerFooter(section: NSInteger, tableView: UITableView, data: Any, type: CHGTableViewHeaderFooterViewType,eventTransmissionBlock:CHGEventTransmissionBlock?) {
+        super.headerFooter(section: section, tableView: tableView, data: data, type: type,eventTransmissionBlock: eventTransmissionBlock)
         let titleModel:TVTitleModel = data as! TVTitleModel
         title?.text = titleModel.title
     }

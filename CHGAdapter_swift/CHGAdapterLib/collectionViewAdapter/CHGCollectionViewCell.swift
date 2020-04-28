@@ -14,10 +14,11 @@ open class CHGCollectionViewCell: UICollectionViewCell {
     public var collectionView:UICollectionView?
     public var cellData:Any?
     
-    open func cellForRow(atIndexPath indexPath:IndexPath,collectionView:UICollectionView?,data:Any?) -> Void {
+    open func cellForRow(atIndexPath indexPath:IndexPath,collectionView:UICollectionView?,data:Any?,eventTransmissionBlock:CHGEventTransmissionBlock?) -> Void {
         self.indexPath = indexPath
-        self.collectionView = collectionView;
-        self.cellData = data;
+        self.collectionView = collectionView
+        self.cellData = data
+        self.eventTransmissionBlock = eventTransmissionBlock
     }
     
     open func adapterTag()->NSInteger? {

@@ -21,7 +21,7 @@ class Phone: NSObject {
 }
 
 extension Phone : CHGTableViewCellModelProtocol {
-    func cellClassName(_ tableView: UITableView, indexPath: IndexPath) -> AnyClass? {
+    func cellClass(_ tableView: UITableView, indexPath: IndexPath) -> AnyClass? {
         return PhoneTableViewCell.self
     }
     

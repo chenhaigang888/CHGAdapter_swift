@@ -15,10 +15,11 @@ open class CHGTableViewCell: UITableViewCell {
     public var tableView:UITableView?
     public var cellData:Any?
     
-    open func cellForRow(atIndexPath indexPath:IndexPath,tableView:UITableView?,data:Any?) -> Void {
+    open func cellForRow(atIndexPath indexPath:IndexPath,tableView:UITableView?,data:Any?,eventTransmissionBlock:CHGEventTransmissionBlock?) -> Void {
         self.indexPath = indexPath
-        self.tableView = tableView;
-        self.cellData = data;
+        self.tableView = tableView
+        self.cellData = data
+        self.eventTransmissionBlock = eventTransmissionBlock
     }
     
     open func adapterTag()->NSInteger? {

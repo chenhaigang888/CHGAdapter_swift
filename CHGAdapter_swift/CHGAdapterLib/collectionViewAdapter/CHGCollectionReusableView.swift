@@ -16,11 +16,12 @@ open class CHGCollectionReusableView: UICollectionReusableView {
     public var reusableViewData:Any?
     public var kind:NSString?
     
-    open func reusableViewFor(collectionView:UICollectionView,indexPath:IndexPath,kind:NSString,reusableViewData:Any?) -> Void {
+    open func reusableViewFor(collectionView:UICollectionView,indexPath:IndexPath,kind:NSString,reusableViewData:Any?,eventTransmissionBlock:CHGEventTransmissionBlock?) -> Void {
         self.collectionView = collectionView
         self.indexPath = indexPath
         self.kind = kind
         self.reusableViewData = reusableViewData
+        self.eventTransmissionBlock = eventTransmissionBlock
     }
     
     open func adapterTag()->NSInteger? {

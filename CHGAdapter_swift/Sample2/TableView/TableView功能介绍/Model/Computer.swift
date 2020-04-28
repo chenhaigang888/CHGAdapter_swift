@@ -16,8 +16,8 @@ struct Computer {
 }
 
 extension Computer : CHGTableViewCellModelProtocol {
-    func cellClassName(_ tableView: UITableView, indexPath: IndexPath) -> String {
-        return "ComputerTableViewCell"
+    func cellClassName(_ tableView: UITableView, indexPath: IndexPath) -> AnyClass? {
+        return ComputerTableViewCell.self
     }
     
     func cellHeigh(_ tableView: UITableView, indexPath: IndexPath) -> CGFloat {

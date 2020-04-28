@@ -21,8 +21,8 @@ class TVSubmitModel: NSObject {
 }
 
 extension TVSubmitModel: CHGTableViewHeaderFooterModelProtocol {
-    func headerFooterClass(_ tableView: UITableView, section: NSInteger, type: CHGTableViewHeaderFooterViewType) -> String {
-        return "TVSubmitHeaderFooterView"
+    func headerFooterClass(_ tableView: UITableView, section: NSInteger, type: CHGTableViewHeaderFooterViewType) -> AnyClass? {
+        return TVSubmitHeaderFooterView.self
     }
     
     func headerFooterHeigh(_ tableView: UITableView, section: NSInteger, type: CHGTableViewHeaderFooterViewType) -> CGFloat {

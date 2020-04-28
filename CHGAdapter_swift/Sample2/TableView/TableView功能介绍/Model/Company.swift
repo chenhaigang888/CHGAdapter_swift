@@ -25,8 +25,8 @@ class Company: NSObject {
 }
 
 extension Company : CHGTableViewHeaderFooterModelProtocol {
-    func headerFooterClass(_ tableView: UITableView, section: NSInteger, type: CHGTableViewHeaderFooterViewType) -> String {
-        return "CompanyHeaderFooterView"
+    func headerFooterClass(_ tableView: UITableView, section: NSInteger, type: CHGTableViewHeaderFooterViewType) -> AnyClass? {
+        return CompanyHeaderFooterView.classForCoder()
     }
     
     func headerFooterHeigh(_ tableView: UITableView, section: NSInteger, type: CHGTableViewHeaderFooterViewType) -> CGFloat {

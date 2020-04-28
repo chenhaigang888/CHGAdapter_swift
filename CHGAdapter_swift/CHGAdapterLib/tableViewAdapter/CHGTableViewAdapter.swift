@@ -25,18 +25,18 @@ public typealias CHGTableViewDidSelectRowBlock = (_ tableView:UITableView,_ inde
 
 public protocol CHGTableViewAdapterProtocol:UITableViewDelegate,UITableViewDataSource, CHGSubDataOfKeyPathDelegate{
     
-    func obtainCellNameWithCell(_ data:Any ,tableView:UITableView, cellForRowAtIndexPath indexPath:IndexPath) -> String
+    func obtainCellNameWithCell(_ data:Any ,tableView:UITableView, cellForRowAtIndexPath indexPath:IndexPath) -> AnyClass?
     
-    func obtainHeaderNameWithHeader(_ data:Any,tableView:UITableView, viewForHeaderInSection section:NSInteger) -> String
+    func obtainHeaderNameWithHeader(_ data:Any,tableView:UITableView, viewForHeaderInSection section:NSInteger) -> AnyClass?
     
-    func obtainFooterNameWithFooter(_ data:Any,tableView:UITableView, viewForFooterInSection section:NSInteger) -> String
+    func obtainFooterNameWithFooter(_ data:Any,tableView:UITableView, viewForFooterInSection section:NSInteger) -> AnyClass?
 }
 
 open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
     
-    public var cellName:String? = ""
-    public var headerName:String? = ""
-    public var footerName:String? = ""
+    public var cellName:AnyClass?
+    public var headerName:AnyClass?
+    public var footerName:AnyClass?
     
     /// 如果cell、headerView、footerView的高度都统一可以通过直接设置以下参数进行设置
     public var cellHeight:CGFloat = 44
@@ -50,15 +50,15 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
     public var controller:UIViewController?
     
     
-    open func obtainCellNameWithCell(_ data: Any, tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> String {
+    open func obtainCellNameWithCell(_ data: Any, tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> AnyClass? {
         return self.cellName!;
     }
     
-    open func obtainHeaderNameWithHeader(_ data: Any, tableView: UITableView, viewForHeaderInSection section: NSInteger) -> String {
+    open func obtainHeaderNameWithHeader(_ data: Any, tableView: UITableView, viewForHeaderInSection section: NSInteger) -> AnyClass? {
         return self.headerName!;
     }
     
-    open func obtainFooterNameWithFooter(_ data: Any, tableView: UITableView, viewForFooterInSection section: NSInteger) -> String {
+    open func obtainFooterNameWithFooter(_ data: Any, tableView: UITableView, viewForFooterInSection section: NSInteger) -> AnyClass? {
         return self.footerName!;
     }
     
@@ -138,29 +138,22 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
         }
     }
     
-    open func fileIsExit(_ fileName:String) -> Bool {
-        let xibFile = Bundle.main.path(forResource: fileName, ofType: "nib")
-        return xibFile != nil
-    }
+    
     
     open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellData = self.cellDataWithIndexPath(indexPath,tableView: tableView)
-        let identifier = self.obtainCellNameWithCell(cellData!, tableView: tableView, cellForRowAtIndexPath: indexPath)
-        
-        if identifier.count == 0 {
-            return UITableViewCell()
-        }
-        
-        var cell = tableView.dequeueReusableCell(withIdentifier: identifier as String)
+        guard let cellClass = self.obtainCellNameWithCell(cellData!, tableView: tableView, cellForRowAtIndexPath: indexPath) else { return UITableViewCell() }
+        let classAllName = NSStringFromClass(cellClass)
+        var cell = tableView.dequeueReusableCell(withIdentifier: classAllName)
         if cell == nil {
-            if self.fileIsExit(identifier as String) {
-                tableView.register(UINib (nibName: identifier as String, bundle: nil), forCellReuseIdentifier: identifier as String)
+            if Utils.fileIsExit(moduleName: Utils.getModuleName(anyClass: cellClass), fileName: Utils.getShortClassName(anyClass: cellClass)) {
+                tableView.register(UINib (nibName:Utils.getShortClassName(anyClass: cellClass),
+                                          bundle: Utils.getBundle(anyClass: cellClass)),
+                                   forCellReuseIdentifier: classAllName)
             } else {
-                let NameSpace:String = Bundle.main.infoDictionary!["CFBundleExecutable"] as! String
-                let classAllNameClass:AnyClass = NSClassFromString("\(NameSpace).\(identifier)")!
-                tableView.register(classAllNameClass, forCellReuseIdentifier: identifier as String)
+                tableView.register(cellClass, forCellReuseIdentifier: classAllName)
             }
-            cell = tableView.dequeueReusableCell(withIdentifier: identifier as String, for: indexPath)
+            cell = tableView.dequeueReusableCell(withIdentifier: classAllName, for: indexPath)
         }
         let cell_:CHGTableViewCell = cell as! CHGTableViewCell
         cell_.eventTransmissionBlock = tableView.eventTransmissionBlock
@@ -198,25 +191,23 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
         if headerFooterData == nil {
             return nil
         }
-        let identifier:String =
-            type == CHGTableViewHeaderFooterViewType.HeaderType ? self.obtainHeaderNameWithHeader(headerFooterData!, tableView: tableView, viewForHeaderInSection: section)
-                :
-                self.obtainFooterNameWithFooter(headerFooterData!, tableView: tableView, viewForFooterInSection: section)
+        guard let headerFooterClass:AnyClass =
+        type == CHGTableViewHeaderFooterViewType.HeaderType ? self.obtainHeaderNameWithHeader(headerFooterData!, tableView: tableView, viewForHeaderInSection: section)
+            :
+            self.obtainFooterNameWithFooter(headerFooterData!, tableView: tableView, viewForFooterInSection: section) else { return nil }
         
-        if identifier.count == 0 {
-            return nil
-        }
+        let classAllName = NSStringFromClass(headerFooterClass)
         
-        var view = tableView.dequeueReusableHeaderFooterView(withIdentifier: identifier as String)
+        var view = tableView.dequeueReusableHeaderFooterView(withIdentifier: classAllName as String)
         if view == nil {
-            if self.fileIsExit(identifier as String) {
-                tableView.register(UINib(nibName: identifier as String, bundle: nil), forHeaderFooterViewReuseIdentifier: identifier as String)
+            if Utils.fileIsExit(moduleName: Utils.getModuleName(anyClass: headerFooterClass), fileName: Utils.getShortClassName(anyClass: headerFooterClass)) {
+                tableView.register(UINib(nibName: Utils.getShortClassName(anyClass: headerFooterClass),
+                                         bundle: Utils.getBundle(anyClass: headerFooterClass)),
+                                   forHeaderFooterViewReuseIdentifier: classAllName)
             } else {
-                let NameSpace:String = Bundle.main.infoDictionary!["CFBundleExecutable"] as! String
-                let classAllNameClass:AnyClass = NSClassFromString("\(NameSpace).\(identifier)")!
-                tableView.register(classAllNameClass, forHeaderFooterViewReuseIdentifier: identifier as String)
+                tableView.register(headerFooterClass, forHeaderFooterViewReuseIdentifier: classAllName)
             }
-            view = tableView.dequeueReusableHeaderFooterView(withIdentifier: identifier as String)
+            view = tableView.dequeueReusableHeaderFooterView(withIdentifier: classAllName)
         }
         
         let view_:CHGTableViewHeaderFooterView = view as! CHGTableViewHeaderFooterView

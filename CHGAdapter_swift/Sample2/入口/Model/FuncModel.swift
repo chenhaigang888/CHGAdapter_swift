@@ -23,8 +23,8 @@ struct FuncModel : CHGTableViewCellModelProtocol{
         }
     }
     
-    func cellClassName(_ tableView: UITableView, indexPath: IndexPath) -> String {
-        return "FuncModelTableViewCell"
+    func cellClassName(_ tableView: UITableView, indexPath: IndexPath) -> AnyClass? {
+        return FuncModelTableViewCell.classForCoder()
     }
 
     func cellHeigh(_ tableView: UITableView, indexPath: IndexPath) -> CGFloat {

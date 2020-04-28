@@ -13,8 +13,8 @@ class CVInputTextModel: NSObject {
 }
 
 extension CVInputTextModel: CHGCollectionViewCellModelProtocol {
-    func cellClassName(collectionView: UICollectionView, at indexPath: IndexPath) -> String {
-        return "CVInputTextCollectionViewCell"
+    func cellClassName(collectionView: UICollectionView, at indexPath: IndexPath) -> AnyClass? {
+        return CVInputTextCollectionViewCell.self
     }
     
     

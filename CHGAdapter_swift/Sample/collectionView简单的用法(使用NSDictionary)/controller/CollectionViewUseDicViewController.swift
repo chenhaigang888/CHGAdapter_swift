@@ -14,8 +14,8 @@ class CollectionViewUseDicViewController: UIViewController {
     
     lazy var adapter:CHGCollectionViewAdapter = {
         let adapter = CHGCollectionViewAdapter.init()//如果只有一种cell header footer 就不需要继承 CHGCollectionViewAdapter
-        adapter.cellName = "CVFriendUseDicCollectionViewCell"
-        adapter.headerName = "CVCollectionViewUseDicHeaderFooterView"
+        adapter.cellName = CVFriendUseDicCollectionViewCell.self
+        adapter.headerName = CVCollectionViewUseDicHeaderFooterView.self
         return adapter
     }()
     

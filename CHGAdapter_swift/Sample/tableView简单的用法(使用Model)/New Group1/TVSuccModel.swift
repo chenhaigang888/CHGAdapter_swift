@@ -20,8 +20,8 @@ class TVSuccModel: NSObject {
 }
 
 extension TVSuccModel: CHGTableViewHeaderFooterModelProtocol {
-    func headerFooterClass(_ tableView: UITableView, section: NSInteger, type: CHGTableViewHeaderFooterViewType) -> String {
-        return "TVSuccHeaderFooterView"
+    func headerFooterClass(_ tableView: UITableView, section: NSInteger, type: CHGTableViewHeaderFooterViewType) -> AnyClass? {
+        return TVSuccHeaderFooterView.self
     }
     
     func headerFooterHeigh(_ tableView: UITableView, section: NSInteger, type: CHGTableViewHeaderFooterViewType) -> CGFloat {

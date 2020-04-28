@@ -23,8 +23,8 @@ class CVHeaderModel: NSObject {
 
 extension CVHeaderModel: CHGCollectionViewSupplementaryElementModelProtocol {
     
-    func reusableView(collectionView: UICollectionView, supplementaryElementOfKind kind: String, atIndexPath indexPath: IndexPath) -> String {
-        return "CVHeaderCollectionReusableView"
+    func reusableView(collectionView: UICollectionView, supplementaryElementOfKind kind: String, atIndexPath indexPath: IndexPath) -> AnyClass? {
+        return CVHeaderCollectionReusableView.self
     }
     
     ///以下注释的代码为设置cell 和 header footer view的布局信息

@@ -18,8 +18,8 @@ class GoodsTypeCollectionReusableView: CHGCollectionReusableView {
     
     override func reusableViewWillAppear() {
         super.reusableViewWillAppear()
-        let model:GoodsType = self.reusableViewData as! GoodsType
-        title.text = model.type
-        title.backgroundColor = model.bgColor
+//        let model:GoodsType = self.reusableViewData as! GoodsType
+//        title.text = model.type
+//        title.backgroundColor = model.bgColor
     }
 }

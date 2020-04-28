@@ -18,8 +18,8 @@ class TBHeaderFooterCollectionReusableView: CHGCollectionReusableView {
     
     override func reusableViewFor(collectionView: UICollectionView, indexPath: IndexPath, kind: NSString, reusableViewData: Any?) {
         super.reusableViewFor(collectionView: collectionView, indexPath: indexPath, kind: kind, reusableViewData: reusableViewData)
-        let model:TBHeaderFooter = self.reusableViewData as! TBHeaderFooter
-        title.text = model.title
+//        let model:TBHeaderFooter = self.reusableViewData as! TBHeaderFooter
+//        title.text = model.title
     }
     
     

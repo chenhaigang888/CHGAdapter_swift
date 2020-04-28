@@ -21,8 +21,8 @@ class TVInputTextModel: NSObject {
 }
 
 extension TVInputTextModel: CHGTableViewCellModelProtocol {
-    func cellClassName(_ tableView: UITableView, indexPath: IndexPath) -> String {
-        return "TVInputTextTableViewCell"
+    func cellClassName(_ tableView: UITableView, indexPath: IndexPath) -> AnyClass? {
+        return TVInputTextTableViewCell.classForCoder()
     }
     
     func cellHeigh(_ tableView: UITableView, indexPath: IndexPath) -> CGFloat {

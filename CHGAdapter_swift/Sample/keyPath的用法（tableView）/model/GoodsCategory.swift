@@ -21,8 +21,8 @@ class GoodsCategory: NSObject {
 }
 
 extension GoodsCategory: CHGTableViewHeaderFooterModelProtocol {
-    func headerFooterClass(_ tableView: UITableView, section: NSInteger, type: CHGTableViewHeaderFooterViewType) -> String {
-        return "GoodsCategoryTableViewHeaderFooterView"
+    func headerFooterClass(_ tableView: UITableView, section: NSInteger, type: CHGTableViewHeaderFooterViewType) -> AnyClass? {
+        return GoodsCategoryTableViewHeaderFooterView.classForCoder()
     }
     
     func headerFooterHeigh(_ tableView: UITableView, section: NSInteger, type: CHGTableViewHeaderFooterViewType) -> CGFloat {
@@ -36,8 +36,8 @@ extension GoodsCategory: CHGTableViewHeaderFooterModelProtocol {
 }
 
 extension GoodsCategory: CHGCollectionViewSupplementaryElementModelProtocol {
-    func reusableView(collectionView: UICollectionView, supplementaryElementOfKind kind: String, atIndexPath indexPath: IndexPath) -> String {
-        return "GoodsCategoryCollectionReusableView"
+    func reusableView(collectionView: UICollectionView, supplementaryElementOfKind kind: String, atIndexPath indexPath: IndexPath) -> AnyClass? {
+        return GoodsCategoryCollectionReusableView.self
     }
     
     func subDataKeyPath(_ indexPath: IndexPath, inCollectionView collectionView: UICollectionView) -> Any {
@@ -59,8 +59,8 @@ class Goods: NSObject {
 }
 
 extension Goods: CHGTableViewCellModelProtocol {
-    func cellClassName(_ tableView: UITableView, indexPath: IndexPath) -> String {
-        return "GoodsTableViewCell"
+    func cellClassName(_ tableView: UITableView, indexPath: IndexPath) -> AnyClass? {
+        return GoodsTableViewCell.classForCoder()
     }
     
     func cellHeigh(_ tableView: UITableView, indexPath: IndexPath) -> CGFloat {
@@ -70,8 +70,8 @@ extension Goods: CHGTableViewCellModelProtocol {
 }
 
 extension Goods: CHGCollectionViewCellModelProtocol {
-    func cellClassName(collectionView: UICollectionView, at indexPath: IndexPath) -> String {
-        return "GoodsCollectionViewCell"
+    func cellClassName(collectionView: UICollectionView, at indexPath: IndexPath) -> AnyClass? {
+        return GoodsCollectionViewCell.self
     }
     
 }

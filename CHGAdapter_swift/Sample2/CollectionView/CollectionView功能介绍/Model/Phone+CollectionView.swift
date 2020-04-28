@@ -9,8 +9,8 @@
 import UIKit
 
 extension Phone : CHGCollectionViewCellModelProtocol {
-    func cellClassName(collectionView: UICollectionView, at indexPath: IndexPath) -> String {
-        return "PhoneCollectionViewCell"
+    func cellClassName(collectionView: UICollectionView, at indexPath: IndexPath) -> AnyClass? {
+        return PhoneCollectionViewCell.self
     }
     
     func cellItemSize(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

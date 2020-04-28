@@ -22,8 +22,8 @@ class CountryModel: NSObject {
 }
 
 extension CountryModel: CHGTableViewHeaderFooterModelProtocol {
-    func headerFooterClass(_ tableView: UITableView, section: NSInteger, type: CHGTableViewHeaderFooterViewType) -> String {
-        return "CountryHeaderFooterView"
+    func headerFooterClass(_ tableView: UITableView, section: NSInteger, type: CHGTableViewHeaderFooterViewType) -> AnyClass? {
+        return CountryHeaderFooterView.classForCoder()
     }
     
     func headerFooterHeigh(_ tableView: UITableView, section: NSInteger, type: CHGTableViewHeaderFooterViewType) -> CGFloat {
@@ -37,8 +37,8 @@ extension CountryModel: CHGTableViewHeaderFooterModelProtocol {
 }
 
 extension CountryModel: CHGCollectionViewSupplementaryElementModelProtocol {
-    func reusableView(collectionView: UICollectionView, supplementaryElementOfKind kind: String, atIndexPath indexPath: IndexPath) -> String {
-        return "CountyCollectionReusableView"
+    func reusableView(collectionView: UICollectionView, supplementaryElementOfKind kind: String, atIndexPath indexPath: IndexPath) -> AnyClass? {
+        return CountyCollectionReusableView.self
     }
     
     func subDataKeyPath(_ indexPath: IndexPath, inCollectionView collectionView: UICollectionView) -> Any {
@@ -58,8 +58,8 @@ class CityModel: NSObject {
 }
 
 extension CityModel: CHGTableViewCellModelProtocol {
-    func cellClassName(_ tableView: UITableView, indexPath: IndexPath) -> String {
-        return "CityTableViewCell"
+    func cellClassName(_ tableView: UITableView, indexPath: IndexPath) -> AnyClass? {
+        return CityTableViewCell.classForCoder()
     }
     
     func cellHeigh(_ tableView: UITableView, indexPath: IndexPath) -> CGFloat {
@@ -68,8 +68,8 @@ extension CityModel: CHGTableViewCellModelProtocol {
 }
 
 extension CityModel: CHGCollectionViewCellModelProtocol {
-    func cellClassName(collectionView: UICollectionView, at indexPath: IndexPath) -> String {
-        return "CityCollectionViewCell"
+    func cellClassName(collectionView: UICollectionView, at indexPath: IndexPath) -> AnyClass? {
+        return CityCollectionViewCell.self
     }
     
     

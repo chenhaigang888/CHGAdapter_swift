@@ -10,8 +10,8 @@ import UIKit
 
 extension Week : CHGCollectionViewCellModelProtocol {
     
-    func cellClassName(collectionView: UICollectionView, at indexPath: IndexPath) -> String {
-        return "WeekCollectionViewCell"
+    func cellClassName(collectionView: UICollectionView, at indexPath: IndexPath) -> AnyClass? {
+        return WeekCollectionViewCell.self
     }
     
     func cellItemSize(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

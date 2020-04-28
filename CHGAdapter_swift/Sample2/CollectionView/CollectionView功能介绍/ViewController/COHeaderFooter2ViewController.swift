@@ -15,24 +15,24 @@ class COHeaderFooter2ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let goodsTypes = getGoodsTypes()
-        collectionView.headerDatas = goodsTypes
-        collectionView.cellDatas = goodsTypes
-        collectionView.footerDatas = goodsTypes
+//        let goodsTypes = getGoodsTypes()
+//        collectionView.headerDatas = goodsTypes
+//        collectionView.cellDatas = goodsTypes
+//        collectionView.footerDatas = goodsTypes
     }
     
-    func getGoodsTypes() -> [GoodsType] {
-        var goodsTypes = [GoodsType]()
-        var i = 0
-        for type in ["国产品牌","国外品牌"] {
-            goodsTypes.append(GoodsType.init(type: type,
-                                             computers: i==0 ? getChinaComputers() : getAmericanComputers(),
-                                             bgColor: i==0 ? .red : .yellow))
-            i += 1
-        }
-        return goodsTypes
-        
-    }
+//    func getGoodsTypes() -> [GoodsType] {
+//        var goodsTypes = [GoodsType]()
+//        var i = 0
+//        for type in ["国产品牌","国外品牌"] {
+//            goodsTypes.append(GoodsType.init(type: type,
+//                                             computers: i==0 ? getChinaComputers() : getAmericanComputers(),
+//                                             bgColor: i==0 ? .red : .yellow))
+//            i += 1
+//        }
+//        return goodsTypes
+//
+//    }
     
     func getChinaComputers() -> [Computer] {
          var computers = [Computer]()

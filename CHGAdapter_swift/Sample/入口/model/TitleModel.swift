@@ -21,8 +21,8 @@ class TitleModel: NSObject {
 
 // MARK: - 如果TitleModel类需要在TableView类中的Cell中使用则需要实现CHGTableViewCellModelProtocol协议
 extension TitleModel: CHGTableViewCellModelProtocol {
-    func cellClassName(_ tableView: UITableView, indexPath: IndexPath) -> String {
-        return "TitleTableViewCell"
+    func cellClassName(_ tableView: UITableView, indexPath: IndexPath) -> AnyClass? {
+        return TitleTableViewCell.self
     }
     
     func cellHeigh(_ tableView: UITableView, indexPath: IndexPath) -> CGFloat {
@@ -32,8 +32,8 @@ extension TitleModel: CHGTableViewCellModelProtocol {
 
 // MARK: - 如果TitleModel类需要在TableView类中的HeadFooterView中使用则需要实现CHGTableViewHeaderFooterModelProtocol协议
 extension TitleModel: CHGTableViewHeaderFooterModelProtocol {
-    func headerFooterClass(_ tableView: UITableView, section: NSInteger, type: CHGTableViewHeaderFooterViewType) -> String {
-        return "这里填写tableView的HeadFooterView类名 必须是CHGTableViewHeaderFooterView的子类"
+    func headerFooterClass(_ tableView: UITableView, section: NSInteger, type: CHGTableViewHeaderFooterViewType) -> AnyClass? {
+        return nil//"这里填写tableView的HeadFooterView类名 必须是CHGTableViewHeaderFooterView的子类"
     }
     
     func headerFooterHeigh(_ tableView: UITableView, section: NSInteger, type: CHGTableViewHeaderFooterViewType) -> CGFloat {
@@ -43,14 +43,14 @@ extension TitleModel: CHGTableViewHeaderFooterModelProtocol {
 
 // MARK: - 如果TitleModel类需要在CollectionView类中的Cell中使用则需要实现CHGCollectionViewCellModelProtocol协议
 extension TitleModel: CHGCollectionViewCellModelProtocol {
-    func cellClassName(collectionView: UICollectionView, at indexPath: IndexPath) -> String {
-        return "TitleCollectionViewCell"
+    func cellClassName(collectionView: UICollectionView, at indexPath: IndexPath) -> AnyClass? {
+        return TitleCollectionViewCell.self
     }
 }
 
 // MARK: - 如果TitleModel类需要在CollectionView类中的Cell中使用则需要实现CHGCollectionViewSupplementaryElementModelProtocol协议
 extension TitleModel: CHGCollectionViewSupplementaryElementModelProtocol {
-    func reusableView(collectionView: UICollectionView, supplementaryElementOfKind kind: String, atIndexPath indexPath: IndexPath) -> String {
-        return "这里填写collectionView的HeadFooterView类名 必须是CHGCollectionReusableView的子类"
+    func reusableView(collectionView: UICollectionView, supplementaryElementOfKind kind: String, atIndexPath indexPath: IndexPath) -> AnyClass? {
+        return nil//"这里填写collectionView的HeadFooterView类名 必须是CHGCollectionReusableView的子类"
     }
 }

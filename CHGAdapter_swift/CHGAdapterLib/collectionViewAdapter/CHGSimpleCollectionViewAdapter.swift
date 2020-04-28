@@ -16,7 +16,7 @@ public protocol CHGCollectionViewCellModelProtocol {
     /// - Parameters:
     ///   - collectionView: model所在的collectionView的cell中（model可能会存在很多collectionView、collectionViewCell）
     ///   - atIndexPath: model在collectionView中所处的indexPath
-    func cellClassName(collectionView:UICollectionView, at indexPath:IndexPath)->String
+    func cellClassName(collectionView:UICollectionView, at indexPath:IndexPath)->AnyClass?
     
     ///返回item的大小
     func cellItemSize(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
@@ -41,7 +41,7 @@ public protocol CHGCollectionViewSupplementaryElementModelProtocol {
     ///   - collectionView: model所在的collectionView的reusableView中（model可能会存在很多collectionView、reusableView）
     ///   - kind: 表示model在collectionView的headerView或者footerView中
     /// - Returns: model在collectionView中所处的indexPath
-    func reusableView(collectionView:UICollectionView, supplementaryElementOfKind kind:String, atIndexPath indexPath:IndexPath) -> String
+    func reusableView(collectionView:UICollectionView, supplementaryElementOfKind kind:String, atIndexPath indexPath:IndexPath) -> AnyClass?
     ///动态设置每个分区的EdgeInsets 不包括header和footer
     func sectionInset(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets
     ///动态设置每行的间距大小
@@ -109,14 +109,14 @@ public extension CHGCollectionViewSupplementaryElementModelProtocol {
 
 open class CHGSimpleCollectionViewAdapter: CHGCollectionViewAdapter {
     
-    open override func obtainCellNameWithCell(_ data: Any, collectionView: UICollectionView, cellForItemAtIndexPath indexPath: IndexPath) -> String {
+    open override func obtainCellNameWithCell(_ data: Any, collectionView: UICollectionView, cellForItemAtIndexPath indexPath: IndexPath) -> AnyClass? {
         guard let cellModelProtocol:CHGCollectionViewCellModelProtocol = (data as AnyObject) as? CHGCollectionViewCellModelProtocol else {
             return super.obtainCellNameWithCell(data, collectionView: collectionView, cellForItemAtIndexPath: indexPath)
         }
         return cellModelProtocol.cellClassName(collectionView: collectionView, at: indexPath)
     }
     
-    open override func obtainSupplementaryElementNameWithCell(_ data: Any, collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: NSString, indexPath: IndexPath) -> String {
+    open override func obtainSupplementaryElementNameWithCell(_ data: Any, collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: NSString, indexPath: IndexPath) -> AnyClass? {
         guard let supplementaryElementModelProtocol:CHGCollectionViewSupplementaryElementModelProtocol = (data as AnyObject) as? CHGCollectionViewSupplementaryElementModelProtocol else {
             return super.obtainSupplementaryElementNameWithCell(data, collectionView: collectionView, viewForSupplementaryElementOfKind: kind, indexPath: indexPath)
         }

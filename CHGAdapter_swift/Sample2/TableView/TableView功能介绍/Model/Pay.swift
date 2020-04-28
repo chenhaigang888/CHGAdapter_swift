@@ -29,14 +29,14 @@ enum Pay {
 }
 
 extension Pay : CHGTableViewCellModelProtocol {
-    func cellClassName(_ tableView: UITableView, indexPath: IndexPath) -> String {
+    func cellClassName(_ tableView: UITableView, indexPath: IndexPath) -> AnyClass? {
         switch self {
         case .aliPay:
-            return "AliPayTableViewCell"
+            return AliPayTableViewCell.classForCoder()
         case .wechatPay:
-            return "WeChatTableViewCell"
+            return WeChatTableViewCell.classForCoder()
         case .unionPay:
-            return "unionpayTableViewCell"
+            return unionpayTableViewCell.self
         }
     }
     

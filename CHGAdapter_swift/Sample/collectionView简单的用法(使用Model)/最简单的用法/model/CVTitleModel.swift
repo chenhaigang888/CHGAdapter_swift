@@ -22,8 +22,8 @@ class CVTitleModel: NSObject {
 
 extension CVTitleModel : CHGCollectionViewCellModelProtocol {
     
-    func cellClassName(collectionView: UICollectionView, at indexPath: IndexPath) -> String {
-        return "CVTitleCollectionViewCell"
+    func cellClassName(collectionView: UICollectionView, at indexPath: IndexPath) -> AnyClass? {
+        return CVTitleCollectionViewCell.self
     }
     
 ////以下注释的代码为设置item的大小

@@ -9,8 +9,8 @@
 import UIKit
 
 extension Company : CHGCollectionViewSupplementaryElementModelProtocol {
-    func reusableView(collectionView: UICollectionView, supplementaryElementOfKind kind: String, atIndexPath indexPath: IndexPath) -> String {
-        return "CompanyCollectionReusableView"
+    func reusableView(collectionView: UICollectionView, supplementaryElementOfKind kind: String, atIndexPath indexPath: IndexPath) -> AnyClass? {
+        return CompanyCollectionReusableView.self
     }
     
     func referenceHeaderSize(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, atSection section: Int) -> CGSize {

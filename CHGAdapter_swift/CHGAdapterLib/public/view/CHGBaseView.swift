@@ -149,5 +149,5 @@ open class CHGBaseView : UIView, CHGViewLifeCycleProtocol, CHGTableViewHeaderFoo
     weak open var targetView: UIView?
     
     open var model: Any?
-
+    
 }

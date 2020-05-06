@@ -93,13 +93,14 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
             }
             return tempArray.count == 0 ? sectionData : tempArray[indexPath.row]
         } else {
+            
             return sectionData is NSArray ? (sectionData as! NSArray)[indexPath.row] : sectionData
         }
     }
     
     open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cellData = self.cellDataWithIndexPath(indexPath,collectionView: collectionView)
-//        let identifier:String = self.obtainCellNameWithCell(cellData!, collectionView: collectionView, cellForItemAtIndexPath: indexPath)
+        //        let identifier:String = self.obtainCellNameWithCell(cellData!, collectionView: collectionView, cellForItemAtIndexPath: indexPath)
         
         guard let cellClass:AnyClass = self.obtainCellClassWithCell(cellData!, collectionView: collectionView, cellForItemAtIndexPath: indexPath) else { return UICollectionViewCell() }
         let classAllName = NSStringFromClass(cellClass)
@@ -113,8 +114,8 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
             collectionView.register(cellClass, forCellWithReuseIdentifier: classAllName)
         }
         let cell:CHGCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: classAllName, for: indexPath) as! CHGCollectionViewCell
-//        cell.eventTransmissionBlock = collectionView.eventTransmissionBlock
-//        cell.cellForRow(atIndexPath: indexPath, collectionView: collectionView, data: cellData,eventTransmissionBlock: collectionView.eventTransmissionBlock)
+        //        cell.eventTransmissionBlock = collectionView.eventTransmissionBlock
+        //        cell.cellForRow(atIndexPath: indexPath, collectionView: collectionView, data: cellData,eventTransmissionBlock: collectionView.eventTransmissionBlock)
         cell.cellForRowAt(indexPath: indexPath, targetView: collectionView, model: cellData!, eventTransmissionBlock: collectionView.eventTransmissionBlock)
         return cell
     }
@@ -122,8 +123,8 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
     open func defaultReusableView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath, headerFooterData:Any?)->CHGCollectionReusableView {
         collectionView.register(CHGCollectionReusableView.classForCoder(), forSupplementaryViewOfKind: kind, withReuseIdentifier:"CHGCollectionReusableView" )
         let reusableView:CHGCollectionReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier:"CHGCollectionReusableView" , for: indexPath) as! CHGCollectionReusableView
-//        reusableView.eventTransmissionBlock = collectionView.eventTransmissionBlock
-//        reusableView.reusableViewFor(collectionView: collectionView, indexPath: indexPath, kind: kind as NSString, reusableViewData: headerFooterData,eventTransmissionBlock: collectionView.eventTransmissionBlock)
+        //        reusableView.eventTransmissionBlock = collectionView.eventTransmissionBlock
+        //        reusableView.reusableViewFor(collectionView: collectionView, indexPath: indexPath, kind: kind as NSString, reusableViewData: headerFooterData,eventTransmissionBlock: collectionView.eventTransmissionBlock)
         reusableView.reusableView(for: collectionView, indexPath: indexPath, kind: kind, model: headerFooterData!, eventTransmissionBlock: collectionView.eventTransmissionBlock)
         return reusableView
     }
@@ -166,8 +167,8 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
         }
         
         let reusableView:CHGCollectionReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: kind as String, withReuseIdentifier: classAllName, for: indexPath) as! CHGCollectionReusableView
-//        reusableView.eventTransmissionBlock = collectionView.eventTransmissionBlock
-//        reusableView.reusableViewFor(collectionView: collectionView, indexPath: indexPath, kind: kind as NSString, reusableViewData: headerFooterData,eventTransmissionBlock: collectionView.eventTransmissionBlock)
+        //        reusableView.eventTransmissionBlock = collectionView.eventTransmissionBlock
+        //        reusableView.reusableViewFor(collectionView: collectionView, indexPath: indexPath, kind: kind as NSString, reusableViewData: headerFooterData,eventTransmissionBlock: collectionView.eventTransmissionBlock)
         reusableView.reusableView(for: collectionView, indexPath: indexPath, kind: kind, model: headerFooterData!, eventTransmissionBlock: collectionView.eventTransmissionBlock)
         return reusableView
     }
@@ -246,7 +247,6 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
         }
         collectionView.scrollListener?.scrollViewDidEndDraggingBlock!(scrollView,decelerate)
     }
-    
     
     @available(iOS 2.0, *)
     open func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {

@@ -9,7 +9,7 @@
 import UIKit
 
 open class CHGTableViewAdapterData: NSObject {
-
+    
     open var cellDatas:[Any]?
     open var headerDatas:[Any]?
     open var footerDatas:[Any]?

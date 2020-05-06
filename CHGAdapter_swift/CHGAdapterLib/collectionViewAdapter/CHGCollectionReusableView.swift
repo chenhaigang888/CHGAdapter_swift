@@ -11,39 +11,39 @@ import UIKit
 open class CHGCollectionReusableView: UICollectionReusableView,CHGCollectionReusableViewLifeCycleProtocol {
     open var indexPath: IndexPath?
     
-     open func reusableView(for collectionView: UICollectionView, indexPath: IndexPath, kind: String, model: Any, eventTransmissionBlock: CHGEventTransmissionBlock?) {
+    open func reusableView(for collectionView: UICollectionView, indexPath: IndexPath, kind: String, model: Any, eventTransmissionBlock: CHGEventTransmissionBlock?) {
         self.targetView = collectionView;
         self.indexPath = indexPath;
         self.kind = kind;
         self.model = model;
         self.eventTransmissionBlock = eventTransmissionBlock
         
-           guard let protocols:[CHGCollectionReusableViewLifeCycleProtocol] = protocols as? [CHGCollectionReusableViewLifeCycleProtocol] else { return }
-           for item in protocols {
-               item.reusableView(for: collectionView, indexPath: indexPath, kind: kind, model: model, eventTransmissionBlock: eventTransmissionBlock)
-           }
-       }
-       
-       open func reusableViewWillReuse(with identifier: String, indexPath: IndexPath) {
-           guard let protocols:[CHGCollectionReusableViewLifeCycleProtocol] = protocols as? [CHGCollectionReusableViewLifeCycleProtocol] else { return }
-           for item in protocols {
-               item.reusableViewWillReuse(with: identifier, indexPath: indexPath)
-           }
-       }
-       
-       open func reusableViewWillAppear() {
-           guard let protocols:[CHGCollectionReusableViewLifeCycleProtocol] = protocols as? [CHGCollectionReusableViewLifeCycleProtocol] else { return }
-           for item in protocols {
-               item.reusableViewWillAppear()
-           }
-       }
-       
-       open func reusableViewDidDisappear() {
-           guard let protocols:[CHGCollectionReusableViewLifeCycleProtocol] = protocols as? [CHGCollectionReusableViewLifeCycleProtocol] else { return }
-           for item in protocols {
-               item.reusableViewDidDisappear()
-           }
-       }
+        guard let protocols:[CHGCollectionReusableViewLifeCycleProtocol] = protocols as? [CHGCollectionReusableViewLifeCycleProtocol] else { return }
+        for item in protocols {
+            item.reusableView(for: collectionView, indexPath: indexPath, kind: kind, model: model, eventTransmissionBlock: eventTransmissionBlock)
+        }
+    }
+    
+    open func reusableViewWillReuse(with identifier: String, indexPath: IndexPath) {
+        guard let protocols:[CHGCollectionReusableViewLifeCycleProtocol] = protocols as? [CHGCollectionReusableViewLifeCycleProtocol] else { return }
+        for item in protocols {
+            item.reusableViewWillReuse(with: identifier, indexPath: indexPath)
+        }
+    }
+    
+    open func reusableViewWillAppear() {
+        guard let protocols:[CHGCollectionReusableViewLifeCycleProtocol] = protocols as? [CHGCollectionReusableViewLifeCycleProtocol] else { return }
+        for item in protocols {
+            item.reusableViewWillAppear()
+        }
+    }
+    
+    open func reusableViewDidDisappear() {
+        guard let protocols:[CHGCollectionReusableViewLifeCycleProtocol] = protocols as? [CHGCollectionReusableViewLifeCycleProtocol] else { return }
+        for item in protocols {
+            item.reusableViewDidDisappear()
+        }
+    }
     
     open var eventTransmissionBlock: CHGEventTransmissionBlock?
     

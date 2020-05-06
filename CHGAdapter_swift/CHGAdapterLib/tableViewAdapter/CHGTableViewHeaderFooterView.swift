@@ -15,11 +15,11 @@ public enum CHGTableViewHeaderFooterViewType {
 
 open class CHGTableViewHeaderFooterView: UITableViewHeaderFooterView {
     
-    public var eventTransmissionBlock:CHGEventTransmissionBlock?
-    public var section:NSInteger?
-    public var tableView:UITableView?
-    public var headerFooterData:Any?
-    public var type:CHGTableViewHeaderFooterViewType?
+    open var eventTransmissionBlock:CHGEventTransmissionBlock?
+    open var section:NSInteger?
+    weak open var tableView:UITableView?
+    open var headerFooterData:Any?
+    open var type:CHGTableViewHeaderFooterViewType?
     
     open func headerFooter(section:NSInteger,tableView:UITableView,data:Any,type:CHGTableViewHeaderFooterViewType,eventTransmissionBlock:CHGEventTransmissionBlock?) -> Void {
         self.section = section

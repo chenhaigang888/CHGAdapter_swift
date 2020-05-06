@@ -39,20 +39,20 @@ public typealias ScrollViewDidChangeAdjustedContentInsetBlock = (_ scrollView: U
 /// UIScrollView delegate block
 open class ScrollListener: NSObject {
     
-    public var scrollViewDidScrollBlock:ScrollViewDidScrollBlock?
-    public var scrollViewDidZoomBlock:ScrollViewDidZoomBlock?
-    public var scrollViewWillBeginDraggingBlock:ScrollViewWillBeginDraggingBlock?
-    public var scrollViewWillEndDraggingBlock:ScrollViewWillEndDraggingBlock?
-    public var scrollViewDidEndDraggingBlock:ScrollViewDidEndDraggingBlock?
-    public var scrollViewWillBeginDeceleratingBlock:ScrollViewWillBeginDeceleratingBlock?
-    public var scrollViewDidEndDeceleratingBlock:ScrollViewDidEndDeceleratingBlock?
-    public var scrollViewDidEndScrollingAnimationBlock:ScrollViewDidEndScrollingAnimationBlock?
-    public var viewForZoomingBlock:ViewForZoomingBlock?
-    public var scrollViewWillBeginZoomingBlock:ScrollViewWillBeginZoomingBlock?
-    public var scrollViewDidEndZoomingBlock:ScrollViewDidEndZoomingBlock?
-    public var scrollViewShouldScrollToTopBlock:ScrollViewShouldScrollToTopBlock?
-    public var scrollViewDidScrollToTopBlock:ScrollViewDidScrollToTopBlock?
-    public var scrollViewDidChangeAdjustedContentInsetBlock:ScrollViewDidChangeAdjustedContentInsetBlock?
+    open var scrollViewDidScrollBlock:ScrollViewDidScrollBlock?
+    open var scrollViewDidZoomBlock:ScrollViewDidZoomBlock?
+    open var scrollViewWillBeginDraggingBlock:ScrollViewWillBeginDraggingBlock?
+    open var scrollViewWillEndDraggingBlock:ScrollViewWillEndDraggingBlock?
+    open var scrollViewDidEndDraggingBlock:ScrollViewDidEndDraggingBlock?
+    open var scrollViewWillBeginDeceleratingBlock:ScrollViewWillBeginDeceleratingBlock?
+    open var scrollViewDidEndDeceleratingBlock:ScrollViewDidEndDeceleratingBlock?
+    open var scrollViewDidEndScrollingAnimationBlock:ScrollViewDidEndScrollingAnimationBlock?
+    open var viewForZoomingBlock:ViewForZoomingBlock?
+    open var scrollViewWillBeginZoomingBlock:ScrollViewWillBeginZoomingBlock?
+    open var scrollViewDidEndZoomingBlock:ScrollViewDidEndZoomingBlock?
+    open var scrollViewShouldScrollToTopBlock:ScrollViewShouldScrollToTopBlock?
+    open var scrollViewDidScrollToTopBlock:ScrollViewDidScrollToTopBlock?
+    open var scrollViewDidChangeAdjustedContentInsetBlock:ScrollViewDidChangeAdjustedContentInsetBlock?
     
 }
 

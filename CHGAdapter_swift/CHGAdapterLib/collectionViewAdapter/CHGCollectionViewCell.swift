@@ -9,10 +9,10 @@
 import UIKit
 
 open class CHGCollectionViewCell: UICollectionViewCell {
-    public var eventTransmissionBlock:CHGEventTransmissionBlock?
-    public var indexPath:IndexPath?
-    public var collectionView:UICollectionView?
-    public var cellData:Any?
+    open var eventTransmissionBlock:CHGEventTransmissionBlock?
+    open var indexPath:IndexPath?
+    weak open var collectionView:UICollectionView?
+    open var cellData:Any?
     
     open func cellForRow(atIndexPath indexPath:IndexPath,collectionView:UICollectionView?,data:Any?,eventTransmissionBlock:CHGEventTransmissionBlock?) -> Void {
         self.indexPath = indexPath
@@ -39,7 +39,6 @@ open class CHGCollectionViewCell: UICollectionViewCell {
      @param identifier identifier
      @param indexPath indexPath
      */
-//    -(void)willReuseWithIdentifier:(NSString*)identifier indexPath:(NSIndexPath*)indexPath;
     open func willReuseWithIdentifier(identifier:NSString,indexPath:NSIndexPath)->Void {
         
     }
@@ -47,7 +46,6 @@ open class CHGCollectionViewCell: UICollectionViewCell {
     /**
      cell将要显示
      */
-//    -(void)cellWillAppear;
     open func cellWillAppear()->Void {
         
     }
@@ -55,7 +53,6 @@ open class CHGCollectionViewCell: UICollectionViewCell {
     /**
      cell已经消失
      */
-//    -(void)cellDidDisappear;
     open func cellDidDisappear()->Void {
         
     }

@@ -10,10 +10,10 @@ import UIKit
 
 open class CHGTableViewAdapterData: NSObject {
 
-    public var cellDatas:[Any]?
-    public var headerDatas:[Any]?
-    public var footerDatas:[Any]?
-    public var indexDatas:[String]?
-    public var customData:Any?
+    open var cellDatas:[Any]?
+    open var headerDatas:[Any]?
+    open var footerDatas:[Any]?
+    open var indexDatas:[String]?
+    open var customData:Any?
     
 }

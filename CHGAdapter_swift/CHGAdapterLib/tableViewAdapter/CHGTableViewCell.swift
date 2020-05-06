@@ -10,10 +10,10 @@ import UIKit
 
 open class CHGTableViewCell: UITableViewCell {
     
-    public var eventTransmissionBlock:CHGEventTransmissionBlock?
-    public var indexPath:IndexPath?
-    public var tableView:UITableView?
-    public var cellData:Any?
+    open var eventTransmissionBlock:CHGEventTransmissionBlock?
+    open var indexPath:IndexPath?
+    weak open var tableView:UITableView?
+    open var cellData:Any?
     
     open func cellForRow(atIndexPath indexPath:IndexPath,tableView:UITableView?,data:Any?,eventTransmissionBlock:CHGEventTransmissionBlock?) -> Void {
         self.indexPath = indexPath

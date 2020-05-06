@@ -22,14 +22,14 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
     
     
     
-    public var cellName:AnyClass?
-    public var headerName:AnyClass?
-    public var footerName:AnyClass?
-    public var adapterData:CHGCollectionViewAdapterData = CHGCollectionViewAdapterData.init()
-    public var keyPathOfSubData:Any?
+    open var cellName:AnyClass?
+    open var headerName:AnyClass?
+    open var footerName:AnyClass?
+    open var adapterData:CHGCollectionViewAdapterData = CHGCollectionViewAdapterData.init()
+    open var keyPathOfSubData:Any?
     //    public var collectionViewDeselectRowAtIndexPathAnimation:Bool = true
-    public var controller:UIViewController?
-    public var tag:NSInteger?
+    weak open var controller:UIViewController?
+    open var tag:NSInteger?
     
     open func obtainCellClassWithCell(_ data: Any, collectionView: UICollectionView, cellForItemAtIndexPath indexPath: IndexPath) -> AnyClass? {
         return self.cellName

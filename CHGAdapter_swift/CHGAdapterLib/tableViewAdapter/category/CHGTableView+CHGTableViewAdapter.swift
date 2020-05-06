@@ -21,8 +21,7 @@ extension UITableView {
     
     open var tableViewAdapter:CHGTableViewAdapter? {
         get {
-            let adapter = objc_getAssociatedObject(self, &tableViewAdapterKey) as? CHGTableViewAdapter
-            if adapter == nil {
+            guard let adapter:CHGTableViewAdapter = objc_getAssociatedObject(self, &tableViewAdapterKey) as? CHGTableViewAdapter else {
                 self.tableViewAdapter = CHGSimpleTableViewAdapter.init()
                 return self.tableViewAdapter
             }
@@ -54,7 +53,7 @@ extension UITableView {
             return objc_getAssociatedObject(self, &eventTransmissionBlockKey) as? CHGEventTransmissionBlock
         }
         set(newValue) {
-            objc_setAssociatedObject(self, &eventTransmissionBlockKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, &eventTransmissionBlockKey, newValue, .OBJC_ASSOCIATION_COPY_NONATOMIC)
         }
     }
     

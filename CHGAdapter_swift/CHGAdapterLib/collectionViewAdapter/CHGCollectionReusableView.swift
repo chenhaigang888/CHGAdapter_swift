@@ -10,11 +10,11 @@ import UIKit
 
 open class CHGCollectionReusableView: UICollectionReusableView {
     
-    public var eventTransmissionBlock:CHGEventTransmissionBlock?
-    public var indexPath:IndexPath?
-    public var collectionView:UICollectionView?
-    public var reusableViewData:Any?
-    public var kind:NSString?
+    open var eventTransmissionBlock:CHGEventTransmissionBlock?
+    open var indexPath:IndexPath?
+    weak open var collectionView:UICollectionView?
+    open var reusableViewData:Any?
+    open var kind:NSString?
     
     open func reusableViewFor(collectionView:UICollectionView,indexPath:IndexPath,kind:NSString,reusableViewData:Any?,eventTransmissionBlock:CHGEventTransmissionBlock?) -> Void {
         self.collectionView = collectionView

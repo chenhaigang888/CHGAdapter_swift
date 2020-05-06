@@ -34,20 +34,20 @@ public protocol CHGTableViewAdapterProtocol:UITableViewDelegate,UITableViewDataS
 
 open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
     
-    public var cellName:AnyClass?
-    public var headerName:AnyClass?
-    public var footerName:AnyClass?
+    open var cellName:AnyClass?
+    open var headerName:AnyClass?
+    open var footerName:AnyClass?
     
     /// 如果cell、headerView、footerView的高度都统一可以通过直接设置以下参数进行设置
-    public var cellHeight:CGFloat = 44
-    public var headerHeight:CGFloat = 0.01
-    public var footerHeight:CGFloat = 0.01
+    open var cellHeight:CGFloat = 44
+    open var headerHeight:CGFloat = 0.01
+    open var footerHeight:CGFloat = 0.01
     
-    public var adapterData:CHGTableViewAdapterData = CHGTableViewAdapterData.init()
-    public var keyPathOfSubData:Any?
-    public var tableViewDeselectRowAtIndexPathAnimation:Bool = true
-    public var tag:NSInteger = 0
-    public var controller:UIViewController?
+    open var adapterData:CHGTableViewAdapterData = CHGTableViewAdapterData.init()
+    open var keyPathOfSubData:Any?
+    open var tableViewDeselectRowAtIndexPathAnimation:Bool = true
+    open var tag:NSInteger = 0
+    weak open var controller:UIViewController?
     
     
     open func obtainCellClassWithCell(_ data: Any, tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> AnyClass? {

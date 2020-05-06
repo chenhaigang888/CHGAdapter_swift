@@ -21,12 +21,12 @@ extension UICollectionView {
     
     open var collectionViewAdapter:CHGCollectionViewAdapter? {
         get {
-            let adapter = objc_getAssociatedObject(self, &collectionViewAdapterKey) as? CHGCollectionViewAdapter
-            if adapter == nil {
+            guard let adapter = objc_getAssociatedObject(self, &collectionViewAdapterKey) as? CHGCollectionViewAdapter else {
                 self.collectionViewAdapter = CHGSimpleCollectionViewAdapter.init()
                 return self.collectionViewAdapter
             }
             return adapter
+            
         }
         set(newValue) {
             objc_setAssociatedObject(self, &collectionViewAdapterKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
@@ -54,7 +54,7 @@ extension UICollectionView {
             return objc_getAssociatedObject(self, &eventTransmissionBlockKey) as? CHGEventTransmissionBlock
         }
         set(newValue) {
-            objc_setAssociatedObject(self, &eventTransmissionBlockKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, &eventTransmissionBlockKey, newValue, .OBJC_ASSOCIATION_COPY_NONATOMIC)
         }
     }
     

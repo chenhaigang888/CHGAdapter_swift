@@ -25,9 +25,15 @@ class CompanyHeaderFooterView: CHGTableViewHeaderFooterView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func headerFooterViewWillAppearWithType(type: CHGTableViewHeaderFooterViewType) {
-        super.headerFooterViewWillAppearWithType(type: type)
-        let model:Company = self.headerFooterData as! Company
+//    override func headerFooterViewWillAppearWithType(type: CHGTableViewHeaderFooterViewType) {
+//        super.headerFooterViewWillAppearWithType(type: type)
+//        let model:Company = self.headerFooterData as! Company
+//        title.text = model.name
+//    }
+    
+    override func headerFooterViewWillAppear(with type: CHGTableViewHeaderFooterViewType) {
+        super.headerFooterViewWillAppear(with: type)
+        let model:Company = self.model as! Company
         title.text = model.name
     }
 }

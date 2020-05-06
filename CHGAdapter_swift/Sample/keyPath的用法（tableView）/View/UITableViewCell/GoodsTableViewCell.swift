@@ -23,9 +23,15 @@ class GoodsTableViewCell: CHGTableViewCell {
         // Configure the view for the selected state
     }
     
-    override func cellForRow(atIndexPath indexPath: IndexPath, tableView: UITableView?, data: Any?,eventTransmissionBlock:CHGEventTransmissionBlock?) {
-        super.cellForRow(atIndexPath: indexPath, tableView: tableView, data: data,eventTransmissionBlock: eventTransmissionBlock)
-        let model:Goods = data as! Goods
+//    override func cellForRow(atIndexPath indexPath: IndexPath, tableView: UITableView?, data: Any?,eventTransmissionBlock:CHGEventTransmissionBlock?) {
+//        super.cellForRow(atIndexPath: indexPath, tableView: tableView, data: data,eventTransmissionBlock: eventTransmissionBlock)
+//        let model:Goods = data as! Goods
+//        title?.text = model.name
+//    }
+    
+    override func cellWillAppear() {
+        super.cellWillAppear()
+        let model:Goods = self.model as! Goods
         title?.text = model.name
     }
 }

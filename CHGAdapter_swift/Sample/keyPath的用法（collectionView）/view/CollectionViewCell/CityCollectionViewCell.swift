@@ -17,10 +17,10 @@ class CityCollectionViewCell: CHGCollectionViewCell {
         // Initialization code
     }
     
-    override func cellForRow(atIndexPath indexPath: IndexPath, collectionView: UICollectionView?, data: Any?,eventTransmissionBlock:CHGEventTransmissionBlock?) {
-        super.cellForRow(atIndexPath: indexPath, collectionView: collectionView, data: data,eventTransmissionBlock: eventTransmissionBlock)
-        let model:CityModel = data as! CityModel
+
+    override func cellForRowAt(indexPath: IndexPath, targetView: UIView, model: Any, eventTransmissionBlock: CHGEventTransmissionBlock?) {
+        super.cellForRowAt(indexPath: indexPath, targetView: targetView, model: model, eventTransmissionBlock: eventTransmissionBlock)
+        let model:CityModel = model as! CityModel
         title?.text = model.name
     }
-
 }

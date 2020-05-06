@@ -13,54 +13,52 @@ public enum CHGTableViewHeaderFooterViewType {
     case FooterType
 }
 
-open class CHGTableViewHeaderFooterView: UITableViewHeaderFooterView {
+open class CHGTableViewHeaderFooterView: UITableViewHeaderFooterView,CHGTableViewHeaderFooterLifeCycleProtocol {
+    open var section: Int?
     
-    open var eventTransmissionBlock:CHGEventTransmissionBlock?
-    open var section:NSInteger?
-    weak open var tableView:UITableView?
-    open var headerFooterData:Any?
-    open var type:CHGTableViewHeaderFooterViewType?
+    open var type: CHGTableViewHeaderFooterViewType?
     
-    open func headerFooter(section:NSInteger,tableView:UITableView,data:Any,type:CHGTableViewHeaderFooterViewType,eventTransmissionBlock:CHGEventTransmissionBlock?) -> Void {
+    open func headerFooter(for section: Int, in tableView: UITableView, model: Any, type: CHGTableViewHeaderFooterViewType, eventTransmissionBlock: CHGEventTransmissionBlock?) {
         self.section = section
-        self.tableView = tableView
-        self.headerFooterData = data
+        self.targetView = tableView
+        self.model = model
         self.type = type
         self.eventTransmissionBlock = eventTransmissionBlock
-    }
-    
-    open func controller()->UIViewController? {
-        return self.tableView?.tableViewAdapter?.controller
-    }
-    
-    open func adapterTag()->NSInteger? {
-        return self.tableView?.tableViewAdapter?.tag
-    }
-    
-    open func customData()->Any? {
-        return self.tableView?.tableViewAdapter?.adapterData.customData
-    }
-    
-    /**
-     将要复用
-     
-     @param identifier identifier
-     */
-    open func willReuseWithIdentifier(identifier:NSString)->Void {
+        
+        guard let protocols:[CHGTableViewHeaderFooterLifeCycleProtocol] = protocols as? [CHGTableViewHeaderFooterLifeCycleProtocol] else { return }
+        for item in protocols {
+            item.headerFooter(for: section, in: tableView, model: model, type: type,eventTransmissionBlock: eventTransmissionBlock)
+        }
         
     }
     
-    /**
-     headerFooterView将要显示
-     */
-    open func headerFooterViewWillAppearWithType(type:CHGTableViewHeaderFooterViewType)->Void {
-        
+    open func headerFooterViewWillReuse(with identifier: String) {
+        guard let protocols:[CHGTableViewHeaderFooterLifeCycleProtocol] = protocols as? [CHGTableViewHeaderFooterLifeCycleProtocol] else { return }
+        for item in protocols {
+            item.headerFooterViewWillReuse(with: identifier)
+        }
     }
     
-    /**
-     headerFooterView已经消失
-     */
-    open func headerFooterViewDidDisAppearWithType(type:CHGTableViewHeaderFooterViewType)->Void {
-        
+    open func headerFooterViewWillAppear(with type: CHGTableViewHeaderFooterViewType) {
+        guard let protocols:[CHGTableViewHeaderFooterLifeCycleProtocol] = protocols as? [CHGTableViewHeaderFooterLifeCycleProtocol] else { return }
+        for item in protocols {
+            item.headerFooterViewWillAppear(with: type)
+        }
     }
+    
+    open func headerFooterViewDidDisAppear(with type: CHGTableViewHeaderFooterViewType) {
+        guard let protocols:[CHGTableViewHeaderFooterLifeCycleProtocol] = protocols as? [CHGTableViewHeaderFooterLifeCycleProtocol] else { return }
+        for item in protocols {
+            item.headerFooterViewDidDisAppear(with: type)
+        }
+    }
+    
+    open var eventTransmissionBlock: CHGEventTransmissionBlock?
+    
+    weak open var targetView: UIView?
+    
+    open var model: Any?
+    
+    open var protocols: [Any]? = [Any]()
+    
 }

@@ -19,7 +19,7 @@ class CompanyCollectionReusableView: CHGCollectionReusableView {
     
     override func reusableViewWillAppear() {
         super.reusableViewWillAppear()
-        let model:Company = self.reusableViewData as! Company
+        let model:Company = self.model as! Company
         title.text = model.name
     }
 }

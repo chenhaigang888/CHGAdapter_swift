@@ -17,15 +17,15 @@ class CVSimulationDownCollectionViewCell: CHGCollectionViewCell {
         // Initialization code
     }
     
-    override func cellForRow(atIndexPath indexPath: IndexPath, collectionView: UICollectionView?, data: Any?,eventTransmissionBlock:CHGEventTransmissionBlock?) {
-        super.cellForRow(atIndexPath: indexPath, collectionView: collectionView, data: data,eventTransmissionBlock: eventTransmissionBlock)
-    }
-
+    
     @IBAction func downloadBtnTap(sender:AnyObject)->Void {
-        _ = self.eventTransmissionBlock!(self,self.cellData!,0,{[weak self](data) in
+        _ = self.eventTransmissionBlock!(self,self.model!,0,{[weak self](data) in
                 //外部传回的下载进度 将下载进度设置为downloadBtn 的title
             self?.downloadBtn?.setTitle(data as? String, for: UIControl.State.normal)
             })
+        
+        
+        
     }
     
 }

@@ -17,9 +17,15 @@ class GoodsCollectionViewCell: CHGCollectionViewCell {
         // Initialization code
     }
 
-    override func cellForRow(atIndexPath indexPath: IndexPath, collectionView: UICollectionView?, data: Any?,eventTransmissionBlock:CHGEventTransmissionBlock?) {
-    super.cellForRow(atIndexPath: indexPath, collectionView: collectionView, data: data,eventTransmissionBlock: eventTransmissionBlock)
-        let model:Goods = data as! Goods
+//    override func cellForRow(atIndexPath indexPath: IndexPath, collectionView: UICollectionView?, data: Any?,eventTransmissionBlock:CHGEventTransmissionBlock?) {
+//    super.cellForRow(atIndexPath: indexPath, collectionView: collectionView, data: data,eventTransmissionBlock: eventTransmissionBlock)
+//        let model:Goods = data as! Goods
+//        title?.text = model.name
+//    }
+    
+    override func cellWillAppear() {
+        super.cellWillAppear()
+        let model:Goods = self.model as! Goods
         title?.text = model.name
     }
 }

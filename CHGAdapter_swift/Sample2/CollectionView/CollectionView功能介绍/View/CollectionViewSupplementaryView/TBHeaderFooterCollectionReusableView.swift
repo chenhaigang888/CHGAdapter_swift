@@ -16,11 +16,10 @@ class TBHeaderFooterCollectionReusableView: CHGCollectionReusableView {
         // Initialization code
     }
     
-    override func reusableViewFor(collectionView: UICollectionView, indexPath: IndexPath, kind: NSString, reusableViewData: Any?,eventTransmissionBlock:CHGEventTransmissionBlock?) {
-        super.reusableViewFor(collectionView: collectionView, indexPath: indexPath, kind: kind, reusableViewData: reusableViewData,eventTransmissionBlock: eventTransmissionBlock)
-//        let model:TBHeaderFooter = self.reusableViewData as! TBHeaderFooter
+    
+    override func reusableViewWillAppear() {
+        super.reusableViewWillAppear()
+//        let model:TBHeaderFooter = self.model as! TBHeaderFooter
 //        title.text = model.title
     }
-    
-    
 }

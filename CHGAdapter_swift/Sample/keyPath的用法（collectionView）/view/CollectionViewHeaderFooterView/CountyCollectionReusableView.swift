@@ -16,9 +16,15 @@ class CountyCollectionReusableView: CHGCollectionReusableView {
         super.awakeFromNib()
         // Initialization code
     }
-    override func reusableViewFor(collectionView: UICollectionView, indexPath: IndexPath, kind: NSString, reusableViewData: Any?,eventTransmissionBlock:CHGEventTransmissionBlock?) {
-    super.reusableViewFor(collectionView: collectionView, indexPath: indexPath, kind: kind, reusableViewData: reusableViewData,eventTransmissionBlock: eventTransmissionBlock)
-        let model:CountryModel = reusableViewData as! CountryModel
+//    override func reusableViewFor(collectionView: UICollectionView, indexPath: IndexPath, kind: NSString, reusableViewData: Any?,eventTransmissionBlock:CHGEventTransmissionBlock?) {
+//    super.reusableViewFor(collectionView: collectionView, indexPath: indexPath, kind: kind, reusableViewData: reusableViewData,eventTransmissionBlock: eventTransmissionBlock)
+//        let model:CountryModel = reusableViewData as! CountryModel
+//        title?.text = model.name
+//    }
+    
+    override func reusableViewWillAppear() {
+        super.reusableViewWillAppear()
+        let model:CountryModel = self.model as! CountryModel
         title?.text = model.name
     }
 }

@@ -18,7 +18,7 @@ class PhoneCollectionViewCell: CHGCollectionViewCell {
 
     override func cellWillAppear() {
         super.cellWillAppear()
-        let phone:Phone = self.cellData as! Phone
+        let phone:Phone = self.model as! Phone
         title.text = phone.brand
     }
 }

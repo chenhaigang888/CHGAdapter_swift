@@ -19,7 +19,7 @@ class WeekCollectionViewCell: CHGCollectionViewCell {
     
     override func cellWillAppear() {
         super.cellWillAppear()
-        guard let week:Week = self.cellData as? Week else { return }
+        guard let week:Week = self.model as? Week else { return }
         name.text = week.weekDesc()
     }
 }

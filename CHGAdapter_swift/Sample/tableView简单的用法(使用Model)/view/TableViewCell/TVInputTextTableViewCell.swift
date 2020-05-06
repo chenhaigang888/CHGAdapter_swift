@@ -21,15 +21,22 @@ class TVInputTextTableViewCell: CHGTableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    override func cellForRow(atIndexPath indexPath: IndexPath, tableView: UITableView?, data: Any?,eventTransmissionBlock:CHGEventTransmissionBlock?) {
-        super.cellForRow(atIndexPath: indexPath, tableView: tableView, data: data,eventTransmissionBlock: eventTransmissionBlock)
-        let inputTextModel:TVInputTextModel = data as! TVInputTextModel
+//    override func cellForRow(atIndexPath indexPath: IndexPath, tableView: UITableView?, data: Any?,eventTransmissionBlock:CHGEventTransmissionBlock?) {
+//        super.cellForRow(atIndexPath: indexPath, tableView: tableView, data: data,eventTransmissionBlock: eventTransmissionBlock)
+//        let inputTextModel:TVInputTextModel = data as! TVInputTextModel
+//        self.textField?.placeholder = inputTextModel.placeholder
+//        self.textField?.text = inputTextModel.inputText
+//    }
+    
+    override func cellWillAppear() {
+        super.cellWillAppear()
+        let inputTextModel:TVInputTextModel = self.model as! TVInputTextModel
         self.textField?.placeholder = inputTextModel.placeholder
         self.textField?.text = inputTextModel.inputText
     }
     
     @IBAction func textFieldTextChanged(sender:AnyObject)->Void {
-        let inputTextModel:TVInputTextModel = self.cellData as! TVInputTextModel
+        let inputTextModel:TVInputTextModel = self.model as! TVInputTextModel
         inputTextModel.inputText = (self.textField?.text)!
         let param = ["indexPath":self.indexPath ?? IndexPath.init(),
                      "inputText":textField?.text ?? ""

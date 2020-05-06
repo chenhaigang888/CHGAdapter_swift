@@ -23,15 +23,30 @@ class FriendTableViewCell: CHGTableViewCell {
 
     }
     
-    override func cellForRow(atIndexPath indexPath: IndexPath, tableView: UITableView?, data: Any?,eventTransmissionBlock:CHGEventTransmissionBlock?) {
-        super.cellForRow(atIndexPath: indexPath, tableView: tableView, data: data,eventTransmissionBlock: eventTransmissionBlock)
-        if data is NSDictionary {
-            let dic:NSDictionary = data as! NSDictionary
-            self.icon.image = UIImage.init(named: dic["icon"] as! String)
-            self.name.text = dic["name"] as? String
-            self.sigin.text = dic["sigin"] as? String
-        } else {
-            let test:Test = data as! Test
+//    override func cellForRow(atIndexPath indexPath: IndexPath, tableView: UITableView?, data: Any?,eventTransmissionBlock:CHGEventTransmissionBlock?) {
+//        super.cellForRow(atIndexPath: indexPath, tableView: tableView, data: data,eventTransmissionBlock: eventTransmissionBlock)
+//        if data is NSDictionary {
+//            let dic:NSDictionary = data as! NSDictionary
+//            self.icon.image = UIImage.init(named: dic["icon"] as! String)
+//            self.name.text = dic["name"] as? String
+//            self.sigin.text = dic["sigin"] as? String
+//        } else {
+//            let test:Test = data as! Test
+//            self.icon.image = UIImage.init(named: test.icon!)
+//            self.name.text = test.name
+//            self.sigin.text = test.sigin
+//        }
+//    }
+    
+    override func cellWillAppear() {
+        super.cellWillAppear()
+        if self.model is NSDictionary {
+        let dic:NSDictionary = self.model as! NSDictionary
+                self.icon.image = UIImage.init(named: dic["icon"] as! String)
+                self.name.text = dic["name"] as? String
+                self.sigin.text = dic["sigin"] as? String
+            } else {
+        let test:Test = self.model as! Test
             self.icon.image = UIImage.init(named: test.icon!)
             self.name.text = test.name
             self.sigin.text = test.sigin

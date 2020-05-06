@@ -12,16 +12,27 @@ class TVTitleDicHeaderFooterView: CHGTableViewHeaderFooterView {
 
     @IBOutlet weak var title:UILabel?
     
-    override func headerFooter(section: NSInteger, tableView: UITableView, data: Any, type: CHGTableViewHeaderFooterViewType,eventTransmissionBlock:CHGEventTransmissionBlock?) {
-        super.headerFooter(section: section, tableView: tableView, data: data, type: type,eventTransmissionBlock: eventTransmissionBlock)
-        if data is NSDictionary {
-            let dic:NSDictionary = data as! NSDictionary
+//    override func headerFooter(section: NSInteger, tableView: UITableView, data: Any, type: CHGTableViewHeaderFooterViewType,eventTransmissionBlock:CHGEventTransmissionBlock?) {
+//        super.headerFooter(section: section, tableView: tableView, data: data, type: type,eventTransmissionBlock: eventTransmissionBlock)
+//        if data is NSDictionary {
+//            let dic:NSDictionary = data as! NSDictionary
+//            title?.text = dic["groupName"] as? String
+//        } else {
+//            let group:Group = data as! Group
+//            title?.text = group.groupName
+//        }
+//
+//    }
+    
+    override func headerFooterViewWillAppear(with type: CHGTableViewHeaderFooterViewType) {
+        super.headerFooterViewWillAppear(with: type)
+        if self.model is NSDictionary {
+            let dic:NSDictionary = self.model as! NSDictionary
             title?.text = dic["groupName"] as? String
         } else {
-            let group:Group = data as! Group
+            let group:Group = self.model as! Group
             title?.text = group.groupName
         }
-        
     }
 
 }

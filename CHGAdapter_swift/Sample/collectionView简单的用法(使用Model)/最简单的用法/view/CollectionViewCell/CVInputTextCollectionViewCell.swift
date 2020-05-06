@@ -19,10 +19,9 @@ class CVInputTextCollectionViewCell: CHGCollectionViewCell {
         
     }
 
-    override func cellForRow(atIndexPath indexPath: IndexPath, collectionView: UICollectionView?, data: Any?,eventTransmissionBlock:CHGEventTransmissionBlock?) {
-    super.cellForRow(atIndexPath: indexPath, collectionView: collectionView, data: data,eventTransmissionBlock: eventTransmissionBlock)
-        
-    }
+
+    
+    
     
     
     @IBAction func textViewChanged(sender:AnyObject) -> Void{

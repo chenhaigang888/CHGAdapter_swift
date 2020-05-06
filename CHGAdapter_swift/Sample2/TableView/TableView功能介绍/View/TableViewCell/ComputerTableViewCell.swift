@@ -24,7 +24,7 @@ class ComputerTableViewCell: CHGTableViewCell {
     
     override func cellWillAppear() {
         super.cellWillAppear()
-        let model:Computer = self.cellData as! Computer
+        let model:Computer = self.model as! Computer
         name.text = model.brand
     }
     

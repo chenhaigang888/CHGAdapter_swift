@@ -18,7 +18,7 @@ class ComputerCollectionViewCell: CHGCollectionViewCell {
     
     override func cellWillAppear() {
         super.cellWillAppear()
-        let model:Computer = self.cellData as! Computer
+        let model:Computer = self.model as! Computer
         title.text = model.brand
     }
 

@@ -8,62 +8,58 @@
 
 import UIKit
 
-open class CHGTableViewCell: UITableViewCell {
-    
-    open var eventTransmissionBlock:CHGEventTransmissionBlock?
-    open var indexPath:IndexPath?
-    weak open var tableView:UITableView?
-    open var cellData:Any?
-    
-    open func cellForRow(atIndexPath indexPath:IndexPath,tableView:UITableView?,data:Any?,eventTransmissionBlock:CHGEventTransmissionBlock?) -> Void {
+open class CHGTableViewCell: UITableViewCell,CHGViewLifeCycleProtocol {
+    open func cellForRowAt(indexPath: IndexPath, targetView: UIView, model: Any, eventTransmissionBlock: CHGEventTransmissionBlock?) {
         self.indexPath = indexPath
-        self.tableView = tableView
-        self.cellData = data
+        self.targetView = targetView
+        self.model = model
         self.eventTransmissionBlock = eventTransmissionBlock
-    }
-    
-    open func adapterTag()->NSInteger? {
-        return self.tableView?.tableViewAdapter?.tag
-    }
-    
-    open func customData()->Any? {
-        return self.tableView?.tableViewAdapter?.adapterData.customData
-    }
-    
-    open func controller()->UIViewController? {
-        return self.tableView?.tableViewAdapter?.controller
-    }
-    
-    /**
-     将被复用
-     
-     @param identifier identifier
-     */
-    open func willReuseWithIdentifier(identifier:NSString)->Void{
         
+        guard let protocols:[CHGViewLifeCycleProtocol] = protocols as? [CHGViewLifeCycleProtocol] else { return }
+        for item in protocols {
+            item.cellForRowAt(indexPath: indexPath, targetView: targetView, model: model, eventTransmissionBlock: eventTransmissionBlock)
+        }
     }
     
-    /**
-     将被复用
-     
-     @param identifier identifier
-     @param indexPath indexPath
-     */
-    open func willReuseWithIdentifier(identifier:NSString, indexPath:NSIndexPath)->Void{
-        
-    }
-    /**
-     cell将要显示
-     */
-    open func cellWillAppear()->Void {
-        
+    open var indexPath: IndexPath?
+    
+    
+    
+    open func cellWillReuse(with identifier: String) {
+        guard let protocols:[CHGViewLifeCycleProtocol] = protocols as? [CHGViewLifeCycleProtocol] else { return }
+        for item in protocols {
+            item.cellWillReuse(with: identifier)
+        }
     }
     
-    /**
-     cell已经消失
-     */
-    open func cellDidDisappear()->Void {
-        
+    open func cellWillReuse(with identifier: String, indexPath: IndexPath) {
+        guard let protocols:[CHGViewLifeCycleProtocol] = protocols as? [CHGViewLifeCycleProtocol] else { return }
+        for item in protocols {
+            item.cellWillReuse(with: identifier, indexPath: indexPath)
+        }
     }
+    
+    open func cellWillAppear() {
+        guard let protocols:[CHGViewLifeCycleProtocol] = protocols as? [CHGViewLifeCycleProtocol] else { return }
+        for item in protocols {
+            item.cellWillAppear()
+        }
+    }
+    
+    open func cellDidDisappear() {
+        guard let protocols:[CHGViewLifeCycleProtocol] = protocols as? [CHGViewLifeCycleProtocol] else { return }
+        for item in protocols {
+            item.cellDidDisappear()
+        }
+    }
+    
+    open var eventTransmissionBlock: CHGEventTransmissionBlock?
+    
+    weak open var targetView: UIView?
+    
+    open var model: Any?
+    
+    open var protocols: [Any]? = [Any]()
+    
 }
 

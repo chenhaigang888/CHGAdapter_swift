@@ -126,6 +126,8 @@
 		84881DB723A8CDF600FA662A /* FuncModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84881DB623A8CDF600FA662A /* FuncModel.swift */; };
 		84881DBC23A8CE8E00FA662A /* FuncModelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84881DBA23A8CE8E00FA662A /* FuncModelTableViewCell.swift */; };
 		84881DBD23A8CE8E00FA662A /* FuncModelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84881DBB23A8CE8E00FA662A /* FuncModelTableViewCell.xib */; };
+		8535A9842462A7AE003391BC /* CHGViewPropertyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8535A9832462A7AE003391BC /* CHGViewPropertyProtocol.swift */; };
+		8535A9872462AE29003391BC /* CHGBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8535A9862462AE29003391BC /* CHGBaseView.swift */; };
 		85AA5D972457C85000EF4413 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AA5D962457C85000EF4413 /* Utils.swift */; };
 		8F0A9F722147EC350030353C /* KeyPathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0A9F702147EC350030353C /* KeyPathViewController.swift */; };
 		8F0A9F732147EC350030353C /* KeyPathViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F0A9F712147EC350030353C /* KeyPathViewController.xib */; };
@@ -313,6 +315,8 @@
 		84881DB623A8CDF600FA662A /* FuncModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncModel.swift; sourceTree = "<group>"; };
 		84881DBA23A8CE8E00FA662A /* FuncModelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncModelTableViewCell.swift; sourceTree = "<group>"; };
 		84881DBB23A8CE8E00FA662A /* FuncModelTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FuncModelTableViewCell.xib; sourceTree = "<group>"; };
+		8535A9832462A7AE003391BC /* CHGViewPropertyProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CHGViewPropertyProtocol.swift; sourceTree = "<group>"; };
+		8535A9862462AE29003391BC /* CHGBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CHGBaseView.swift; sourceTree = "<group>"; };
 		85AA5D962457C85000EF4413 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		8F0A9F702147EC350030353C /* KeyPathViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPathViewController.swift; sourceTree = "<group>"; };
 		8F0A9F712147EC350030353C /* KeyPathViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyPathViewController.xib; sourceTree = "<group>"; };
@@ -936,6 +940,31 @@
 			path = TableViewCell;
 			sourceTree = "<group>";
 		};
+		8535A9812462A774003391BC /* protocol */ = {
+			isa = PBXGroup;
+			children = (
+				8FB8F15F2148B47200B96551 /* CHGSubDataOfKeyPathDelegate.swift */,
+				8535A9832462A7AE003391BC /* CHGViewPropertyProtocol.swift */,
+			);
+			path = protocol;
+			sourceTree = "<group>";
+		};
+		8535A9822462A788003391BC /* tool */ = {
+			isa = PBXGroup;
+			children = (
+				85AA5D962457C85000EF4413 /* Utils.swift */,
+			);
+			path = tool;
+			sourceTree = "<group>";
+		};
+		8535A9852462AE1A003391BC /* view */ = {
+			isa = PBXGroup;
+			children = (
+				8535A9862462AE29003391BC /* CHGBaseView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		8F0A9F6C2147EBC70030353C /* keyPath的用法（tableView） */ = {
 			isa = PBXGroup;
 			children = (
@@ -998,10 +1027,11 @@
 		8F0EE8B32140FA62004058D7 /* public */ = {
 			isa = PBXGroup;
 			children = (
+				8535A9852462AE1A003391BC /* view */,
+				8535A9822462A788003391BC /* tool */,
+				8535A9812462A774003391BC /* protocol */,
 				8F0EE8B721410B0A004058D7 /* model */,
 				8F0EE8B6214109F5004058D7 /* category */,
-				8FB8F15F2148B47200B96551 /* CHGSubDataOfKeyPathDelegate.swift */,
-				85AA5D962457C85000EF4413 /* Utils.swift */,
 			);
 			path = public;
 			sourceTree = "<group>";
@@ -1513,6 +1543,7 @@
 				8F0A9F782147EE9A0030353C /* GoodsCategoryTableViewHeaderFooterView.swift in Sources */,
 				8F126EB3212AEF61003FD300 /* TitleCollectionViewCell.swift in Sources */,
 				8FB8F1602148B47200B96551 /* CHGSubDataOfKeyPathDelegate.swift in Sources */,
+				8535A9872462AE29003391BC /* CHGBaseView.swift in Sources */,
 				8F2271B020EA243F00C72514 /* CHGCollectionViewAdapterData.swift in Sources */,
 				84881DB723A8CDF600FA662A /* FuncModel.swift in Sources */,
 				8F0A9F752147ED2B0030353C /* GoodsCategory.swift in Sources */,
@@ -1525,6 +1556,7 @@
 				8F2271AD20EA243F00C72514 /* UICollectionView+CHGCollectionViewAdapter.swift in Sources */,
 				8449A04923AB60570012F312 /* COVarietyData2ViewController.swift in Sources */,
 				84499FEB23AB14770012F312 /* ComputerTableViewCell.swift in Sources */,
+				8535A9842462A7AE003391BC /* CHGViewPropertyProtocol.swift in Sources */,
 				5FF37AA52128215300477E61 /* TableViewViewController.swift in Sources */,
 				8F2271B120EA243F00C72514 /* CHGCollectionReusableView.swift in Sources */,
 				5F92C3142127FCA500455EEB /* CVHeaderCollectionReusableView.swift in Sources */,

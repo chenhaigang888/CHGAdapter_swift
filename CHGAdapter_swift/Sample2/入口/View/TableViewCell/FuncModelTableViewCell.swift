@@ -23,12 +23,16 @@ class FuncModelTableViewCell: CHGTableViewCell {
         // Configure the view for the selected state
     }
     
-    override func cellForRow(atIndexPath indexPath: IndexPath, tableView: UITableView?, data: Any?,eventTransmissionBlock:CHGEventTransmissionBlock?) {
-        super.cellForRow(atIndexPath: indexPath, tableView: tableView, data: data,eventTransmissionBlock: eventTransmissionBlock)
-        let model:FuncModel = data as! FuncModel
+//    override func cellForRow(atIndexPath indexPath: IndexPath, tableView: UITableView?, data: Any?,eventTransmissionBlock:CHGEventTransmissionBlock?) {
+//        super.cellForRow(atIndexPath: indexPath, tableView: tableView, data: data,eventTransmissionBlock: eventTransmissionBlock)
+//        let model:FuncModel = data as! FuncModel
+//        funcNameLabel.text = model.title
+//    }
+    
+    override func cellWillAppear() {
+        super.cellWillAppear()
+        let model:FuncModel = self.model as! FuncModel
         funcNameLabel.text = model.title
     }
-    
-    
     
 }

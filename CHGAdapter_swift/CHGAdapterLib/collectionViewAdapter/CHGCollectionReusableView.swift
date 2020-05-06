@@ -8,55 +8,54 @@
 
 import UIKit
 
-open class CHGCollectionReusableView: UICollectionReusableView {
+open class CHGCollectionReusableView: UICollectionReusableView,CHGCollectionReusableViewLifeCycleProtocol {
+    open var indexPath: IndexPath?
     
-    open var eventTransmissionBlock:CHGEventTransmissionBlock?
-    open var indexPath:IndexPath?
-    weak open var collectionView:UICollectionView?
-    open var reusableViewData:Any?
-    open var kind:NSString?
-    
-    open func reusableViewFor(collectionView:UICollectionView,indexPath:IndexPath,kind:NSString,reusableViewData:Any?,eventTransmissionBlock:CHGEventTransmissionBlock?) -> Void {
-        self.collectionView = collectionView
-        self.indexPath = indexPath
-        self.kind = kind
-        self.reusableViewData = reusableViewData
+     open func reusableView(for collectionView: UICollectionView, indexPath: IndexPath, kind: String, model: Any, eventTransmissionBlock: CHGEventTransmissionBlock?) {
+        self.targetView = collectionView;
+        self.indexPath = indexPath;
+        self.kind = kind;
+        self.model = model;
         self.eventTransmissionBlock = eventTransmissionBlock
-    }
-    
-    open func adapterTag()->NSInteger? {
-        return self.collectionView?.collectionViewAdapter?.tag
-    }
-    
-    open func customData()->Any? {
-        return self.collectionView?.collectionViewAdapter?.adapterData.customData
-    }
-    
-    open func controller()->UIViewController?{
-        return self.collectionView?.collectionViewAdapter?.controller
-    }
-    
-    /**
-     将被复用
-     
-     @param identifier identifier
-     @param indexPath indexPath
-     */
-    open func willReuseWithIdentifier(identifier:NSString,indexPath:NSIndexPath)->Void {
         
-    }
+           guard let protocols:[CHGCollectionReusableViewLifeCycleProtocol] = protocols as? [CHGCollectionReusableViewLifeCycleProtocol] else { return }
+           for item in protocols {
+               item.reusableView(for: collectionView, indexPath: indexPath, kind: kind, model: model, eventTransmissionBlock: eventTransmissionBlock)
+           }
+       }
+       
+       open func reusableViewWillReuse(with identifier: String, indexPath: IndexPath) {
+           guard let protocols:[CHGCollectionReusableViewLifeCycleProtocol] = protocols as? [CHGCollectionReusableViewLifeCycleProtocol] else { return }
+           for item in protocols {
+               item.reusableViewWillReuse(with: identifier, indexPath: indexPath)
+           }
+       }
+       
+       open func reusableViewWillAppear() {
+           guard let protocols:[CHGCollectionReusableViewLifeCycleProtocol] = protocols as? [CHGCollectionReusableViewLifeCycleProtocol] else { return }
+           for item in protocols {
+               item.reusableViewWillAppear()
+           }
+       }
+       
+       open func reusableViewDidDisappear() {
+           guard let protocols:[CHGCollectionReusableViewLifeCycleProtocol] = protocols as? [CHGCollectionReusableViewLifeCycleProtocol] else { return }
+           for item in protocols {
+               item.reusableViewDidDisappear()
+           }
+       }
     
-    /**
-     cell将要显示
-     */
-    open func reusableViewWillAppear()->Void {
-        
-    }
+    open var eventTransmissionBlock: CHGEventTransmissionBlock?
     
-    /**
-     cell已经消失
-     */
-    open func reusableViewDidDisappear()->Void {
-        
-    }
+    open var kind: String?
+    
+    
+    
+    weak open var targetView: UIView?
+    
+    open var model: Any?
+    
+    open var protocols: [Any]? = [Any]()
+    
+    
 }

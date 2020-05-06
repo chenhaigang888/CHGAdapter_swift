@@ -17,13 +17,18 @@ class CVHeaderCollectionReusableView: CHGCollectionReusableView {
         // Initialization code
     }
     
-    override func reusableViewFor(collectionView: UICollectionView, indexPath: IndexPath, kind: NSString, reusableViewData: Any?,eventTransmissionBlock:CHGEventTransmissionBlock?) {
-    super.reusableViewFor(collectionView: collectionView, indexPath: indexPath, kind: kind, reusableViewData: reusableViewData,eventTransmissionBlock: eventTransmissionBlock)
-        let headerModel:CVHeaderModel = reusableViewData as! CVHeaderModel
+//    override func reusableViewFor(collectionView: UICollectionView, indexPath: IndexPath, kind: NSString, reusableViewData: Any?,eventTransmissionBlock:CHGEventTransmissionBlock?) {
+//    super.reusableViewFor(collectionView: collectionView, indexPath: indexPath, kind: kind, reusableViewData: reusableViewData,eventTransmissionBlock: eventTransmissionBlock)
+//        let headerModel:CVHeaderModel = reusableViewData as! CVHeaderModel
+//        self.name?.text = headerModel.name
+//        self.name?.backgroundColor = headerModel.bgColor
+//    }
+    
+    override func reusableViewWillAppear() {
+        super.reusableViewWillAppear()
+        let headerModel:CVHeaderModel = self.model as! CVHeaderModel
         self.name?.text = headerModel.name
         self.name?.backgroundColor = headerModel.bgColor
     }
-    
-    
     
 }

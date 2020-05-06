@@ -16,9 +16,15 @@ class GoodsCategoryCollectionReusableView: CHGCollectionReusableView {
         super.awakeFromNib()
         // Initialization code
     }
-    override func reusableViewFor(collectionView: UICollectionView, indexPath: IndexPath, kind: NSString, reusableViewData: Any?,eventTransmissionBlock:CHGEventTransmissionBlock?) {
-    super.reusableViewFor(collectionView: collectionView, indexPath: indexPath, kind: kind, reusableViewData: reusableViewData,eventTransmissionBlock: eventTransmissionBlock)
-        let model:GoodsCategory = reusableViewData as! GoodsCategory
+//    override func reusableViewFor(collectionView: UICollectionView, indexPath: IndexPath, kind: NSString, reusableViewData: Any?,eventTransmissionBlock:CHGEventTransmissionBlock?) {
+//    super.reusableViewFor(collectionView: collectionView, indexPath: indexPath, kind: kind, reusableViewData: reusableViewData,eventTransmissionBlock: eventTransmissionBlock)
+//        let model:GoodsCategory = reusableViewData as! GoodsCategory
+//        title?.text = model.name
+//    }
+    
+    override func reusableViewWillAppear() {
+        super.reusableViewWillAppear()
+        let model:GoodsCategory = self.model as! GoodsCategory
         title?.text = model.name
     }
 }

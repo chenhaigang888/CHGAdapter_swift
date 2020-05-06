@@ -18,18 +18,31 @@ class CVFriendUseDicCollectionViewCell: CHGCollectionViewCell {
         // Initialization code
     }
 
-    override func cellForRow(atIndexPath indexPath: IndexPath, collectionView: UICollectionView?, data: Any?,eventTransmissionBlock:CHGEventTransmissionBlock?) {
-    super.cellForRow(atIndexPath: indexPath, collectionView: collectionView, data: data,eventTransmissionBlock: eventTransmissionBlock)
-        if data is NSDictionary {
-            let dic:NSDictionary = data as! NSDictionary
+//    override func cellForRow(atIndexPath indexPath: IndexPath, collectionView: UICollectionView?, data: Any?,eventTransmissionBlock:CHGEventTransmissionBlock?) {
+//    super.cellForRow(atIndexPath: indexPath, collectionView: collectionView, data: data,eventTransmissionBlock: eventTransmissionBlock)
+//        if data is NSDictionary {
+//            let dic:NSDictionary = data as! NSDictionary
+//            icon?.image = UIImage.init(named: dic["icon"] as! String)
+//            title?.text = dic["name"] as? String
+//        } else {
+//            let test:Test = data as! Test
+//            icon?.image = UIImage.init(named: test.icon!)
+//            title?.text = test.name
+//
+//        }
+//    }
+    
+    override func cellWillAppear() {
+        super.cellWillAppear()
+        if self.model is NSDictionary {
+            let dic:NSDictionary = self.model as! NSDictionary
             icon?.image = UIImage.init(named: dic["icon"] as! String)
             title?.text = dic["name"] as? String
         } else {
-            let test:Test = data as! Test
+            let test:Test = self.model as! Test
             icon?.image = UIImage.init(named: test.icon!)
             title?.text = test.name
-            
+
         }
     }
-    
 }

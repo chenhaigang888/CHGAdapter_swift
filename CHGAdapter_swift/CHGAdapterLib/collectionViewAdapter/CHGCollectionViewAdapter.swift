@@ -114,7 +114,8 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
         }
         let cell:CHGCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: classAllName, for: indexPath) as! CHGCollectionViewCell
 //        cell.eventTransmissionBlock = collectionView.eventTransmissionBlock
-        cell.cellForRow(atIndexPath: indexPath, collectionView: collectionView, data: cellData,eventTransmissionBlock: collectionView.eventTransmissionBlock)
+//        cell.cellForRow(atIndexPath: indexPath, collectionView: collectionView, data: cellData,eventTransmissionBlock: collectionView.eventTransmissionBlock)
+        cell.cellForRowAt(indexPath: indexPath, targetView: collectionView, model: cellData!, eventTransmissionBlock: collectionView.eventTransmissionBlock)
         return cell
     }
     
@@ -122,7 +123,8 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
         collectionView.register(CHGCollectionReusableView.classForCoder(), forSupplementaryViewOfKind: kind, withReuseIdentifier:"CHGCollectionReusableView" )
         let reusableView:CHGCollectionReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier:"CHGCollectionReusableView" , for: indexPath) as! CHGCollectionReusableView
 //        reusableView.eventTransmissionBlock = collectionView.eventTransmissionBlock
-        reusableView.reusableViewFor(collectionView: collectionView, indexPath: indexPath, kind: kind as NSString, reusableViewData: headerFooterData,eventTransmissionBlock: collectionView.eventTransmissionBlock)
+//        reusableView.reusableViewFor(collectionView: collectionView, indexPath: indexPath, kind: kind as NSString, reusableViewData: headerFooterData,eventTransmissionBlock: collectionView.eventTransmissionBlock)
+        reusableView.reusableView(for: collectionView, indexPath: indexPath, kind: kind, model: headerFooterData!, eventTransmissionBlock: collectionView.eventTransmissionBlock)
         return reusableView
     }
     
@@ -165,7 +167,8 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
         
         let reusableView:CHGCollectionReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: kind as String, withReuseIdentifier: classAllName, for: indexPath) as! CHGCollectionReusableView
 //        reusableView.eventTransmissionBlock = collectionView.eventTransmissionBlock
-        reusableView.reusableViewFor(collectionView: collectionView, indexPath: indexPath, kind: kind as NSString, reusableViewData: headerFooterData,eventTransmissionBlock: collectionView.eventTransmissionBlock)
+//        reusableView.reusableViewFor(collectionView: collectionView, indexPath: indexPath, kind: kind as NSString, reusableViewData: headerFooterData,eventTransmissionBlock: collectionView.eventTransmissionBlock)
+        reusableView.reusableView(for: collectionView, indexPath: indexPath, kind: kind, model: headerFooterData!, eventTransmissionBlock: collectionView.eventTransmissionBlock)
         return reusableView
     }
     

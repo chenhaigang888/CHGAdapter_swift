@@ -17,10 +17,15 @@ class TitleCollectionViewCell: CHGCollectionViewCell {
         // Initialization code
     }
     
-    override func cellForRow(atIndexPath indexPath: IndexPath, collectionView: UICollectionView?, data: Any?,eventTransmissionBlock:CHGEventTransmissionBlock?) {
-    super.cellForRow(atIndexPath: indexPath, collectionView: collectionView, data: data,eventTransmissionBlock: eventTransmissionBlock)
-        let titleModel:TitleModel = data as! TitleModel
+//    override func cellForRow(atIndexPath indexPath: IndexPath, collectionView: UICollectionView?, data: Any?,eventTransmissionBlock:CHGEventTransmissionBlock?) {
+//    super.cellForRow(atIndexPath: indexPath, collectionView: collectionView, data: data,eventTransmissionBlock: eventTransmissionBlock)
+//        let titleModel:TitleModel = data as! TitleModel
+//        name?.text = titleModel.name
+//    }
+
+    override func cellWillAppear() {
+        super.cellWillAppear()
+        let titleModel:TitleModel = self.model as! TitleModel
         name?.text = titleModel.name
     }
-
 }

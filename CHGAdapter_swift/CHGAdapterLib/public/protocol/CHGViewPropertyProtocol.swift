@@ -17,9 +17,23 @@ public protocol CHGViewPropertyProtocol {
     var targetView:UIView? { get set }
     ///当前cell、headerFooter、view需要显示的数据
     var model:Any? { get set }
-    ///根据类型不一样存储不同的协议
-    var protocols:[Any]? { get set }
+//    ///根据类型不一样存储不同的协议
+//    var protocols:[Any]? { get set }
     
+    var protocolsVMK:[ViewMappingKey]? { get set }
+    
+    
+}
+
+open class ViewMappingKey: NSObject {
+    var view:CHGViewPropertyProtocol?
+    var key:AnyKeyPath?
+    
+    public init(view:CHGViewPropertyProtocol?,key:AnyKeyPath?) {
+        super.init()
+        self.view = view
+        self.key = key
+    }
     
 }
 

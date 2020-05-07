@@ -10,7 +10,7 @@ import UIKit
 
 open class CHGBaseView : UIView, CHGViewLifeCycleProtocol, CHGTableViewHeaderFooterLifeCycleProtocol, CHGCollectionReusableViewLifeCycleProtocol {
     
-    open var protocols: [Any]? = [Any]()
+    open var protocolsVMK: [ViewMappingKey]? = [ViewMappingKey]()
     
     open var indexPath: IndexPath?
     
@@ -20,37 +20,51 @@ open class CHGBaseView : UIView, CHGViewLifeCycleProtocol, CHGTableViewHeaderFoo
         self.model = model;
         self.eventTransmissionBlock = eventTransmissionBlock
         
-        guard let protocols:[CHGViewLifeCycleProtocol] = protocols as? [CHGViewLifeCycleProtocol] else { return }
-        for item in protocols {
-            item.cellForRowAt(indexPath: indexPath, targetView: targetView, model: model, eventTransmissionBlock: eventTransmissionBlock)
+        guard let protocolsVMK:[ViewMappingKey] = protocolsVMK else { return }
+        for viewKey in protocolsVMK {
+            if let view:CHGViewLifeCycleProtocol = viewKey.view as? CHGViewLifeCycleProtocol {
+                if let key:AnyKeyPath = viewKey.key, let subModel = model[keyPath:key] {
+                    view.cellForRowAt(indexPath: indexPath, targetView: targetView, model: subModel, eventTransmissionBlock: eventTransmissionBlock)
+                } else {
+                    view.cellForRowAt(indexPath: indexPath, targetView: targetView, model: model, eventTransmissionBlock: eventTransmissionBlock)
+                }
+            }
         }
     }
     
     open func cellWillReuse(with identifier: String) {
-        guard let protocols:[CHGViewLifeCycleProtocol] = protocols as? [CHGViewLifeCycleProtocol] else { return }
-        for item in protocols {
-            item.cellWillReuse(with: identifier)
+        guard let protocolsVMK:[ViewMappingKey] = protocolsVMK else { return }
+        for viewKey in protocolsVMK {
+            if let view:CHGViewLifeCycleProtocol = viewKey.view as? CHGViewLifeCycleProtocol {
+                view.cellWillReuse(with: identifier)
+            }
         }
     }
     
     open func cellWillReuse(with identifier: String, indexPath: IndexPath) {
-        guard let protocols:[CHGViewLifeCycleProtocol] = protocols as? [CHGViewLifeCycleProtocol] else { return }
-        for item in protocols {
-            item.cellWillReuse(with: identifier, indexPath: indexPath)
+        guard let protocolsVMK:[ViewMappingKey] = protocolsVMK else { return }
+        for viewKey in protocolsVMK {
+            if let view:CHGViewLifeCycleProtocol = viewKey.view as? CHGViewLifeCycleProtocol  {
+                view.cellWillReuse(with: identifier, indexPath: indexPath)
+            }
         }
     }
     
     open func cellWillAppear() {
-        guard let protocols:[CHGViewLifeCycleProtocol] = protocols as? [CHGViewLifeCycleProtocol] else { return }
-        for item in protocols {
-            item.cellWillAppear()
+        guard let protocolsVMK:[ViewMappingKey] = protocolsVMK else { return }
+        for viewKey in protocolsVMK {
+            if let view:CHGViewLifeCycleProtocol = viewKey.view as? CHGViewLifeCycleProtocol {
+                view.cellWillAppear()
+            }
         }
     }
     
     open func cellDidDisappear() {
-        guard let protocols:[CHGViewLifeCycleProtocol] = protocols as? [CHGViewLifeCycleProtocol] else { return }
-        for item in protocols {
-            item.cellDidDisappear()
+        guard let protocolsVMK:[ViewMappingKey] = protocolsVMK else { return }
+        for viewKey in protocolsVMK {
+            if let view:CHGViewLifeCycleProtocol = viewKey.view as? CHGViewLifeCycleProtocol  {
+                view.cellDidDisappear()
+            }
         }
     }
     
@@ -65,31 +79,42 @@ open class CHGBaseView : UIView, CHGViewLifeCycleProtocol, CHGTableViewHeaderFoo
         self.type = type
         self.eventTransmissionBlock = eventTransmissionBlock
         
-        guard let protocols:[CHGTableViewHeaderFooterLifeCycleProtocol] = protocols as? [CHGTableViewHeaderFooterLifeCycleProtocol] else { return }
-        for item in protocols {
-            item.headerFooter(for: section, in: tableView, model: model, type: type,eventTransmissionBlock: eventTransmissionBlock)
+        guard let protocolsVMK:[ViewMappingKey] = protocolsVMK else { return }
+        for viewKey in protocolsVMK {
+            if let view:CHGTableViewHeaderFooterLifeCycleProtocol = viewKey.view as? CHGTableViewHeaderFooterLifeCycleProtocol {
+                if let key:AnyKeyPath = viewKey.key, let subModel = model[keyPath:key] {
+                    view.headerFooter(for: section, in: tableView, model: subModel, type: type, eventTransmissionBlock: eventTransmissionBlock)
+                } else {
+                    view.headerFooter(for: section, in: tableView, model: model, type: type, eventTransmissionBlock: eventTransmissionBlock)
+                }
+            }
         }
-        
     }
     
     open func headerFooterViewWillReuse(with identifier: String) {
-        guard let protocols:[CHGTableViewHeaderFooterLifeCycleProtocol] = protocols as? [CHGTableViewHeaderFooterLifeCycleProtocol] else { return }
-        for item in protocols {
-            item.headerFooterViewWillReuse(with: identifier)
+        guard let protocolsVMK:[ViewMappingKey] = protocolsVMK else { return }
+        for viewKey in protocolsVMK {
+            if let view:CHGTableViewHeaderFooterLifeCycleProtocol = viewKey.view as? CHGTableViewHeaderFooterLifeCycleProtocol  {
+                view.headerFooterViewWillReuse(with: identifier)
+            }
         }
     }
     
     open func headerFooterViewWillAppear(with type: CHGTableViewHeaderFooterViewType) {
-        guard let protocols:[CHGTableViewHeaderFooterLifeCycleProtocol] = protocols as? [CHGTableViewHeaderFooterLifeCycleProtocol] else { return }
-        for item in protocols {
-            item.headerFooterViewWillAppear(with: type)
+        guard let protocolsVMK:[ViewMappingKey] = protocolsVMK else { return }
+        for viewKey in protocolsVMK {
+            if let view:CHGTableViewHeaderFooterLifeCycleProtocol = viewKey.view as? CHGTableViewHeaderFooterLifeCycleProtocol  {
+                view.headerFooterViewWillAppear(with: type)
+            }
         }
     }
     
     open func headerFooterViewDidDisAppear(with type: CHGTableViewHeaderFooterViewType) {
-        guard let protocols:[CHGTableViewHeaderFooterLifeCycleProtocol] = protocols as? [CHGTableViewHeaderFooterLifeCycleProtocol] else { return }
-        for item in protocols {
-            item.headerFooterViewDidDisAppear(with: type)
+        guard let protocolsVMK:[ViewMappingKey] = protocolsVMK else { return }
+        for viewKey in protocolsVMK {
+            if let view:CHGTableViewHeaderFooterLifeCycleProtocol = viewKey.view as? CHGTableViewHeaderFooterLifeCycleProtocol {
+                view.headerFooterViewDidDisAppear(with: type)
+            }
         }
     }
     
@@ -101,50 +126,46 @@ open class CHGBaseView : UIView, CHGViewLifeCycleProtocol, CHGTableViewHeaderFoo
         self.kind = kind;
         self.model = model;
         
-        guard let protocols:[CHGCollectionReusableViewLifeCycleProtocol] = protocols as? [CHGCollectionReusableViewLifeCycleProtocol] else { return }
-        for item in protocols {
-            item.reusableView(for: collectionView, indexPath: indexPath, kind: kind, model: model, eventTransmissionBlock: eventTransmissionBlock)
-        }
-    }
-    
-    open func reusableViewWillReuse(with identifier: String, indexPath: IndexPath) {
-        guard let protocols:[CHGCollectionReusableViewLifeCycleProtocol] = protocols as? [CHGCollectionReusableViewLifeCycleProtocol] else { return }
-        for item in protocols {
-            item.reusableViewWillReuse(with: identifier, indexPath: indexPath)
-        }
-    }
-    
-    open func reusableViewWillAppear() {
-        guard let protocols:[CHGCollectionReusableViewLifeCycleProtocol] = protocols as? [CHGCollectionReusableViewLifeCycleProtocol] else { return }
-        for item in protocols {
-            item.reusableViewWillAppear()
-        }
-    }
-    
-    open func reusableViewDidDisappear() {
-        guard let protocols:[CHGCollectionReusableViewLifeCycleProtocol] = protocols as? [CHGCollectionReusableViewLifeCycleProtocol] else { return }
-        for item in protocols {
-            item.reusableViewDidDisappear()
-        }
-    }
-    
-    
-    private var _eventTransmissionBlock: CHGEventTransmissionBlock?
-    open var eventTransmissionBlock: CHGEventTransmissionBlock?{
-        get {
-            return _eventTransmissionBlock
-            
-        }
-        set(newValue) {
-            _eventTransmissionBlock = newValue
-            guard let protocols:[CHGViewLifeCycleProtocol] = protocols as? [CHGViewLifeCycleProtocol] else { return }
-            for var item in protocols {
-                item.eventTransmissionBlock = newValue
+        guard let protocolsVMK:[ViewMappingKey] = protocolsVMK else { return }
+        for viewKey in protocolsVMK {
+            if let view:CHGCollectionReusableViewLifeCycleProtocol = viewKey.view as? CHGCollectionReusableViewLifeCycleProtocol {
+                if let key:AnyKeyPath = viewKey.key, let subModel = model[keyPath:key] {
+                    view.reusableView(for: collectionView, indexPath: indexPath, kind: kind, model: subModel, eventTransmissionBlock: eventTransmissionBlock)
+                } else {
+                    view.reusableView(for: collectionView, indexPath: indexPath, kind: kind, model: model, eventTransmissionBlock: eventTransmissionBlock)
+                }
             }
         }
     }
     
+    open func reusableViewWillReuse(with identifier: String, indexPath: IndexPath) {
+        guard let protocolsVMK:[ViewMappingKey] = protocolsVMK else { return }
+        for viewKey in protocolsVMK {
+            if let view:CHGCollectionReusableViewLifeCycleProtocol = viewKey.view as? CHGCollectionReusableViewLifeCycleProtocol {
+                view.reusableViewWillReuse(with: identifier, indexPath: indexPath)
+            }
+        }
+    }
     
+    open func reusableViewWillAppear() {
+        guard let protocolsVMK:[ViewMappingKey] = protocolsVMK else { return }
+        for viewKey in protocolsVMK {
+            if let view:CHGCollectionReusableViewLifeCycleProtocol = viewKey.view as? CHGCollectionReusableViewLifeCycleProtocol {
+                view.reusableViewWillAppear()
+            }
+        }
+    }
+    
+    open func reusableViewDidDisappear() {
+        guard let protocolsVMK:[ViewMappingKey] = protocolsVMK else { return }
+        for viewKey in protocolsVMK {
+            if let view:CHGCollectionReusableViewLifeCycleProtocol = viewKey.view as? CHGCollectionReusableViewLifeCycleProtocol  {
+                view.reusableViewDidDisappear()
+            }
+        }
+    }
+    
+    open var eventTransmissionBlock: CHGEventTransmissionBlock?
     
     weak open var targetView: UIView?
     

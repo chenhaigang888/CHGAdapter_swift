@@ -9,49 +9,9 @@
 import UIKit
 
 open class CHGTableViewCell: UITableViewCell,CHGViewLifeCycleProtocol {
-    open func cellForRowAt(indexPath: IndexPath, targetView: UIView, model: Any, eventTransmissionBlock: CHGEventTransmissionBlock?) {
-        self.indexPath = indexPath
-        self.targetView = targetView
-        self.model = model
-        self.eventTransmissionBlock = eventTransmissionBlock
-        
-        guard let protocols:[CHGViewLifeCycleProtocol] = protocols as? [CHGViewLifeCycleProtocol] else { return }
-        for item in protocols {
-            item.cellForRowAt(indexPath: indexPath, targetView: targetView, model: model, eventTransmissionBlock: eventTransmissionBlock)
-        }
-    }
+    open var protocolsVMK: [ViewMappingKey]? = [ViewMappingKey]()
     
     open var indexPath: IndexPath?
-    
-    
-    
-    open func cellWillReuse(with identifier: String) {
-        guard let protocols:[CHGViewLifeCycleProtocol] = protocols as? [CHGViewLifeCycleProtocol] else { return }
-        for item in protocols {
-            item.cellWillReuse(with: identifier)
-        }
-    }
-    
-    open func cellWillReuse(with identifier: String, indexPath: IndexPath) {
-        guard let protocols:[CHGViewLifeCycleProtocol] = protocols as? [CHGViewLifeCycleProtocol] else { return }
-        for item in protocols {
-            item.cellWillReuse(with: identifier, indexPath: indexPath)
-        }
-    }
-    
-    open func cellWillAppear() {
-        guard let protocols:[CHGViewLifeCycleProtocol] = protocols as? [CHGViewLifeCycleProtocol] else { return }
-        for item in protocols {
-            item.cellWillAppear()
-        }
-    }
-    
-    open func cellDidDisappear() {
-        guard let protocols:[CHGViewLifeCycleProtocol] = protocols as? [CHGViewLifeCycleProtocol] else { return }
-        for item in protocols {
-            item.cellDidDisappear()
-        }
-    }
     
     open var eventTransmissionBlock: CHGEventTransmissionBlock?
     
@@ -59,7 +19,60 @@ open class CHGTableViewCell: UITableViewCell,CHGViewLifeCycleProtocol {
     
     open var model: Any?
     
-    open var protocols: [Any]? = [Any]()
+    
+    open func cellForRowAt(indexPath: IndexPath, targetView: UIView, model: Any, eventTransmissionBlock: CHGEventTransmissionBlock?) {
+        self.indexPath = indexPath;
+        self.targetView = targetView;
+        self.model = model;
+        self.eventTransmissionBlock = eventTransmissionBlock
+        
+        guard let protocolsVMK:[ViewMappingKey] = protocolsVMK else { return }
+        for viewKey in protocolsVMK {
+            if let view:CHGViewLifeCycleProtocol = viewKey.view as? CHGViewLifeCycleProtocol {
+                if let key:AnyKeyPath = viewKey.key, let subModel = model[keyPath:key] {
+                    view.cellForRowAt(indexPath: indexPath, targetView: targetView, model: subModel, eventTransmissionBlock: eventTransmissionBlock)
+                } else {
+                    view.cellForRowAt(indexPath: indexPath, targetView: targetView, model: model, eventTransmissionBlock: eventTransmissionBlock)
+                }
+            }
+        }
+    }
+    
+    open func cellWillReuse(with identifier: String) {
+        guard let protocolsVMK:[ViewMappingKey] = protocolsVMK else { return }
+        for viewKey in protocolsVMK {
+            if let view:CHGViewLifeCycleProtocol = viewKey.view as? CHGViewLifeCycleProtocol {
+                view.cellWillReuse(with: identifier)
+            }
+        }
+    }
+    
+    open func cellWillReuse(with identifier: String, indexPath: IndexPath) {
+        guard let protocolsVMK:[ViewMappingKey] = protocolsVMK else { return }
+        for viewKey in protocolsVMK {
+            if let view:CHGViewLifeCycleProtocol = viewKey.view as? CHGViewLifeCycleProtocol  {
+                view.cellWillReuse(with: identifier, indexPath: indexPath)
+            }
+        }
+    }
+    
+    open func cellWillAppear() {
+        guard let protocolsVMK:[ViewMappingKey] = protocolsVMK else { return }
+        for viewKey in protocolsVMK {
+            if let view:CHGViewLifeCycleProtocol = viewKey.view as? CHGViewLifeCycleProtocol {
+                view.cellWillAppear()
+            }
+        }
+    }
+    
+    open func cellDidDisappear() {
+        guard let protocolsVMK:[ViewMappingKey] = protocolsVMK else { return }
+        for viewKey in protocolsVMK {
+            if let view:CHGViewLifeCycleProtocol = viewKey.view as? CHGViewLifeCycleProtocol  {
+                view.cellDidDisappear()
+            }
+        }
+    }
     
 }
 

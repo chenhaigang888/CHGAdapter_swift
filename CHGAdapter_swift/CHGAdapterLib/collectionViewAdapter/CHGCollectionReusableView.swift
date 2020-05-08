@@ -9,7 +9,7 @@
 import UIKit
 
 open class CHGCollectionReusableView: UICollectionReusableView,CHGCollectionReusableViewLifeCycleProtocol {
-    open var protocolsVMK: [ViewMappingKey]? = [ViewMappingKey]()
+    open var protocolsVMO: [ViewMappingObject]? = [ViewMappingObject]()
     
     open var indexPath: IndexPath?
     
@@ -27,10 +27,11 @@ open class CHGCollectionReusableView: UICollectionReusableView,CHGCollectionReus
         self.kind = kind;
         self.model = model;
         
-        guard let protocolsVMK:[ViewMappingKey] = protocolsVMK else { return }
-        for viewKey in protocolsVMK {
+        guard let protocolsVMO:[ViewMappingObject] = protocolsVMO else { return }
+        for viewKey in protocolsVMO {
             if let view:CHGCollectionReusableViewLifeCycleProtocol = viewKey.view as? CHGCollectionReusableViewLifeCycleProtocol {
-                if let key:AnyKeyPath = viewKey.key, let subModel = model[keyPath:key] {
+                let type:CHGAdapterViewType = kind == UICollectionView.elementKindSectionHeader ? .HeaderType : .FooterType//这里不用判断cell的情况
+                if let mapping = viewKey.mapping, let key:AnyKeyPath = mapping[type] as? AnyKeyPath, let subModel = model[keyPath:key] {
                     view.reusableView(for: collectionView, indexPath: indexPath, kind: kind, model: subModel, eventTransmissionBlock: eventTransmissionBlock)
                 } else {
                     view.reusableView(for: collectionView, indexPath: indexPath, kind: kind, model: model, eventTransmissionBlock: eventTransmissionBlock)
@@ -40,8 +41,8 @@ open class CHGCollectionReusableView: UICollectionReusableView,CHGCollectionReus
     }
     
     open func reusableViewWillReuse(with identifier: String, indexPath: IndexPath) {
-        guard let protocolsVMK:[ViewMappingKey] = protocolsVMK else { return }
-        for viewKey in protocolsVMK {
+        guard let protocolsVMO:[ViewMappingObject] = protocolsVMO else { return }
+        for viewKey in protocolsVMO {
             if let view:CHGCollectionReusableViewLifeCycleProtocol = viewKey.view as? CHGCollectionReusableViewLifeCycleProtocol {
                 view.reusableViewWillReuse(with: identifier, indexPath: indexPath)
             }
@@ -49,8 +50,8 @@ open class CHGCollectionReusableView: UICollectionReusableView,CHGCollectionReus
     }
     
     open func reusableViewWillAppear() {
-        guard let protocolsVMK:[ViewMappingKey] = protocolsVMK else { return }
-        for viewKey in protocolsVMK {
+        guard let protocolsVMO:[ViewMappingObject] = protocolsVMO else { return }
+        for viewKey in protocolsVMO {
             if let view:CHGCollectionReusableViewLifeCycleProtocol = viewKey.view as? CHGCollectionReusableViewLifeCycleProtocol {
                 view.reusableViewWillAppear()
             }
@@ -58,8 +59,8 @@ open class CHGCollectionReusableView: UICollectionReusableView,CHGCollectionReus
     }
     
     open func reusableViewDidDisappear() {
-        guard let protocolsVMK:[ViewMappingKey] = protocolsVMK else { return }
-        for viewKey in protocolsVMK {
+        guard let protocolsVMO:[ViewMappingObject] = protocolsVMO else { return }
+        for viewKey in protocolsVMO {
             if let view:CHGCollectionReusableViewLifeCycleProtocol = viewKey.view as? CHGCollectionReusableViewLifeCycleProtocol  {
                 view.reusableViewDidDisappear()
             }

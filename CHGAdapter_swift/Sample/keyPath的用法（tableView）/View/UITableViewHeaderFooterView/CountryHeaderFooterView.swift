@@ -18,13 +18,13 @@ class CountryHeaderFooterView: CHGTableViewHeaderFooterView {
     }
     */
     
-//    override func headerFooter(section: NSInteger, tableView: UITableView, data: Any, type: CHGTableViewHeaderFooterViewType,eventTransmissionBlock:CHGEventTransmissionBlock?) {
+//    override func headerFooter(section: NSInteger, tableView: UITableView, data: Any, type: CHGAdapterViewType,eventTransmissionBlock:CHGEventTransmissionBlock?) {
 //        super.headerFooter(section: section, tableView: tableView, data: data, type: type,eventTransmissionBlock: eventTransmissionBlock)
 //        let model:CountryModel = data as! CountryModel
 //        title?.text = model.name
 //    }
     
-    override func headerFooterViewWillAppear(with type: CHGTableViewHeaderFooterViewType) {
+    override func headerFooterViewWillAppear(with type: CHGAdapterViewType) {
         super.headerFooterViewWillAppear(with: type)
         let model:CountryModel = self.model as! CountryModel
         title?.text = model.name

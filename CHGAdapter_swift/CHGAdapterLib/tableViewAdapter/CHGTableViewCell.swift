@@ -9,7 +9,7 @@
 import UIKit
 
 open class CHGTableViewCell: UITableViewCell,CHGViewLifeCycleProtocol {
-    open var protocolsVMK: [ViewMappingKey]? = [ViewMappingKey]()
+    open var protocolsVMO: [ViewMappingObject]? = [ViewMappingObject]()
     
     open var indexPath: IndexPath?
     
@@ -26,10 +26,10 @@ open class CHGTableViewCell: UITableViewCell,CHGViewLifeCycleProtocol {
         self.model = model;
         self.eventTransmissionBlock = eventTransmissionBlock
         
-        guard let protocolsVMK:[ViewMappingKey] = protocolsVMK else { return }
-        for viewKey in protocolsVMK {
+        guard let protocolsVMO:[ViewMappingObject] = protocolsVMO else { return }
+        for viewKey in protocolsVMO {
             if let view:CHGViewLifeCycleProtocol = viewKey.view as? CHGViewLifeCycleProtocol {
-                if let key:AnyKeyPath = viewKey.key, let subModel = model[keyPath:key] {
+                if let mapping = viewKey.mapping, let key:AnyKeyPath = mapping[.CellType] as? AnyKeyPath, let subModel = model[keyPath:key] {
                     view.cellForRowAt(indexPath: indexPath, targetView: targetView, model: subModel, eventTransmissionBlock: eventTransmissionBlock)
                 } else {
                     view.cellForRowAt(indexPath: indexPath, targetView: targetView, model: model, eventTransmissionBlock: eventTransmissionBlock)
@@ -39,8 +39,8 @@ open class CHGTableViewCell: UITableViewCell,CHGViewLifeCycleProtocol {
     }
     
     open func cellWillReuse(with identifier: String) {
-        guard let protocolsVMK:[ViewMappingKey] = protocolsVMK else { return }
-        for viewKey in protocolsVMK {
+        guard let protocolsVMO:[ViewMappingObject] = protocolsVMO else { return }
+        for viewKey in protocolsVMO {
             if let view:CHGViewLifeCycleProtocol = viewKey.view as? CHGViewLifeCycleProtocol {
                 view.cellWillReuse(with: identifier)
             }
@@ -48,8 +48,8 @@ open class CHGTableViewCell: UITableViewCell,CHGViewLifeCycleProtocol {
     }
     
     open func cellWillReuse(with identifier: String, indexPath: IndexPath) {
-        guard let protocolsVMK:[ViewMappingKey] = protocolsVMK else { return }
-        for viewKey in protocolsVMK {
+        guard let protocolsVMO:[ViewMappingObject] = protocolsVMO else { return }
+        for viewKey in protocolsVMO {
             if let view:CHGViewLifeCycleProtocol = viewKey.view as? CHGViewLifeCycleProtocol  {
                 view.cellWillReuse(with: identifier, indexPath: indexPath)
             }
@@ -57,8 +57,8 @@ open class CHGTableViewCell: UITableViewCell,CHGViewLifeCycleProtocol {
     }
     
     open func cellWillAppear() {
-        guard let protocolsVMK:[ViewMappingKey] = protocolsVMK else { return }
-        for viewKey in protocolsVMK {
+        guard let protocolsVMO:[ViewMappingObject] = protocolsVMO else { return }
+        for viewKey in protocolsVMO {
             if let view:CHGViewLifeCycleProtocol = viewKey.view as? CHGViewLifeCycleProtocol {
                 view.cellWillAppear()
             }
@@ -66,8 +66,8 @@ open class CHGTableViewCell: UITableViewCell,CHGViewLifeCycleProtocol {
     }
     
     open func cellDidDisappear() {
-        guard let protocolsVMK:[ViewMappingKey] = protocolsVMK else { return }
-        for viewKey in protocolsVMK {
+        guard let protocolsVMO:[ViewMappingObject] = protocolsVMO else { return }
+        for viewKey in protocolsVMO {
             if let view:CHGViewLifeCycleProtocol = viewKey.view as? CHGViewLifeCycleProtocol  {
                 view.cellDidDisappear()
             }

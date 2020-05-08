@@ -20,11 +20,11 @@ class TVTitleModel: NSObject {
 }
 
 extension TVTitleModel: CHGTableViewHeaderFooterModelProtocol {
-    func headerFooterClass(_ tableView: UITableView, section: NSInteger, type: CHGTableViewHeaderFooterViewType) -> AnyClass? {
+    func headerFooterClass(_ tableView: UITableView, section: NSInteger, type: CHGAdapterViewType) -> AnyClass? {
         return TVTitleHeaderFooterView.self
     }
     
-    func headerFooterHeigh(_ tableView: UITableView, section: NSInteger, type: CHGTableViewHeaderFooterViewType) -> CGFloat {
+    func headerFooterHeigh(_ tableView: UITableView, section: NSInteger, type: CHGAdapterViewType) -> CGFloat {
         return 30
     }
     

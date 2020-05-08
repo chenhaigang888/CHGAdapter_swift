@@ -163,16 +163,16 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
     }
     
     open func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return self.tableview(tableView, tableViewHeaderFooterViewType: CHGTableViewHeaderFooterViewType.HeaderType, viewForHeaderInSection: section)
+        return self.tableview(tableView, tableViewHeaderFooterViewType: CHGAdapterViewType.HeaderType, viewForHeaderInSection: section)
     }
     
     open func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return self.tableview(tableView, tableViewHeaderFooterViewType: CHGTableViewHeaderFooterViewType.FooterType, viewForHeaderInSection: section)
+        return self.tableview(tableView, tableViewHeaderFooterViewType: CHGAdapterViewType.FooterType, viewForHeaderInSection: section)
     }
     
-    open func headerFooterDataWithType(type:CHGTableViewHeaderFooterViewType,section:NSInteger) -> Any? {
+    open func headerFooterDataWithType(type:CHGAdapterViewType,section:NSInteger) -> Any? {
         let headerFooterDatas:[Any]? =
-            type == CHGTableViewHeaderFooterViewType.HeaderType
+            type == CHGAdapterViewType.HeaderType
                 ?
                     self.adapterData.headerDatas
                 :
@@ -186,14 +186,14 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
         return nil
     }
     
-    open func tableview(_ tableView:UITableView,tableViewHeaderFooterViewType type:CHGTableViewHeaderFooterViewType,viewForHeaderInSection section:NSInteger) -> UIView? {
+    open func tableview(_ tableView:UITableView,tableViewHeaderFooterViewType type:CHGAdapterViewType,viewForHeaderInSection section:NSInteger) -> UIView? {
         //获取headerFooter的Item 数据
         let headerFooterData:Any? = self.headerFooterDataWithType(type: type, section: section)
         if headerFooterData == nil {
             return nil
         }
         guard let headerFooterClass:AnyClass =
-            type == CHGTableViewHeaderFooterViewType.HeaderType ? self.obtainHeaderClassWithHeader(headerFooterData!, tableView: tableView, viewForHeaderInSection: section)
+            type == CHGAdapterViewType.HeaderType ? self.obtainHeaderClassWithHeader(headerFooterData!, tableView: tableView, viewForHeaderInSection: section)
                 :
                 self.obtainFooterClassWithFooter(headerFooterData!, tableView: tableView, viewForFooterInSection: section) else { return nil }
         
@@ -220,7 +220,7 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
     
     open func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         if view is CHGTableViewHeaderFooterView {
-            //            (view as! CHGTableViewHeaderFooterView).headerFooterViewWillAppearWithType(type: CHGTableViewHeaderFooterViewType.HeaderType)
+            //            (view as! CHGTableViewHeaderFooterView).headerFooterViewWillAppearWithType(type: CHGAdapterViewType.HeaderType)
             (view as! CHGTableViewHeaderFooterView).headerFooterViewWillAppear(with: .HeaderType)
         }
     }
@@ -233,14 +233,14 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
     
     open func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
         if view is CHGTableViewHeaderFooterView {
-            //            (view as! CHGTableViewHeaderFooterView).headerFooterViewWillAppearWithType(type: CHGTableViewHeaderFooterViewType.FooterType)
+            //            (view as! CHGTableViewHeaderFooterView).headerFooterViewWillAppearWithType(type: CHGAdapterViewType.FooterType)
             (view as! CHGTableViewHeaderFooterView).headerFooterViewWillAppear(with: .FooterType)
         }
     }
     
     open func tableView(_ tableView: UITableView, didEndDisplayingHeaderView view: UIView, forSection section: Int) {
         if view is CHGTableViewHeaderFooterView {
-            //            (view as! CHGTableViewHeaderFooterView).headerFooterViewDidDisAppearWithType(type: CHGTableViewHeaderFooterViewType.HeaderType)
+            //            (view as! CHGTableViewHeaderFooterView).headerFooterViewDidDisAppearWithType(type: CHGAdapterViewType.HeaderType)
             (view as! CHGTableViewHeaderFooterView).headerFooterViewDidDisAppear(with: .HeaderType)
         }
     }
@@ -253,7 +253,7 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
     
     open func tableView(_ tableView: UITableView, didEndDisplayingFooterView view: UIView, forSection section: Int) {
         if view is CHGTableViewHeaderFooterView {
-            //            (view as! CHGTableViewHeaderFooterView).headerFooterViewDidDisAppearWithType(type: CHGTableViewHeaderFooterViewType.FooterType)
+            //            (view as! CHGTableViewHeaderFooterView).headerFooterViewDidDisAppearWithType(type: CHGAdapterViewType.FooterType)
             (view as! CHGTableViewHeaderFooterView).headerFooterViewDidDisAppear(with: .FooterType)
         }
     }

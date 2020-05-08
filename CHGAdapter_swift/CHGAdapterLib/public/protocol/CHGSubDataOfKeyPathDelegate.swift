@@ -20,3 +20,4 @@ public protocol CHGSubDataOfKeyPathDelegate {
     /// - Returns: 返回keyPath
     func subDataKeyPath(_ indexPath:IndexPath, targetView:UIScrollView ) -> Any?
 }
+

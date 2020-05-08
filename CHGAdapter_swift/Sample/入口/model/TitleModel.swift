@@ -32,11 +32,11 @@ extension TitleModel: CHGTableViewCellModelProtocol {
 
 // MARK: - 如果TitleModel类需要在TableView类中的HeadFooterView中使用则需要实现CHGTableViewHeaderFooterModelProtocol协议
 extension TitleModel: CHGTableViewHeaderFooterModelProtocol {
-    func headerFooterClass(_ tableView: UITableView, section: NSInteger, type: CHGTableViewHeaderFooterViewType) -> AnyClass? {
+    func headerFooterClass(_ tableView: UITableView, section: NSInteger, type: CHGAdapterViewType) -> AnyClass? {
         return nil//"这里填写tableView的HeadFooterView类名 必须是CHGTableViewHeaderFooterView的子类"
     }
     
-    func headerFooterHeigh(_ tableView: UITableView, section: NSInteger, type: CHGTableViewHeaderFooterViewType) -> CGFloat {
+    func headerFooterHeigh(_ tableView: UITableView, section: NSInteger, type: CHGAdapterViewType) -> CGFloat {
         return 30
     }
 }

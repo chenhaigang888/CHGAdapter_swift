@@ -20,19 +20,19 @@ public protocol CHGViewPropertyProtocol {
 //    ///根据类型不一样存储不同的协议
 //    var protocols:[Any]? { get set }
     
-    var protocolsVMK:[ViewMappingKey]? { get set }
+    var protocolsVMO:[ViewMappingObject]? { get set }
     
     
 }
 
-open class ViewMappingKey: NSObject {
+open class ViewMappingObject: NSObject {
     var view:CHGViewPropertyProtocol?
-    var key:AnyKeyPath?
+    var mapping:[CHGAdapterViewType : Any?]?
     
-    public init(view:CHGViewPropertyProtocol?,key:AnyKeyPath?) {
+    public init(view:CHGViewPropertyProtocol?, mapping:[CHGAdapterViewType : Any]?) {
         super.init()
         self.view = view
-        self.key = key
+        self.mapping = mapping
     }
     
 }
@@ -68,7 +68,7 @@ public protocol CHGViewLifeCycleProtocol : CHGViewPropertyProtocol {
 public protocol CHGTableViewHeaderFooterLifeCycleProtocol : CHGViewPropertyProtocol {
     
     var section:Int? { get set }
-    var type:CHGTableViewHeaderFooterViewType? { get set }
+    var type:CHGAdapterViewType? { get set }
     
     
     /// 必须重写这个方法 子类应该在这个方法中给HeaderFooterView中的各个view设定value
@@ -77,7 +77,7 @@ public protocol CHGTableViewHeaderFooterLifeCycleProtocol : CHGViewPropertyProto
     ///   - tableView: 当前HeaderFooterView所在的UITableView
     ///   - model: 当前HeaderFooterView的数据
     ///   - type: 当前类型是header或者footer
-    func headerFooter(for section:Int, in tableView:UITableView, model:Any, type:CHGTableViewHeaderFooterViewType,eventTransmissionBlock:CHGEventTransmissionBlock?) -> Void
+    func headerFooter(for section:Int, in tableView:UITableView, model:Any, type:CHGAdapterViewType,eventTransmissionBlock:CHGEventTransmissionBlock?) -> Void
     
     /// 将要复用
     /// - Parameter identifier: 复用标志
@@ -85,11 +85,11 @@ public protocol CHGTableViewHeaderFooterLifeCycleProtocol : CHGViewPropertyProto
     
     /// headerFooterView将要显示
     /// - Parameter type: 类型
-    func headerFooterViewWillAppear(with type:CHGTableViewHeaderFooterViewType) -> Void
+    func headerFooterViewWillAppear(with type:CHGAdapterViewType) -> Void
     
     /// headerFooterView已经消失
     /// - Parameter type: 类型
-    func headerFooterViewDidDisAppear(with type:CHGTableViewHeaderFooterViewType) -> Void
+    func headerFooterViewDidDisAppear(with type:CHGAdapterViewType) -> Void
     
     
 }

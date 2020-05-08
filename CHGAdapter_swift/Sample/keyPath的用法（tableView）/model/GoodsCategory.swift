@@ -21,11 +21,11 @@ class GoodsCategory: NSObject {
 }
 
 extension GoodsCategory: CHGTableViewHeaderFooterModelProtocol {
-    func headerFooterClass(_ tableView: UITableView, section: NSInteger, type: CHGTableViewHeaderFooterViewType) -> AnyClass? {
+    func headerFooterClass(_ tableView: UITableView, section: NSInteger, type: CHGAdapterViewType) -> AnyClass? {
         return GoodsCategoryTableViewHeaderFooterView.classForCoder()
     }
     
-    func headerFooterHeigh(_ tableView: UITableView, section: NSInteger, type: CHGTableViewHeaderFooterViewType) -> CGFloat {
+    func headerFooterHeigh(_ tableView: UITableView, section: NSInteger, type: CHGAdapterViewType) -> CGFloat {
         return 30
     }
     

@@ -17,13 +17,13 @@ class TVSuccHeaderFooterView: CHGTableViewHeaderFooterView {
         title?.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(titleTap(sender:))))
     }
     
-//    override func headerFooter(section: NSInteger, tableView: UITableView, data: Any, type: CHGTableViewHeaderFooterViewType,eventTransmissionBlock:CHGEventTransmissionBlock?) {
+//    override func headerFooter(section: NSInteger, tableView: UITableView, data: Any, type: CHGAdapterViewType,eventTransmissionBlock:CHGEventTransmissionBlock?) {
 //        super.headerFooter(section: section, tableView: tableView, data: data, type: type,eventTransmissionBlock: eventTransmissionBlock)
 //        let succModel:TVSuccModel = data as! TVSuccModel
 //        self.title?.text = succModel.title
 //    }
     
-    override func headerFooterViewWillAppear(with type: CHGTableViewHeaderFooterViewType) {
+    override func headerFooterViewWillAppear(with type: CHGAdapterViewType) {
         super.headerFooterViewWillAppear(with: type)
         let succModel:TVSuccModel = self.model as! TVSuccModel
         self.title?.text = succModel.title

@@ -12,7 +12,7 @@ class TVTitleDicHeaderFooterView: CHGTableViewHeaderFooterView {
 
     @IBOutlet weak var title:UILabel?
     
-//    override func headerFooter(section: NSInteger, tableView: UITableView, data: Any, type: CHGTableViewHeaderFooterViewType,eventTransmissionBlock:CHGEventTransmissionBlock?) {
+//    override func headerFooter(section: NSInteger, tableView: UITableView, data: Any, type: CHGAdapterViewType,eventTransmissionBlock:CHGEventTransmissionBlock?) {
 //        super.headerFooter(section: section, tableView: tableView, data: data, type: type,eventTransmissionBlock: eventTransmissionBlock)
 //        if data is NSDictionary {
 //            let dic:NSDictionary = data as! NSDictionary
@@ -24,7 +24,7 @@ class TVTitleDicHeaderFooterView: CHGTableViewHeaderFooterView {
 //
 //    }
     
-    override func headerFooterViewWillAppear(with type: CHGTableViewHeaderFooterViewType) {
+    override func headerFooterViewWillAppear(with type: CHGAdapterViewType) {
         super.headerFooterViewWillAppear(with: type)
         if self.model is NSDictionary {
             let dic:NSDictionary = self.model as! NSDictionary

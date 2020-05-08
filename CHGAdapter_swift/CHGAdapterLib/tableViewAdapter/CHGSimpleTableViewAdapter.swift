@@ -45,7 +45,7 @@ public protocol CHGTableViewHeaderFooterModelProtocol {
     ///   - section: section
     ///   - type: 表示当前model在header或者footer view中
     /// - Returns: 返回headerFooter类名或者identifier
-    func headerFooterClass(_ tableView: UITableView, section: NSInteger,type:CHGTableViewHeaderFooterViewType) -> AnyClass?
+    func headerFooterClass(_ tableView: UITableView, section: NSInteger,type:CHGAdapterViewType) -> AnyClass?
     
     /// 返回当前cell、headerFooter的高度
     ///
@@ -59,7 +59,7 @@ public protocol CHGTableViewHeaderFooterModelProtocol {
     ///   - section: section
     ///   - type: 表示当前model在header或者footer view中
     /// - Returns: 返回header footer的高度
-    func headerFooterHeigh(_ tableView: UITableView, section: NSInteger,type:CHGTableViewHeaderFooterViewType) -> CGFloat
+    func headerFooterHeigh(_ tableView: UITableView, section: NSInteger,type:CHGAdapterViewType) -> CGFloat
     
     /// 如果你的cell的数据是Model中的某一个字段（比如好友列表 外层Model是Group，Group中有一个字段friends为数组，你想使用Group中的friends字段的元素作为cell，则可以通过这个方法返回:\Group.friends）
     ///

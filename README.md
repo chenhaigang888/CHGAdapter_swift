@@ -14,7 +14,7 @@ oc版：https://github.com/chenhaigang888/CHGAdapter
 
 ### Installation with CocoaPods
 
-> pod 'CHGAdapter_swift', '~> 0.6.0'
+> pod 'CHGAdapter_swift', '~> 0.7.0'
 
 
 ### example 最简单的用法（不使用Adapter）

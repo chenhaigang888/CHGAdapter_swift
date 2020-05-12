@@ -15,6 +15,10 @@ public enum CHGAdapterViewType {
 }
 
 open class CHGTableViewHeaderFooterView: UITableViewHeaderFooterView,CHGTableViewHeaderFooterLifeCycleProtocol {
+    public var indexPath: IndexPath?
+    
+    public var kind: String?
+    
     open var protocolsVMO: [ViewMappingObject]? = [ViewMappingObject]()
     
     open var section: Int?
@@ -72,5 +76,22 @@ open class CHGTableViewHeaderFooterView: UITableViewHeaderFooterView,CHGTableVie
                 view.headerFooterViewDidDisAppear(with: type)
             }
         }
+    }
+    
+    open func addAutoDistributionModel(view:CHGViewProtocol, mapping:[CHGAdapterViewType:Any]?) -> Void {
+        self.protocolsVMO?.append(ViewMappingObject.init(view: view, mapping: mapping))
+    }
+    
+    public func replaceAt(index: Int, autoDistributionModel view: CHGViewProtocol, mapping: [CHGAdapterViewType : Any]?) {
+        guard let range:Range<Int> = Range<Int>.init(NSMakeRange(index, 1)) else { return }
+        self.protocolsVMO?.replaceSubrange(range, with: [ViewMappingObject.init(view: view, mapping: mapping)])
+    }
+    
+    open func removeAutoDistributionModelViewAt(index:Int) -> Void {
+        self.protocolsVMO?.remove(at: index)
+    }
+    
+    open func removeAutoDistributionModelView() -> Void {
+        self.protocolsVMO?.removeAll()
     }
 }

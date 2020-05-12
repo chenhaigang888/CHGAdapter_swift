@@ -22,7 +22,14 @@ public protocol CHGViewPropertyProtocol {
     
     var protocolsVMO:[ViewMappingObject]? { get set }
     
+    ///当前cell的indexPath信息
+    var indexPath:IndexPath? { get set }
     
+    var section:Int? { get set }
+    
+    var type:CHGAdapterViewType? { get set }
+    
+    var kind:String? { get set }
 }
 
 open class ViewMappingObject: NSObject {
@@ -37,11 +44,20 @@ open class ViewMappingObject: NSObject {
     
 }
 
-/// cell的生命周期协议
-public protocol CHGViewLifeCycleProtocol : CHGViewPropertyProtocol {
+public protocol CHGViewProtocol : CHGViewPropertyProtocol {
+    func addAutoDistributionModel(view:CHGViewProtocol, mapping:[CHGAdapterViewType:Any]?) -> Void
     
-    ///当前cell的indexPath信息
-    var indexPath:IndexPath? { get set }
+    func replaceAt(index:Int, autoDistributionModel view:CHGViewProtocol, mapping:[CHGAdapterViewType:Any]?) -> Void
+    
+    func removeAutoDistributionModelViewAt(index:Int) -> Void
+    
+    func removeAutoDistributionModelView() -> Void
+}
+
+/// cell的生命周期协议
+public protocol CHGViewLifeCycleProtocol : CHGViewProtocol {
+    
+    
     
     /// 必须重写这个方法 子类应该在这个方法中给cell中的各个view设定value
     /// - Parameters:
@@ -65,10 +81,9 @@ public protocol CHGViewLifeCycleProtocol : CHGViewPropertyProtocol {
 
 
 /// TableViewHeaderFooter生命周期协议
-public protocol CHGTableViewHeaderFooterLifeCycleProtocol : CHGViewPropertyProtocol {
+public protocol CHGTableViewHeaderFooterLifeCycleProtocol : CHGViewProtocol {
     
-    var section:Int? { get set }
-    var type:CHGAdapterViewType? { get set }
+    
     
     
     /// 必须重写这个方法 子类应该在这个方法中给HeaderFooterView中的各个view设定value
@@ -96,9 +111,8 @@ public protocol CHGTableViewHeaderFooterLifeCycleProtocol : CHGViewPropertyProto
 
 
 
-public protocol CHGCollectionReusableViewLifeCycleProtocol : CHGViewPropertyProtocol {
-    var indexPath:IndexPath? { get set }
-    var kind:String? { get set }
+public protocol CHGCollectionReusableViewLifeCycleProtocol : CHGViewProtocol {
+    
     
     /// reusableView数据
     /// - Parameters:

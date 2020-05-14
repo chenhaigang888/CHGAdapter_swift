@@ -19,5 +19,7 @@ public protocol CHGSubDataOfKeyPathDelegate {
     ///   - targetView: 当前内容所在的View 一般为UITableView和UICollectionView
     /// - Returns: 返回keyPath
     func subDataKeyPath(_ indexPath:IndexPath, targetView:UIScrollView ) -> Any?
+    
+    
 }
 

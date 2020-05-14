@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CollectionViewViewController: UIViewController {
+class CollectionViewViewController: UIViewController,CHGScrollViewDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
     var inputText:String = ""//记录输入内容
@@ -29,9 +29,22 @@ class CollectionViewViewController: UIViewController {
         collectionView.footerDatas = footerDatas as? [Any]
         collectionView.collectionViewDidSelectItemAtIndexPathBlock = collectionViewDidSelectItemAtIndexPathBlock
         collectionView.eventTransmissionBlock = eventTransmissionBlock
-        collectionView?.scrollListener?.scrollViewDidScrollBlock = {(scrollView)in
-            print("scrollView.contentOffset.y:\(scrollView.contentOffset.y)")
-        }
+        collectionView.add(scrollViewDelegate: self)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        collectionView.add(scrollViewDelegate: self)
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        collectionView.remove(scrollViewDelegate: self)
+    }
+    
+    
+    func chg_scrollViewDidScroll(scrollView: UIScrollView) {
+        print("scrollView.contentOffset.y:\(scrollView.contentOffset.y)")
     }
 
     override func didReceiveMemoryWarning() {

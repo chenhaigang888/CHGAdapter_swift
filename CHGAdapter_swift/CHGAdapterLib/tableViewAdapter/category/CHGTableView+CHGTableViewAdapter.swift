@@ -15,7 +15,7 @@ private var tableViewAdapterKey: Void?
 private var eventTransmissionBlockKey: Void?
 private var tableViewDidSelectRowBlockKey: Void?
 private var tableViewEmptyDataShowKey: Void?
-private var scrollListenerKey:Void?
+private var scrollViewDelegatesKey:Void?
 
 extension UITableView {
     
@@ -34,17 +34,37 @@ extension UITableView {
         }
     }
     
-    open var scrollListener: ScrollListener? {
+    open var scrollViewDelegates:[CHGScrollViewDelegate]? {
         get {
-            let  scrollListener = objc_getAssociatedObject(self, &scrollListenerKey)
-            guard scrollListener != nil else {
-                self.scrollListener = ScrollListener()
-                return self.scrollListener
+            let  scrollViewDelegates = objc_getAssociatedObject(self, &scrollViewDelegatesKey)
+            guard scrollViewDelegates != nil else {
+                self.scrollViewDelegates = [CHGScrollViewDelegate]()
+                return self.scrollViewDelegates
             }
-            return scrollListener as? ScrollListener
+            return scrollViewDelegates as? [CHGScrollViewDelegate]
         }
         set(newValue) {
-            objc_setAssociatedObject(self, &scrollListenerKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, &scrollViewDelegatesKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+    
+    open func add(scrollViewDelegate:CHGScrollViewDelegate) -> Void {
+        let contain = self.scrollViewDelegates?.contains(where: { (item) -> Bool in
+            return item as AnyObject === scrollViewDelegate as AnyObject
+        }) ?? false
+        if contain {
+           return
+        }
+        self.scrollViewDelegates?.append(scrollViewDelegate)
+    }
+    
+    open func remove(scrollViewDelegate:CHGScrollViewDelegate) -> Void {
+        guard let scrollViewDelegates:[CHGScrollViewDelegate] = self.scrollViewDelegates else { return }
+        for i in 0..<scrollViewDelegates.count {
+            if self.scrollViewDelegates?[i] as AnyObject? === scrollViewDelegate as AnyObject {
+                self.scrollViewDelegates?.remove(at: i)
+                return
+            }
         }
     }
     

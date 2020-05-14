@@ -267,132 +267,122 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
     
     @available(iOS 2.0, *)
     open func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let tableView:UITableView = scrollView as! UITableView
-        guard tableView.scrollListener?.scrollViewDidScrollBlock != nil else {
-            return
+        guard let tableView:UITableView = scrollView as? UITableView , let scrollViewDelegates = tableView.scrollViewDelegates else { return }
+        for scrollViewDelegate in scrollViewDelegates {
+            scrollViewDelegate.chg_scrollViewDidScroll(scrollView: scrollView)
         }
-        tableView.scrollListener?.scrollViewDidScrollBlock!(scrollView)
     }
     
     @available(iOS 3.2, *)
     open func scrollViewDidZoom(_ scrollView: UIScrollView) {
-        let tableView:UITableView = scrollView as! UITableView
-        guard tableView.scrollListener?.scrollViewDidZoomBlock != nil else {
-            return
+        guard let tableView:UITableView = scrollView as? UITableView , let scrollViewDelegates = tableView.scrollViewDelegates else { return }
+        for scrollViewDelegate in scrollViewDelegates {
+            scrollViewDelegate.chg_scrollViewDidZoom(scrollView: scrollView)
         }
-        tableView.scrollListener?.scrollViewDidZoomBlock!(scrollView)
     }
     
     @available(iOS 2.0, *)
     open func scrollViewWillBeginDragging(_ scrollView: UIScrollView){
-        let tableView:UITableView = scrollView as! UITableView
-        guard tableView.scrollListener?.scrollViewWillBeginDraggingBlock != nil else {
-            return
+        guard let tableView:UITableView = scrollView as? UITableView , let scrollViewDelegates = tableView.scrollViewDelegates else { return }
+        for scrollViewDelegate in scrollViewDelegates {
+            scrollViewDelegate.chg_scrollViewWillBeginDragging(scrollView: scrollView)
         }
-        tableView.scrollListener?.scrollViewWillBeginDraggingBlock!(scrollView)
     }
     
     @available(iOS 5.0, *)
     open func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>){
-        let tableView:UITableView = scrollView as! UITableView
-        guard tableView.scrollListener?.scrollViewWillEndDraggingBlock != nil else {
-            return
+        guard let tableView:UITableView = scrollView as? UITableView , let scrollViewDelegates = tableView.scrollViewDelegates else { return }
+        for scrollViewDelegate in scrollViewDelegates {
+            scrollViewDelegate.chg_scrollViewWillEndDragging(scrollView: scrollView, with: velocity, targetContentOffset: targetContentOffset)
         }
-        tableView.scrollListener?.scrollViewWillEndDraggingBlock!(scrollView,velocity,targetContentOffset)
     }
     
     @available(iOS 2.0, *)
     open func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        let tableView:UITableView = scrollView as! UITableView
-        guard tableView.scrollListener?.scrollViewDidEndDraggingBlock != nil else {
-            return
+        guard let tableView:UITableView = scrollView as? UITableView , let scrollViewDelegates = tableView.scrollViewDelegates else { return }
+        for scrollViewDelegate in scrollViewDelegates {
+            scrollViewDelegate.chg_scrollViewDidEndDragging(scrollView: scrollView, will: decelerate)
         }
-        tableView.scrollListener?.scrollViewDidEndDraggingBlock!(scrollView,decelerate)
     }
     
     
     @available(iOS 2.0, *)
     open func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
-        let tableView:UITableView = scrollView as! UITableView
-        guard tableView.scrollListener?.scrollViewWillBeginDeceleratingBlock != nil else {
-            return
+        guard let tableView:UITableView = scrollView as? UITableView , let scrollViewDelegates = tableView.scrollViewDelegates else { return }
+        for scrollViewDelegate in scrollViewDelegates {
+            scrollViewDelegate.chg_scrollViewWillBeginDecelerating(scrollView: scrollView)
         }
-        tableView.scrollListener?.scrollViewWillBeginDeceleratingBlock!(scrollView)
     }
     
     @available(iOS 2.0, *)
     open func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let tableView:UITableView = scrollView as! UITableView
-        guard tableView.scrollListener?.scrollViewDidEndDeceleratingBlock != nil else {
-            return
+        guard let tableView:UITableView = scrollView as? UITableView , let scrollViewDelegates = tableView.scrollViewDelegates else { return }
+        for scrollViewDelegate in scrollViewDelegates {
+            scrollViewDelegate.chg_scrollViewDidEndDecelerating(scrollView: scrollView)
         }
-        tableView.scrollListener?.scrollViewDidEndDeceleratingBlock!(scrollView)
     }
     
     
     @available(iOS 2.0, *)
     open func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
-        let tableView:UITableView = scrollView as! UITableView
-        guard tableView.scrollListener?.scrollViewDidEndScrollingAnimationBlock != nil else {
-            return
+        guard let tableView:UITableView = scrollView as? UITableView , let scrollViewDelegates = tableView.scrollViewDelegates else { return }
+        for scrollViewDelegate in scrollViewDelegates {
+            scrollViewDelegate.chg_scrollViewDidEndScrollingAnimation(scrollView: scrollView)
         }
-        tableView.scrollListener?.scrollViewDidEndScrollingAnimationBlock!(scrollView)
     }
     
     
     @available(iOS 2.0, *)
     open func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        let tableView:UITableView = scrollView as! UITableView
-        guard tableView.scrollListener?.viewForZoomingBlock != nil else {
-            return nil
+        guard let tableView:UITableView = scrollView as? UITableView , let scrollViewDelegates = tableView.scrollViewDelegates else { return nil}
+        for scrollViewDelegate in scrollViewDelegates {
+            return scrollViewDelegate.chg_viewForZoomingInScrollView(scrollView: scrollView)
         }
-        return tableView.scrollListener?.viewForZoomingBlock!(scrollView)
+        
+        return nil
     }
     
     @available(iOS 3.2, *)
     open func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
-        let tableView:UITableView = scrollView as! UITableView
-        guard tableView.scrollListener?.scrollViewWillBeginZoomingBlock != nil else {
-            return
+        guard let tableView:UITableView = scrollView as? UITableView , let scrollViewDelegates = tableView.scrollViewDelegates else { return }
+        for scrollViewDelegate in scrollViewDelegates {
+            scrollViewDelegate.chg_scrollViewWillBeginZooming(scrollView: scrollView, with: view)
         }
-        tableView.scrollListener?.scrollViewWillBeginZoomingBlock!(scrollView,view)
     }
     
     @available(iOS 2.0, *)
     open func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
-        let tableView:UITableView = scrollView as! UITableView
-        guard tableView.scrollListener?.scrollViewDidEndZoomingBlock != nil else {
-            return
+        guard let tableView:UITableView = scrollView as? UITableView , let scrollViewDelegates = tableView.scrollViewDelegates else { return }
+        for scrollViewDelegate in scrollViewDelegates {
+            scrollViewDelegate.chg_scrollViewDidEndZooming(scrollView: scrollView, with: view, at: scale)
         }
-        tableView.scrollListener?.scrollViewDidEndZoomingBlock!(scrollView,view,scale)
     }
     
     
     @available(iOS 2.0, *)
     open func scrollViewShouldScrollToTop(_ scrollView: UIScrollView) -> Bool {
-        let tableView:UITableView = scrollView as! UITableView
-        guard tableView.scrollListener?.scrollViewShouldScrollToTopBlock != nil else {
-            return scrollView.scrollsToTop
+        guard let tableView:UITableView = scrollView as? UITableView , let scrollViewDelegates = tableView.scrollViewDelegates else { return true}
+        for scrollViewDelegate in scrollViewDelegates {
+            return scrollViewDelegate.chg_scrollViewShouldScrollToTop(scrollView: scrollView)
         }
-        return (tableView.scrollListener?.scrollViewShouldScrollToTopBlock!(scrollView))!
+        
+        return true
     }
     
     @available(iOS 2.0, *)
     open func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {
-        let tableView:UITableView = scrollView as! UITableView
-        guard tableView.scrollListener?.scrollViewDidScrollToTopBlock != nil else {
-            return
+        guard let tableView:UITableView = scrollView as? UITableView , let scrollViewDelegates = tableView.scrollViewDelegates else { return }
+        for scrollViewDelegate in scrollViewDelegates {
+            scrollViewDelegate.chg_scrollViewDidScrollToTop(scrollView: scrollView)
         }
-        tableView.scrollListener?.scrollViewDidScrollToTopBlock!(scrollView)
     }
     
     @available(iOS 11.0, *)
     open func scrollViewDidChangeAdjustedContentInset(_ scrollView: UIScrollView) {
-        let tableView:UITableView = scrollView as! UITableView
-        guard tableView.scrollListener?.scrollViewDidChangeAdjustedContentInsetBlock != nil else {
-            return
+        guard let tableView:UITableView = scrollView as? UITableView , let scrollViewDelegates = tableView.scrollViewDelegates else { return }
+        for scrollViewDelegate in scrollViewDelegates {
+            scrollViewDelegate.chg_scrollViewDidChangeAdjustedContentInset(scrollView: scrollView)
         }
-        tableView.scrollListener?.scrollViewDidChangeAdjustedContentInsetBlock!(scrollView)
     }
 }
 

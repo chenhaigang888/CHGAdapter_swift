@@ -126,6 +126,7 @@
 		84881DB723A8CDF600FA662A /* FuncModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84881DB623A8CDF600FA662A /* FuncModel.swift */; };
 		84881DBC23A8CE8E00FA662A /* FuncModelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84881DBA23A8CE8E00FA662A /* FuncModelTableViewCell.swift */; };
 		84881DBD23A8CE8E00FA662A /* FuncModelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84881DBB23A8CE8E00FA662A /* FuncModelTableViewCell.xib */; };
+		85349D1D246BF88000776773 /* UIScrollViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85349D1C246BF88000776773 /* UIScrollViewDelegate.swift */; };
 		8535A9842462A7AE003391BC /* CHGViewPropertyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8535A9832462A7AE003391BC /* CHGViewPropertyProtocol.swift */; };
 		8535A9872462AE29003391BC /* CHGBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8535A9862462AE29003391BC /* CHGBaseView.swift */; };
 		85AA5D972457C85000EF4413 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AA5D962457C85000EF4413 /* Utils.swift */; };
@@ -315,6 +316,7 @@
 		84881DB623A8CDF600FA662A /* FuncModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncModel.swift; sourceTree = "<group>"; };
 		84881DBA23A8CE8E00FA662A /* FuncModelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncModelTableViewCell.swift; sourceTree = "<group>"; };
 		84881DBB23A8CE8E00FA662A /* FuncModelTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FuncModelTableViewCell.xib; sourceTree = "<group>"; };
+		85349D1C246BF88000776773 /* UIScrollViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollViewDelegate.swift; sourceTree = "<group>"; };
 		8535A9832462A7AE003391BC /* CHGViewPropertyProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CHGViewPropertyProtocol.swift; sourceTree = "<group>"; };
 		8535A9862462AE29003391BC /* CHGBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CHGBaseView.swift; sourceTree = "<group>"; };
 		85AA5D962457C85000EF4413 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -945,6 +947,7 @@
 			children = (
 				8FB8F15F2148B47200B96551 /* CHGSubDataOfKeyPathDelegate.swift */,
 				8535A9832462A7AE003391BC /* CHGViewPropertyProtocol.swift */,
+				85349D1C246BF88000776773 /* UIScrollViewDelegate.swift */,
 			);
 			path = protocol;
 			sourceTree = "<group>";
@@ -1552,6 +1555,7 @@
 				8F2271B620EA243F00C72514 /* CHGTableViewAdapterData.swift in Sources */,
 				8449A02A23AB5BA50012F312 /* LoginHeader.swift in Sources */,
 				8FB8F1672148C02300B96551 /* KeyPathCVViewController.swift in Sources */,
+				85349D1D246BF88000776773 /* UIScrollViewDelegate.swift in Sources */,
 				5FF37ABC2128329B00477E61 /* TVTitleModel.swift in Sources */,
 				8F2271AD20EA243F00C72514 /* UICollectionView+CHGCollectionViewAdapter.swift in Sources */,
 				8449A04923AB60570012F312 /* COVarietyData2ViewController.swift in Sources */,

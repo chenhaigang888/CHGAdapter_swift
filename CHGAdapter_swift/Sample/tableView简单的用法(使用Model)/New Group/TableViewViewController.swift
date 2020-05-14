@@ -8,9 +8,16 @@
 
 import UIKit
 
-class TableViewViewController: UIViewController {
+class TableViewViewController: UIViewController,CHGScrollViewDelegate {
+    
+    
     
     @IBOutlet weak var tableView:UITableView?
+    
+    
+    func chg_scrollViewDidScroll(scrollView: UIScrollView) {
+        print("scrollView.contentOffset.y:\(scrollView.contentOffset.y)")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,9 +25,11 @@ class TableViewViewController: UIViewController {
         tableView?.cellDatas = cellDatas as? [Any]
         tableView?.footerDatas = footerDatas as? [Any]
         tableView?.eventTransmissionBlock = eventTransmissionBlock
-        tableView?.scrollListener?.scrollViewDidScrollBlock = {(scrollView)in
-            print("scrollView.contentOffset.y:\(scrollView.contentOffset.y)")
-        }
+        
+        tableView?.add(scrollViewDelegate: self)
+//        tableView?.scrollListener?.scrollViewDidScrollBlock = {(scrollView)in
+//            print("scrollView.contentOffset.y:\(scrollView.contentOffset.y)")
+//        }
 
     }
 

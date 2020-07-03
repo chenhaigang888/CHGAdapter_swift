@@ -88,4 +88,5 @@ open class CHGCollectionReusableView: UICollectionReusableView,CHGCollectionReus
         self.protocolsVMO?.removeAll()
     }
     
+    
 }

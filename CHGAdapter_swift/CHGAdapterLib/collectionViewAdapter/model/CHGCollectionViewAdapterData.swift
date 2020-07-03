@@ -8,9 +8,17 @@
 
 import UIKit
 
-open class CHGCollectionViewAdapterData: NSObject {
-    public var cellDatas:[Any]?
-    public var headerDatas:[Any]?
-    public var footerDatas:[Any]?
-    public var customData:Any?
+open class CHGCollectionViewAdapterData: NSObject,CHGAdapterDataProtocol {
+    open var cellDatas: [Any]?
+    
+    open var headerDatas: [Any]?
+    
+    open var footerDatas: [Any]?
+    
+    open var customData: Any?
+    
+//    open var cellDatas:[Any]?
+//    open var headerDatas:[Any]?
+//    open var footerDatas:[Any]?
+//    open var customData:Any?
 }

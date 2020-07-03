@@ -8,8 +8,41 @@
 
 import UIKit
 
+/// 适配器数据协议
+public protocol CHGAdapterDataProtocol {
+    var cellDatas:[Any]? { get set }
+    var headerDatas:[Any]? { get set }
+    var footerDatas:[Any]? { get set }
+    var customData:Any? { get set }
+}
+
+/// UITableView 适配器数据协议
+public protocol CHGTableViewAdapterDataProtocol : CHGAdapterDataProtocol {
+    var indexDatas:[String]? { get set }
+}
+
+/// 简化获取关键数据的协议
+public protocol SimplifiedGetDataProtocol {
+    
+    func headerDatas() -> [Any]?
+    
+    func cellData() -> [Any]?
+    
+    func footerDatas() -> [Any]?
+    
+    func indexDatas() -> [Any]?
+    
+    ///  获取AdapterData中的customData
+    func customData() -> Any?
+    
+    /// 返回当前cell所在的controller
+    func controller() -> UIViewController?
+    
+    func adapterData() -> CHGAdapterDataProtocol?
+}
+
 /// View属性协议
-public protocol CHGViewPropertyProtocol {
+public protocol CHGViewPropertyProtocol : SimplifiedGetDataProtocol {
     
     ///当前数据可通过此block向外部传递
     var eventTransmissionBlock:CHGEventTransmissionBlock? { get set }
@@ -32,6 +65,58 @@ public protocol CHGViewPropertyProtocol {
     var kind:String? { get set }
 }
 
+extension CHGViewPropertyProtocol {
+    ///  获取AdapterData中的customData
+    public func customData() -> Any? {
+        return adapterData()?.customData
+    }
+    
+    public func headerDatas() -> [Any]? {
+        return adapterData()?.headerDatas
+    }
+    
+    public func cellData() -> [Any]? {
+        return adapterData()?.cellDatas
+    }
+    
+    public func footerDatas() -> [Any]? {
+        return adapterData()?.footerDatas
+    }
+    
+    public func indexDatas() -> [Any]? {
+        guard let adapterData:CHGTableViewAdapterDataProtocol = adapterData() as? CHGTableViewAdapterDataProtocol else { return nil }
+        return adapterData.indexDatas
+    }
+    
+    /// 返回当前cell所在的controller
+    public func controller() -> UIViewController? {
+        if targetView is UITableView {
+            guard let tableView:UITableView = targetView as? UITableView else { return nil }
+            return tableView.tableViewAdapter?.controller
+        }
+        
+        if targetView is UICollectionView {
+            guard let collectionView:UICollectionView = targetView as? UICollectionView else { return nil }
+            return collectionView.collectionViewAdapter?.controller
+        }
+        return nil
+    }
+    
+    public func adapterData() -> CHGAdapterDataProtocol? {
+        if targetView is UITableView {
+            guard let tableView:UITableView = targetView as? UITableView else { return nil }
+            return tableView.adapterData
+        }
+        
+        if targetView is UICollectionView {
+            guard let collectionView:UICollectionView = targetView as? UICollectionView else { return nil }
+            return collectionView.adapterData
+        }
+        return nil
+    }
+}
+
+
 open class ViewMappingObject: NSObject {
     var view:CHGViewPropertyProtocol?
     var mapping:[CHGAdapterViewType : Any?]?
@@ -44,6 +129,7 @@ open class ViewMappingObject: NSObject {
     
 }
 
+
 public protocol CHGViewProtocol : CHGViewPropertyProtocol {
     func addAutoDistributionModel(view:CHGViewProtocol, mapping:[CHGAdapterViewType:Any]?) -> Void
     
@@ -54,10 +140,9 @@ public protocol CHGViewProtocol : CHGViewPropertyProtocol {
     func removeAutoDistributionModelView() -> Void
 }
 
+
 /// cell的生命周期协议
-public protocol CHGViewLifeCycleProtocol : CHGViewProtocol {
-    
-    
+public protocol CHGViewLifeCycleProtocol : CHGViewProtocol{
     
     /// 必须重写这个方法 子类应该在这个方法中给cell中的各个view设定value
     /// - Parameters:
@@ -77,14 +162,13 @@ public protocol CHGViewLifeCycleProtocol : CHGViewProtocol {
     
     /// cell已经消失
     func cellDidDisappear() -> Void
+    
+    
 }
 
 
 /// TableViewHeaderFooter生命周期协议
 public protocol CHGTableViewHeaderFooterLifeCycleProtocol : CHGViewProtocol {
-    
-    
-    
     
     /// 必须重写这个方法 子类应该在这个方法中给HeaderFooterView中的各个view设定value
     /// - Parameters:
@@ -106,13 +190,10 @@ public protocol CHGTableViewHeaderFooterLifeCycleProtocol : CHGViewProtocol {
     /// - Parameter type: 类型
     func headerFooterViewDidDisAppear(with type:CHGAdapterViewType) -> Void
     
-    
 }
 
 
-
 public protocol CHGCollectionReusableViewLifeCycleProtocol : CHGViewProtocol {
-    
     
     /// reusableView数据
     /// - Parameters:
@@ -132,3 +213,5 @@ public protocol CHGCollectionReusableViewLifeCycleProtocol : CHGViewProtocol {
     
     func reusableViewDidDisappear() -> Void
 }
+
+

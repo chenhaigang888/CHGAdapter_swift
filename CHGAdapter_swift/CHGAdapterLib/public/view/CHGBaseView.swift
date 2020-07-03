@@ -21,8 +21,8 @@ open class CHGBaseView : UIView, CHGViewLifeCycleProtocol, CHGTableViewHeaderFoo
         self.eventTransmissionBlock = eventTransmissionBlock
         
         guard let protocolsVMO:[ViewMappingObject] = protocolsVMO else { return }
+        
         for viewKey in protocolsVMO {
-            
             if let view:CHGViewLifeCycleProtocol = viewKey.view as? CHGViewLifeCycleProtocol {
                 if let mapping = viewKey.mapping, let key:AnyKeyPath = mapping[.CellType] as? AnyKeyPath, let subModel = model[keyPath:key] {
                     view.cellForRowAt(indexPath: indexPath, targetView: targetView, model: subModel, eventTransmissionBlock: eventTransmissionBlock)

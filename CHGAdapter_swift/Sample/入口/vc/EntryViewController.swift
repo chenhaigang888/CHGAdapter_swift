@@ -37,7 +37,6 @@ class EntryViewController: UIViewController {
                      ["基础6-2（多种cell和headerFooter为同一个Model）",Base6_2ViewController.self]] {
                         data.append(Entry.init(title: item[0] as? String,vc: item[1] as? UIViewController.Type))
         }
-
         return data
     }
   

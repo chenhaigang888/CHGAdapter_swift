@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="AlbumTableViewHeaderFooterView" customModule="CHGAdapter_swift" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XA8-U6-SvH">
+                    <rect key="frame" x="0.0" y="44" width="207" height="818"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vXq-2M-S4d">
+                    <rect key="frame" x="207" y="44" width="207" height="818"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="XA8-U6-SvH" secondAttribute="bottom" id="33z-Bp-UFe"/>
+                <constraint firstItem="vXq-2M-S4d" firstAttribute="leading" secondItem="XA8-U6-SvH" secondAttribute="trailing" id="4W1-qG-IyH"/>
+                <constraint firstItem="vXq-2M-S4d" firstAttribute="width" secondItem="XA8-U6-SvH" secondAttribute="width" id="5p6-AZ-S7J"/>
+                <constraint firstItem="XA8-U6-SvH" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="RJc-Bl-8AM"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="vXq-2M-S4d" secondAttribute="bottom" id="Z91-7F-mxO"/>
+                <constraint firstItem="XA8-U6-SvH" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="acF-te-o7g"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="vXq-2M-S4d" secondAttribute="trailing" id="bc1-wt-Dww"/>
+                <constraint firstItem="vXq-2M-S4d" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="yGx-Hi-fF5"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="createTimeLabel" destination="vXq-2M-S4d" id="v6s-Ih-qij"/>
+                <outlet property="nameLabel" destination="XA8-U6-SvH" id="Tmr-Na-Wre"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="153"/>
+        </view>
+    </objects>
+</document>

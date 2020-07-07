@@ -15,6 +15,7 @@ struct SongsModel {
     
 }
 
+//当SongsModel在UITableView中显示的时候实现以下协议
 extension SongsModel : CHGTableViewCellModelProtocol {
     func cellClass(_ tableView: UITableView, indexPath: IndexPath) -> AnyClass? {
         return SongsModelTableViewCell.self
@@ -23,6 +24,7 @@ extension SongsModel : CHGTableViewCellModelProtocol {
     func cellHeigh(_ tableView: UITableView, indexPath: IndexPath) -> CGFloat {
         return 50
     }
-    
-    
 }
+
+
+

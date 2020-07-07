@@ -39,3 +39,4 @@ extension Singer : CHGTableViewHeaderFooterModelProtocol {
         return \Singer.songs
     }
 }
+

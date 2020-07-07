@@ -16,6 +16,10 @@ struct Entry {
     
 }
 
+struct EntryType {
+    var title:String?
+}
+
 extension Entry : CHGTableViewCellModelProtocol {
     func cellClass(_ tableView: UITableView, indexPath: IndexPath) -> AnyClass? {
         return EntryTableViewCell.self
@@ -23,6 +27,16 @@ extension Entry : CHGTableViewCellModelProtocol {
     
     func cellHeigh(_ tableView: UITableView, indexPath: IndexPath) -> CGFloat {
         return 44
+    }
+}
+
+extension EntryType : CHGTableViewHeaderFooterModelProtocol {
+    func headerFooterClass(_ tableView: UITableView, section: NSInteger, type: CHGAdapterViewType) -> AnyClass? {
+        return EntryTypeHeaderFooterView.self
+    }
+    
+    func headerFooterHeigh(_ tableView: UITableView, section: NSInteger, type: CHGAdapterViewType) -> CGFloat {
+        return 60
     }
     
     

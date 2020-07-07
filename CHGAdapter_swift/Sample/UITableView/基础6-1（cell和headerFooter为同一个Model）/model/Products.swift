@@ -28,3 +28,4 @@ extension Products : CHGTableViewCellModelProtocol {
     
     
 }
+

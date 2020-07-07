@@ -38,3 +38,5 @@ extension ProductsType : CHGTableViewHeaderFooterModelProtocol {
         return \ProductsType.productses
     }
 }
+
+

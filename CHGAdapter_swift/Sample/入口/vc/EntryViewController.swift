@@ -16,8 +16,9 @@ class EntryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Demo入口"
-        tableView.cellDatas = [createData()]
+        title = "CHGAdapter_swift Demo入口"
+        tableView.headerDatas = [EntryType.init(title: "UITableView"), EntryType.init(title: "UICollectionView")]
+        tableView.cellDatas = createData()
         tableView.setTableViewDidSelectRowBlock { [weak self](tableView, indexPath, itemData) in
             guard let model:Entry = itemData as? Entry,let clsType = model.vc else { return }
             let vcTemp = clsType.init()
@@ -37,7 +38,19 @@ class EntryViewController: UIViewController {
                      ["基础6-2（多种cell和headerFooter为同一个Model）",Base6_2ViewController.self]] {
                         data.append(Entry.init(title: item[0] as? String,vc: item[1] as? UIViewController.Type))
         }
-        return data
+        
+        var data2 = [Any]()
+        
+        for item in [["基础1（显示cell）",BaseCV_1_ViewController.self],
+                     ["基础2（显示header和footer）",BaseCV_2_ViewController.self],
+                     ["基础3（cell点击处理）",BaseCV_3_ViewController.self],
+                     ["基础4（cell、headerFooterView中的事件传递到ViewController中）",BaseCV_4_ViewController.self],
+                     ["基础5（多种Model在cell中）",BaseCV_5_ViewController.self],
+                     ["基础6-1（cell和headerFooter为同一个Model）",BaseCV_6_1_ViewController.self],
+                     ["基础6-2（多种cell和headerFooter为同一个Model）",Base_6_2_ViewController.self]] {
+                        data2.append(Entry.init(title: item[0] as? String,vc: item[1] as? UIViewController.Type))
+        }
+        return [data,data2]
     }
   
 

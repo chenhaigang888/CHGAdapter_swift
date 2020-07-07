@@ -1,17 +1,16 @@
 //
-//  Base6_2ViewController.swift
+//  Base_6_2_ViewController.swift
 //  CHGAdapter_swift
 //
-//  Created by dnaer5 on 2020/7/6.
+//  Created by dnaer5 on 2020/7/7.
 //  Copyright © 2020 chen haiGang. All rights reserved.
 //
 
 import UIKit
 
-class Base6_2ViewController: UIViewController {
+class Base_6_2_ViewController: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "基础6-2（多种cell和headerFooter为同一个Model）"
@@ -19,9 +18,9 @@ class Base6_2ViewController: UIViewController {
         data.append(contentsOf: createProducts())
         data.append(contentsOf: createSinger())
         
-        tableView.headerDatas = data
-        tableView.cellDatas = data
-        tableView.footerDatas = data
+        collectionView.headerDatas = data
+        collectionView.cellDatas = data
+        collectionView.footerDatas = data
         
 //        提示
 //        由于列表中有多种数据类型。因此以下代码应该注释掉。应该在 HeaderFooter的Model中通过“func subDataKeyPath(_ indexPath: IndexPath, inTableView tableView: UITableView) -> Any”方法动态的指定

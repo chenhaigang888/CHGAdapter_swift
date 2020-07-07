@@ -30,6 +30,7 @@ open class CHGCollectionReusableView: UICollectionReusableView,CHGCollectionReus
         self.indexPath = indexPath;
         self.kind = kind;
         self.model = model;
+        self.eventTransmissionBlock = eventTransmissionBlock
         
         guard let protocolsVMO:[ViewMappingObject] = protocolsVMO else { return }
         for viewKey in protocolsVMO {

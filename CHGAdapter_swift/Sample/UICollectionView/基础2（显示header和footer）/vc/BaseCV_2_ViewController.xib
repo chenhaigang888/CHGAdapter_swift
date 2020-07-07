@@ -8,9 +8,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EntryViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BaseCV_2_ViewController" customModule="CHGAdapter_swift" customModuleProvider="target">
             <connections>
-                <outlet property="tableView" destination="d32-ho-L03" id="QOF-Ir-WzZ"/>
+                <outlet property="collectionView" destination="9CL-GI-PYY" id="TFr-dr-pNQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,17 +19,23 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="d32-ho-L03">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="9CL-GI-PYY">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                </tableView>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LIt-ZZ-bKX">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="d32-ho-L03" secondAttribute="bottom" id="16d-2X-NZg"/>
-                <constraint firstItem="d32-ho-L03" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="eAS-vV-SU1"/>
-                <constraint firstItem="d32-ho-L03" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="sKc-Bs-cLB"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="d32-ho-L03" secondAttribute="trailing" id="y2C-bw-Ca3"/>
+                <constraint firstItem="9CL-GI-PYY" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="6w8-jU-74g"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9CL-GI-PYY" secondAttribute="trailing" id="Jq8-Kf-RCe"/>
+                <constraint firstItem="9CL-GI-PYY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="KUo-9d-cA1"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="9CL-GI-PYY" secondAttribute="bottom" id="cQN-bL-dFF"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="93" y="153"/>

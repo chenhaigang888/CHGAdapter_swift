@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="230" id="KGk-i7-Jjw" customClass="UserTableViewCell" customModule="CHGAdapter_swift" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="230"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="230"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJj-v7-2Gm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="ESr-hF-Pa7"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="akt-OH-gIJ" customClass="FriendView" customModule="CHGAdapter_swift" customModuleProvider="target">
+                        <rect key="frame" x="16" y="21" width="288" height="198"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="sJj-v7-2Gm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="AI0-UB-l7K"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="akt-OH-gIJ" secondAttribute="trailing" id="GhB-pb-ADn"/>
+                    <constraint firstItem="akt-OH-gIJ" firstAttribute="top" secondItem="sJj-v7-2Gm" secondAttribute="bottom" id="JDw-Na-pYe"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="akt-OH-gIJ" secondAttribute="bottom" id="S9f-gB-CDl"/>
+                    <constraint firstItem="sJj-v7-2Gm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Svc-1C-6cE"/>
+                    <constraint firstItem="akt-OH-gIJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="djb-NA-5jd"/>
+                    <constraint firstAttribute="trailing" secondItem="sJj-v7-2Gm" secondAttribute="trailing" id="z4c-qk-6k9"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="fridentView" destination="akt-OH-gIJ" id="7MB-RW-qaB"/>
+                <outlet property="name" destination="sJj-v7-2Gm" id="GnP-hG-Ig3"/>
+            </connections>
+            <point key="canvasLocation" x="34.782608695652179" y="90.401785714285708"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

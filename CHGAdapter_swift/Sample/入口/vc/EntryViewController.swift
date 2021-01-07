@@ -35,7 +35,8 @@ class EntryViewController: UIViewController {
                      ["基础4（cell、headerFooterView中的事件传递到ViewController中）",Base4ViewController.self],
                      ["基础5（多种Model在cell中）",Base5ViewController.self],
                      ["基础6-1（cell和headerFooter为同一个Model）",Base6ViewController.self],
-                     ["基础6-2（多种cell和headerFooter为同一个Model）",Base6_2ViewController.self]] {
+                     ["基础6-2（多种cell和headerFooter为同一个Model）",Base6_2ViewController.self],
+                     ["基础7",SevenViewController.self]] {
                         data.append(Entry.init(title: item[0] as? String,vc: item[1] as? UIViewController.Type))
         }
         

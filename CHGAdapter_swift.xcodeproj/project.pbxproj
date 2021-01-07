@@ -20,6 +20,14 @@
 		8541D0F524B40DD3003905C0 /* OrderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8541D0F324B40DD3003905C0 /* OrderCollectionViewCell.xib */; };
 		8541D0F824B40FD9003905C0 /* OrderGroupCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8541D0F624B40FD9003905C0 /* OrderGroupCollectionReusableView.swift */; };
 		8541D0F924B40FD9003905C0 /* OrderGroupCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8541D0F724B40FD9003905C0 /* OrderGroupCollectionReusableView.xib */; };
+		854380DD25A7072300ACD810 /* SevenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854380DB25A7072300ACD810 /* SevenViewController.swift */; };
+		854380DE25A7072300ACD810 /* SevenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 854380DC25A7072300ACD810 /* SevenViewController.xib */; };
+		854380E725A7075700ACD810 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854380E625A7075700ACD810 /* User.swift */; };
+		854380EE25A707DB00ACD810 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854380EC25A707DB00ACD810 /* UserTableViewCell.swift */; };
+		854380EF25A707DB00ACD810 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 854380ED25A707DB00ACD810 /* UserTableViewCell.xib */; };
+		854380F725A7095000ACD810 /* FriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854380F625A7095000ACD810 /* FriendView.swift */; };
+		854380FD25A70B4600ACD810 /* FriendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854380FB25A70B4600ACD810 /* FriendCollectionViewCell.swift */; };
+		854380FE25A70B4600ACD810 /* FriendCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 854380FC25A70B4600ACD810 /* FriendCollectionViewCell.xib */; };
 		854AF11224B412D000BB9667 /* OrderGroup+CHGCollectionViewSupplementaryElementModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854AF11124B412D000BB9667 /* OrderGroup+CHGCollectionViewSupplementaryElementModelProtocol.swift */; };
 		854AF11724B41ABB00BB9667 /* BaseCV_5_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854AF11524B41ABB00BB9667 /* BaseCV_5_ViewController.swift */; };
 		854AF11824B41ABB00BB9667 /* BaseCV_5_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 854AF11624B41ABB00BB9667 /* BaseCV_5_ViewController.xib */; };
@@ -157,6 +165,14 @@
 		8541D0F324B40DD3003905C0 /* OrderCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderCollectionViewCell.xib; sourceTree = "<group>"; };
 		8541D0F624B40FD9003905C0 /* OrderGroupCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderGroupCollectionReusableView.swift; sourceTree = "<group>"; };
 		8541D0F724B40FD9003905C0 /* OrderGroupCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderGroupCollectionReusableView.xib; sourceTree = "<group>"; };
+		854380DB25A7072300ACD810 /* SevenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevenViewController.swift; sourceTree = "<group>"; };
+		854380DC25A7072300ACD810 /* SevenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SevenViewController.xib; sourceTree = "<group>"; };
+		854380E625A7075700ACD810 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		854380EC25A707DB00ACD810 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		854380ED25A707DB00ACD810 /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
+		854380F625A7095000ACD810 /* FriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendView.swift; sourceTree = "<group>"; };
+		854380FB25A70B4600ACD810 /* FriendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCollectionViewCell.swift; sourceTree = "<group>"; };
+		854380FC25A70B4600ACD810 /* FriendCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendCollectionViewCell.xib; sourceTree = "<group>"; };
 		854AF11124B412D000BB9667 /* OrderGroup+CHGCollectionViewSupplementaryElementModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrderGroup+CHGCollectionViewSupplementaryElementModelProtocol.swift"; sourceTree = "<group>"; };
 		854AF11524B41ABB00BB9667 /* BaseCV_5_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCV_5_ViewController.swift; sourceTree = "<group>"; };
 		854AF11624B41ABB00BB9667 /* BaseCV_5_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseCV_5_ViewController.xib; sourceTree = "<group>"; };
@@ -395,6 +411,37 @@
 			path = UICollectionReusableView;
 			sourceTree = "<group>";
 		};
+		854380DA25A706FC00ACD810 /* 基础7 */ = {
+			isa = PBXGroup;
+			children = (
+				854380EB25A707BD00ACD810 /* View */,
+				854380E525A7074600ACD810 /* model */,
+				854380DB25A7072300ACD810 /* SevenViewController.swift */,
+				854380DC25A7072300ACD810 /* SevenViewController.xib */,
+			);
+			path = "基础7";
+			sourceTree = "<group>";
+		};
+		854380E525A7074600ACD810 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				854380E625A7075700ACD810 /* User.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		854380EB25A707BD00ACD810 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				854380EC25A707DB00ACD810 /* UserTableViewCell.swift */,
+				854380ED25A707DB00ACD810 /* UserTableViewCell.xib */,
+				854380F625A7095000ACD810 /* FriendView.swift */,
+				854380FB25A70B4600ACD810 /* FriendCollectionViewCell.swift */,
+				854380FC25A70B4600ACD810 /* FriendCollectionViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		854AF11324B41A9300BB9667 /* 基础5（多种Model在cell中） */ = {
 			isa = PBXGroup;
 			children = (
@@ -529,6 +576,7 @@
 		859D5B2324B3223500CEF90E /* UITableView */ = {
 			isa = PBXGroup;
 			children = (
+				854380DA25A706FC00ACD810 /* 基础7 */,
 				859D5B2424B3223500CEF90E /* 基础4（cell、headerFooterView中的事件传递到ViewController中） */,
 				859D5B3224B3223500CEF90E /* 基础6-1（cell和headerFooter为同一个Model） */,
 				859D5B4224B3223500CEF90E /* 基础3（cell点击处理） */,
@@ -1257,6 +1305,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				854380EF25A707DB00ACD810 /* UserTableViewCell.xib in Resources */,
+				854380DE25A7072300ACD810 /* SevenViewController.xib in Resources */,
 				8541D0F924B40FD9003905C0 /* OrderGroupCollectionReusableView.xib in Resources */,
 				859D5B9524B3223500CEF90E /* SingerHeaderFooterView.xib in Resources */,
 				859D5B8724B3223500CEF90E /* ProductsTypeHeaderFooterView.xib in Resources */,
@@ -1293,6 +1343,7 @@
 				859D5B7E24B3223500CEF90E /* Base6ViewController.xib in Resources */,
 				859D5B8224B3223500CEF90E /* ProductsTableViewCell.xib in Resources */,
 				856C681924B3302A00256E4E /* AlbumDescCollectionReusableView.xib in Resources */,
+				854380FE25A70B4600ACD810 /* FriendCollectionViewCell.xib in Resources */,
 				8541D0F524B40DD3003905C0 /* OrderCollectionViewCell.xib in Resources */,
 				854AF12C24B41CA300BB9667 /* ProductsTypeFooterCollectionReusableView.xib in Resources */,
 				859D5BA824B326D000CEF90E /* EntryViewController.xib in Resources */,
@@ -1362,6 +1413,7 @@
 				8F2271B220EA243F00C72514 /* CHGTableView+CHGTableViewAdapter.swift in Sources */,
 				859D5B9124B3223500CEF90E /* Singer.swift in Sources */,
 				8FB8F1602148B47200B96551 /* CHGSubDataOfKeyPathDelegate.swift in Sources */,
+				854380EE25A707DB00ACD810 /* UserTableViewCell.swift in Sources */,
 				8535A9872462AE29003391BC /* CHGBaseView.swift in Sources */,
 				856C681524B32FE800256E4E /* AlbumDesc+CHGCollectionViewSupplementaryElementModelProtocol.swift in Sources */,
 				8F2271B020EA243F00C72514 /* CHGCollectionViewAdapterData.swift in Sources */,
@@ -1373,6 +1425,7 @@
 				85D5E6DC24B4227F005430C7 /* SingerCollectionReusableView.swift in Sources */,
 				8F2271AD20EA243F00C72514 /* UICollectionView+CHGCollectionViewAdapter.swift in Sources */,
 				859D5B8C24B3223500CEF90E /* SongsModel.swift in Sources */,
+				854380F725A7095000ACD810 /* FriendView.swift in Sources */,
 				8535A9842462A7AE003391BC /* CHGViewPropertyProtocol.swift in Sources */,
 				859D5B7A24B3223500CEF90E /* OrderTableViewCell.swift in Sources */,
 				8F2271B120EA243F00C72514 /* CHGCollectionReusableView.swift in Sources */,
@@ -1414,6 +1467,7 @@
 				5F92C2F02127C94000455EEB /* CHGSimpleCollectionViewAdapter.swift in Sources */,
 				856C680F24B32C7000256E4E /* SongsModel+CollectionViewCellModelProtocol.swift in Sources */,
 				8F2271B720EA243F00C72514 /* CHGTableViewAdapter.swift in Sources */,
+				854380DD25A7072300ACD810 /* SevenViewController.swift in Sources */,
 				854AF11B24B41B4000BB9667 /* Products+CHGCollectionViewCellModelProtocol.swift in Sources */,
 				859D5B8524B3223500CEF90E /* ProductsTypeFooterHeaderFooterView.swift in Sources */,
 				8F2271B420EA243F00C72514 /* CHGTableViewCell.swift in Sources */,
@@ -1427,12 +1481,14 @@
 				859D5B9E24B3223500CEF90E /* AlbumTableViewHeaderFooterView.swift in Sources */,
 				8F14D04020ABC4A4005E4A15 /* AppDelegate.swift in Sources */,
 				859D5B7824B3223500CEF90E /* Order.swift in Sources */,
+				854380FD25A70B4600ACD810 /* FriendCollectionViewCell.swift in Sources */,
 				859D5B8D24B3223500CEF90E /* SongsModelTableViewCell.swift in Sources */,
 				859D5B7F24B3223500CEF90E /* Base6ViewController.swift in Sources */,
 				85D5E6E024B42303005430C7 /* SingerDescCollectionReusableView.swift in Sources */,
 				8F2271AC20EA243F00C72514 /* CHGCollectionViewAdapter.swift in Sources */,
 				854AF11724B41ABB00BB9667 /* BaseCV_5_ViewController.swift in Sources */,
 				859D5B8B24B3223500CEF90E /* Base1ViewController.swift in Sources */,
+				854380E725A7075700ACD810 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

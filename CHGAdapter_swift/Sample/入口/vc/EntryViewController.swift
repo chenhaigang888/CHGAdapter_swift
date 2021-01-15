@@ -29,7 +29,8 @@ class EntryViewController: UIViewController {
 
     func createData() -> [Any] {
         var data = [Any]()
-        for item in [["基础1（显示cell）",Base1ViewController.self],
+        for item in [["基础0（显示cell）",Base0ViewController.self],
+                     ["基础1（显示cell）",Base1ViewController.self],
                      ["基础2（显示header和footer）",Base2ViewController.self],
                      ["基础3（cell点击处理）",Base3ViewController.self],
                      ["基础4（cell、headerFooterView中的事件传递到ViewController中）",Base4ViewController.self],
@@ -42,7 +43,8 @@ class EntryViewController: UIViewController {
         
         var data2 = [Any]()
         
-        for item in [["基础1（显示cell）",BaseCV_1_ViewController.self],
+        for item in [["基础0（）",Base_cv0_ViewController.self],
+                     ["基础1（显示cell）",BaseCV_1_ViewController.self],
                      ["基础2（显示header和footer）",BaseCV_2_ViewController.self],
                      ["基础3（cell点击处理）",BaseCV_3_ViewController.self],
                      ["基础4（cell、headerFooterView中的事件传递到ViewController中）",BaseCV_4_ViewController.self],

@@ -20,14 +20,11 @@ public protocol CHGCollectionViewAdapterProtocol :UICollectionViewDataSource,UIC
 
 open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
     
-    
-    
     open var cellName:AnyClass?
     open var headerName:AnyClass?
     open var footerName:AnyClass?
     open var adapterData:CHGCollectionViewAdapterData = CHGCollectionViewAdapterData.init()
     open var keyPathOfSubData:Any?
-    //    public var collectionViewDeselectRowAtIndexPathAnimation:Bool = true
     weak open var controller:UIViewController?
     open var tag:NSInteger?
     
@@ -59,49 +56,48 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
         }
         let subDataKeyPathTemp = self.subDataKeyPath(IndexPath.init(row: 0, section: section), targetView: collectionView)
         
-        if subDataKeyPathTemp != nil &&  !(cellDatas![section] is NSArray){
+        if subDataKeyPathTemp != nil &&  !(cellDatas![section] is Array<Any>){
             if subDataKeyPathTemp is String || subDataKeyPathTemp is NSString {
                 if (subDataKeyPathTemp as? NSString)?.length != 0 {
-                    return ((cellDatas![section] as AnyObject).value(forKey: subDataKeyPathTemp! as! String) as! NSArray).count
+                    return ((cellDatas![section] as AnyObject).value(forKey: subDataKeyPathTemp! as! String) as! Array<Any>).count
                 }
             } else {
-                return (cellDatas![section][keyPath:subDataKeyPathTemp as! AnyKeyPath] as! NSArray).count
+                return (cellDatas![section][keyPath:subDataKeyPathTemp as! AnyKeyPath] as! Array<Any>).count
             }
         }
-        let cellData = cellDatas![section]
-        if cellData is NSArray {
-            return (cellData as! NSArray).count
-        } else {
-            return 1
+        if let cellData:Array = cellDatas![section] as? Array<Any> {
+            return cellData.count
         }
+        return 1
     }
     
     open func cellDataWithIndexPath(_ indexPath:IndexPath,collectionView:UICollectionView) -> Any? {
         if self.adapterData.cellDatas?.count == 0 {
             return nil
         }
+        
         let sectionData = self.adapterData.cellDatas![indexPath.section]
         let subDataKeyPathTemp = self.subDataKeyPath(indexPath, targetView: collectionView)
-        if subDataKeyPathTemp != nil && !(sectionData is NSArray) {
-            var tempArray:NSArray = []
+        if subDataKeyPathTemp != nil && !(sectionData is Array<Any>) {
+            var tempArray:Array<Any> = []
             if subDataKeyPathTemp is String || subDataKeyPathTemp is NSString {
                 if (subDataKeyPathTemp as? NSString)?.length != 0 {
-                    tempArray = (sectionData as AnyObject).value(forKey: subDataKeyPathTemp as! String) as! NSArray
+                    tempArray = (sectionData as AnyObject).value(forKey: subDataKeyPathTemp as! String) as! Array<Any>
                 }
             } else {
-                tempArray = sectionData[keyPath:subDataKeyPathTemp as! AnyKeyPath] as! NSArray
+                tempArray = sectionData[keyPath:subDataKeyPathTemp as! AnyKeyPath] as! Array<Any>
             }
             return tempArray.count == 0 ? sectionData : tempArray[indexPath.row]
         } else {
-            
-            return sectionData is NSArray ? (sectionData as! NSArray)[indexPath.row] : sectionData
+            if let array:Array = sectionData as? Array<Any> {
+                return array[indexPath.row]
+            }
+            return sectionData
         }
     }
     
     open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cellData = self.cellDataWithIndexPath(indexPath,collectionView: collectionView)
-        //        let identifier:String = self.obtainCellNameWithCell(cellData!, collectionView: collectionView, cellForItemAtIndexPath: indexPath)
-        
         guard let cellClass:AnyClass = self.obtainCellClassWithCell(cellData!, collectionView: collectionView, cellForItemAtIndexPath: indexPath) else { return UICollectionViewCell() }
         let classAllName = NSStringFromClass(cellClass)
         
@@ -114,8 +110,6 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
             collectionView.register(cellClass, forCellWithReuseIdentifier: classAllName)
         }
         let cell:CHGCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: classAllName, for: indexPath) as! CHGCollectionViewCell
-        //        cell.eventTransmissionBlock = collectionView.eventTransmissionBlock
-        //        cell.cellForRow(atIndexPath: indexPath, collectionView: collectionView, data: cellData,eventTransmissionBlock: collectionView.eventTransmissionBlock)
         cell.cellForRowAt(indexPath: indexPath, targetView: collectionView, model: cellData!, eventTransmissionBlock: collectionView.eventTransmissionBlock)
         return cell
     }
@@ -123,8 +117,6 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
     open func defaultReusableView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath, headerFooterData:Any?)->CHGCollectionReusableView {
         collectionView.register(CHGCollectionReusableView.classForCoder(), forSupplementaryViewOfKind: kind, withReuseIdentifier:"CHGCollectionReusableView" )
         let reusableView:CHGCollectionReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier:"CHGCollectionReusableView" , for: indexPath) as! CHGCollectionReusableView
-        //        reusableView.eventTransmissionBlock = collectionView.eventTransmissionBlock
-        //        reusableView.reusableViewFor(collectionView: collectionView, indexPath: indexPath, kind: kind as NSString, reusableViewData: headerFooterData,eventTransmissionBlock: collectionView.eventTransmissionBlock)
         reusableView.reusableView(for: collectionView, indexPath: indexPath, kind: kind, model: headerFooterData!, eventTransmissionBlock: collectionView.eventTransmissionBlock)
         return reusableView
     }
@@ -165,10 +157,7 @@ open class CHGCollectionViewAdapter: NSObject,CHGCollectionViewAdapterProtocol {
         } else {
             collectionView.register(headerFooterClass, forSupplementaryViewOfKind: kind as String, withReuseIdentifier: classAllName)
         }
-        
         let reusableView:CHGCollectionReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: kind as String, withReuseIdentifier: classAllName, for: indexPath) as! CHGCollectionReusableView
-        //        reusableView.eventTransmissionBlock = collectionView.eventTransmissionBlock
-        //        reusableView.reusableViewFor(collectionView: collectionView, indexPath: indexPath, kind: kind as NSString, reusableViewData: headerFooterData,eventTransmissionBlock: collectionView.eventTransmissionBlock)
         reusableView.reusableView(for: collectionView, indexPath: indexPath, kind: kind, model: headerFooterData!, eventTransmissionBlock: collectionView.eventTransmissionBlock)
         return reusableView
     }

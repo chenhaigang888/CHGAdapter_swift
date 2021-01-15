@@ -92,21 +92,19 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
             return 0;
         }
         let subDataKeyPathTemp = self.subDataKeyPath(IndexPath.init(row: 0, section: section), targetView: tableView)
-        if (subDataKeyPathTemp != nil && (!(cellDatas![section] is NSArray))) {
+        if (subDataKeyPathTemp != nil && (!(cellDatas![section] is Array<Any>))) {
             if subDataKeyPathTemp is String || subDataKeyPathTemp is NSString {
                 if (subDataKeyPathTemp as? NSString)?.length != 0 {
-                    return ((cellDatas![section] as AnyObject).value(forKey: subDataKeyPathTemp! as! String) as! NSArray).count
+                    return ((cellDatas![section] as AnyObject).value(forKey: subDataKeyPathTemp! as! String) as! Array<Any>).count
                 }
             } else {
-                return (cellDatas![section][keyPath:subDataKeyPathTemp as! AnyKeyPath] as! NSArray).count
+                return (cellDatas![section][keyPath:subDataKeyPathTemp as! AnyKeyPath] as! Array<Any>).count
             }
         }
-        let cellData = cellDatas![section]
-        if cellData is NSArray {
-            return (cellData as AnyObject).count
-        } else {
-            return 1
+        if let cellData:Array = cellDatas![section] as? Array<Any> {
+            return cellData.count
         }
+        return 1
     }
     
     open func sectionIndexTitles(for tableView: UITableView) -> [String]? {
@@ -123,22 +121,23 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
         }
         let sectionData = self.adapterData.cellDatas![indexPath.section]
         let subDataKeyPathTemp = self.subDataKeyPath(indexPath,targetView: tableView)
-        if subDataKeyPathTemp != nil && !(sectionData is NSArray) {
-            var tempArray:NSArray = []
+        if subDataKeyPathTemp != nil && !(sectionData is Array<Any>) {
+            var tempArray:Array<Any> = []
             if subDataKeyPathTemp is String || subDataKeyPathTemp is NSString {
                 if (subDataKeyPathTemp as? NSString)?.length != 0 {
-                    tempArray = (sectionData as AnyObject).value(forKey: subDataKeyPathTemp as! String) as! NSArray
+                    tempArray = (sectionData as AnyObject).value(forKey: subDataKeyPathTemp as! String) as! Array<Any>
                 }
             } else {
-                tempArray = sectionData[keyPath:subDataKeyPathTemp as! AnyKeyPath] as! NSArray
+                tempArray = sectionData[keyPath:subDataKeyPathTemp as! AnyKeyPath] as! Array<Any>
             }
             return tempArray.count == 0 ? sectionData : tempArray[indexPath.row]
         } else {
-            return sectionData is NSArray ? (sectionData as! NSArray)[indexPath.row] : sectionData
+            if let array:Array = sectionData as? Array<Any> {
+                return array[indexPath.row]
+            }
+            return sectionData
         }
     }
-    
-    
     
     open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellData = self.cellDataWithIndexPath(indexPath,tableView: tableView)
@@ -156,8 +155,6 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
             cell = tableView.dequeueReusableCell(withIdentifier: classAllName, for: indexPath)
         }
         let cell_:CHGTableViewCell = cell as! CHGTableViewCell
-        //        cell_.eventTransmissionBlock = tableView.eventTransmissionBlock
-        //        cell_.cellForRow(atIndexPath: indexPath, tableView: tableView, data: cellData,eventTransmissionBlock: tableView.eventTransmissionBlock)
         cell_.cellForRowAt(indexPath: indexPath, targetView: tableView, model: cellData!, eventTransmissionBlock: tableView.eventTransmissionBlock)
         return cell_
     }
@@ -210,17 +207,13 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
             }
             view = tableView.dequeueReusableHeaderFooterView(withIdentifier: classAllName)
         }
-        
         let view_:CHGTableViewHeaderFooterView = view as! CHGTableViewHeaderFooterView
-        //        view_.eventTransmissionBlock = tableView.eventTransmissionBlock
-        //        view_.headerFooter(section: section, tableView: tableView, data: headerFooterData!, type: type,eventTransmissionBlock: tableView.eventTransmissionBlock)
         view_.headerFooter(for: section, in: tableView, model: headerFooterData!, type: type, eventTransmissionBlock: tableView.eventTransmissionBlock)
         return view_
     }
     
     open func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         if view is CHGTableViewHeaderFooterView {
-            //            (view as! CHGTableViewHeaderFooterView).headerFooterViewWillAppearWithType(type: CHGAdapterViewType.HeaderType)
             (view as! CHGTableViewHeaderFooterView).headerFooterViewWillAppear(with: .HeaderType)
         }
     }
@@ -233,14 +226,12 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
     
     open func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
         if view is CHGTableViewHeaderFooterView {
-            //            (view as! CHGTableViewHeaderFooterView).headerFooterViewWillAppearWithType(type: CHGAdapterViewType.FooterType)
             (view as! CHGTableViewHeaderFooterView).headerFooterViewWillAppear(with: .FooterType)
         }
     }
     
     open func tableView(_ tableView: UITableView, didEndDisplayingHeaderView view: UIView, forSection section: Int) {
         if view is CHGTableViewHeaderFooterView {
-            //            (view as! CHGTableViewHeaderFooterView).headerFooterViewDidDisAppearWithType(type: CHGAdapterViewType.HeaderType)
             (view as! CHGTableViewHeaderFooterView).headerFooterViewDidDisAppear(with: .HeaderType)
         }
     }
@@ -253,7 +244,6 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
     
     open func tableView(_ tableView: UITableView, didEndDisplayingFooterView view: UIView, forSection section: Int) {
         if view is CHGTableViewHeaderFooterView {
-            //            (view as! CHGTableViewHeaderFooterView).headerFooterViewDidDisAppearWithType(type: CHGAdapterViewType.FooterType)
             (view as! CHGTableViewHeaderFooterView).headerFooterViewDidDisAppear(with: .FooterType)
         }
     }

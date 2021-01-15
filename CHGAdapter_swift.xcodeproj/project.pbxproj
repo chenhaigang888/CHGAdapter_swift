@@ -499,6 +499,13 @@
 			path = UICollectionReusableView;
 			sourceTree = "<group>";
 		};
+		8567E03025B19F2D00768A09 /* aaa */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = aaa;
+			sourceTree = "<group>";
+		};
 		856C680724B32BF700256E4E /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -911,6 +918,7 @@
 		859D5BA924B329F000CEF90E /* UICollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				8567E03025B19F2D00768A09 /* aaa */,
 				85D5E6CF24B42173005430C7 /* 基础6-2（多种cell和headerFooter为同一个Model） */,
 				85D5E6C924B41F98005430C7 /* 基础6-1（cell和headerFooter为同一个Model） */,
 				854AF11324B41A9300BB9667 /* 基础5（多种Model在cell中） */,

@@ -16,9 +16,4 @@ open class CHGCollectionViewAdapterData: NSObject,CHGAdapterDataProtocol {
     open var footerDatas: [Any]?
     
     open var customData: Any?
-    
-//    open var cellDatas:[Any]?
-//    open var headerDatas:[Any]?
-//    open var footerDatas:[Any]?
-//    open var customData:Any?
 }

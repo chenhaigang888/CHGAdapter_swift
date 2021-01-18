@@ -79,29 +79,23 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
     }
     
     open func numberOfSections(in tableView: UITableView) -> Int {
-        let cellDatas = self.adapterData.cellDatas
-        if cellDatas == nil || cellDatas?.count == 0 {
-            return 0
-        }
-        return (cellDatas?.count)!
+        return self.adapterData.cellDatas?.count ?? 0
     }
     
     open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let cellDatas = self.adapterData.cellDatas
-        if cellDatas?.count == 0 {
-            return 0;
-        }
-        let subDataKeyPathTemp = self.subDataKeyPath(IndexPath.init(row: 0, section: section), targetView: tableView)
-        if (subDataKeyPathTemp != nil && (!(cellDatas![section] is Array<Any>))) {
-            if subDataKeyPathTemp is String || subDataKeyPathTemp is NSString {
-                if (subDataKeyPathTemp as? NSString)?.length != 0 {
-                    return ((cellDatas![section] as AnyObject).value(forKey: subDataKeyPathTemp! as! String) as! Array<Any>).count
-                }
-            } else {
-                return (cellDatas![section][keyPath:subDataKeyPathTemp as! AnyKeyPath] as! Array<Any>).count
+        guard let cellDatas:[Any] = self.adapterData.cellDatas else { return 0 }
+        if let subDataKeyPathTemp = self.subDataKeyPath(IndexPath.init(row: 0, section: section), targetView: tableView) ,
+           !(cellDatas[section] is Array<Any>) {
+            guard let subDataKeyPathTempStr:String = subDataKeyPathTemp as? String,
+                  subDataKeyPathTempStr.count > 0,
+                  let cellDataItem:AnyObject = cellDatas[section] as? AnyObject,
+                  let items:[Any] = cellDataItem.value(forKey: subDataKeyPathTempStr) as? [Any] else {
+                return (cellDatas[section][keyPath:subDataKeyPathTemp as! AnyKeyPath] as! [Any]).count
             }
+            return items.count
         }
-        if let cellData:Array = cellDatas![section] as? Array<Any> {
+
+        if let cellData:[Any] = cellDatas[section] as? [Any] {
             return cellData.count
         }
         return 1
@@ -213,45 +207,45 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
     }
     
     open func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        if view is CHGTableViewHeaderFooterView {
-            (view as! CHGTableViewHeaderFooterView).headerFooterViewWillAppear(with: .HeaderType)
+        if let view:CHGTableViewHeaderFooterView = view as? CHGTableViewHeaderFooterView {
+            view.headerFooterViewWillAppear(with: .HeaderType)
         }
     }
     
     open func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if cell is CHGTableViewCell {
-            (cell as! CHGTableViewCell).cellWillAppear()
+        if let cell:CHGTableViewCell = cell as? CHGTableViewCell {
+            cell.cellWillAppear()
         }
     }
     
     open func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
-        if view is CHGTableViewHeaderFooterView {
-            (view as! CHGTableViewHeaderFooterView).headerFooterViewWillAppear(with: .FooterType)
+        if let view:CHGTableViewHeaderFooterView = view as? CHGTableViewHeaderFooterView {
+            view.headerFooterViewWillAppear(with: .FooterType)
         }
     }
     
     open func tableView(_ tableView: UITableView, didEndDisplayingHeaderView view: UIView, forSection section: Int) {
-        if view is CHGTableViewHeaderFooterView {
-            (view as! CHGTableViewHeaderFooterView).headerFooterViewDidDisAppear(with: .HeaderType)
+        if let view:CHGTableViewHeaderFooterView = view as? CHGTableViewHeaderFooterView {
+            view.headerFooterViewDidDisAppear(with: .HeaderType)
         }
     }
     
     open func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if cell is CHGTableViewCell {
-            (cell as! CHGTableViewCell).cellDidDisappear()
+        if let cell:CHGTableViewCell = cell as? CHGTableViewCell {
+            cell.cellDidDisappear()
         }
     }
     
     open func tableView(_ tableView: UITableView, didEndDisplayingFooterView view: UIView, forSection section: Int) {
-        if view is CHGTableViewHeaderFooterView {
-            (view as! CHGTableViewHeaderFooterView).headerFooterViewDidDisAppear(with: .FooterType)
+        if let view:CHGTableViewHeaderFooterView = view as? CHGTableViewHeaderFooterView {
+            view.headerFooterViewDidDisAppear(with: .FooterType)
         }
     }
     
     open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: self.tableViewDeselectRowAtIndexPathAnimation)
-        if tableView.tableViewDidSelectRowBlock != nil {
-            tableView.tableViewDidSelectRowBlock!(tableView,indexPath,self.cellDataWithIndexPath(indexPath,tableView: tableView)!)
+        if let tableViewDidSelectRowBlock = tableView.tableViewDidSelectRowBlock {
+            tableViewDidSelectRowBlock(tableView,indexPath,self.cellDataWithIndexPath(indexPath,tableView: tableView)!)
         }
     }
     

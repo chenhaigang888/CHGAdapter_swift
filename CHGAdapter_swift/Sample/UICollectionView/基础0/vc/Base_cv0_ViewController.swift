@@ -14,13 +14,13 @@ class Base_cv0_ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         collectionView.cellDatas = [["😂","😊","😄","😏"],
                                     ["😂","😊","😄","😏"],
                                     ["😂","😊","😄","😏"],
                                     ["😂","😊","😄","😏"],
                                     ["😂","😊","😄","😏"],
                                     ["😂","😊","😄","😏"]]
+        
     }
 
 }

@@ -20,6 +20,10 @@
 		8541D0F524B40DD3003905C0 /* OrderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8541D0F324B40DD3003905C0 /* OrderCollectionViewCell.xib */; };
 		8541D0F824B40FD9003905C0 /* OrderGroupCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8541D0F624B40FD9003905C0 /* OrderGroupCollectionReusableView.swift */; };
 		8541D0F924B40FD9003905C0 /* OrderGroupCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8541D0F724B40FD9003905C0 /* OrderGroupCollectionReusableView.xib */; };
+		8542BC7925B5608300730029 /* StringCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8542BC7725B5608300730029 /* StringCollectionReusableView.swift */; };
+		8542BC7A25B5608300730029 /* StringCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8542BC7825B5608300730029 /* StringCollectionReusableView.xib */; };
+		8542BC8125B5633E00730029 /* StringTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8542BC8025B5633E00730029 /* StringTableViewHeaderFooterView.swift */; };
+		8542BC8625B5637800730029 /* StringTableViewHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8542BC8525B5637800730029 /* StringTableViewHeaderFooterView.xib */; };
 		854380DD25A7072300ACD810 /* SevenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854380DB25A7072300ACD810 /* SevenViewController.swift */; };
 		854380DE25A7072300ACD810 /* SevenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 854380DC25A7072300ACD810 /* SevenViewController.xib */; };
 		854380E725A7075700ACD810 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854380E625A7075700ACD810 /* User.swift */; };
@@ -174,6 +178,10 @@
 		8541D0F324B40DD3003905C0 /* OrderCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderCollectionViewCell.xib; sourceTree = "<group>"; };
 		8541D0F624B40FD9003905C0 /* OrderGroupCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderGroupCollectionReusableView.swift; sourceTree = "<group>"; };
 		8541D0F724B40FD9003905C0 /* OrderGroupCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderGroupCollectionReusableView.xib; sourceTree = "<group>"; };
+		8542BC7725B5608300730029 /* StringCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCollectionReusableView.swift; sourceTree = "<group>"; };
+		8542BC7825B5608300730029 /* StringCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StringCollectionReusableView.xib; sourceTree = "<group>"; };
+		8542BC8025B5633E00730029 /* StringTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
+		8542BC8525B5637800730029 /* StringTableViewHeaderFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StringTableViewHeaderFooterView.xib; sourceTree = "<group>"; };
 		854380DB25A7072300ACD810 /* SevenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevenViewController.swift; sourceTree = "<group>"; };
 		854380DC25A7072300ACD810 /* SevenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SevenViewController.xib; sourceTree = "<group>"; };
 		854380E625A7075700ACD810 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -429,6 +437,42 @@
 			path = UICollectionReusableView;
 			sourceTree = "<group>";
 		};
+		8542BC7525B5603700730029 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				8542BC7625B5604000730029 /* headerFooterView */,
+				8FD5702825B1AA8A008B4C60 /* cell */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		8542BC7625B5604000730029 /* headerFooterView */ = {
+			isa = PBXGroup;
+			children = (
+				8542BC7725B5608300730029 /* StringCollectionReusableView.swift */,
+				8542BC7825B5608300730029 /* StringCollectionReusableView.xib */,
+			);
+			path = headerFooterView;
+			sourceTree = "<group>";
+		};
+		8542BC7E25B5630A00730029 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				8542BC7F25B5631300730029 /* headerFooterView */,
+				8FD5704725B1BEF5008B4C60 /* cell */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		8542BC7F25B5631300730029 /* headerFooterView */ = {
+			isa = PBXGroup;
+			children = (
+				8542BC8025B5633E00730029 /* StringTableViewHeaderFooterView.swift */,
+				8542BC8525B5637800730029 /* StringTableViewHeaderFooterView.xib */,
+			);
+			path = headerFooterView;
+			sourceTree = "<group>";
+		};
 		854380DA25A706FC00ACD810 /* 基础7 */ = {
 			isa = PBXGroup;
 			children = (
@@ -520,8 +564,8 @@
 		8567E03025B19F2D00768A09 /* 基础0 */ = {
 			isa = PBXGroup;
 			children = (
+				8542BC7525B5603700730029 /* view */,
 				8FD5705225B1C00A008B4C60 /* vc */,
-				8FD5702825B1AA8A008B4C60 /* cell */,
 				8FD5701F25B1AA22008B4C60 /* model */,
 			);
 			path = "基础0";
@@ -1229,8 +1273,8 @@
 		8FD5704525B1BE9E008B4C60 /* 基础0 */ = {
 			isa = PBXGroup;
 			children = (
+				8542BC7E25B5630A00730029 /* view */,
 				8FD5706425B1C170008B4C60 /* vc */,
-				8FD5704725B1BEF5008B4C60 /* cell */,
 				8FD5704625B1BEAD008B4C60 /* model */,
 			);
 			path = "基础0";
@@ -1400,10 +1444,12 @@
 				854380DE25A7072300ACD810 /* SevenViewController.xib in Resources */,
 				8541D0F924B40FD9003905C0 /* OrderGroupCollectionReusableView.xib in Resources */,
 				859D5B9524B3223500CEF90E /* SingerHeaderFooterView.xib in Resources */,
+				8542BC7A25B5608300730029 /* StringCollectionReusableView.xib in Resources */,
 				859D5B8724B3223500CEF90E /* ProductsTypeHeaderFooterView.xib in Resources */,
 				85D5E6D424B4218E005430C7 /* Base_6_2_ViewController.xib in Resources */,
 				859D5B7B24B3223500CEF90E /* OrderTableViewCell.xib in Resources */,
 				85D5E6DD24B4227F005430C7 /* SingerCollectionReusableView.xib in Resources */,
+				8542BC8625B5637800730029 /* StringTableViewHeaderFooterView.xib in Resources */,
 				8F14D04A20ABC4A5005E4A15 /* LaunchScreen.storyboard in Resources */,
 				859D5B9424B3223500CEF90E /* SingerDescHeaderFooterView.xib in Resources */,
 				8541D0EC24B40CD8003905C0 /* BaseCV_4_ViewController.xib in Resources */,
@@ -1568,12 +1614,14 @@
 				856C680F24B32C7000256E4E /* SongsModel+CollectionViewCellModelProtocol.swift in Sources */,
 				8F2271B720EA243F00C72514 /* CHGTableViewAdapter.swift in Sources */,
 				854380DD25A7072300ACD810 /* SevenViewController.swift in Sources */,
+				8542BC7925B5608300730029 /* StringCollectionReusableView.swift in Sources */,
 				854AF11B24B41B4000BB9667 /* Products+CHGCollectionViewCellModelProtocol.swift in Sources */,
 				859D5B8524B3223500CEF90E /* ProductsTypeFooterHeaderFooterView.swift in Sources */,
 				8F2271B420EA243F00C72514 /* CHGTableViewCell.swift in Sources */,
 				85D5E6CD24B41FBD005430C7 /* BaseCV_6_1_ViewController.swift in Sources */,
 				8541D0EF24B40D62003905C0 /* Order+CHGCollectionViewCellModelProtocol.swift in Sources */,
 				8541D0F824B40FD9003905C0 /* OrderGroupCollectionReusableView.swift in Sources */,
+				8542BC8125B5633E00730029 /* StringTableViewHeaderFooterView.swift in Sources */,
 				8541D0EB24B40CD8003905C0 /* BaseCV_4_ViewController.swift in Sources */,
 				8F2271B320EA243F00C72514 /* CHGTableViewHeaderFooterView.swift in Sources */,
 				8F2271B520EA243F00C72514 /* CHGTableViewEmptyDataShow.swift in Sources */,

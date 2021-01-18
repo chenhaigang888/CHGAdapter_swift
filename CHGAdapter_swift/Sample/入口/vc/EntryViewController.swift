@@ -22,6 +22,7 @@ class EntryViewController: UIViewController {
         tableView.setTableViewDidSelectRowBlock { [weak self](tableView, indexPath, itemData) in
             guard let model:Entry = itemData as? Entry,let clsType = model.vc else { return }
             let vcTemp = clsType.init()
+            vcTemp.title = model.title
             self?.navigationController?.pushViewController(vcTemp, animated: true)
         }
     }
@@ -37,7 +38,8 @@ class EntryViewController: UIViewController {
                      ["基础5（多种Model在cell中）",Base5ViewController.self],
                      ["基础6-1（cell和headerFooter为同一个Model）",Base6ViewController.self],
                      ["基础6-2（多种cell和headerFooter为同一个Model）",Base6_2ViewController.self],
-                     ["基础7",SevenViewController.self]] {
+                     ["基础6-3",SevenViewController.self],
+                     ["基础6-4（使用字典作为数据模型）",DictionaryViewController.self]] {
                         data.append(Entry.init(title: item[0] as? String,vc: item[1] as? UIViewController.Type))
         }
         

@@ -24,6 +24,11 @@
 		8542BC7A25B5608300730029 /* StringCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8542BC7825B5608300730029 /* StringCollectionReusableView.xib */; };
 		8542BC8125B5633E00730029 /* StringTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8542BC8025B5633E00730029 /* StringTableViewHeaderFooterView.swift */; };
 		8542BC8625B5637800730029 /* StringTableViewHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8542BC8525B5637800730029 /* StringTableViewHeaderFooterView.xib */; };
+		8542BC8E25B5694400730029 /* Dictionary+model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8542BC8D25B5694400730029 /* Dictionary+model.swift */; };
+		8542BC9525B56CB700730029 /* DictionaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8542BC9325B56CB700730029 /* DictionaryTableViewCell.swift */; };
+		8542BC9625B56CB700730029 /* DictionaryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8542BC9425B56CB700730029 /* DictionaryTableViewCell.xib */; };
+		8542BC9C25B56CD000730029 /* DictionaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8542BC9A25B56CD000730029 /* DictionaryViewController.swift */; };
+		8542BC9D25B56CD000730029 /* DictionaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8542BC9B25B56CD000730029 /* DictionaryViewController.xib */; };
 		854380DD25A7072300ACD810 /* SevenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854380DB25A7072300ACD810 /* SevenViewController.swift */; };
 		854380DE25A7072300ACD810 /* SevenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 854380DC25A7072300ACD810 /* SevenViewController.xib */; };
 		854380E725A7075700ACD810 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854380E625A7075700ACD810 /* User.swift */; };
@@ -182,6 +187,11 @@
 		8542BC7825B5608300730029 /* StringCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StringCollectionReusableView.xib; sourceTree = "<group>"; };
 		8542BC8025B5633E00730029 /* StringTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
 		8542BC8525B5637800730029 /* StringTableViewHeaderFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StringTableViewHeaderFooterView.xib; sourceTree = "<group>"; };
+		8542BC8D25B5694400730029 /* Dictionary+model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+model.swift"; sourceTree = "<group>"; };
+		8542BC9325B56CB700730029 /* DictionaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryTableViewCell.swift; sourceTree = "<group>"; };
+		8542BC9425B56CB700730029 /* DictionaryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DictionaryTableViewCell.xib; sourceTree = "<group>"; };
+		8542BC9A25B56CD000730029 /* DictionaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryViewController.swift; sourceTree = "<group>"; };
+		8542BC9B25B56CD000730029 /* DictionaryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DictionaryViewController.xib; sourceTree = "<group>"; };
 		854380DB25A7072300ACD810 /* SevenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevenViewController.swift; sourceTree = "<group>"; };
 		854380DC25A7072300ACD810 /* SevenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SevenViewController.xib; sourceTree = "<group>"; };
 		854380E625A7075700ACD810 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -473,6 +483,42 @@
 			path = headerFooterView;
 			sourceTree = "<group>";
 		};
+		8542BC8A25B568FD00730029 /* 基础6-3（使用字典作为数据模型） */ = {
+			isa = PBXGroup;
+			children = (
+				8542BC9225B56C7C00730029 /* view */,
+				8542BC8C25B5692900730029 /* model */,
+				8542BC8B25B5691A00730029 /* vc */,
+			);
+			path = "基础6-3（使用字典作为数据模型）";
+			sourceTree = "<group>";
+		};
+		8542BC8B25B5691A00730029 /* vc */ = {
+			isa = PBXGroup;
+			children = (
+				8542BC9A25B56CD000730029 /* DictionaryViewController.swift */,
+				8542BC9B25B56CD000730029 /* DictionaryViewController.xib */,
+			);
+			path = vc;
+			sourceTree = "<group>";
+		};
+		8542BC8C25B5692900730029 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				8542BC8D25B5694400730029 /* Dictionary+model.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		8542BC9225B56C7C00730029 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				8542BC9325B56CB700730029 /* DictionaryTableViewCell.swift */,
+				8542BC9425B56CB700730029 /* DictionaryTableViewCell.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		854380DA25A706FC00ACD810 /* 基础7 */ = {
 			isa = PBXGroup;
 			children = (
@@ -648,6 +694,7 @@
 		859D5B2324B3223500CEF90E /* UITableView */ = {
 			isa = PBXGroup;
 			children = (
+				8542BC8A25B568FD00730029 /* 基础6-3（使用字典作为数据模型） */,
 				8FD5704525B1BE9E008B4C60 /* 基础0 */,
 				854380DA25A706FC00ACD810 /* 基础7 */,
 				859D5B2424B3223500CEF90E /* 基础4（cell、headerFooterView中的事件传递到ViewController中） */,
@@ -1462,6 +1509,7 @@
 				859D5B7624B3223500CEF90E /* Base4ViewController.xib in Resources */,
 				859D5B9624B3223500CEF90E /* Base5ViewController.xib in Resources */,
 				854AF12124B41BA000BB9667 /* ProductsCollectionViewCell.xib in Resources */,
+				8542BC9625B56CB700730029 /* DictionaryTableViewCell.xib in Resources */,
 				859D5B9824B3223500CEF90E /* Base2ViewController.xib in Resources */,
 				8541D0E624B40AF8003905C0 /* BaseCV_3_ViewController.xib in Resources */,
 				859D5B8A24B3223500CEF90E /* Base1ViewController.xib in Resources */,
@@ -1487,6 +1535,7 @@
 				8541D0F524B40DD3003905C0 /* OrderCollectionViewCell.xib in Resources */,
 				854AF12C24B41CA300BB9667 /* ProductsTypeFooterCollectionReusableView.xib in Resources */,
 				8FD5704B25B1BF1C008B4C60 /* StringTableViewCell.xib in Resources */,
+				8542BC9D25B56CD000730029 /* DictionaryViewController.xib in Resources */,
 				859D5BA824B326D000CEF90E /* EntryViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1550,9 +1599,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8542BC9C25B56CD000730029 /* DictionaryViewController.swift in Sources */,
 				859D5B9024B3223500CEF90E /* Base6_2ViewController.swift in Sources */,
 				8F2271B220EA243F00C72514 /* CHGTableView+CHGTableViewAdapter.swift in Sources */,
 				859D5B9124B3223500CEF90E /* Singer.swift in Sources */,
+				8542BC9525B56CB700730029 /* DictionaryTableViewCell.swift in Sources */,
 				8FB8F1602148B47200B96551 /* CHGSubDataOfKeyPathDelegate.swift in Sources */,
 				854380EE25A707DB00ACD810 /* UserTableViewCell.swift in Sources */,
 				8535A9872462AE29003391BC /* CHGBaseView.swift in Sources */,
@@ -1577,6 +1628,7 @@
 				85D5E6E424B4252F005430C7 /* EntryTypeHeaderFooterView.swift in Sources */,
 				856C682224B3310300256E4E /* BaseCV_2_ViewController.swift in Sources */,
 				8FD5702B25B1AAA7008B4C60 /* StringCollectionViewCell.swift in Sources */,
+				8542BC8E25B5694400730029 /* Dictionary+model.swift in Sources */,
 				854AF12B24B41CA300BB9667 /* ProductsTypeFooterCollectionReusableView.swift in Sources */,
 				85AA5D972457C85000EF4413 /* Utils.swift in Sources */,
 				859D5B9D24B3223500CEF90E /* AlbumDescTableViewHeaderFooterView.swift in Sources */,

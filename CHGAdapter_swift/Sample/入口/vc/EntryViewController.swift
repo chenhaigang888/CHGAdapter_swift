@@ -38,14 +38,13 @@ class EntryViewController: UIViewController {
                      ["基础5（多种Model在cell中）",Base5ViewController.self],
                      ["基础6-1（cell和headerFooter为同一个Model）",Base6ViewController.self],
                      ["基础6-2（多种cell和headerFooter为同一个Model）",Base6_2ViewController.self],
-                     ["基础6-3",SevenViewController.self],
-                     ["基础6-4（使用字典作为数据模型）",DictionaryViewController.self]] {
+                     ["基础6-3（使用字典作为数据模型）",DictionaryViewController.self]] {
                         data.append(Entry.init(title: item[0] as? String,vc: item[1] as? UIViewController.Type))
         }
         
         var data2 = [Any]()
         
-        for item in [["基础0（）",Base_cv0_ViewController.self],
+        for item in [["基础0（显示cell）",Base_cv0_ViewController.self],
                      ["基础1（显示cell）",BaseCV_1_ViewController.self],
                      ["基础2（显示header和footer）",BaseCV_2_ViewController.self],
                      ["基础3（cell点击处理）",BaseCV_3_ViewController.self],

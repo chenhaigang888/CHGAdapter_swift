@@ -11,6 +11,7 @@ import Pods_CHGAdapter_swift
 let TB_cell_class_key = "TB_cell_class_key"
 let TB_cell_height_key = "TB_cell_height_key"
 
+
 //使用字典在cell中显示
 extension Dictionary : CHGTableViewCellModelProtocol {
     

@@ -21,7 +21,14 @@ public typealias CHGCallBack = (_ data:Any?) -> Any?
 public typealias CHGEventTransmissionBlock = (_ target:Any?,_ params:Any?,_ tag:NSInteger,_ callBack:CHGCallBack?) -> Any?
 
 /// tableViewDidSelectRow 回调
-public typealias CHGTableViewDidSelectRowBlock = (_ tableView:UITableView,_ indexPath:IndexPath,_ itemData:Any)->Void
+public typealias CHGTableViewDidSelectRowBlock = (_ tableView:UITableView,_ indexPath:IndexPath, _ itemData:Any) -> Void
+
+public typealias CHGTableViewCommitEditForRowBlock = (_ tableView:UITableView,_ editingStyle: UITableViewCell.EditingStyle, _ indexPath:IndexPath, _ itemData:Any) -> Void
+
+public typealias CHGTableViewDidEndEditingBlock = (_ tableView: UITableView, _ indexPath: IndexPath?, _ itemData:Any) -> Void
+
+public typealias CHGTableViewWillBeginEditingBlock = (_ tableView: UITableView, _ indexPath: IndexPath?, _ itemData:Any) -> Void
+
 
 public protocol CHGTableViewAdapterProtocol:UITableViewDelegate,UITableViewDataSource, CHGSubDataOfKeyPathDelegate{
     
@@ -48,6 +55,12 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
     open var tableViewDeselectRowAtIndexPathAnimation:Bool = true
     open var tag:NSInteger = 0
     weak open var controller:UIViewController?
+    
+    open var canEditEnable:Bool? = false
+    open var editingStyle: UITableViewCell.EditingStyle = .none
+    open var titleForDeleteConfirmationButton:String?
+    open var rowActions:[UITableViewRowAction]?
+    open var shouldIndentWhileEditingRow: Bool = false
     
     
     open func obtainCellClassWithCell(_ data: Any, tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> AnyClass? {
@@ -247,6 +260,44 @@ open class CHGTableViewAdapter: NSObject,CHGTableViewAdapterProtocol {
         if let tableViewDidSelectRowBlock = tableView.tableViewDidSelectRowBlock {
             tableViewDidSelectRowBlock(tableView,indexPath,self.cellDataWithIndexPath(indexPath,tableView: tableView)!)
         }
+    }
+    
+    open func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        canEditEnable ?? false
+    }
+    
+    open func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        editingStyle
+    }
+    
+    open func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if let tableViewCommitEditForRowBlock = tableView.tableViewCommitEditForRowBlock {
+            tableViewCommitEditForRowBlock(tableView,editingStyle,indexPath,cellDataWithIndexPath(indexPath,tableView: tableView)!)
+        }
+    }
+    
+    open func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return titleForDeleteConfirmationButton
+    }
+    
+    open func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        rowActions
+    }
+    
+    open func tableView(_ tableView: UITableView, didEndEditingRowAt indexPath: IndexPath?) {
+        if let tableViewDidEndEditingBlock = tableView.tableViewDidEndEditingBlock, let indexPath = indexPath {
+            tableViewDidEndEditingBlock(tableView,indexPath,cellDataWithIndexPath(indexPath, tableView: tableView)!)
+        }
+    }
+    
+    open func tableView(_ tableView: UITableView, willBeginEditingRowAt indexPath: IndexPath) {
+        if let tableViewWillBeginEditingBlock = tableView.tableViewWillBeginEditingBlock {
+            tableViewWillBeginEditingBlock(tableView,indexPath,cellDataWithIndexPath(indexPath, tableView: tableView)!)
+        }
+    }
+    
+    open func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        shouldIndentWhileEditingRow
     }
     
     @available(iOS 2.0, *)

@@ -9,9 +9,9 @@
 import UIKit
 
 open class CHGCollectionReusableView: UICollectionReusableView,CHGCollectionReusableViewLifeCycleProtocol {
-    public var section: Int?
+    open var section: Int?
     
-    public var type: CHGAdapterViewType?
+    open var type: CHGAdapterViewType?
     
     open var protocolsVMO: [ViewMappingObject]? = [ViewMappingObject]()
     
@@ -76,7 +76,7 @@ open class CHGCollectionReusableView: UICollectionReusableView,CHGCollectionReus
         self.protocolsVMO?.append(ViewMappingObject.init(view: view, mapping: mapping))
     }
     
-    public func replaceAt(index: Int, autoDistributionModel view: CHGViewProtocol, mapping: [CHGAdapterViewType : Any]?) {
+    open func replaceAt(index: Int, autoDistributionModel view: CHGViewProtocol, mapping: [CHGAdapterViewType : Any]?) {
         guard let range:Range<Int> = Range<Int>.init(NSMakeRange(index, 1)) else { return }
         self.protocolsVMO?.replaceSubrange(range, with: [ViewMappingObject.init(view: view, mapping: mapping)])
     }

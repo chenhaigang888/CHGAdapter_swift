@@ -9,11 +9,11 @@
 import UIKit
 
 open class CHGTableViewCell: UITableViewCell,CHGViewLifeCycleProtocol {
-    public var section: Int?
+    open var section: Int?
     
-    public var type: CHGAdapterViewType?
+    open var type: CHGAdapterViewType?
     
-    public var kind: String?
+    open var kind: String?
     
     open var protocolsVMO: [ViewMappingObject]? = [ViewMappingObject]()
     
@@ -84,7 +84,7 @@ open class CHGTableViewCell: UITableViewCell,CHGViewLifeCycleProtocol {
         self.protocolsVMO?.append(ViewMappingObject.init(view: view, mapping: mapping))
     }
     
-    public func replaceAt(index: Int, autoDistributionModel view: CHGViewProtocol, mapping: [CHGAdapterViewType : Any]?) {
+    open func replaceAt(index: Int, autoDistributionModel view: CHGViewProtocol, mapping: [CHGAdapterViewType : Any]?) {
         guard let range:Range<Int> = Range<Int>.init(NSMakeRange(index, 1)) else { return }
         self.protocolsVMO?.replaceSubrange(range, with: [ViewMappingObject.init(view: view, mapping: mapping)])
     }

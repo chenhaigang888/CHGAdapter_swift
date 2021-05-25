@@ -16,6 +16,9 @@ private var eventTransmissionBlockKey: Void?
 private var tableViewDidSelectRowBlockKey: Void?
 private var tableViewEmptyDataShowKey: Void?
 private var scrollViewDelegatesKey:Void?
+private var tableViewCommitEditForRowBlockKey:Void?
+private var tableViewWillBeginEditingBlockKey:Void?
+private var tableViewDidEndEditingBlockKey:Void?
 
 extension UITableView {
     
@@ -87,6 +90,33 @@ extension UITableView {
         }
         set(newValue) {
             objc_setAssociatedObject(self, &tableViewDidSelectRowBlockKey, newValue, .OBJC_ASSOCIATION_COPY_NONATOMIC)
+        }
+    }
+    
+    open var tableViewCommitEditForRowBlock:CHGTableViewCommitEditForRowBlock? {
+        get {
+            return objc_getAssociatedObject(self, &tableViewCommitEditForRowBlockKey) as? CHGTableViewCommitEditForRowBlock
+        }
+        set(newValue) {
+            objc_setAssociatedObject(self, &tableViewCommitEditForRowBlockKey, newValue, .OBJC_ASSOCIATION_COPY_NONATOMIC)
+        }
+    }
+    
+    open var tableViewWillBeginEditingBlock:CHGTableViewWillBeginEditingBlock? {
+        get {
+            return objc_getAssociatedObject(self, &tableViewWillBeginEditingBlockKey) as? CHGTableViewWillBeginEditingBlock
+        }
+        set(newValue) {
+            objc_setAssociatedObject(self, &tableViewWillBeginEditingBlockKey, newValue, .OBJC_ASSOCIATION_COPY_NONATOMIC)
+        }
+    }
+    
+    open var tableViewDidEndEditingBlock:CHGTableViewDidEndEditingBlock? {
+        get {
+            return objc_getAssociatedObject(self, &tableViewDidEndEditingBlockKey) as? CHGTableViewDidEndEditingBlock
+        }
+        set(newValue) {
+            objc_setAssociatedObject(self, &tableViewDidEndEditingBlockKey, newValue, .OBJC_ASSOCIATION_COPY_NONATOMIC)
         }
     }
     

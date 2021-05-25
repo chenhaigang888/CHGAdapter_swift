@@ -25,9 +25,58 @@ public protocol CHGTableViewCellModelProtocol {
     ///   - tableView: 当前model所在的tableView
     ///   - indexPath: 当前model所在的indexPath
     /// - Returns: cell、headerFooter的高度
-    func cellHeigh(_ tableView:UITableView, indexPath:IndexPath) -> CGFloat
+    func cellHeigh(_ tableView: UITableView, indexPath:IndexPath) -> CGFloat
+    
+    /// 是否可以编辑
+    /// - Parameters:
+    ///   - tableView: tableView description
+    ///   - indexPath: indexPath description
+    func cellCanEdit(_ tableView: UITableView, indexPath: IndexPath) -> Bool
     
     
+    /// 按钮文字
+    /// - Parameters:
+    ///   - tableView: tableView description
+    ///   - indexPath: indexPath description
+    func titleForDeleteConfirmationButton(_ tableView: UITableView, indexPath: IndexPath) -> String?
+    
+    func editingStyle(_ tableView: UITableView, indexPath: IndexPath) -> UITableViewCell.EditingStyle
+    
+    func editActions(tableView: UITableView, indexPath:IndexPath) -> [UITableViewRowAction]?
+    
+    func shouldIndentWhileEditing(tableView: UITableView, indexPath:IndexPath) -> Bool
+    
+}
+
+
+public extension CHGTableViewCellModelProtocol {
+    /// 是否可以编辑
+    /// - Parameters:
+    ///   - tableView: tableView description
+    ///   - indexPath: indexPath description
+    func cellCanEdit(_ tableView: UITableView, indexPath: IndexPath) -> Bool {
+        false
+    }
+    
+    /// 按钮文字
+    /// - Parameters:
+    ///   - tableView: tableView description
+    ///   - indexPath: indexPath description
+    func titleForDeleteConfirmationButton(_ tableView: UITableView, indexPath: IndexPath) -> String? {
+        nil
+    }
+
+    func editingStyle(_ tableView: UITableView, indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        .none
+    }
+    
+    func editActions(tableView: UITableView, indexPath:IndexPath) -> [UITableViewRowAction]? {
+        nil
+    }
+    
+    func shouldIndentWhileEditing(tableView: UITableView, indexPath:IndexPath) -> Bool {
+        false
+    }
 }
 
 ///header footer的model需要实现的协议
@@ -137,4 +186,40 @@ open class CHGSimpleTableViewAdapter: CHGTableViewAdapter {
         }
         return tableViewHeaderFooterModelProtocol.headerFooterHeigh(tableView, section: section, type: .FooterType)
     }
+    
+    override open func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        guard let tableViewCellModelProtocol:CHGTableViewCellModelProtocol = cellDataWithIndexPath(indexPath,tableView: tableView) as? CHGTableViewCellModelProtocol else {
+            return super.tableView(tableView, canEditRowAt: indexPath)
+        }
+        return tableViewCellModelProtocol.cellCanEdit(tableView, indexPath: indexPath)
+    }
+    
+    open override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        guard let tableViewCellModelProtocol:CHGTableViewCellModelProtocol = cellDataWithIndexPath(indexPath,tableView: tableView) as? CHGTableViewCellModelProtocol else {
+            return super.tableView(tableView, editingStyleForRowAt: indexPath)
+        }
+        return tableViewCellModelProtocol.editingStyle(tableView, indexPath: indexPath)
+    }
+    
+    override open func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        guard let tableViewCellModelProtocol:CHGTableViewCellModelProtocol = cellDataWithIndexPath(indexPath,tableView: tableView) as? CHGTableViewCellModelProtocol else {
+            return super.tableView(tableView, titleForDeleteConfirmationButtonForRowAt: indexPath)
+        }
+        return tableViewCellModelProtocol.titleForDeleteConfirmationButton(tableView, indexPath: indexPath)
+    }
+    
+    open override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        guard let tableViewCellModelProtocol:CHGTableViewCellModelProtocol = cellDataWithIndexPath(indexPath,tableView: tableView) as? CHGTableViewCellModelProtocol else {
+            return super.tableView(tableView, editActionsForRowAt: indexPath)
+        }
+        return tableViewCellModelProtocol.editActions(tableView: tableView, indexPath: indexPath)
+    }
+    
+    open override func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        guard let tableViewCellModelProtocol:CHGTableViewCellModelProtocol = cellDataWithIndexPath(indexPath,tableView: tableView) as? CHGTableViewCellModelProtocol else {
+            return super.tableView(tableView, shouldIndentWhileEditingRowAt: indexPath)
+        }
+        return tableViewCellModelProtocol.shouldIndentWhileEditing(tableView: tableView, indexPath: indexPath)
+    }
+
 }

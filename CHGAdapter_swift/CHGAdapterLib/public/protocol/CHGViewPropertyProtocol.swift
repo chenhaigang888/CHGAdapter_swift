@@ -118,8 +118,8 @@ extension CHGViewPropertyProtocol {
 
 
 open class ViewMappingObject: NSObject {
-    var view:CHGViewPropertyProtocol?
-    var mapping:[CHGAdapterViewType : Any?]?
+    open var view:CHGViewPropertyProtocol?
+    open var mapping:[CHGAdapterViewType : Any?]?
     
     public init(view:CHGViewPropertyProtocol?, mapping:[CHGAdapterViewType : Any]?) {
         super.init()

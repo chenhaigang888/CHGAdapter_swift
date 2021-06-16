@@ -8,7 +8,7 @@
 
 import UIKit
 
-public enum CHGAdapterViewType {
+public enum CHGAdapterViewType:Int,Codable {
     case HeaderType
     case CellType
     case FooterType

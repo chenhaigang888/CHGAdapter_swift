@@ -26,7 +26,7 @@
 
 ### Installation with CocoaPods
 
-> pod 'CHGAdapter_swift', '~> 0.7.7'
+> pod 'CHGAdapter_swift', '~> 0.7.8'
 
 
 ### example （UITableView）

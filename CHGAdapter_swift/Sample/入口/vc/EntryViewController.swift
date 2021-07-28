@@ -24,7 +24,7 @@ class EntryViewController: UIViewController {
             let vcTemp = clsType.init()
             vcTemp.title = model.title
             self?.navigationController?.pushViewController(vcTemp, animated: true)
-        }
+        } 
     }
 
 

@@ -110,107 +110,141 @@ public extension CHGCollectionViewSupplementaryElementModelProtocol {
 open class CHGSimpleCollectionViewAdapter: CHGCollectionViewAdapter {
     
     open override func obtainCellClassWithCell(_ data: Any, collectionView: UICollectionView, cellForItemAtIndexPath indexPath: IndexPath) -> AnyClass? {
-        guard let cellModelProtocol:CHGCollectionViewCellModelProtocol = data as? CHGCollectionViewCellModelProtocol else {
-            return super.obtainCellClassWithCell(data, collectionView: collectionView, cellForItemAtIndexPath: indexPath)
+        if let cellModelProtocol = data as? CHGCollectionViewCellModelProtocol {
+            return cellModelProtocol.cellClass(collectionView: collectionView, at: indexPath)
+        } else if let cellModelProtocol = (data as AnyObject) as? CHGCollectionViewCellModelProtocol {
+            return cellModelProtocol.cellClass(collectionView: collectionView, at: indexPath)
         }
-        return cellModelProtocol.cellClass(collectionView: collectionView, at: indexPath)
+        return super.obtainCellClassWithCell(data, collectionView: collectionView, cellForItemAtIndexPath: indexPath)
     }
     
     open override func obtainSupplementaryElementClassWithCell(_ data: Any, collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: NSString, indexPath: IndexPath) -> AnyClass? {
-        guard let supplementaryElementModelProtocol:CHGCollectionViewSupplementaryElementModelProtocol = data as? CHGCollectionViewSupplementaryElementModelProtocol else {
-            return super.obtainSupplementaryElementClassWithCell(data, collectionView: collectionView, viewForSupplementaryElementOfKind: kind, indexPath: indexPath)
+        if let supplementaryElementModelProtocol = data as? CHGCollectionViewSupplementaryElementModelProtocol {
+            return supplementaryElementModelProtocol.reusableView(collectionView: collectionView, supplementaryElementOfKind: kind as String, atIndexPath: indexPath)
+        } else if let supplementaryElementModelProtocol = (data as AnyObject) as? CHGCollectionViewSupplementaryElementModelProtocol {
+            return supplementaryElementModelProtocol.reusableView(collectionView: collectionView, supplementaryElementOfKind: kind as String, atIndexPath: indexPath)
         }
-        return supplementaryElementModelProtocol.reusableView(collectionView: collectionView, supplementaryElementOfKind: kind as String, atIndexPath: indexPath)
+        return super.obtainSupplementaryElementClassWithCell(data, collectionView: collectionView, viewForSupplementaryElementOfKind: kind, indexPath: indexPath)
     }
     
     ///动态设置每个分区的EdgeInsets 不包括header和footer
     open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        guard let supplementaryElementModelProtocol:CHGCollectionViewSupplementaryElementModelProtocol = headerFooterDataWithrSupplementaryElementOfKind(kind: UICollectionView.elementKindSectionHeader as NSString, indexPath: IndexPath.init(row: 0, section: section)) as? CHGCollectionViewSupplementaryElementModelProtocol else {
-            if collectionViewLayout.isKind(of: UICollectionViewFlowLayout.classForCoder()) {
-                let layout:UICollectionViewFlowLayout = collectionViewLayout as! UICollectionViewFlowLayout
-                return layout.sectionInset
-            }
-            return UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0)
+        let data = headerFooterDataWithrSupplementaryElementOfKind(kind: UICollectionView.elementKindSectionHeader as NSString, indexPath: IndexPath.init(row: 0, section: section))
+        if let supplementaryElementModelProtocol = data as? CHGCollectionViewSupplementaryElementModelProtocol  {
+            return supplementaryElementModelProtocol.sectionInset(collectionView: collectionView, layout: collectionViewLayout, insetForSectionAt: section)
+        } else if let supplementaryElementModelProtocol = (data as AnyObject) as? CHGCollectionViewSupplementaryElementModelProtocol  {
+            return supplementaryElementModelProtocol.sectionInset(collectionView: collectionView, layout: collectionViewLayout, insetForSectionAt: section)
         }
-        return supplementaryElementModelProtocol.sectionInset(collectionView: collectionView, layout: collectionViewLayout, insetForSectionAt: section)
+        return UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0)
     }
     
     ///动态设置每行的间距大小
     open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        guard let supplementaryElementModelProtocol:CHGCollectionViewSupplementaryElementModelProtocol = headerFooterDataWithrSupplementaryElementOfKind(kind: UICollectionView.elementKindSectionHeader as NSString, indexPath: IndexPath.init(row: 0, section: section)) as? CHGCollectionViewSupplementaryElementModelProtocol else {
-            if collectionViewLayout.isKind(of: UICollectionViewFlowLayout.classForCoder()) {
-                let layout:UICollectionViewFlowLayout = collectionViewLayout as! UICollectionViewFlowLayout
-                return layout.minimumLineSpacing
-            }
-            return 0
+        let data = headerFooterDataWithrSupplementaryElementOfKind(kind: UICollectionView.elementKindSectionHeader as NSString, indexPath: IndexPath.init(row: 0, section: section))
+        
+        if let supplementaryElementModelProtocol = data as? CHGCollectionViewSupplementaryElementModelProtocol {
+            return supplementaryElementModelProtocol.minimumLineSpacing(collectionView:collectionView, layout: collectionViewLayout, atSection: section)
+        } else if let supplementaryElementModelProtocol = (data as AnyObject) as? CHGCollectionViewSupplementaryElementModelProtocol {
+            return supplementaryElementModelProtocol.minimumLineSpacing(collectionView:collectionView, layout: collectionViewLayout, atSection: section)
         }
-        return supplementaryElementModelProtocol.minimumLineSpacing(collectionView:collectionView, layout: collectionViewLayout, atSection: section)
+        if collectionViewLayout.isKind(of: UICollectionViewFlowLayout.classForCoder()) {
+            let layout:UICollectionViewFlowLayout = collectionViewLayout as! UICollectionViewFlowLayout
+            return layout.minimumLineSpacing
+        }
+        return 0
     }
     
     ///动态设置每列的间距大小
     open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        guard let supplementaryElementModelProtocol:CHGCollectionViewSupplementaryElementModelProtocol = headerFooterDataWithrSupplementaryElementOfKind(kind: UICollectionView.elementKindSectionHeader as NSString, indexPath: IndexPath.init(row: 0, section: section)) as? CHGCollectionViewSupplementaryElementModelProtocol else {
-            if collectionViewLayout.isKind(of: UICollectionViewFlowLayout.classForCoder()) {
-                let layout:UICollectionViewFlowLayout = collectionViewLayout as! UICollectionViewFlowLayout
-                return layout.minimumInteritemSpacing
-            }
-            return 0
+        let data = headerFooterDataWithrSupplementaryElementOfKind(kind: UICollectionView.elementKindSectionHeader as NSString, indexPath: IndexPath.init(row: 0, section: section))
+        if let supplementaryElementModelProtocol = data as? CHGCollectionViewSupplementaryElementModelProtocol {
+            return supplementaryElementModelProtocol.minimumInteritemSpacingCollectionView(collectionView: collectionView, layout: collectionViewLayout, atSection: section)
+        } else if let supplementaryElementModelProtocol = (data as AnyObject) as? CHGCollectionViewSupplementaryElementModelProtocol {
+            return supplementaryElementModelProtocol.minimumInteritemSpacingCollectionView(collectionView: collectionView, layout: collectionViewLayout, atSection: section)
         }
-        return supplementaryElementModelProtocol.minimumInteritemSpacingCollectionView(collectionView: collectionView, layout: collectionViewLayout, atSection: section)
+        
+        if collectionViewLayout.isKind(of: UICollectionViewFlowLayout.classForCoder()) {
+            let layout:UICollectionViewFlowLayout = collectionViewLayout as! UICollectionViewFlowLayout
+            return layout.minimumInteritemSpacing
+        }
+        return 0
     }
     
     
     //动态设置某个分区头视图大小
     open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        guard let supplementaryElementModelProtocol:CHGCollectionViewSupplementaryElementModelProtocol = headerFooterDataWithrSupplementaryElementOfKind(kind: UICollectionView.elementKindSectionHeader as NSString, indexPath: IndexPath.init(row: 0, section: section)) as? CHGCollectionViewSupplementaryElementModelProtocol else {
-            if collectionViewLayout.isKind(of: UICollectionViewFlowLayout.classForCoder()) {
-                let layout:UICollectionViewFlowLayout = collectionViewLayout as! UICollectionViewFlowLayout
-                return layout.headerReferenceSize
-            }
-            return CGSize.init(width: collectionView.frame.width, height: 0)
+        let data = headerFooterDataWithrSupplementaryElementOfKind(kind: UICollectionView.elementKindSectionHeader as NSString, indexPath: IndexPath.init(row: 0, section: section))
+        if let supplementaryElementModelProtocol = data as? CHGCollectionViewSupplementaryElementModelProtocol {
+            return supplementaryElementModelProtocol.referenceHeaderSize(collectionView: collectionView, layout: collectionViewLayout, atSection: section)
+        }else if let supplementaryElementModelProtocol = (data as AnyObject) as? CHGCollectionViewSupplementaryElementModelProtocol {
+            return supplementaryElementModelProtocol.referenceHeaderSize(collectionView: collectionView, layout: collectionViewLayout, atSection: section)
         }
-        return supplementaryElementModelProtocol.referenceHeaderSize(collectionView: collectionView, layout: collectionViewLayout, atSection: section)
+        if collectionViewLayout.isKind(of: UICollectionViewFlowLayout.classForCoder()) {
+            let layout:UICollectionViewFlowLayout = collectionViewLayout as! UICollectionViewFlowLayout
+            return layout.headerReferenceSize
+        }
+        return CGSize.init(width: collectionView.frame.width, height: 0)
         
     }
     
     ///动态设置每个Item的尺寸大小
     open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        guard let cellModelProtocol:CHGCollectionViewCellModelProtocol = cellDataWithIndexPath(indexPath,collectionView: collectionView) as? CHGCollectionViewCellModelProtocol else {
-            if collectionViewLayout.isKind(of: UICollectionViewFlowLayout.classForCoder()) {
-                let layout:UICollectionViewFlowLayout = collectionViewLayout as! UICollectionViewFlowLayout
-                return layout.itemSize
-            }
-            return CGSize.init(width: 50, height: 50)
+        let data = cellDataWithIndexPath(indexPath,collectionView: collectionView)
+        if let cellModelProtocol = data as? CHGCollectionViewCellModelProtocol {
+            return cellModelProtocol.cellItemSize(collectionView: collectionView, layout: collectionViewLayout, sizeForItemAt: indexPath)
+        } else if let cellModelProtocol = (data as AnyObject) as? CHGCollectionViewCellModelProtocol {
+            return cellModelProtocol.cellItemSize(collectionView: collectionView, layout: collectionViewLayout, sizeForItemAt: indexPath)
         }
-        return cellModelProtocol.cellItemSize(collectionView: collectionView, layout: collectionViewLayout, sizeForItemAt: indexPath)
+        if collectionViewLayout.isKind(of: UICollectionViewFlowLayout.classForCoder()) {
+            let layout:UICollectionViewFlowLayout = collectionViewLayout as! UICollectionViewFlowLayout
+            return layout.itemSize
+        }
+        return CGSize.init(width: 50, height: 50)
     }
     
     //动态设置某个分区尾视图大小
     open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        guard let supplementaryElementModelProtocol:CHGCollectionViewSupplementaryElementModelProtocol = headerFooterDataWithrSupplementaryElementOfKind(kind: UICollectionView.elementKindSectionFooter as NSString, indexPath: IndexPath.init(row: 0, section: section)) as? CHGCollectionViewSupplementaryElementModelProtocol else {
-            if collectionViewLayout.isKind(of: UICollectionViewFlowLayout.classForCoder()) {
-                let layout:UICollectionViewFlowLayout = collectionViewLayout as! UICollectionViewFlowLayout
-                return layout.footerReferenceSize
-            }
-            return CGSize.init(width: collectionView.frame.width, height: 0)
+        let data = headerFooterDataWithrSupplementaryElementOfKind(kind: UICollectionView.elementKindSectionFooter as NSString, indexPath: IndexPath.init(row: 0, section: section))
+        if let supplementaryElementModelProtocol = data as? CHGCollectionViewSupplementaryElementModelProtocol {
+            return supplementaryElementModelProtocol.referenceFooterSize(collectionView: collectionView, layout: collectionViewLayout, atSection: section)
+        } else if let supplementaryElementModelProtocol = (data as AnyObject) as? CHGCollectionViewSupplementaryElementModelProtocol {
+            return supplementaryElementModelProtocol.referenceFooterSize(collectionView: collectionView, layout: collectionViewLayout, atSection: section)
         }
-        return supplementaryElementModelProtocol.referenceFooterSize(collectionView: collectionView, layout: collectionViewLayout, atSection: section)
+        if collectionViewLayout.isKind(of: UICollectionViewFlowLayout.classForCoder()) {
+            let layout:UICollectionViewFlowLayout = collectionViewLayout as! UICollectionViewFlowLayout
+            return layout.footerReferenceSize
+        }
+        return CGSize.init(width: collectionView.frame.width, height: 0)
+        
     }
     
     open override func subDataKeyPath(_ indexPath: IndexPath, targetView: UIScrollView) -> Any? {
-        guard let supplementaryElementModelProtocol:CHGCollectionViewSupplementaryElementModelProtocol = self.adapterData.cellDatas![indexPath.section] as? CHGCollectionViewSupplementaryElementModelProtocol else {
-            return super.subDataKeyPath(indexPath, targetView: targetView)
-        }
-        let keyPath = supplementaryElementModelProtocol.subDataKeyPath(indexPath, inCollectionView: targetView as! UICollectionView)
-        if keyPath is NSString || keyPath is String {
-            let keyPathStr:NSString = keyPath as! NSString
-            if keyPathStr.length == 0 {
-                return super.subDataKeyPath(indexPath, targetView: targetView)
-            } else {
-                return keyPathStr
+        let data = self.adapterData.cellDatas![indexPath.section]
+        if let supplementaryElementModelProtocol = data as? CHGCollectionViewSupplementaryElementModelProtocol {
+            let keyPath = supplementaryElementModelProtocol.subDataKeyPath(indexPath, inCollectionView: targetView as! UICollectionView)
+            if keyPath is NSString || keyPath is String {
+                let keyPathStr:NSString = keyPath as! NSString
+                if keyPathStr.length == 0 {
+                    return super.subDataKeyPath(indexPath, targetView: targetView)
+                } else {
+                    return keyPathStr
+                }
             }
+            return keyPath
+        } else if let supplementaryElementModelProtocol = (data as AnyObject) as? CHGCollectionViewSupplementaryElementModelProtocol {
+            let keyPath = supplementaryElementModelProtocol.subDataKeyPath(indexPath, inCollectionView: targetView as! UICollectionView)
+            if keyPath is NSString || keyPath is String {
+                let keyPathStr:NSString = keyPath as! NSString
+                if keyPathStr.length == 0 {
+                    return super.subDataKeyPath(indexPath, targetView: targetView)
+                } else {
+                    return keyPathStr
+                }
+            }
+            return keyPath
         }
-        return keyPath
+        
+        return super.subDataKeyPath(indexPath, targetView: targetView)
     }
     
 }

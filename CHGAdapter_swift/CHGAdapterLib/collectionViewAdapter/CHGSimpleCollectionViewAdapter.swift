@@ -135,6 +135,10 @@ open class CHGSimpleCollectionViewAdapter: CHGCollectionViewAdapter {
         } else if let supplementaryElementModelProtocol = (data as AnyObject) as? CHGCollectionViewSupplementaryElementModelProtocol  {
             return supplementaryElementModelProtocol.sectionInset(collectionView: collectionView, layout: collectionViewLayout, insetForSectionAt: section)
         }
+        if collectionViewLayout.isKind(of: UICollectionViewFlowLayout.classForCoder()) {
+            let layout:UICollectionViewFlowLayout = collectionViewLayout as! UICollectionViewFlowLayout
+            return layout.sectionInset
+        }
         return UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0)
     }
     

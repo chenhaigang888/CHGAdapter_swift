@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "CHGAdapter_swift"
-  s.version      = "0.7.9"
+  s.version      = "0.8.0"
   s.summary      = "主要解决UITableView、UICollectionView与dataSource和Delegate解耦合"
 
   # This description is used to generate tags and improve search results.
